@@ -266,6 +266,53 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2020/12/24/develop-note/wsl-docker/">WSL1 使用 Docker 一直无法启动</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/12/24/develop-note/wsl-docker/">
+          
+          
+            
+          
+          问题WSL1 无法正常启动 Dokcer，Dokcer一直处于 not running 状态
+解决办法WSL1 是伪 Linux，实际上仍然是 Windows 底层，而 Docker 是基于系统底层实现的，这就导致了无法在 Windows(WSL1) 上运行 Linux 版本的 Dokcer使用 WSL2 则可以正常使用 Docker，目前上述问题在不使用 WSL2 的情况下，暂时无法解决
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-24 15:55" pubdate>
+              2020-12-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/WSL/">WSL</a>
+            
+              <a href="/tags/Dokcer/">Dokcer</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2020/12/21/acm/myACM/">我的ACM脚印</a>
       </h1>
 
@@ -307,58 +354,6 @@ ACM到底带给我什么了
               <a href="/tags/ACM/">ACM</a>
             
               <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2020/12/21/interview/java/">面试复习（Java）</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/12/21/interview/java/">
-          
-          
-            
-          
-          线程池
-线程池的原因
-不断的创建和删除线程，会带来较大的系统资源负载
-线程缺乏统一的管理，可能会出现无限制的创建线程
-线程之间抢占资源
-
-
-线程池的属性
-核心线程数：保持存在的线程数量，这些线程会一直存在，不会被删除
-任务缓冲队列：当所有的核心线程都在运行时，新的任务会被加入到缓冲队列中
-非核心线程数：当任务缓冲队列满后，将会创建新的线程来执行队列中的任务，且额外创建的线程数不会超过非核心线程数
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-12-21 01:31" pubdate>
-              2020-12-21
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
             
           </div>
         

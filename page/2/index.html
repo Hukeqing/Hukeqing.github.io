@@ -171,36 +171,31 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/05/interview/computer-graphics/">面试复习（计算机图形学）</a>
+        <a href="/2021/02/23/interview/database/">面试复习（数据库）</a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/05/interview/computer-graphics/">
+        <a href="/2021/02/23/interview/database/">
           
           
             
           
-          渲染管线
-渲染流程
-应用程序阶段
-加载数据到显存
-设置渲染模式
-调用 DrawCall
+          B 树和 B+ 树
+B 树的特点
+一个节点上包含至多 $m - 1$ 个值
+根节点至少有两个孩子
+非叶子节点如果包含了 $k$ 个值，则其包含了 $k + 1$ 个孩子节点
+所有叶子节点都位于同一层
 
 
-几何阶段
-顶点着色器：将三维的顶点坐标信息映射到 $[-1, 1]$ 的平面上
-裁剪：裁剪出摄像机视野内的顶点
-屏幕映射：将 $[-1, 1]$ 内的图片映射到屏幕上
+B+ 树的特点
+所有的非叶子节点不再保存值，而是只保存了中间值
+所有值保存在叶子节点上
+所有的叶子节点通过链表按照顺序进行连接
 
 
-光栅化阶段
-三角形设置与三角形遍历：找出片元
-片元着色器：对每一个片元进行着色，计算其颜色值
-逐片元操作：模板测试，深度测试，混合
-
-
-
+为什么数据库会采用 B+ 树而不是 B 树或者 AVL 树
+AV
         </a>
       </p>
 
@@ -208,8 +203,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-05 07:33" pubdate>
-              2021-09-05
+            <time datetime="2021-02-23 17:09" pubdate>
+              2021-02-23
             </time>
           </div>
         
@@ -219,176 +214,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/09/05/front-end/Front-end-image-cropping-effect/" target="_self">
-          <img src="/image/front-end/Front-end-image-cropping-effect/myAvatarUpload.png" srcset="/img/loading.gif" alt="原生 JavaScript 实现图片裁剪">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/05/front-end/Front-end-image-cropping-effect/">原生 JavaScript 实现图片裁剪</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/05/front-end/Front-end-image-cropping-effect/">
-          
-          
-            
-          
-          原生 JavaScript 实现图片裁剪由于最近做的一个项目里，需要把用户头像上传。但是要求用户头像必须是正方形，所以需要将矩形图片裁剪为正方形
-在花了接近 5 个小时之后，总算是将功能上线了，在此记录下整个思路经过
-前提首先，单纯靠前端，是不可能实现将图片截取其中的部分，然后将部分上传到后端。所以，需要靠伪装裁剪效果的方式来实现裁剪
-思路首先把裁剪图片的页面进行分层
-思路1——clip
-
-
-
-层
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-05 07:33" pubdate>
-              2021-09-05
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
-            
-              <a href="/tags/HTML/">HTML</a>
-            
-              <a href="/tags/JavaScript/">JavaScript</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/06/10/notebook/Computer-Graphics/" target="_self">
-          <img src="/image/notebook/Computer-Graphics/Bezier-G1.png" srcset="/img/loading.gif" alt="计算机图形学">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/10/notebook/Computer-Graphics/">计算机图形学</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/10/notebook/Computer-Graphics/">
-          
-          
-            
-          
-          相关概念分辨率
-屏幕分辨率：用水平和垂直方向所能显示光点数总和的乘积表示
-显示分辨率：用水平和垂直方向所能显示像素点总和的乘积表示
-存储分辨率：指帧缓存区域的大小
-
-帧缓存计算水平分辨率 * 垂直分辨率 * 每个像素所占用的字节图的表示和数据结构
-复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等
-图元通常是指不可再分的独立的图形实体。
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-10 10:54" pubdate>
-              2021-06-10
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a>
-            
-              <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
-            
-              <a href="/tags/%E8%AF%BE%E7%A8%8B/">课程</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2021/06/07/develop-note/wsl-localhost/" target="_self">
-          <img src="/image/develop-note/wsl-localhost/WSL-ifconfig.jpg" srcset="/img/loading.gif" alt="Windows 通过网络访问 WSL2">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/07/develop-note/wsl-localhost/">Windows 通过网络访问 WSL2</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/07/develop-note/wsl-localhost/">
-          
-          
-            
-          
-          localhost当使用 localhost 时，Windows 直接访问到 WSL 内的进程，即看起来似乎是一台电脑，
-127.0.0.1当使用本地 IP 时，即使用 127.0.0.1 时，Windows 将会无法访问到 WSL，Windows 认为这是强调它自己。
-JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并不确定是不是 JVM 的问题还是 Spr
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-07 22:39" pubdate>
-              2021-06-07
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
-            
-              <a href="/tags/WSL/">WSL</a>
             
           </div>
         
@@ -589,6 +414,97 @@ C++ 的特性（C++11及以上）
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">Codeforces Round#699 (Div. 2)</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">
+          
+          
+            
+          
+          暂时还没有 AK，留坑
+A. Space Navigation大致题意给你一段在棋盘上的移动指令，问能否通过在不改变原指令顺序，仅删除部分或者全部或者不删除的情况下，到达某个指定地点
+分析可以通过指令直接得出可以到达的范围，比如删除所有的“向左”指令后，能够到达的最右，同理可以得到四个方向的极值，最后判断目标地点是否在极值范围内即可
+AC code1234567891011121314151617
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-06 14:52" pubdate>
+              2021-02-06
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/ACM/">ACM</a>
+            
+              <a href="/tags/Codeforces/">Codeforces</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/27/develop-note/wsl-clean/">清理 WSL2 的磁盘占用</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/27/develop-note/wsl-clean/">
+          
+          
+            
+          
+          方法来源：https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168
+由于 vhdx 格式的磁盘镜像文件只支持自动扩容但不支持自动缩容，所以需要手动来实现缩容，即利用 Windows 自带的 diskpart 来实现
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-27 14:58" pubdate>
+              2021-01-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/WSL/">WSL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/01/26/acm/CodeforcesRound697(Div.%203)/">Codeforces Round#697 (Div. 3)</a>
       </h1>
 
@@ -621,6 +537,60 @@ A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为
               <a href="/tags/ACM/">ACM</a>
             
               <a href="/tags/Codeforces/">Codeforces</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/18/develop-note/windows-ntfs/">Windows 下的 NTFS 驱动器索引 BUG</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/18/develop-note/windows-ntfs/">
+          
+          
+            
+          
+          NTFS BUG
+            警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问
+          
+1cd c:\:$i30:$bitmap
+
+            警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问
+          
+当你试图进入、访问此目录时，就有机会导致 NTFS 驱动器索引损坏，此问题
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-18 12:25" pubdate>
+              2021-01-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/Windows/">Windows</a>
+            
+              <a href="/tags/NTFS/">NTFS</a>
+            
+              <a href="/tags/BUG/">BUG</a>
             
           </div>
         
