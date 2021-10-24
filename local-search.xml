@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Mac 截图唤起速度慢</title>
+    <link href="/2021/10/24/mac/screen-cut/"/>
+    <url>/2021/10/24/mac/screen-cut/</url>
+    
+    <content type="html"><![CDATA[<ul><li>打开截屏软件</li><li>选中任意一个录制的按钮</li><li>点击选项</li><li>取消 mac 麦克风按钮</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>macOS</tag>
+      
+      <tag>截图</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C++ 语言实现动态变化的线程池</title>
     <link href="/2021/10/13/cpp/thread-pool/"/>
     <url>/2021/10/13/cpp/thread-pool/</url>
@@ -56,11 +77,11 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>学习</tag>
       
       <tag>课程</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -123,9 +144,9 @@
     
     <tags>
       
-      <tag>面试准备</tag>
-      
       <tag>计算机图形学</tag>
+      
+      <tag>面试准备</tag>
       
     </tags>
     
