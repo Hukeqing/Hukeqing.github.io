@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
-  <title>WSL1 使用 Docker 一直无法启动 - Shiroha白羽的博客</title>
+  <title>Portable OJ 一期工程技术方案 - Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -152,7 +152,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="WSL1 使用 Docker 一直无法启动">
+            <span class="h2" id="subtitle" title="Portable OJ 一期工程技术方案">
               
             </span>
 
@@ -167,8 +167,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-24 15:55" pubdate>
-        2020年12月24日 下午
+      <time datetime="2021-10-31 20:09" pubdate>
+        2021年10月31日 晚上
       </time>
     </span>
   
@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      98 字
+      668 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      7
        分钟
     </span>
   
@@ -227,56 +227,62 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">WSL1 使用 Docker 一直无法启动</h1>
+            <h1 style="display: none">Portable OJ 一期工程技术方案</h1>
             
             <div class="markdown-body">
-              <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>WSL1 无法正常启动 Dokcer，Dokcer一直处于 not running 状态</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>WSL1 是伪 Linux，实际上仍然是 Windows 底层，而 Docker 是基于系统底层实现的，这就导致了无法在 Windows(WSL1) 上运行 Linux 版本的 Dokcer<br>使用 WSL2 则可以正常使用 Docker，目前上述问题在不使用 WSL2 的情况下，暂时无法解决</p>
-
+              <h1 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h1><h2 id="系统结构"><a href="#系统结构" class="headerlink" title="系统结构"></a>系统结构</h2><p>采用三端分离的架构</p>
+<h3 id="web"><a href="#web" class="headerlink" title="web"></a>web</h3><ul>
+<li>网页前端，通过 HTTP/HTTPS 协议与 server 进行通信</li>
+</ul>
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><ul>
+<li>负责与前端进行 HTTP/HTTPS 协议通信</li>
+<li>负责逻辑任务与定时任务的处理</li>
+<li>与 judge 通过 TCP 长链接与非阻塞 IO 进行通信</li>
+<li>负责文件的管理和数据库的连接</li>
+</ul>
+<h3 id="judge"><a href="#judge" class="headerlink" title="judge"></a>judge</h3><ul>
+<li>负责进行程序的编译和运行</li>
+</ul>
+<h2 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h2><p>所有模块的需要索引的信息和部分短字段均存储至 MySQL，非短字段或者非需要索引字段均存储至 Mongo，Redis 仅用于缓存且不采用持久化</p>
+<h1 id="模块设计"><a href="#模块设计" class="headerlink" title="模块设计"></a>模块设计</h1><h2 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h2><h3 id="用户属性"><a href="#用户属性" class="headerlink" title="用户属性"></a>用户属性</h3><ul>
+<li>id。唯一不变的用户标识</li>
+<li>用户名。表示用户的唯一标识，仅限大小写英文、数字和下划线组成，长度至少三个字符，通常情况下不允许更新</li>
+<li>密码。仅限大小写英文、数字和<code>!@#$%^&amp;*()_+-=[]\;&#39;,./&#123;&#125;|:&quot;&lt;&gt;?</code>组成</li>
+<li>类型。默认为 <code>NORMAL</code></li>
+<li>组织。用户一定属于某个组织，组织按层级高层级对低层级有管理权，对同层级没有管理权，管理关系以 DAG 图表示。能够进行管理的组织可以调整对方的所在组织和所拥有的权限</li>
+<li>权限。用户拥有的权限，不同的权限组成的数组</li>
+<li>总提交数。</li>
+<li>总通过数。</li>
+<li>邮箱。用于找回密码和后续的通知信息，在第一次版本迭代中不发挥作用</li>
+</ul>
+<h3 id="用户功能"><a href="#用户功能" class="headerlink" title="用户功能"></a>用户功能</h3><ul>
+<li>通过 handle 和 password 登录</li>
+<li>通过 handle 和 password 注册</li>
+<li>调整对方所属组织<ul>
+<li>对方所属组织以及被调整后的组织必须要在都在当前用户的管理下</li>
+</ul>
+</li>
+<li>授予权限（需要 GRANT 权限）<ul>
+<li>被授予的权限必须是当前用户拥有的权限，且对方在当前用户的管理下</li>
+</ul>
+</li>
+<li>收回权限（需要 GRANT 权限）<ul>
+<li>被收回的权限必须是当前用户拥有的权限，且对方在当前用户的管理下</li>
+</ul>
+</li>
+</ul>
+<h1 id="存储设计"><a href="#存储设计" class="headerlink" title="存储设计"></a>存储设计</h1><h2 id="用户模块-1"><a href="#用户模块-1" class="headerlink" title="用户模块"></a>用户模块</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">account</span><br>(<br>    <span class="hljs-keyword">id</span>       <span class="hljs-built_in">BIGINT</span>      AUTO_INCREMENT <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户 ID&#x27;</span>,<br>    data_id  <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">32</span>)                    <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户数据主键&#x27;</span>,<br>    handle   <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户名&#x27;</span>,<br>    <span class="hljs-keyword">password</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户密码&#x27;</span>,<br>    <span class="hljs-keyword">type</span>     <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户类型&#x27;</span>,<br>    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>),<br>    <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span> uk_handle(<span class="hljs-string">`handle`</span>)<br>) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mp4 <span class="hljs-keyword">COLLATION</span>=utf8mb4_general_ci <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户基本信息表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NormalUserData</span> </span>&#123;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 数据库主键</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Id</span><br>    <span class="hljs-keyword">private</span> String _id;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 所属组织</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> OrganizationType organization;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 总提交数量</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer submission;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 总通过数量</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer accept;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 权限列表</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Set&lt;PermissionType&gt; permissionTypeSet;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 邮箱</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String email;<br>&#125;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
                 
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
-                    
-                      <a class="hover-with-bg" href="/tags/WSL/">WSL</a>
-                    
-                      <a class="hover-with-bg" href="/tags/Dokcer/">Dokcer</a>
-                    
-                  </div>
-                
               </div>
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2020/12/26/notebook/Computer-network-experiment/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机网络实验复习</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2020/12/21/acm/myACM/">
-                        <span class="hidden-mobile">我的ACM脚印</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
@@ -486,9 +492,55 @@
 
 
 
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
 
 
 
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
