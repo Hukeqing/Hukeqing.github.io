@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Mac 使用带 python 的 vim</title>
+    <link href="/2021/11/15/develop-note/macvim/"/>
+    <url>/2021/11/15/develop-note/macvim/</url>
+    
+    <content type="html"><![CDATA[<p>mac 自带的 vim 并不支持 python<br>采用 brew 的 macvim 代替即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install macvim<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>macOS</tag>
+      
+      <tag>vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mac 截图唤起速度慢</title>
     <link href="/2021/10/24/mac/screen-cut/"/>
     <url>/2021/10/24/mac/screen-cut/</url>
@@ -77,11 +98,11 @@
     
     <tags>
       
+      <tag>计算机图形学</tag>
+      
       <tag>学习</tag>
       
       <tag>课程</tag>
-      
-      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -100,9 +121,9 @@
     
     <tags>
       
-      <tag>WSL</tag>
-      
       <tag>短笔记</tag>
+      
+      <tag>WSL</tag>
       
     </tags>
     
@@ -144,9 +165,9 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>面试准备</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -361,9 +382,9 @@
     
     <tags>
       
-      <tag>WSL</tag>
-      
       <tag>短笔记</tag>
+      
+      <tag>WSL</tag>
       
     </tags>
     
@@ -474,9 +495,9 @@
     
     <tags>
       
-      <tag>短笔记</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>短笔记</tag>
       
     </tags>
     
@@ -518,9 +539,9 @@
     
     <tags>
       
-      <tag>WSL</tag>
-      
       <tag>短笔记</tag>
+      
+      <tag>WSL</tag>
       
       <tag>Dokcer</tag>
       
