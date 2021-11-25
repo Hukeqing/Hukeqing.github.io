@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -131,7 +131,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/image/default/main_bg.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -171,6 +171,50 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/11/25/develop-note/git-remote-reconnect/">GitHub 下载的 zip 代码如何与原仓库再次建立连接</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/11/25/develop-note/git-remote-reconnect/">
+          
+          
+            
+          
+          执行如下命令即可（注意替换关键词）
+1234567unzip &lt;repo&gt;.zipcd &lt;repo&gt;git initgit add .git remote add origin https://github.com/&lt;user&gt;/&lt;repo&gt;.gitgit remote updategit checkout master
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-11-25 12:46" pubdate>
+              2021-11-25
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/git/">git</a>
+            
+              <a href="/tags/GitHub/">GitHub</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/">Dockerfile 中下载 JDK8</a>
       </h1>
 
@@ -196,6 +240,17 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
           </div>
         
         
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Docker/">Docker</a>
+            
+              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/JDK/">JDK</a>
+            
+          </div>
         
       </div>
     </article>
@@ -608,54 +663,6 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
               <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
             
               <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/27/interview/algorithm/">面试复习（算法）</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/27/interview/algorithm/">
-          
-          
-            
-          
-          链表有环问题
-判断单向链表是否有环
-定义两个指针，从链表的开始，同时沿着链表指针移动，速度分别为一个单位和两个单位。当某个时刻，两个指针指向同一个节点的时候则此链表有环
-理论上，速度可以是任意的两个不同的值，因为只要速度差和环的长度有最小公倍数，则必定存在相交的时间点
-
-
-找出链表的环的交点位置
-通过上述步骤（速度取一步两步），当两个指针第一次相遇的时候，将速度为二步的指针移动至开头，并将速度调整
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-27 12:36" pubdate>
-              2021-03-27
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
             
           </div>
         

@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -131,7 +131,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/image/default/main_bg.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -164,6 +164,51 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/27/develop-note/wsl-clean/">清理 WSL2 的磁盘占用</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/27/develop-note/wsl-clean/">
+          
+          
+            
+          
+          方法来源：https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168
+由于 vhdx 格式的磁盘镜像文件只支持自动扩容但不支持自动缩容，所以需要手动来实现缩容，即利用 Windows 自带的 diskpart 来实现
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-27 14:58" pubdate>
+              2021-01-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/WSL/">WSL</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -434,9 +479,9 @@ internet 是一个通用名词，它泛
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/MySQL/">MySQL</a>
-            
               <a href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+            
+              <a href="/tags/MySQL/">MySQL</a>
             
           </div>
         

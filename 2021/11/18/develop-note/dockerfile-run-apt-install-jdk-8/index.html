@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
-  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -65,7 +65,7 @@
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,7 +147,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/image/default/main_bg.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -210,6 +210,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
         </div>
       </div>
     </div>
@@ -229,6 +233,12 @@
             <!-- SEO header -->
             <h1 style="display: none">Dockerfile 中下载 JDK8</h1>
             
+              <p class="note note-info">
+                
+                  本文最后更新于：4 天前
+                
+              </p>
+            
             <div class="markdown-body">
               <h1 id="openjdk-8-jdk-headless"><a href="#openjdk-8-jdk-headless" class="headerlink" title="openjdk-8-jdk-headless"></a>openjdk-8-jdk-headless</h1><p>在 Linux 中常用 <code>apt install openjdk-8-headless</code> 来安装 JDK，但是 dockerfile 中无法正常安装</p>
 <h1 id="adoptopenjdk-8-hotspot"><a href="#adoptopenjdk-8-hotspot" class="headerlink" title="adoptopenjdk-8-hotspot"></a>adoptopenjdk-8-hotspot</h1><p>通常在 docker 中使用 adoptopenjdk-8-hotspot 来代替 openjdk</p>
@@ -240,6 +250,17 @@
               <div class="post-metas mb-3">
                 
                 
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Docker/">Docker</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/">短笔记</a>
+                    
+                      <a class="hover-with-bg" href="/tags/JDK/">JDK</a>
+                    
+                  </div>
+                
               </div>
               
                 <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
@@ -248,6 +269,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/11/25/develop-note/git-remote-reconnect/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GitHub 下载的 zip 代码如何与原仓库再次建立连接</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

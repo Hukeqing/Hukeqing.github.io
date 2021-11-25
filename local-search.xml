@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>GitHub 下载的 zip 代码如何与原仓库再次建立连接</title>
+    <link href="/2021/11/25/develop-note/git-remote-reconnect/"/>
+    <url>/2021/11/25/develop-note/git-remote-reconnect/</url>
+    
+    <content type="html"><![CDATA[<p>执行如下命令即可（注意替换关键词）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">unzip &lt;repo&gt;.zip<br>cd &lt;repo&gt;<br>git init<br>git add .<br>git remote add origin https://github.com/&lt;user&gt;/&lt;repo&gt;.git<br>git remote update<br>git checkout master<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+      <tag>GitHub</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Dockerfile 中下载 JDK8</title>
     <link href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/"/>
     <url>/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/</url>
@@ -11,6 +32,16 @@
     <content type="html"><![CDATA[<h1 id="openjdk-8-jdk-headless"><a href="#openjdk-8-jdk-headless" class="headerlink" title="openjdk-8-jdk-headless"></a>openjdk-8-jdk-headless</h1><p>在 Linux 中常用 <code>apt install openjdk-8-headless</code> 来安装 JDK，但是 dockerfile 中无法正常安装</p><h1 id="adoptopenjdk-8-hotspot"><a href="#adoptopenjdk-8-hotspot" class="headerlink" title="adoptopenjdk-8-hotspot"></a>adoptopenjdk-8-hotspot</h1><p>通常在 docker 中使用 adoptopenjdk-8-hotspot 来代替 openjdk</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-keyword">RUN</span><span class="bash"> [<span class="hljs-string">&quot;/bin/bash&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add -&quot;</span>]</span><br><span class="hljs-keyword">RUN</span><span class="bash"> [<span class="hljs-string">&quot;/bin/bash&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;echo &#x27;deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb buster main&#x27; &gt; /etc/apt/sources.list.d/AdoptOpenJDK.list&quot;</span>]</span><br>apt install adoptopenjdk-<span class="hljs-number">8</span>-hotspot<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>短笔记</tag>
+      
+      <tag>JDK</tag>
+      
+    </tags>
     
   </entry>
   
@@ -508,9 +539,9 @@
     
     <tags>
       
-      <tag>MySQL</tag>
-      
       <tag>短笔记</tag>
+      
+      <tag>MySQL</tag>
       
     </tags>
     
