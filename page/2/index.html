@@ -171,6 +171,69 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/03/27/interview/computer-graphics/">面试复习（计算机图形学）</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/27/interview/computer-graphics/">
+          
+          
+            
+          
+          渲染管线
+渲染流程
+应用程序阶段
+加载数据到显存
+设置渲染模式
+调用 DrawCall
+
+
+几何阶段
+顶点着色器：将三维的顶点坐标信息映射到 $[-1, 1]$ 的平面上
+裁剪：裁剪出摄像机视野内的顶点
+屏幕映射：将 $[-1, 1]$ 内的图片映射到屏幕上
+
+
+光栅化阶段
+三角形设置与三角形遍历：找出片元
+片元着色器：对每一个片元进行着色，计算其颜色值
+逐片元操作：模板测试，深度测试，混合
+
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-27 14:10" pubdate>
+              2021-03-27
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
+            
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">计算机图形学</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/03/27/interview/algorithm/">面试复习（算法）</a>
       </h1>
 
@@ -655,52 +718,6 @@ C++ 的特性（C++11及以上）
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">面试准备</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">Codeforces Round#699 (Div. 2)</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">
-          
-          
-            
-          
-          暂时还没有 AK，留坑
-A. Space Navigation大致题意给你一段在棋盘上的移动指令，问能否通过在不改变原指令顺序，仅删除部分或者全部或者不删除的情况下，到达某个指定地点
-分析可以通过指令直接得出可以到达的范围，比如删除所有的“向左”指令后，能够到达的最右，同理可以得到四个方向的极值，最后判断目标地点是否在极值范围内即可
-AC code1234567891011121314151617
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-06 14:52" pubdate>
-              2021-02-06
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/ACM/">ACM</a>
-            
-              <a href="/tags/Codeforces/">Codeforces</a>
             
           </div>
         
