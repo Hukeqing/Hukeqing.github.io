@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      5.4k 字
+      6.4k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      62
+      72
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 分钟前
+                  本文最后更新于：3 分钟前
                 
               </p>
             
@@ -991,6 +991,156 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 <h3 id="Mongo-1"><a href="#Mongo-1" class="headerlink" title="Mongo"></a>Mongo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProblemData</span> </span>&#123;<br><br>    <span class="hljs-meta">@Id</span><br>    <span class="hljs-keyword">private</span> String _id;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 首次关联至的比赛 ID</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Long contestId;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 默认的耗时限制，单位（ms）</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer defaultTimeLimit;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 默认的内存限制，单位（mb）</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer defaultMemoryLimit;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 部分语言的特殊时间限制</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Map&lt;LanguageType, Integer&gt; specialTimeLimit;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 部分语言的特殊内存限制</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Map&lt;LanguageType, Integer&gt; specialMemoryLimit;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 允许使用的语言类型</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> List&lt;LanguageType&gt; supportLanguage;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 题目描述</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String description;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 输入描述</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String input;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 输出描述</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String output;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 输入输出样例</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> List&lt;Example&gt; example;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 题目类型</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> ProblemType type;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * judge 模式</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> JudgeCodeType judgeCodeType;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * DIY judge code</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String judgeCode;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试样例的名称，允许给不同的样例准备不同的名称，输入为 XXX.in，输出为 XXX.out，交互题只有输入</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> List&lt;String&gt; testName;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 是否允许下载样例</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Boolean shareTest;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 标准代码，必定为通过</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> StdCode stdCode;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试代码（并不一定是通过，可能是故意错误的，但是一定有一份是通过的）</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> List&lt;StdCode&gt; testCodeList;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 题目版本号</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer version;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 题目最后更新时间</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Date gmtModifyTime;<br><br>    <span class="hljs-meta">@Data</span><br>    <span class="hljs-meta">@Builder</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Example</span> </span>&#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 样例输入（原始文件格式 \n 表示换行）</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> String in;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 样例输出（原始文件格式 \n 表示换行）</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> String out;<br>    &#125;<br><br>    <span class="hljs-meta">@Data</span><br>    <span class="hljs-meta">@Builder</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StdCode</span> </span>&#123;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 文件名</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> String name;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 代码</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> String code;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 期望结果</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> SolutionStatusType expectResultType;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 所使用的语言</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> LanguageType languageType;<br><br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 最终的测试 ID</span><br><span class="hljs-comment">         */</span><br>        <span class="hljs-keyword">private</span> Long solutionId;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reset</span><span class="hljs-params">()</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.solutionId = <span class="hljs-keyword">null</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="提交模块-1"><a href="#提交模块-1" class="headerlink" title="提交模块"></a>提交模块</h2><h3 id="MySQL-2"><a href="#MySQL-2" class="headerlink" title="MySQL"></a>MySQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> solution<br>(<br>    <span class="hljs-keyword">id</span>                  <span class="hljs-built_in">BIGINT</span>          AUTO_INCREMENT  <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目 ID&#x27;</span>,<br>    data_id             <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">32</span>)                         <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目数据主键&#x27;</span>,<br>    submit_time         <span class="hljs-built_in">date</span>                            <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目的标题&#x27;</span>,<br>    user_id             <span class="hljs-built_in">BIGINT</span>                              <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交的用户 ID&#x27;</span>,<br>    problem_id          <span class="hljs-built_in">BIGINT</span>                          <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交至的问题 ID&#x27;</span>,<br>    contest_id          <span class="hljs-built_in">BIGINT</span>                              <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交至的比赛 ID&#x27;</span>,<br>    language_type       <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交的语言类型&#x27;</span>,<br>    <span class="hljs-keyword">status</span>              <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;当前状态&#x27;</span>,<br>    solution_type       <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交的类型。公开的提交，在比赛中提交，系统测试程序&#x27;</span>,<br>    time_cost           <span class="hljs-built_in">INT</span>                                 <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;耗时&#x27;</span>,<br>    memory_cost         <span class="hljs-built_in">INT</span>                                 <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;内存消耗&#x27;</span>,           <br>    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>)<br>) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mp4 <span class="hljs-keyword">COLLATION</span>=utf8mb4_general_ci <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;提交基本信息&#x27;</span>;<br></code></pre></td></tr></table></figure>
 <h3 id="Mongo-2"><a href="#Mongo-2" class="headerlink" title="Mongo"></a>Mongo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SolutionData</span> </span>&#123;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Mongo ID</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Id</span><br>    <span class="hljs-keyword">private</span> String _id;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 代码内容</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String code;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 编译信息</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String compileMsg;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 运行中 judge 反馈信息</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Map&lt;String, String&gt; runningMsg;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 运行的版本号</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer runOnVersion;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Judge-与-Service-交互数据格式"><a href="#Judge-与-Service-交互数据格式" class="headerlink" title="Judge 与 Service 交互数据格式"></a>Judge 与 Service 交互数据格式</h1><p>Judge 和 Service 通过超长时间的 TCP 连接，并通过应答的方式，由 Judge 向 Service 发送请求，Service 应答。Judge 通过向 Service 发送注册指令在 Service 上完成注册，然后可以获取到一个唯一表示当前 Judge 机的编码，之后 Judge 可以使用多个新增 TCP 连接的方式实现建立多条 TCP 连接并绑定至同一个 Judge 上</p>
+<h2 id="通用格式"><a href="#通用格式" class="headerlink" title="通用格式"></a>通用格式</h2><h3 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-keyword">BEGIN</span><br><span class="hljs-variable">$</span>&#123;METHOD&#125;<br><span class="hljs-variable">$</span>&#123;<span class="hljs-keyword">DATA</span>&#125;<br><span class="hljs-keyword">END</span><br></code></pre></td></tr></table></figure>
+<h3 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span>&#123;CODE&#125;<br><span class="hljs-variable">$</span>&#123;<span class="hljs-keyword">DATA</span>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="格式说明"><a href="#格式说明" class="headerlink" title="格式说明"></a>格式说明</h3><p>其中 DATA 数据使用分块传输编码的方式进行编码</p>
+<p>每一个块都以一个该块包含的字节数（以十进制整数表示）开始，跟随一个 LF 换行符，然后是数据本身，最后以一个 LF 结束，且结束的 LF 不在字节数长度内。最后一个块必定是一个字节数为 0 的块，消息最后以 LF 结尾。即类似如下内容</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;len1&#125;</span><br><span class="hljs-variable">$&#123;data1&#125;</span><br><span class="hljs-variable">$&#123;len2&#125;</span><br><span class="hljs-variable">$&#123;data2&#125;</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<p>将所有块的数据拼接后可以得到完整的数据内容，数据有三种格式，为前后端约定，分别为 <strong>单数据</strong> <strong>简单数据</strong> 和 <strong>复杂数据</strong>，同时规定在后续开发中，尽量避免使用复杂数据结构</p>
+<h4 id="单数据"><a href="#单数据" class="headerlink" title="单数据"></a>单数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
+<p>直接显示值，此方式适用于返回值仅有一个值的情况，或者是仅有一个数组/集合的情况</p>
+<h4 id="简单数据"><a href="#简单数据" class="headerlink" title="简单数据"></a>简单数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;key&#125;</span> <span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
+<p>为一个 <code>key</code> 和一个 <code>value</code>，表示 <code>key</code> 的值是 <code>value</code>，中间使用空格分割，最后以 LF 作为结束符号</p>
+<h4 id="复杂数据"><a href="#复杂数据" class="headerlink" title="复杂数据"></a>复杂数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;key&#125;</span> <span class="hljs-variable">$&#123;len&#125;</span><br><span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
+<p>首先是一个 <code>key</code> 和 <code>len</code>，表示这个 <code>key</code> 的值长度为 <code>len</code>，然后是一个 LF 换行符，再紧接着的是整个值的信息，最后以 LF 作为结束符号。通常用在简单数据中存在换行、空格的数据情况下使用</p>
+<p>Response 返回时还会携带状态码，若状态码为非 0 则为错误</p>
+<h2 id="API-接口说明"><a href="#API-接口说明" class="headerlink" title="API 接口说明"></a>API 接口说明</h2><p>标题即为请求调用的方法</p>
+<h3 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h3><p>向目标 Service 注册本 Judge 机</p>
+<h4 id="请求参数"><a href="#请求参数" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">serverCode</td>
+<td style="text-align:center">目标服务器给出的随机服务串，用来认定 Judge 是来自可信任的人启动并连接至此的</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">maxThreadCore</td>
+<td style="text-align:center">最大任务线程池大小</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">maxSocketCore</td>
+<td style="text-align:center">最大通信线程池大小</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息"><a href="#返回信息" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">judgeCode</td>
+<td style="text-align:center">表示当前 Judge 的口令</td>
+<td style="text-align:center">单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="Append"><a href="#Append" class="headerlink" title="Append"></a>Append</h3><p>通知服务器新增加一个 TCP 连接，并与现有的 TCP 所指向的 Judge 绑定</p>
+<h4 id="请求参数-1"><a href="#请求参数-1" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">judgeCode</td>
+<td style="text-align:center">表示当前 Judge 的口令</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-1"><a href="#返回信息-1" class="headerlink" title="返回信息"></a>返回信息</h4><p>无返回信息</p>
+<h3 id="Heartbeat"><a href="#Heartbeat" class="headerlink" title="Heartbeat"></a>Heartbeat</h3><p>心跳数据包</p>
+<h4 id="请求参数-2"><a href="#请求参数-2" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">socketAccumulation</td>
+<td style="text-align:center">堆积的通信数据量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">threadAccumulation</td>
+<td style="text-align:center">堆积的任务数据量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-2"><a href="#返回信息-2" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">judgeTask</td>
+<td style="text-align:center">需要进行 judge 的编号，可重复出现，表示多个任务</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">testTask</td>
+<td style="text-align:center">需要生成 test 数据的 problem 编号，可重复出现，表示多个任务</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">threadCore</td>
+<td style="text-align:center">更新最大线程池数量，为更新至的值，可以为空</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">socketCore</td>
+<td style="text-align:center">更新最大连接池数量，为更新至的值，可以为空</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">killJudge</td>
+<td style="text-align:center">需要终止的 judge 任务编号，可重复出现</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">killTest</td>
+<td style="text-align:center">需要终止的生成 test 的 problem 编号，可重复出现</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+
             </div>
             <hr>
             <div>
