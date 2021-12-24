@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 分钟前
+                  本文最后更新于：1 小时前
                 
               </p>
             
@@ -316,6 +316,11 @@
 <td style="text-align:center">EDIT_NOT_OWNER_PROBLEM</td>
 <td style="text-align:center">编辑可访问的题目</td>
 <td style="text-align:center">可以随意编辑任何可以查看的题目</td>
+</tr>
+<tr>
+<td style="text-align:center">VIEW_PUBLIC_SOLUTION</td>
+<td style="text-align:center">查看公开的所有提交</td>
+<td style="text-align:center">可以查看公开的所有提交</td>
 </tr>
 </tbody>
 </table>
@@ -999,11 +1004,11 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;len1&#125;</span><br><span class="hljs-variable">$&#123;data1&#125;</span><br><span class="hljs-variable">$&#123;len2&#125;</span><br><span class="hljs-variable">$&#123;data2&#125;</span><br><span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 <p>将所有块的数据拼接后可以得到完整的数据内容，数据有三种格式，为前后端约定，分别为 <strong>单数据</strong> <strong>简单数据</strong> 和 <strong>复杂数据</strong>，同时规定在后续开发中，尽量避免使用复杂数据结构</p>
 <h4 id="单数据"><a href="#单数据" class="headerlink" title="单数据"></a>单数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
-<p>直接显示值，此方式适用于返回值仅有一个值的情况，或者是仅有一个数组/集合的情况</p>
+<p>直接显示值，此方式适用于返回值仅有一个值的情况，或者是仅有一个数组/集合的情况，仅用于返回值</p>
 <h4 id="简单数据"><a href="#简单数据" class="headerlink" title="简单数据"></a>简单数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;key&#125;</span> <span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
 <p>为一个 <code>key</code> 和一个 <code>value</code>，表示 <code>key</code> 的值是 <code>value</code>，中间使用空格分割，最后以 LF 作为结束符号</p>
 <h4 id="复杂数据"><a href="#复杂数据" class="headerlink" title="复杂数据"></a>复杂数据</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;key&#125;</span> <span class="hljs-variable">$&#123;len&#125;</span><br><span class="hljs-variable">$&#123;value&#125;</span><br></code></pre></td></tr></table></figure>
-<p>首先是一个 <code>key</code> 和 <code>len</code>，表示这个 <code>key</code> 的值长度为 <code>len</code>，然后是一个 LF 换行符，再紧接着的是整个值的信息，最后以 LF 作为结束符号。通常用在简单数据中存在换行、空格的数据情况下使用</p>
+<p>首先是一个 <code>key</code> 和 <code>len</code>，表示这个 <code>key</code> 的值长度为 <code>len</code>，然后是一个 LF 换行符，再紧接着的是整个值的信息，最后以 LF 作为结束符号。通常用在简单数据中存在换行、空格的数据情况下使用，仅用于请求值</p>
 <p>Response 返回时还会携带状态码，若状态码为非 0 则为错误</p>
 <h2 id="API-接口说明"><a href="#API-接口说明" class="headerlink" title="API 接口说明"></a>API 接口说明</h2><p>标题即为请求调用的方法</p>
 <h3 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h3><p>向目标 Service 注册本 Judge 机</p>
