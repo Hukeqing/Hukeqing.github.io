@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.1k 字
+      7.2k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      80
+      81
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 小时前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -921,6 +921,22 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </li>
 </ul>
 </li>
+<li>提交公共代码<ul>
+<li>前端提供<ul>
+<li>代码</li>
+<li>语言</li>
+<li>所提交的题目 ID</li>
+</ul>
+</li>
+<li>后端逻辑<ul>
+<li>检查当前用户是否有权限访问此题目</li>
+<li>检查语言是否规范</li>
+<li>检查代码长度是否规范</li>
+<li>创建新的提交并推入 judge 任务</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="提交模块"><a href="#提交模块" class="headerlink" title="提交模块"></a>提交模块</h2><h3 id="提交属性"><a href="#提交属性" class="headerlink" title="提交属性"></a>提交属性</h3><ul>
 <li>id。唯一不变的提交标识符</li>
@@ -971,22 +987,6 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </li>
 <li>执行 rejudge<ul>
 <li>TODO 项目</li>
-</ul>
-</li>
-<li>提交公共代码<ul>
-<li>前端提供<ul>
-<li>代码</li>
-<li>语言</li>
-<li>所提交的题目 ID</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>检查当前用户是否有权限访问此题目</li>
-<li>检查语言是否规范</li>
-<li>检查代码长度是否规范</li>
-<li>创建新的提交并推入 judge 任务</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -1212,7 +1212,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h3 id="SolutionReport"><a href="#SolutionReport" class="headerlink" title="SolutionReport"></a>SolutionReport</h3><p>提交评测 Solution 的信息</p>
+<h3 id="SolutionTest"><a href="#SolutionTest" class="headerlink" title="SolutionTest"></a>SolutionTest</h3><p>获取评测 Solution 的下一组测试名称</p>
 <h4 id="请求参数-4"><a href="#请求参数-4" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
@@ -1224,14 +1224,51 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">需要提交信息的类型，<code>result</code> 表示最终结果，<code>compile</code> 表示编译信息，<code>testName</code> 表示获取当前测试的名称，<code>test</code> 表示回复当前的测试数据的信息</td>
+<td style="text-align:center">id</td>
+<td style="text-align:center">对应提交 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-4"><a href="#返回信息-4" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">下一组测试数据名称</td>
+<td style="text-align:center">单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="SolutionTestReport"><a href="#SolutionTestReport" class="headerlink" title="SolutionTestReport"></a>SolutionTestReport</h3><p>提交评测 Solution 的信息</p>
+<h4 id="请求参数-5"><a href="#请求参数-5" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">对应运行的结果</td>
 <td style="text-align:center">简单数据</td>
 </tr>
 <tr>
-<td style="text-align:center">value</td>
-<td style="text-align:center">对应信息的 value</td>
-<td style="text-align:center">简单数据</td>
+<td style="text-align:center">msg</td>
+<td style="text-align:center">对应运行产生的信息</td>
+<td style="text-align:center">复杂数据</td>
 </tr>
 <tr>
 <td style="text-align:center">id</td>
@@ -1251,7 +1288,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-4"><a href="#返回信息-4" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-5"><a href="#返回信息-5" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1262,40 +1299,45 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">problemId</td>
-<td style="text-align:center">提交对应的题目 ID</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-<tr>
-<td style="text-align:center">language</td>
-<td style="text-align:center">使用的语言</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-<tr>
-<td style="text-align:center">judgeName</td>
-<td style="text-align:center">使用的 judge 模式</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-<tr>
-<td style="text-align:center">testNum</td>
-<td style="text-align:center">测试数据量</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-<tr>
-<td style="text-align:center">timeLimit</td>
-<td style="text-align:center">时间限制</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-<tr>
-<td style="text-align:center">memoryLimit</td>
-<td style="text-align:center">内存限制</td>
-<td style="text-align:center">简单数据</td>
+<td style="text-align:center">continue</td>
+<td style="text-align:center">是否结束评测</td>
+<td style="text-align:center">单数据</td>
 </tr>
 </tbody>
 </table>
 </div>
+<h3 id="SolutionCompileMsgReport"><a href="#SolutionCompileMsgReport" class="headerlink" title="SolutionCompileMsgReport"></a>SolutionCompileMsgReport</h3><p>提交评测 Solution 的编译信息</p>
+<h4 id="请求参数-6"><a href="#请求参数-6" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">对应提交 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">对应编译是否成功的信息</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:center">编译信息</td>
+<td style="text-align:center">复杂数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-6"><a href="#返回信息-6" class="headerlink" title="返回信息"></a>返回信息</h4><p>无返回信息</p>
 <h3 id="SolutionCode"><a href="#SolutionCode" class="headerlink" title="SolutionCode"></a>SolutionCode</h3><p>提交的代码</p>
-<h4 id="请求参数-5"><a href="#请求参数-5" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<h4 id="请求参数-7"><a href="#请求参数-7" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1313,7 +1355,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-5"><a href="#返回信息-5" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-7"><a href="#返回信息-7" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1332,8 +1374,8 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h3 id="StandardJudge"><a href="#StandardJudge" class="headerlink" title="StandardJudge"></a>StandardJudge</h3><p>获取默认的 Judge 列表</p>
-<h4 id="请求参数-6"><a href="#请求参数-6" class="headerlink" title="请求参数"></a>请求参数</h4><p>无请求参数</p>
-<h4 id="返回信息-6"><a href="#返回信息-6" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="请求参数-8"><a href="#请求参数-8" class="headerlink" title="请求参数"></a>请求参数</h4><p>无请求参数</p>
+<h4 id="返回信息-8"><a href="#返回信息-8" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1352,7 +1394,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h3 id="StandardJudgeCode"><a href="#StandardJudgeCode" class="headerlink" title="StandardJudgeCode"></a>StandardJudgeCode</h3><p>获取对应的默认 Judge 代码</p>
-<h4 id="请求参数-7"><a href="#请求参数-7" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<h4 id="请求参数-9"><a href="#请求参数-9" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1370,7 +1412,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-7"><a href="#返回信息-7" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-9"><a href="#返回信息-9" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1389,7 +1431,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h3 id="ProblemJudgeCode"><a href="#ProblemJudgeCode" class="headerlink" title="ProblemJudgeCode"></a>ProblemJudgeCode</h3><p>获取对应题目的自定义 Judge 代码</p>
-<h4 id="请求参数-8"><a href="#请求参数-8" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<h4 id="请求参数-10"><a href="#请求参数-10" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1407,7 +1449,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-8"><a href="#返回信息-8" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-10"><a href="#返回信息-10" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1426,7 +1468,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h3 id="ProblemDataIn"><a href="#ProblemDataIn" class="headerlink" title="ProblemDataIn"></a>ProblemDataIn</h3><p>获取对应题目的输入文件</p>
-<h4 id="请求参数-9"><a href="#请求参数-9" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<h4 id="请求参数-11"><a href="#请求参数-11" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1449,7 +1491,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-9"><a href="#返回信息-9" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-11"><a href="#返回信息-11" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1468,7 +1510,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h3 id="ProblemDataOut"><a href="#ProblemDataOut" class="headerlink" title="ProblemDataOut"></a>ProblemDataOut</h3><p>获取对应题目的输出文件</p>
-<h4 id="请求参数-10"><a href="#请求参数-10" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<h4 id="请求参数-12"><a href="#请求参数-12" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1491,7 +1533,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-10"><a href="#返回信息-10" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<h4 id="返回信息-12"><a href="#返回信息-12" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
 <table>
 <thead>
 <tr>
