@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：20 小时前
+                  本文最后更新于：6 分钟前
                 
               </p>
             
@@ -1090,7 +1090,7 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </ul>
 </li>
 <li>Judge 心跳包<ul>
-<li>参数<br>  + </li>
+<li>参数<br>  +</li>
 </ul>
 </li>
 <li>获取提交的信息</li>
@@ -1152,9 +1152,9 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 <td style="text-align:center">简单数据</td>
 </tr>
 <tr>
-<td style="text-align:center">“languageVersion”</td>
-<td style="text-align:center">语言的版本信息</td>
-<td style="text-align:center">复杂数据</td>
+<td style="text-align:center">maxWorkCore</td>
+<td style="text-align:center">最大任务线程池大小</td>
+<td style="text-align:center">简单数据</td>
 </tr>
 </tbody>
 </table>
@@ -1209,12 +1209,17 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </thead>
 <tbody>
 <tr>
+<td style="text-align:center">threadAccumulation</td>
+<td style="text-align:center">堆积的小任务数据量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
 <td style="text-align:center">socketAccumulation</td>
 <td style="text-align:center">堆积的通信数据量</td>
 <td style="text-align:center">简单数据</td>
 </tr>
 <tr>
-<td style="text-align:center">threadAccumulation</td>
+<td style="text-align:center">workAccumulation</td>
 <td style="text-align:center">堆积的任务数据量</td>
 <td style="text-align:center">简单数据</td>
 </tr>
@@ -1249,6 +1254,11 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 <tr>
 <td style="text-align:center">socketCore</td>
 <td style="text-align:center">更新最大连接池数量，为更新至的值，可以为空</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">workCore</td>
+<td style="text-align:center">更新最大任务线程池数量，为更新至的值，可以为空</td>
 <td style="text-align:center">简单数据</td>
 </tr>
 </tbody>
