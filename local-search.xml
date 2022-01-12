@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>C++ 模版可变参数列表传递给 C 的 va_list 可变参数列表</title>
+    <link href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/"/>
+    <url>/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/</url>
+    
+    <content type="html"><![CDATA[<h1 id="C-可变参数"><a href="#C-可变参数" class="headerlink" title="C 可变参数"></a>C 可变参数</h1><p>以 <code>printf</code> 为例，常见如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">printf</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* format, ...)</span></span>;<br></code></pre></td></tr></table></figure></p><h1 id="CPP-可变参数"><a href="#CPP-可变参数" class="headerlink" title="CPP 可变参数"></a>CPP 可变参数</h1><p>常见如下</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span>&lt;class... Args&gt;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">printf</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;format, <span class="hljs-keyword">const</span> Args &amp;... args)</span></span>;<br></code></pre></td></tr></table></figure><p>若此时需要为 C 的 <code>printf</code> 进行包装，使其可以接受 <code>string</code> 类型的 format，则可以用如下方式实现</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">template</span>&lt;class... Args&gt;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">printf</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;format, <span class="hljs-keyword">const</span> Args &amp;... args)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">printf</span>(format.c_str(), args...);<br>&#125;<br></code></pre></td></tr></table></figure><p>通常会提示警告，因为 <code>c_str()</code> 得到的字符串不能保证是一个可格式化的字符串，而 <code>printf</code> 的函数原型是</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c">__attribute__((__format__ (__printf__, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)))<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">printf</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* format, ...)</span></span>;<br></code></pre></td></tr></table></figure><p>这使得 <code>printf</code> 会被检查第一个参数是否满足 <code>printf</code>, <code>scanf</code>, <code>strftime</code>, 或者 <code>strfmon</code> 风格</p><p>但是通过此方法可以将部分 C 语言中的方法扩展到 CPP 的模版化</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>C</tag>
+      
+      <tag>C++</tag>
+      
+      <tag>可变参数</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GitHub 下载的 zip 代码如何与原仓库再次建立连接</title>
     <link href="/2021/11/25/develop-note/git-remote-reconnect/"/>
     <url>/2021/11/25/develop-note/git-remote-reconnect/</url>
@@ -161,11 +184,11 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>学习</tag>
       
       <tag>课程</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -228,9 +251,9 @@
     
     <tags>
       
-      <tag>面试准备</tag>
-      
       <tag>计算机图形学</tag>
+      
+      <tag>面试准备</tag>
       
     </tags>
     
@@ -604,9 +627,9 @@
       
       <tag>短笔记</tag>
       
-      <tag>WSL</tag>
-      
       <tag>Dokcer</tag>
+      
+      <tag>WSL</tag>
       
     </tags>
     
