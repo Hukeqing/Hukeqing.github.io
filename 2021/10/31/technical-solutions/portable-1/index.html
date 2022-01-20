@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.3k 字
+      7.6k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      82
+      85
        分钟
     </span>
   
@@ -1575,6 +1575,191 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
+<h3 id="TestInfo"><a href="#TestInfo" class="headerlink" title="TestInfo"></a>TestInfo</h3><p>获取 Test 任务的信息</p>
+<h4 id="请求参数-13"><a href="#请求参数-13" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">题目的 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-13"><a href="#返回信息-13" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">language</td>
+<td style="text-align:center">使用的语言</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">testNum</td>
+<td style="text-align:center">测试数据量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">timeLimit</td>
+<td style="text-align:center">时间限制</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">memoryLimit</td>
+<td style="text-align:center">内存限制</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="TestStdCode"><a href="#TestStdCode" class="headerlink" title="TestStdCode"></a>TestStdCode</h3><p>获取生成测试的用的标准代码</p>
+<h4 id="请求参数-14"><a href="#请求参数-14" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">题目的 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-14"><a href="#返回信息-14" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">code</td>
+<td style="text-align:center">标准代码</td>
+<td style="text-align:center">单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="TestReportOutput"><a href="#TestReportOutput" class="headerlink" title="TestReportOutput"></a>TestReportOutput</h3><p>上传输出文件</p>
+<h4 id="请求参数-15"><a href="#请求参数-15" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">题目的 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">flag</td>
+<td style="text-align:center">是否成功</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">数据的名称</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">pos</td>
+<td style="text-align:center">输出的偏移量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">输出的片段内容</td>
+<td style="text-align:center">复杂数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-15"><a href="#返回信息-15" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">language</td>
+<td style="text-align:center">使用的语言</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">testNum</td>
+<td style="text-align:center">测试数据量</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">timeLimit</td>
+<td style="text-align:center">时间限制</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">memoryLimit</td>
+<td style="text-align:center">内存限制</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="TestResultReport"><a href="#TestResultReport" class="headerlink" title="TestResultReport"></a>TestResultReport</h3><h4 id="请求参数-16"><a href="#请求参数-16" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">题目的 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">结果</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-16"><a href="#返回信息-16" class="headerlink" title="返回信息"></a>返回信息</h4><p>无</p>
 
             </div>
             <hr>
