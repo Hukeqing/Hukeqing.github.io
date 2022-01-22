@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.6k 字
+      7.7k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      85
+      86
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -1664,8 +1664,45 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h3 id="TestReportOutput"><a href="#TestReportOutput" class="headerlink" title="TestReportOutput"></a>TestReportOutput</h3><p>上传输出文件</p>
+<h3 id="TestTest"><a href="#TestTest" class="headerlink" title="TestTest"></a>TestTest</h3><p>获取评测 Test 的下一组测试名称</p>
 <h4 id="请求参数-15"><a href="#请求参数-15" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">problem ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-15"><a href="#返回信息-15" class="headerlink" title="返回信息"></a>返回信息</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">name</td>
+<td style="text-align:center">下一组测试数据名称</td>
+<td style="text-align:center">单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="TestReportOutput"><a href="#TestReportOutput" class="headerlink" title="TestReportOutput"></a>TestReportOutput</h3><p>上传输出文件</p>
+<h4 id="请求参数-16"><a href="#请求参数-16" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1703,28 +1740,8 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </tbody>
 </table>
 </div>
-<h4 id="返回信息-15"><a href="#返回信息-15" class="headerlink" title="返回信息"></a>返回信息</h4><p>无</p>
-<h3 id="TestResultReport"><a href="#TestResultReport" class="headerlink" title="TestResultReport"></a>TestResultReport</h3><p>通知服务器 stdCode 编译出现编译错误</p>
-<h4 id="请求参数-16"><a href="#请求参数-16" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">描述</th>
-<th style="text-align:center">使用的数据类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">id</td>
-<td style="text-align:center">题目的 ID</td>
-<td style="text-align:center">简单数据</td>
-</tr>
-</tbody>
-</table>
-</div>
 <h4 id="返回信息-16"><a href="#返回信息-16" class="headerlink" title="返回信息"></a>返回信息</h4><p>无</p>
-<h3 id="TestReportOver"><a href="#TestReportOver" class="headerlink" title="TestReportOver"></a>TestReportOver</h3><p>通知服务器，本题目的 test 生成已经成功完成</p>
+<h3 id="TestResultReport"><a href="#TestResultReport" class="headerlink" title="TestResultReport"></a>TestResultReport</h3><p>通知服务器 stdCode 编译出现编译错误</p>
 <h4 id="请求参数-17"><a href="#请求参数-17" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
 <table>
 <thead>
@@ -1744,6 +1761,26 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </table>
 </div>
 <h4 id="返回信息-17"><a href="#返回信息-17" class="headerlink" title="返回信息"></a>返回信息</h4><p>无</p>
+<h3 id="TestReportOver"><a href="#TestReportOver" class="headerlink" title="TestReportOver"></a>TestReportOver</h3><p>通知服务器，本题目的 test 生成已经成功完成</p>
+<h4 id="请求参数-18"><a href="#请求参数-18" class="headerlink" title="请求参数"></a>请求参数</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">使用的数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">题目的 ID</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="返回信息-18"><a href="#返回信息-18" class="headerlink" title="返回信息"></a>返回信息</h4><p>无</p>
 
             </div>
             <hr>
