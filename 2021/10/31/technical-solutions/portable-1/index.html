@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      8k 字
+      8.2k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      90
+      92
        分钟
     </span>
   
@@ -276,8 +276,8 @@
 <h1 id="模块设计"><a href="#模块设计" class="headerlink" title="模块设计"></a>模块设计</h1><p>判断模块从属规则：基于哪个实体的数据进行逻辑判断</p>
 <h2 id="用户模块"><a href="#用户模块" class="headerlink" title="用户模块"></a>用户模块</h2><h3 id="用户属性"><a href="#用户属性" class="headerlink" title="用户属性"></a>用户属性</h3><ul>
 <li>id。唯一不变的用户标识</li>
-<li>handle: 用户名。表示用户的唯一标识，仅限大小写英文、数字和下划线组成，长度至少四个字符，通常情况下不允许更新</li>
-<li>password: 密码。仅限大小写英文、数字和<code>!@#$%^&amp;*()_+-=[]\;&#39;,./&#123;&#125;|:&quot;&lt;&gt;?</code>组成，至少 6 位数</li>
+<li>handle: 用户名。表示用户的唯一标识，匹配 <code>^[a-zA-Z0-9_\-]&#123;4,15&#125;$</code>，通常情况下不允许更新</li>
+<li>password: 密码。匹配 <code>^[a-zA-Z0-9_\-@#$%^&amp;*~&#39;,./?:]&#123;6,16&#125;$</code></li>
 <li>type: 类型。默认为 <code>NORMAL</code>，表示用户的类型</li>
 <li>organization: 组织。用户一定属于某个组织，组织按层级高层级对低层级有管理权，对同层级没有管理权，管理关系以 DAG 图表示。能够进行管理的组织可以调整对方的所在组织和所拥有的权限</li>
 <li>permissionTypeSet: 权限列表。用户拥有的权限</li>
@@ -481,42 +481,11 @@ f([TREAT_FAILED]) -- 执行处理 --&gt; c([TREATING])
 g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </code></pre>
 <ul>
-<li>accessType: 题目的访问权限</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">访问权限</th>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">在题库中查看和提交</th>
-<th style="text-align:center">比赛链接</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">PUBLIC</td>
-<td style="text-align:center">公开的</td>
-<td style="text-align:center">均可</td>
-<td style="text-align:center">均可</td>
-</tr>
-<tr>
-<td style="text-align:center">HIDDEN</td>
-<td style="text-align:center">隐藏的</td>
-<td style="text-align:center">仅拥有查看权限的人</td>
-<td style="text-align:center">仅拥有查看权限的人</td>
-</tr>
-<tr>
-<td style="text-align:center">PRIVATE</td>
-<td style="text-align:center">私有的</td>
-<td style="text-align:center">仅拥有者</td>
-<td style="text-align:center">仅拥有者</td>
-</tr>
-</tbody>
-</table>
-</div>
-<ul>
-<li>submissionCount: 总提交数，历史上所有的提交数</li>
+<li><p>accessType: 题目的访问权限</p>
+<p>| 访问权限 | 名称 | 在题库中查看和提交 | 比赛链接 |<br>| :-: | :-: | :-: | :-: |<br>| PUBLIC | 公开的 | 均可 | 均可 |<br>| HIDDEN | 隐藏的 | 仅拥有查看权限的人 | 仅拥有查看权限的人 |<br>| PRIVATE | 私有的 | 仅拥有者 | 仅拥有者 |</p>
+</li>
+<li><p>submissionCount: 总提交数，历史上所有的提交数</p>
+</li>
 <li>acceptCount: 总通过数，历史上所有的通过数</li>
 <li>owner: 指向用户的 id</li>
 <li>contestId: 链接到的比赛 ID（仅保存第一次链接到的比赛）</li>
@@ -1076,6 +1045,22 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </ul>
 </li>
 </ul>
+<h2 id="比赛模块"><a href="#比赛模块" class="headerlink" title="比赛模块"></a>比赛模块</h2><h3 id="比赛属性"><a href="#比赛属性" class="headerlink" title="比赛属性"></a>比赛属性</h3><ul>
+<li>id。唯一不变的主键</li>
+<li>owner。拥有者</li>
+<li>title。标题</li>
+<li>startTime。开始时间</li>
+<li>duration。持续时间</li>
+<li><p>accessType。访问权限</p>
+<p>| 访问权限 | 名称 | 描述 |<br>| :-: | :-: | :-: | :-: |<br>| PUBLIC | 公开的 | 允许任何人进入查看此比赛并进行 |<br>| PASSWORD | 需要密码的 | 在输入密码后授权允许在当前浏览器上进入 |<br>| PRIVATE | 邀请制的 | 仅允许指定的部分用户参加 |</p>
+</li>
+<li><p>problemList。题目列表</p>
+</li>
+<li>problemAccessTypeList。允许此类访问权限的题目</li>
+<li>coAuthor。共同的出题人</li>
+<li>accessTypeValue。访问权限配置值</li>
+<li>announcement。公告</li>
+</ul>
 <h1 id="存储设计"><a href="#存储设计" class="headerlink" title="存储设计"></a>存储设计</h1><h2 id="用户模块-1"><a href="#用户模块-1" class="headerlink" title="用户模块"></a>用户模块</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">account</span><br>(<br>    <span class="hljs-keyword">id</span>       <span class="hljs-built_in">BIGINT</span>      AUTO_INCREMENT <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户 ID&#x27;</span>,<br>    data_id  <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">32</span>)                    <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户数据主键&#x27;</span>,<br>    handle   <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户名&#x27;</span>,<br>    <span class="hljs-keyword">password</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户密码&#x27;</span>,<br>    <span class="hljs-keyword">type</span>     <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户类型&#x27;</span>,<br>    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>),<br>    <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span> uk_handle(<span class="hljs-string">`handle`</span>)<br>) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mp4 <span class="hljs-keyword">COLLATION</span>=utf8mb4_general_ci <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;用户基本信息表&#x27;</span>;<br></code></pre></td></tr></table></figure>
 <h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NormalUserData</span> </span>&#123;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 数据库主键</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Id</span><br>    <span class="hljs-keyword">private</span> String _id;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 所属组织</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> OrganizationType organization;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 总提交数量</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer submission;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 总通过数量</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer accept;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 权限列表</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Set&lt;PermissionType&gt; permissionTypeSet;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 邮箱</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String email;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="题目模块"><a href="#题目模块" class="headerlink" title="题目模块"></a>题目模块</h2><h3 id="MySQL-1"><a href="#MySQL-1" class="headerlink" title="MySQL"></a>MySQL</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> problem<br>(<br>    <span class="hljs-keyword">id</span>                  <span class="hljs-built_in">BIGINT</span>          AUTO_INCREMENT  <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目 ID&#x27;</span>,<br>    data_id             <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">32</span>)                         <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目数据主键&#x27;</span>,<br>    title               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">256</span>)                    <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目的标题&#x27;</span>,<br>    status_type         <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目状态&#x27;</span>,<br>    access_type         <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">64</span>)                     <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;访问权限&#x27;</span>,<br>    submission_count    <span class="hljs-built_in">INT</span>             <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>       <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;总提交数&#x27;</span>,<br>    accept_count        <span class="hljs-built_in">INT</span>             <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>       <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;通过的提交数&#x27;</span>,<br>    owner               <span class="hljs-built_in">BIGINT</span>                          <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目拥有者&#x27;</span>,<br>    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>),<br>    <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">KEY</span> uk_handle(<span class="hljs-string">`title`</span>)<br>) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8mp4 <span class="hljs-keyword">COLLATION</span>=utf8mb4_general_ci <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">&#x27;题目基本信息表&#x27;</span>;<br></code></pre></td></tr></table></figure>
@@ -1354,6 +1339,11 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 <tr>
 <td style="text-align:center">value</td>
 <td style="text-align:center">对应运行的结果</td>
+<td style="text-align:center">简单数据</td>
+</tr>
+<tr>
+<td style="text-align:center">testName</td>
+<td style="text-align:center">运行的测试名称</td>
 <td style="text-align:center">简单数据</td>
 </tr>
 <tr>
