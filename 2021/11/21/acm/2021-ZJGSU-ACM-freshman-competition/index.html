@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      98
+      99
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 个月前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -265,70 +265,71 @@
 <tbody>
 <tr>
 <td style="text-align:center">chiking 的偶像</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">172</td>
+<td style="text-align:center">98.3%</td>
 <td style="text-align:center">100%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 和珂朵莉</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">141</td>
+<td style="text-align:center">80.6%</td>
 <td style="text-align:center">80%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 的序列 II</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">58</td>
+<td style="text-align:center">51.3%</td>
 <td style="text-align:center">60%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 的序列 I</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">113</td>
+<td style="text-align:center">64.6%</td>
 <td style="text-align:center">50%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 的棋盘</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1.1%</td>
 <td style="text-align:center">30%</td>
 </tr>
 <tr>
 <td style="text-align:center">乐于助人的 chiking</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">13.7%</td>
 <td style="text-align:center">20%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 的俄罗斯方块</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0%</td>
 <td style="text-align:center">1%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 和大家一起来做签到题</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0%</td>
 <td style="text-align:center">1%</td>
 </tr>
 <tr>
 <td style="text-align:center">chiking 是一个机器人</td>
-<td style="text-align:center">“EDIT”</td>
-<td style="text-align:center">“EDIT”</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0%</td>
 <td style="text-align:center">1%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>P.S. “EDIT” 部分懒得数了，先凑合看一下</p>
+<p>综上来看，整个新生赛除了一道题没有达到预期的成绩，其他题目均与预期相差不大</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="chiking-的偶像"><a href="#chiking-的偶像" class="headerlink" title="chiking 的偶像"></a>chiking 的偶像</h2><h3 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h3><p>循环输出 <code>\soup_god/</code>，且总共输出的字符串长度为 $n$</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的签到题，只需要还记得有 mod 这个运算就能写出来</p>
 <h3 id="AC-Code"><a href="#AC-Code" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *data = <span class="hljs-string">&quot;\\soup_god/&quot;</span>;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; data[i % <span class="hljs-number">10</span>];<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>我以为大家被卡在不会 <code>mod</code>，结果大家都卡在 <code>\\</code>，这就挺尴尬的</p>
 <h2 id="chiking-和珂朵莉"><a href="#chiking-和珂朵莉" class="headerlink" title="chiking 和珂朵莉"></a>chiking 和珂朵莉</h2><h3 id="大致题意-1"><a href="#大致题意-1" class="headerlink" title="大致题意"></a>大致题意</h3><p>$n$ 个物品，每个物品都有价值和所属类别，让你选择 $n - k$ 种类别的物品，使得所选出来的这些类别的物品的总价值最大</p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>也是签到题之一</p>
 <p>在读入数据的时候统计每个类别的物品价值只和，之后排序一下，取出后 $n - k$ 个类别的价值即可</p>
 <h3 id="AC-Code-1"><a href="#AC-Code-1" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> w[<span class="hljs-number">11</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">int</span> m, n, k;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; m &gt;&gt; n &gt;&gt; k;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; m; ++i) &#123;<br>        <span class="hljs-keyword">int</span> d, s;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; d &gt;&gt; s;<br>        w[s] += d;<br>    &#125;<br>    sort(w + <span class="hljs-number">1</span>, w + n + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = k + <span class="hljs-number">1</span>; i &lt;= n; ++i) ans += w[i];<br>    <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>这道题原来有一个小坑点，即物品的价值可以为负数，所以需要额外增加一个判断，但是想了想还是当签到题，不要故意恶心了，于是就删掉了。所以顺便好奇的问一下，有多少人看到题面之后去想过价值是不是可能为负数呢</p>
+<h3 id="吐槽-1"><a href="#吐槽-1" class="headerlink" title="吐槽"></a>吐槽</h3><p>这道题原来有一个小坑点，即物品的价值可以为负数，所以需要额外增加一个判断，但是想了想还是当签到题，不要故意恶心了，于是就删掉了。所以顺便好奇的问一下，有多少人看到题面之后去想过价值是不是可能为负数呢</p>
 <h2 id="chiking-的序列-II"><a href="#chiking-的序列-II" class="headerlink" title="chiking 的序列 II"></a>chiking 的序列 II</h2><h3 id="大致题意-2"><a href="#大致题意-2" class="headerlink" title="大致题意"></a>大致题意</h3><p>有一个<strong>非递减</strong>的数组，允许你进行任意次数操作，每次操作可以使得其中一个值增加 $1$，问至少需要多少次操作才能使得数组内没有相同的值</p>
 <h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>因为只能进行加法运算，所以数字只会增加，由于已经排序好了数组，所以最简单的方案就是让每一个值都比前一个值要大即可</p>
 <h3 id="AC-Code-2"><a href="#AC-Code-2" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">data</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) <span class="hljs-built_in">cin</span> &gt;&gt; data[i];<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">int</span> tmp = max(data[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>, data[i]);<br>        sum += tmp - data[i];<br>        data[i] = tmp;<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; sum &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
