@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      9.4k 字
+      8k 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      105
+      90
        分钟
     </span>
   
@@ -235,7 +235,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：42 分钟前
+                  本文最后更新于：2 分钟前
                 
               </p>
             
@@ -326,21 +326,6 @@
 <td style="text-align:center">VIEW_SOLUTION_MESSAGE</td>
 <td style="text-align:center">查看提交的运行信息</td>
 <td style="text-align:center">查看提交的运行信息</td>
-</tr>
-<tr>
-<td style="text-align:center">VIEW_ALL_CONTEST</td>
-<td style="text-align:center">查看所有比赛</td>
-<td style="text-align:center">能够无视约束查看所有比赛，但是不可以提交</td>
-</tr>
-<tr>
-<td style="text-align:center">CREATE_AND_EDIT_CONTEST</td>
-<td style="text-align:center">创建和更新比赛内容权利</td>
-<td style="text-align:center">能够创建和编辑自己的比赛，此权限不影响合作者编辑题目</td>
-</tr>
-<tr>
-<td style="text-align:center">EDIT_NOT_OWNER_CONTEST</td>
-<td style="text-align:center">更新其他人拥有的比赛内容权利</td>
-<td style="text-align:center">能够创建和编辑别人的比赛，此权限不影响合作者编辑题目</td>
 </tr>
 <tr>
 <td style="text-align:center">MANAGER_JUDGE</td>
@@ -1062,201 +1047,6 @@ g([CHECK_FAILED]) -- 执行处理 --&gt; e([CHECKING])
 </li>
 <li>等待一个 judge 完成最后的判题任务后，关闭一个 Judge（需要 VIEW_SERVICE_CODE）<ul>
 <li>关闭掉一个 Judge 容器，让 Judge 在完成其所有的判题后推出</li>
-</ul>
-</li>
-</ul>
-<h2 id="比赛模块"><a href="#比赛模块" class="headerlink" title="比赛模块"></a>比赛模块</h2><h3 id="比赛属性"><a href="#比赛属性" class="headerlink" title="比赛属性"></a>比赛属性</h3><ul>
-<li>id。唯一不变的主键</li>
-<li>owner。拥有者</li>
-<li>title。标题</li>
-<li>startTime。开始时间</li>
-<li>duration。持续时间</li>
-<li><p>accessType。访问权限</p>
-<p>| 访问权限 | 名称 | 描述 |<br>| :-: | :-: | :-: | :-: |<br>| PUBLIC | 公开的 | 允许任何人进入查看此比赛并进行 |<br>| PASSWORD | 需要密码的 | 在输入密码后授权允许在当前浏览器上进入 |<br>| PRIVATE | 邀请制的 | 仅允许指定的部分用户参加 |</p>
-</li>
-<li><p>problemList。题目列表</p>
-</li>
-<li>problemAccessTypeList。允许此类访问权限的题目</li>
-<li>coAuthor。共同的出题人</li>
-<li>accessTypeValue。题目的访问权限配置值</li>
-<li>freezeTime。封榜单时长</li>
-<li><p>announcement。公告</p>
-<p>| 访问权限 | 普通用户 | 有密码或者在邀请列表内的 | 出题人/合作者 | VAC 的 | ENOC 的 |<br>| :-: | :-: | :-: | :-: | :-: | :-: |<br>| PUBLIC | 可以查看/提交 | 可以查看/提交 | 可以查看/提交/编辑 | 可以查看/提交 | 可以查看/提交/编辑 |<br>| PASSWORD | 无 | 可以查看/提交 | 可以查看/提交/编辑 | 可以查看/提交 | 可以查看/提交/编辑 |<br>| PRIVATE | 无 | 可以查看/提交 | 可以查看/编辑 | 可以查看 | 可以查看/编辑 |</p>
-</li>
-</ul>
-<h3 id="比赛功能"><a href="#比赛功能" class="headerlink" title="比赛功能"></a>比赛功能</h3><ul>
-<li>查看比赛列表<ul>
-<li>前端提供<ul>
-<li>页码</li>
-<li>每一页的数量</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>检查每一页的数量是否在要求范围内</li>
-<li>获取所有比赛总量</li>
-<li>检查页码是否在范围内</li>
-<li>获取指定页码的内容并返回</li>
-<li>在会话中中添加此用户的认证信息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看比赛详情<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-</ul>
-</li>
-<li>公开的比赛<ul>
-<li>在会话中中添加此用户的认证信息</li>
-<li>返回比赛信息</li>
-</ul>
-</li>
-<li>需要密码的<ul>
-<li>检查用户是否已经认证过此比赛</li>
-<li>检查用户是否是比赛的拥有者或者合作者</li>
-<li>检查用户是否拥有 VIEW_ALL_CONTEST 权限</li>
-<li>检查用户的密码是否正确</li>
-<li>在会话中中添加此用户的认证信息</li>
-<li>返回比赛信息</li>
-</ul>
-</li>
-<li>邀请制的<ul>
-<li>检查用户是否已经认证过此比赛</li>
-<li>检查用户是否是比赛的拥有者或者合作者</li>
-<li>检查用户是否拥有 VIEW_ALL_CONTEST 权限</li>
-<li>检查用户是否在邀请列表中</li>
-<li>在会话中中添加此用户的认证信息</li>
-<li>返回比赛信息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看比赛的题目<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>题目的序号</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>认证用户信息，参考查看比赛详情</li>
-<li>返回题目信息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看比赛提交列表<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>提交的页码</li>
-<li>提交每页数量</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>认证用户信息，参考查看比赛详情</li>
-<li>返回比赛提交列表</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看比赛提交详情<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>提交的 id</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>认证用户信息，参考查看比赛详情</li>
-<li>若为题目的拥有者、合作者，则返回提交的详情和运行信息</li>
-<li>若为提交本人，则仅返回提交的详情</li>
-<li>若为其他人，则拒绝</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>查看比赛榜单<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>认证用户信息，参考查看比赛详情</li>
-<li>返回榜单，注意封榜</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>在比赛中提交<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>题目的序号</li>
-<li>提交的代码</li>
-<li>提交的语言</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>认证用户信息，参考查看比赛详情</li>
-<li>“公开的”和“需要密码的”仅允许比赛参与者和比赛拥有者和合作出题人可以进行提交，“邀请制的”，则仅邀请制内的可以提交</li>
-<li>完成提交，并加入判题系统</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>创建/更新比赛（需要 CREATE_AND_EDIT_CONTEST）<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>比赛的标题</li>
-<li>题目列表</li>
-<li>比赛开始时间</li>
-<li>比赛持续时间</li>
-<li>比赛的访问权限</li>
-<li>比赛访问权限的参数</li>
-<li>共同出题人</li>
-<li>题目的访问权限配置值</li>
-<li>封榜单时长</li>
-<li>公告</li>
-</ul>
-</li>
-<li>比赛未开始<ul>
-<li>检查是否是 owner 或者拥有 EDIT_NOT_OWNER_CONTEST 权限</li>
-<li>均可更新</li>
-</ul>
-</li>
-<li>比赛开始后但未封榜<ul>
-<li>检查是否是 owner 或者拥有 EDIT_NOT_OWNER_CONTEST 权限</li>
-<li>不可以删除题目，但是可以增加</li>
-<li>不可以修改开始时间</li>
-<li>不可以修改封榜时间至当前时间之前</li>
-<li>不可以修改结束时间至当前时间之前</li>
-<li>不可以修改共同出题人</li>
-</ul>
-</li>
-<li>比赛开始封榜但是没有结束<ul>
-<li>检查是否是 owner 或者拥有 EDIT_NOT_OWNER_CONTEST 权限</li>
-<li>不可以删除题目，但是可以增加</li>
-<li>不可以修改开始时间</li>
-<li>不可以修改封榜实际时间，即结束时间需要和封榜时间同时增长</li>
-<li>不可以修改共同出题人</li>
-</ul>
-</li>
-<li>比赛结束之后<ul>
-<li>除了公告，所有内容均不可修改</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>比赛共同出题人修改比赛题目<ul>
-<li>前端提供<ul>
-<li>比赛的 id</li>
-<li>变更操作与题目 id</li>
-</ul>
-</li>
-<li>后端逻辑<ul>
-<li>检查是否有权编辑此比赛</li>
-<li>检查是否有权限变更请求的列表中的题目，共同出题人只能变更 <code>owner</code> 为其本身的题目</li>
-<li>检查当前是否还可以变更题目列表</li>
-<li>变更比赛的题目</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
