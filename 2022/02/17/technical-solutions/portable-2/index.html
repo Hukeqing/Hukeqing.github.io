@@ -274,19 +274,84 @@
 <li>title。标题</li>
 <li>startTime。开始时间</li>
 <li>duration。持续时间</li>
-<li><p>accessType。访问权限</p>
-<p>| 访问权限 | 名称 | 描述 |<br>| :-: | :-: | :-: |<br>| PUBLIC | 公开的 | 允许任何人进入查看此比赛并进行 |<br>| PASSWORD | 需要密码的 | 在输入密码后授权允许在当前浏览器上进入 |<br>| PRIVATE | 邀请制的 | 仅允许指定的部分用户参加 |</p>
-</li>
-<li><p>problemList。题目列表</p>
-</li>
+<li>accessType。访问权限</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">访问权限</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PUBLIC</td>
+<td style="text-align:center">公开的</td>
+<td style="text-align:center">允许任何人进入查看此比赛并进行</td>
+</tr>
+<tr>
+<td style="text-align:center">PASSWORD</td>
+<td style="text-align:center">需要密码的</td>
+<td style="text-align:center">在输入密码后授权允许在当前浏览器上进入</td>
+</tr>
+<tr>
+<td style="text-align:center">PRIVATE</td>
+<td style="text-align:center">邀请制的</td>
+<td style="text-align:center">仅允许指定的部分用户参加</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>problemList。题目列表</li>
 <li>problemAccessTypeList。允许此类访问权限的题目</li>
 <li>coAuthor。共同的出题人</li>
 <li>accessTypeValue。题目的访问权限配置值</li>
 <li>freezeTime。封榜单时长</li>
-<li><p>announcement。公告</p>
-<p>| 访问权限 | 普通用户 | 有密码或者在邀请列表内的 | 出题人/合作者 | VAC 的 | ENOC 的 |<br>| :-: | :-: | :-: | :-: | :-: | :-: |<br>| PUBLIC | 可以查看/提交 | 可以查看/提交 | 可以查看/提交/编辑 | 可以查看/提交 | 可以查看/提交/编辑 |<br>| PASSWORD | 无 | 可以查看/提交 | 可以查看/提交/编辑 | 可以查看/提交 | 可以查看/提交/编辑 |<br>| PRIVATE | 无 | 可以查看/提交 | 可以查看/编辑 | 可以查看 | 可以查看/编辑 |</p>
-</li>
+<li>announcement。公告</li>
 </ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">访问权限</th>
+<th style="text-align:center">普通用户</th>
+<th style="text-align:center">有密码或者在邀请列表内的</th>
+<th style="text-align:center">出题人/合作者</th>
+<th style="text-align:center">VAC 的</th>
+<th style="text-align:center">ENOC 的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PUBLIC</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/提交/编辑</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/提交/编辑</td>
+</tr>
+<tr>
+<td style="text-align:center">PASSWORD</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/提交/编辑</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/提交/编辑</td>
+</tr>
+<tr>
+<td style="text-align:center">PRIVATE</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">可以查看/提交</td>
+<td style="text-align:center">可以查看/编辑</td>
+<td style="text-align:center">可以查看</td>
+<td style="text-align:center">可以查看/编辑</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="比赛功能"><a href="#比赛功能" class="headerlink" title="比赛功能"></a>比赛功能</h3><ul>
 <li>查看比赛列表<ul>
 <li>前端提供<ul>
