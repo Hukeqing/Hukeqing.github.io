@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Java 生成验证码 Captcha</title>
+    <link href="/2022/03/19/develop-note/java-create-captcha/"/>
+    <url>/2022/03/19/develop-note/java-create-captcha/</url>
+    
+    <content type="html"><![CDATA[<p>方法效率较低，推荐使用缓存，重复使用验证码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 验证码宽度</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Integer CAPTCHA_WIDTH = <span class="hljs-number">150</span>;<br><span class="hljs-comment">// 验证码高度</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Integer CAPTCHA_HEIGHT = <span class="hljs-number">40</span>;<br><span class="hljs-comment">// 验证码最大旋转角度（不推荐修改）</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Integer CAPTCHA_CHAR_ROTATE = <span class="hljs-number">5</span>;<br><span class="hljs-comment">// 干扰线数量</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Integer CAPTCHA_LINE_NUM = <span class="hljs-number">5</span>;<br><span class="hljs-comment">// 验证码数量</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Integer CAPTCHA_CHAR_NUM = <span class="hljs-number">4</span>;<br><span class="hljs-comment">// 验证码的保存格式</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String CAPTCHA_CONTENT_TYPE = <span class="hljs-string">&quot;PNG&quot;</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">createCaptcha</span><span class="hljs-params">(OutputStream outputStream)</span> <span class="hljs-keyword">throws</span> PortableException </span>&#123;<br>    BufferedImage image = <span class="hljs-keyword">new</span> BufferedImage(CAPTCHA_WIDTH, CAPTCHA_HEIGHT, BufferedImage.TYPE_INT_BGR);<br>    Graphics2D g = (Graphics2D) image.getGraphics();<br>    g.fillRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, CAPTCHA_WIDTH, CAPTCHA_HEIGHT);<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; CAPTCHA_LINE_NUM; i++) &#123;<br>        drawRandomLine(g);<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; CAPTCHA_LINE_NUM; i++) &#123;<br>        drawLeftToRightLine(g);<br>    &#125;<br>    StringBuilder ans = <span class="hljs-keyword">new</span> StringBuilder();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; CAPTCHA_CHAR_NUM; i++) &#123;<br>        ans.append(drawString(g, i + <span class="hljs-number">1</span>));<br>    &#125;<br>    <span class="hljs-keyword">try</span> &#123;<br>        ImageIO.write(image, CAPTCHA_CONTENT_TYPE, outputStream);<br>    &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>        <span class="hljs-keyword">throw</span> PortableException.of(<span class="hljs-string">&quot;B-01-002&quot;</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans.toString();<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drawRandomLine</span><span class="hljs-params">(Graphics2D g)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> xs = RANDOM.nextInt(CAPTCHA_WIDTH);<br>    <span class="hljs-keyword">int</span> xe = RANDOM.nextInt(CAPTCHA_WIDTH);<br>    <span class="hljs-keyword">int</span> ys = RANDOM.nextInt(CAPTCHA_HEIGHT);<br>    <span class="hljs-keyword">int</span> ye = RANDOM.nextInt(CAPTCHA_HEIGHT);<br>    g.setFont(ARIAL_FONT);<br>    g.setColor(getRandomColor());<br>    g.drawLine(xs, ys, xe, ye);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drawLeftToRightLine</span><span class="hljs-params">(Graphics2D g)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> xs = RANDOM.nextInt(CAPTCHA_WIDTH / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">int</span> xe = CAPTCHA_WIDTH / <span class="hljs-number">2</span> + RANDOM.nextInt(CAPTCHA_WIDTH / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">int</span> ys = RANDOM.nextInt(CAPTCHA_HEIGHT / <span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">int</span> ye = CAPTCHA_HEIGHT / <span class="hljs-number">2</span> + RANDOM.nextInt(CAPTCHA_HEIGHT / <span class="hljs-number">2</span>);<br>    g.setFont(ARIAL_FONT);<br>    g.setColor(getRandomColor());<br>    g.drawLine(xs, ys, xe, ye);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">drawString</span><span class="hljs-params">(Graphics2D g, Integer num)</span> </span>&#123;<br>    <span class="hljs-comment">// 保证左侧和右侧不要贴边，总共留出一个字符的空间</span><br>    <span class="hljs-keyword">int</span> baseX = (<span class="hljs-keyword">int</span>) (CAPTCHA_WIDTH * <span class="hljs-number">1.0</span> / (ImageUtils.CAPTCHA_CHAR_NUM + <span class="hljs-number">1</span>) * num);<br>    AffineTransform old = g.getTransform();<br>    String c = getRandomChar();<br><br>    g.setFont(ARIAL_FONT);<br>    g.setColor(getRandomColor());<br>    g.rotate(Math.toRadians(RANDOM.nextInt(CAPTCHA_CHAR_ROTATE * <span class="hljs-number">2</span>) - CAPTCHA_CHAR_ROTATE));<br>    g.drawString(c, baseX, CAPTCHA_HEIGHT / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>);<br>    g.setTransform(old);<br><br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Color <span class="hljs-title">getRandomColor</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> upper = <span class="hljs-number">128</span>;<br>    <span class="hljs-keyword">int</span> lower = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> r = lower + RANDOM.nextInt(upper);<br>    <span class="hljs-keyword">int</span> g = lower + RANDOM.nextInt(upper);<br>    <span class="hljs-keyword">int</span> b = lower + RANDOM.nextInt(upper);<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Color(r, g, b);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getRandomChar</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> String.valueOf(CAPTCHA_CHAR.charAt(RANDOM.nextInt(CAPTCHA_CHAR.length())));<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>验证码</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C++ 模版可变参数列表传递给 C 的 va_list 可变参数列表</title>
     <link href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/"/>
     <url>/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/</url>
@@ -77,9 +98,9 @@
     
     <tags>
       
-      <tag>Docker</tag>
-      
       <tag>短笔记</tag>
+      
+      <tag>Docker</tag>
       
       <tag>JDK</tag>
       
@@ -184,11 +205,11 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>学习</tag>
       
       <tag>课程</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -251,9 +272,9 @@
     
     <tags>
       
-      <tag>面试准备</tag>
-      
       <tag>计算机图形学</tag>
+      
+      <tag>面试准备</tag>
       
     </tags>
     
@@ -581,9 +602,9 @@
     
     <tags>
       
-      <tag>短笔记</tag>
-      
       <tag>MySQL</tag>
+      
+      <tag>短笔记</tag>
       
     </tags>
     
