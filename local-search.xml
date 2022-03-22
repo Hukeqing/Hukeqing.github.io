@@ -5,6 +5,27 @@
   
   <entry>
     <title>Java 生成验证码 Captcha</title>
+    <link href="/2022/03/22/develop-note/clion-mac-CMAKE_OSX_SYSROOT/"/>
+    <url>/2022/03/22/develop-note/clion-mac-CMAKE_OSX_SYSROOT/</url>
+    
+    <content type="html"><![CDATA[<p>在 macOS 更新后，CLion 可能会出现如下错误</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">CMake Warning at <span class="hljs-regexp">/Applications/</span>CLion.app<span class="hljs-regexp">/Contents/</span>bin<span class="hljs-regexp">/cmake/m</span>ac<span class="hljs-regexp">/share/</span>cmake-<span class="hljs-number">3.15</span><span class="hljs-regexp">/Modules/</span>Platform/Darwin-Initialize.cmake:<span class="hljs-number">131</span> (message):<br>  Ignoring CMAKE_OSX_SYSROOT value:<br><br>   <span class="hljs-regexp">/Applications/</span>Xcode.app<span class="hljs-regexp">/Contents/</span>Developer<span class="hljs-regexp">/Platforms/</span>MacOSX.platform<span class="hljs-regexp">/Developer/</span>SDKs/MacOSX12.<span class="hljs-number">1</span>.sdk<br><br>  because the directory does not exist.<br></code></pre></td></tr></table></figure><p>这时候，只需要删除 <code>cmake-build-debug</code> 或者对应的目录，然后 reload cmake 就行了</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CLion</tag>
+      
+      <tag>macOS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Java 生成验证码 Captcha</title>
     <link href="/2022/03/19/develop-note/java-create-captcha/"/>
     <url>/2022/03/19/develop-note/java-create-captcha/</url>
     
@@ -272,9 +293,9 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>面试准备</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
