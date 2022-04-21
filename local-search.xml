@@ -4,9 +4,30 @@
   
   
   <entry>
+    <title>Gitbook 安装出错</title>
+    <link href="/2022/03/24/develop-note/gitbook-install-error/"/>
+    <url>/2022/03/24/develop-note/gitbook-install-error/</url>
+    
+    <content type="html"><![CDATA[<p>执行 <code>npm i gitbook-cli -g</code> 时出现</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk">    <span class="hljs-keyword">if</span> (cb) cb.apply(this, arguments)<br>           ^<br>TypeError: cb.apply is not a <span class="hljs-keyword">function</span><br>    at <span class="hljs-regexp">/home/</span>travis<span class="hljs-regexp">/.nvm/</span>versions<span class="hljs-regexp">/node/</span>v12.<span class="hljs-number">18.3</span><span class="hljs-regexp">/lib/</span>node_modules<span class="hljs-regexp">/gitbook-cli/</span>node_modules<span class="hljs-regexp">/npm/</span>node_modules<span class="hljs-regexp">/graceful-fs/</span>polyfills.js:<span class="hljs-number">287</span>:<span class="hljs-number">18</span><br>    at FSReqCallback.oncomplete (fs.js:<span class="hljs-number">169</span>:<span class="hljs-number">5</span>)<br></code></pre></td></tr></table></figure><p>的情况，可以执行下面的命令解决</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">cd `npm root -g`<span class="hljs-regexp">/gitbook-cli/</span>node_modules<span class="hljs-regexp">/npm/</span>node_modules/<br>npm install graceful-fs@<span class="hljs-number">4.2</span>.<span class="hljs-number">4</span> --save<br>gitbook install<br></code></pre></td></tr></table></figure><p>即可</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Gitbook</tag>
+      
+      <tag>nodejs</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>macOS 更新后导致 sdk 丢失问题</title>
-    <link href="/2022/03/22/develop-note/clion-mac-CMAKE_OSX_SYSROOT/"/>
-    <url>/2022/03/22/develop-note/clion-mac-CMAKE_OSX_SYSROOT/</url>
+    <link href="/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/"/>
+    <url>/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/</url>
     
     <content type="html"><![CDATA[<p>在 macOS 更新后，CLion 可能会出现如下错误</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk">CMake Warning at <span class="hljs-regexp">/Applications/</span>CLion.app<span class="hljs-regexp">/Contents/</span>bin<span class="hljs-regexp">/cmake/m</span>ac<span class="hljs-regexp">/share/</span>cmake-<span class="hljs-number">3.15</span><span class="hljs-regexp">/Modules/</span>Platform/Darwin-Initialize.cmake:<span class="hljs-number">131</span> (message):<br>  Ignoring CMAKE_OSX_SYSROOT value:<br><br>   <span class="hljs-regexp">/Applications/</span>Xcode.app<span class="hljs-regexp">/Contents/</span>Developer<span class="hljs-regexp">/Platforms/</span>MacOSX.platform<span class="hljs-regexp">/Developer/</span>SDKs/MacOSX12.<span class="hljs-number">1</span>.sdk<br><br>  because the directory does not exist.<br></code></pre></td></tr></table></figure><p>这时候，只需要删除 <code>cmake-build-debug</code> 或者对应的目录，然后 reload cmake 就行了</p>]]></content>
     
@@ -133,8 +154,8 @@
   
   <entry>
     <title>Mac 使用带 python 的 vim</title>
-    <link href="/2021/11/15/develop-note/macvim/"/>
-    <url>/2021/11/15/develop-note/macvim/</url>
+    <link href="/2021/11/15/mac/macvim/"/>
+    <url>/2021/11/15/mac/macvim/</url>
     
     <content type="html"><![CDATA[<p>mac 自带的 vim 并不支持 python<br>采用 brew 的 macvim 代替即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">brew install macvim<br></code></pre></td></tr></table></figure>]]></content>
     
