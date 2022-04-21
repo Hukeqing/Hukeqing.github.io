@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>develop-note/centos-ufw-docker-ip.md</title>
+    <link href="/2022/04/21/develop-note/centos-ufw-docker-ip/"/>
+    <url>/2022/04/21/develop-note/centos-ufw-docker-ip/</url>
+    
+    <content type="html"><![CDATA[<p>当 centOS 关闭掉防火墙后，请务必重启 docker</p><figure class="highlight shell"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs shell">systemctl restart docker<br></code></pre></td></tr></table></figure><p>否则会导致 docker-compose 出错</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs subunit"><span class="hljs-keyword">ERROR: </span>Failed to Setup IP tables: Unable to enable SKIP DNAT rule:  (iptables failed: iptables --wait -t nat -I DOCKER -i br<span class="hljs-string">-7506353</span>a9954 -j RETURN: iptables: No chain/target/match by that name.<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+      <tag>centOS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Gitbook 安装出错</title>
     <link href="/2022/03/24/develop-note/gitbook-install-error/"/>
     <url>/2022/03/24/develop-note/gitbook-install-error/</url>
@@ -35,9 +56,9 @@
     
     <tags>
       
-      <tag>CLion</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>CLion</tag>
       
     </tags>
     
