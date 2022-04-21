@@ -1,22 +1,47 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
-  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/image/default/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
+  
+    <meta name="description" content="本篇中的题目顺序为预期难度顺序，并非比赛题目顺序                   本篇中所有的“更好的优化”均为标准答案之外的思考，不使用此内容也可以通过题目           比赛预期情况总共比赛人数：175 (至少通过一道题的人数，没有通过题的不计入总人数)     题目名 实际通过次数 实际通过比例 预期通过比例     chiking 的偶像 172">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021年浙江工商大学新生赛题解">
+<meta property="og:url" content="http://example.com/2021/11/21/acm/2021-ZJGSU-ACM-freshman-competition/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="本篇中的题目顺序为预期难度顺序，并非比赛题目顺序                   本篇中所有的“更好的优化”均为标准答案之外的思考，不使用此内容也可以通过题目           比赛预期情况总共比赛人数：175 (至少通过一道题的人数，没有通过题的不计入总人数)     题目名 实际通过次数 实际通过比例 预期通过比例     chiking 的偶像 172">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/2*4.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/3*8.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/Tetris-cannot-be-inserted.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/10-2.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/3-1.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/3-2.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block-solve.png">
+<meta property="og:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/1-4-block-solve.png">
+<meta property="article:published_time" content="2021-11-21T06:15:20.000Z">
+<meta property="article:modified_time" content="2022-02-16T15:52:51.508Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="ACM">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/image/acm/2021-ZJGSU-ACM-freshman-competition/2*4.png">
+  
+  
   <title>2021年浙江工商大学新生赛题解 - Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -38,7 +63,6 @@
   
 
 
-
 <!-- 主题依赖的图标库，不要自行修改 -->
 
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
@@ -55,7 +79,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,8 +92,9 @@
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Mauve</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -143,13 +168,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -188,21 +214,18 @@
 
 <div class="mt-1">
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.7k 字
+      18k 字
     </span>
   
 
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-clock-fill"></i>
       
       
-      99
-       分钟
+      151 分钟
     </span>
   
 
@@ -335,7 +358,7 @@
 <p>综上来看，整个新生赛除了一道题没有达到预期的成绩，其他题目均与预期相差不大</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="chiking-的偶像"><a href="#chiking-的偶像" class="headerlink" title="chiking 的偶像"></a>chiking 的偶像</h2><h3 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h3><p>循环输出 <code>\soup_god/</code>，且总共输出的字符串长度为 $n$</p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>简单的签到题，只需要还记得有 mod 这个运算就能写出来</p>
-<h3 id="AC-Code"><a href="#AC-Code" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *data = <span class="hljs-string">&quot;\\soup_god/&quot;</span>;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; data[i % <span class="hljs-number">10</span>];<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="AC-Code"><a href="#AC-Code" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *data = <span class="hljs-string">&quot;\\soup_god/&quot;</span>;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; data[i % <span class="hljs-number">10</span>];<br>    &#125;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h3><p>我以为大家被卡在不会 <code>mod</code>，结果大家都卡在 <code>\\</code>，这就挺尴尬的</p>
 <h2 id="chiking-和珂朵莉"><a href="#chiking-和珂朵莉" class="headerlink" title="chiking 和珂朵莉"></a>chiking 和珂朵莉</h2><h3 id="大致题意-1"><a href="#大致题意-1" class="headerlink" title="大致题意"></a>大致题意</h3><p>$n$ 个物品，每个物品都有价值和所属类别，让你选择 $n - k$ 种类别的物品，使得所选出来的这些类别的物品的总价值最大</p>
 <h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>也是签到题之一</p>
@@ -352,8 +375,8 @@
 <h3 id="AC-Code-3"><a href="#AC-Code-3" class="headerlink" title="AC Code"></a>AC Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> _;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> ts = <span class="hljs-number">0</span>; ts &lt; _; ++ts) &#123;<br>        <span class="hljs-keyword">int</span> n;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">int</span> tmp;<br>            <span class="hljs-built_in">cin</span> &gt;&gt; tmp;<br>            ans = max(ans, tmp - i - <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="chiking-的棋盘"><a href="#chiking-的棋盘" class="headerlink" title="chiking 的棋盘"></a>chiking 的棋盘</h2><h3 id="大致题意-4"><a href="#大致题意-4" class="headerlink" title="大致题意"></a>大致题意</h3><p>用 $k$ 个 <code>L</code> 形状的方块能否平铺一个矩形方格</p>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>我们可以用 <code>L</code> 形状的方块拼出如下两种最简平铺方案</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2*4.png" srcset="/img/loading.gif" alt="2-4"></p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3*8.png" srcset="/img/loading.gif" alt="3-8"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2*4.png" srcset="/img/loading.gif" lazyload alt="2-4"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3*8.png" srcset="/img/loading.gif" lazyload alt="3-8"></p>
 <p>这两个方案都是 $8$ 个方格的倍数，所以起码，方格总数应该是 $8$ 的倍数，即 $n \times m = 8k$</p>
 <ol>
 <li>假设两边都是偶数，那么必然其中一边为 $2$ 的倍数，另外一边为 $4$ 的倍数，所以必然可以被仅靠第一种平铺方案平铺</li>
@@ -376,10 +399,10 @@
 <h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>需要思考的东西比较多，我们先来证明一些东西，方面后面使用</p>
 <h4 id="实际上仅会出现-10-分和-3-分两种消方块"><a href="#实际上仅会出现-10-分和-3-分两种消方块" class="headerlink" title="实际上仅会出现 10 分和 3 分两种消方块"></a>实际上仅会出现 10 分和 3 分两种消方块</h4><p>这个结论应该是比较简单就可以得出的，因为垂直方向上只有长度为 2 和 4 的方块，所以当我们能遇到创造出 10 分的情况，尽快消除绝对不会亏</p>
 <h4 id="长条方块必定可以合并视为-2-times-4"><a href="#长条方块必定可以合并视为-2-times-4" class="headerlink" title="长条方块必定可以合并视为 2 \times 4"></a>长条方块必定可以合并视为 <script type="math/tex">2 \times 4</script></h4><p>这个结论指的是如下的情况是不可能发生的(带箭头的蓝色方块是最后落下的)</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/Tetris-cannot-be-inserted.png" srcset="/img/loading.gif" alt="Tetris-cannot be inserted"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/Tetris-cannot-be-inserted.png" srcset="/img/loading.gif" lazyload alt="Tetris-cannot be inserted"></p>
 <p>因为这个情况下，才会出现 <script type="math/tex">1 \times 4</script> 无法插入到原来的 <script type="math/tex">1 \times 4</script> 中使得变成 <script type="math/tex">2 \times 4</script></p>
 <p>而这个情况恰好满足一个 10 分的消除情况，即下图</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png" srcset="/img/loading.gif" alt="10-1"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png" srcset="/img/loading.gif" lazyload alt="10-1"></p>
 <p>既然能创造 10 分，那么就没必要纠结是不是能够合并了，先变成 10 分重要，所以不存在单独一根的长条方块的情况</p>
 <h4 id="将-2-2-放中间一定不是好的选择"><a href="#将-2-2-放中间一定不是好的选择" class="headerlink" title="将 2*2 放中间一定不是好的选择"></a>将 2*2 放中间一定不是好的选择</h4><p>这个结论应该显而易见吧，因为放左/右边既可以与 <script type="math/tex">1 \times 4</script> 消分，还可以与 <script type="math/tex">2 \times 2</script> 消分，比放中间肯定更优</p>
 <h4 id="原来的结构不影响当前期望的分数"><a href="#原来的结构不影响当前期望的分数" class="headerlink" title="原来的结构不影响当前期望的分数"></a>原来的结构不影响当前期望的分数</h4><p>这句话扩展起来就是</p>
@@ -388,24 +411,24 @@
 </blockquote>
 <p>这一条暂且先不证明</p>
 <h4 id="所有组合如下"><a href="#所有组合如下" class="headerlink" title="所有组合如下"></a>所有组合如下</h4><p>所有能够拿分的组合只有下面这些，其中只有前两个是 10 分，其他的均为 3 分</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png" srcset="/img/loading.gif" alt="10-1"></p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-2.png" srcset="/img/loading.gif" alt="10-2"></p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3-1.png" srcset="/img/loading.gif" alt="3-1"></p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3-2.png" srcset="/img/loading.gif" alt="3-2"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-1.png" srcset="/img/loading.gif" lazyload alt="10-1"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/10-2.png" srcset="/img/loading.gif" lazyload alt="10-2"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3-1.png" srcset="/img/loading.gif" lazyload alt="3-1"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/3-2.png" srcset="/img/loading.gif" lazyload alt="3-2"></p>
 <p>接下来我们可以证明上面那条的结论</p>
 <p>之前方块带来的影响主要是由于其必须要先落下导致占用了一定的位置，使得原来可以消掉的方块没有办法继续消除</p>
 <p>最常见的一个影响就是 <script type="math/tex">2 \times 2</script> 影响，简单来说就是原来已经有一块 <script type="math/tex">2 \times 2</script> 方格，此时就不一定能够做到满足上述的消分情况，如下图</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block.png" srcset="/img/loading.gif" alt="2-2-block.jpeg"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block.png" srcset="/img/loading.gif" lazyload alt="2-2-block.jpeg"></p>
 <p>例如此时，其实无法完美的满足第二种 10 分的消分情况，因为你不可能将四个 <script type="math/tex">1 \times 4</script> 放在同一行中，即同时下落四个 <script type="math/tex">1 \times 4</script> 的方块时，你不能仅通过这四个方块得到 10 分</p>
 <p>但是又如何呢？</p>
 <p>实际上我们仍然可以拿到 10 分，而且最后剩下的结果仍然是 <script type="math/tex">2 \times 2</script>方块，如下图所示</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block-solve.png" srcset="/img/loading.gif" alt="2-2-block-solve"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/2-2-block-solve.png" srcset="/img/loading.gif" lazyload alt="2-2-block-solve"></p>
 <p>这里就不再详细介绍每种情况了，供各位思考在 <script type="math/tex">2 \times 2</script> 的影响下，四种得分方案是否都可以得到原来的分数且不带来新的影响</p>
 <p>还有一种影响是 <script type="math/tex">2 \times 4</script> 的，比较类似，不再详细说明了</p>
 <p>特别的，无论在 <script type="math/tex">2 \times 2</script> 还是 <script type="math/tex">2 \times 4</script> 的影响下，第三种得分方案都有可能会从 3 分变成 10 分，而这虽然增加了分数，但是同时也增加了难于预料的问题，必须予以解决。有趣的是，这种新的得分方案，其实正是第一种方案，所以如果我们能够优先将所有可能的第一种方案计算完，那么此情况其实不再可能出现，那么也就可以忽略了</p>
 <p>除了 <script type="math/tex">2 \times 2</script> 还是 <script type="math/tex">2 \times 4</script>，还有更多的可能，例如更高的 <script type="math/tex">2 \times 8</script> 等等，但实际上是类似的，也就不再需要证明</p>
 <p>当然还有更加离谱的影响，例如 <script type="math/tex">1 \times 4</script>影响，明显，这个影响确实真的影响到得分了，因为第四种得分方案压根不可能得分了，如下图</p>
-<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/1-4-block-solve.png" srcset="/img/loading.gif" alt="1-4-block-solve"></p>
+<p><img src="/image/acm/2021-ZJGSU-ACM-freshman-competition/1-4-block-solve.png" srcset="/img/loading.gif" lazyload alt="1-4-block-solve"></p>
 <p>但是，注意题目中说的 <script type="math/tex">1 \times 4</script> 一定是偶数个，所以之后必定有一个 <script type="math/tex">1 \times 4</script>，那么就回到了开头的那个结论的情况，这里又可以拿到 10 分了</p>
 <h4 id="穿插组合并无影响"><a href="#穿插组合并无影响" class="headerlink" title="穿插组合并无影响"></a>穿插组合并无影响</h4><p>简单来说就是两个结构需要的方块穿插起来，并不会影响最终的得分，这里就不再详细介绍</p>
 <p>当你证明完成后接下来就是模拟讨论所有情况即可</p>
@@ -466,7 +489,11 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -496,11 +523,13 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
+    Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
       var dark = 'github-dark';
       var schema = document.documentElement.getAttribute('data-user-color-scheme');
@@ -550,7 +579,7 @@
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -617,8 +646,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -633,36 +663,38 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  
-    <script  src="/js/lazyload.js" ></script>
-  
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  
 
 
 
@@ -677,23 +709,9 @@
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
   </script>
 
 
@@ -708,6 +726,9 @@
       MathJax = {
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          
         },
         options: {
           renderActions: {
@@ -751,7 +772,6 @@
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

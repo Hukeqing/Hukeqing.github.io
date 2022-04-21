@@ -1,22 +1,39 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
-  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/image/default/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
+  
+    <meta name="description" content="相关概念分辨率 屏幕分辨率：用水平和垂直方向所能显示光点数总和的乘积表示 显示分辨率：用水平和垂直方向所能显示像素点总和的乘积表示 存储分辨率：指帧缓存区域的大小  帧缓存计算水平分辨率 * 垂直分辨率 * 每个像素所占用的字节图的表示和数据结构 复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等 图元通常是指不可再分的独立的图形实体。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机图形学">
+<meta property="og:url" content="http://example.com/2021/06/10/notebook/Computer-Graphics/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="相关概念分辨率 屏幕分辨率：用水平和垂直方向所能显示光点数总和的乘积表示 显示分辨率：用水平和垂直方向所能显示像素点总和的乘积表示 存储分辨率：指帧缓存区域的大小  帧缓存计算水平分辨率 * 垂直分辨率 * 每个像素所占用的字节图的表示和数据结构 复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等 图元通常是指不可再分的独立的图形实体。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/notebook/Computer-Graphics/Bezier-G1.png">
+<meta property="article:published_time" content="2021-06-10T02:54:17.000Z">
+<meta property="article:modified_time" content="2021-06-14T08:59:36.000Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="课程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/image/notebook/Computer-Graphics/Bezier-G1.png">
+  
+  
   <title>计算机图形学 - Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -38,7 +55,6 @@
   
 
 
-
 <!-- 主题依赖的图标库，不要自行修改 -->
 
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
@@ -55,7 +71,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -68,8 +84,9 @@
   <header style="height: 80vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Mauve</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -143,13 +160,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -188,21 +206,18 @@
 
 <div class="mt-1">
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.7k 字
+      10k 字
     </span>
   
 
   
-    
     <span class="post-meta mr-2">
       <i class="iconfont icon-clock-fill"></i>
       
       
-      62
-       分钟
+      85 分钟
     </span>
   
 
@@ -282,7 +297,7 @@ y' = Math.round(y + \epsilon \cdot \Delta y)
 <li>若 $x \neq x_1$ 则跳到第三步</li>
 </ol>
 <h2 id="二次曲线生成算法"><a href="#二次曲线生成算法" class="headerlink" title="二次曲线生成算法"></a>二次曲线生成算法</h2><h3 id="Bresenham-整圆"><a href="#Bresenham-整圆" class="headerlink" title="Bresenham 整圆"></a>Bresenham 整圆</h3><p>按照八分法画圆，先绘制 $\frac{\pi}{2} 至 \frac{\pi}{4}$ 的圆，即下图的 $1b$ 区域</p>
-<p><img src="/image/notebook/Computer-Graphics/draw-a-circle.png" srcset="/img/loading.gif" alt="draw-a-circle"></p>
+<p><img src="/image/notebook/Computer-Graphics/draw-a-circle.png" srcset="/img/loading.gif" lazyload alt="draw-a-circle"></p>
 <p>定义圆的半径 $R$，则</p>
 <ol>
 <li>定义 $d = 1 - R, x = 0, y = R$</li>
@@ -305,11 +320,11 @@ y' = Math.round(y + \epsilon \cdot \Delta y)
 <h3 id="射线法"><a href="#射线法" class="headerlink" title="射线法"></a>射线法</h3><p>从外部点出发，沿任意方向发射射线，若射线与多边形的交点个数为奇数，则为内部，否则为外部</p>
 <h3 id="弧长法"><a href="#弧长法" class="headerlink" title="弧长法"></a>弧长法</h3><p>略</p>
 <h3 id="有效边表算法"><a href="#有效边表算法" class="headerlink" title="有效边表算法"></a>有效边表算法</h3><p>考虑对于每一条直线 $y = kx + b$，当 $y’ = y + 1$ 时， $x’ = x + \frac{1}{k}$。所以求交点时，若已知一个交点 $(x, y)$，则可以通过上述公式推导出下一个交点为 $(x + \frac{1}{k}, y + 1)$</p>
-<p>所以依照上述结论，得出如下的操作（以下图为例）<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-example.png" srcset="/img/loading.gif" alt="active-edge-list-algorithm-example"></p>
+<p>所以依照上述结论，得出如下的操作（以下图为例）<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-example.png" srcset="/img/loading.gif" lazyload alt="active-edge-list-algorithm-example"></p>
 <ol>
 <li>构建一个长度等于几何图形的最大高度的表格</li>
-<li>将几何图形的每一条边的最低点的 $x, y_{max}, \frac{1}{k}$ 保存进入对应的 $y_{min}$ 表格中，（这三个值的顺序可以任意交换，例如下面的所有图中的数据顺序为 $y_{max}, x, \frac{1}{k}$ ），对于每一个单元，按照 $x$ 进行从小到大排序，若 $x$ 相同，则按照 $\frac{1}{k}$ 从小到大排序。所以可以得到下面的表格<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-1.png" srcset="/img/loading.gif" alt="active-edge-list-algorithm-1"></li>
-<li>从最小的 $y$ 开始，不断增大 $y$，根据上一次的 $y$，计算 $y’ = y + 1$ 时，每一个元素对应的 $x’ = x + \frac{1}{k}$ ，对于当前的 $y$ 从第一个节点遍历到最后一个节点，若经过的节点数为奇数，则将这块区域内都进行染色，然后移除所有 $y = y_{max}$ 的数据，可以得到下图<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-2.png" srcset="/img/loading.gif" alt="active-edge-list-algorithm-2"></li>
+<li>将几何图形的每一条边的最低点的 $x, y_{max}, \frac{1}{k}$ 保存进入对应的 $y_{min}$ 表格中，（这三个值的顺序可以任意交换，例如下面的所有图中的数据顺序为 $y_{max}, x, \frac{1}{k}$ ），对于每一个单元，按照 $x$ 进行从小到大排序，若 $x$ 相同，则按照 $\frac{1}{k}$ 从小到大排序。所以可以得到下面的表格<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-1.png" srcset="/img/loading.gif" lazyload alt="active-edge-list-algorithm-1"></li>
+<li>从最小的 $y$ 开始，不断增大 $y$，根据上一次的 $y$，计算 $y’ = y + 1$ 时，每一个元素对应的 $x’ = x + \frac{1}{k}$ ，对于当前的 $y$ 从第一个节点遍历到最后一个节点，若经过的节点数为奇数，则将这块区域内都进行染色，然后移除所有 $y = y_{max}$ 的数据，可以得到下图<br><img src="/image/notebook/Computer-Graphics/active-edge-list-algorithm-2.png" srcset="/img/loading.gif" lazyload alt="active-edge-list-algorithm-2"></li>
 </ol>
 <h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>略</p>
 <h2 id="反走样技术"><a href="#反走样技术" class="headerlink" title="反走样技术"></a>反走样技术</h2><h3 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h3><ul>
@@ -599,7 +614,7 @@ x_n & y_n & 1
 <h2 id="二维观察-1"><a href="#二维观察-1" class="headerlink" title="二维观察"></a>二维观察</h2><p>略</p>
 <h2 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h2><h3 id="点的裁剪"><a href="#点的裁剪" class="headerlink" title="点的裁剪"></a>点的裁剪</h3><p>对于点 $P(x, y)$，若满足 $x_{wl} \leq x \leq x_{wr}$ 且 $y_{wb} \leq y \leq y_{wt}$ 则在窗口内，否则在窗口外</p>
 <h3 id="直线的裁剪"><a href="#直线的裁剪" class="headerlink" title="直线的裁剪"></a>直线的裁剪</h3><h4 id="Cohen-Sutherland-算法"><a href="#Cohen-Sutherland-算法" class="headerlink" title="Cohen-Sutherland 算法"></a>Cohen-Sutherland 算法</h4><p>对一条直线的两个顶点进行编码</p>
-<p><img src="/image/notebook/Computer-Graphics/Cohen-Sutherland-1.png" srcset="/img/loading.gif" alt="Cohen-Sutherland-1"></p>
+<p><img src="/image/notebook/Computer-Graphics/Cohen-Sutherland-1.png" srcset="/img/loading.gif" lazyload alt="Cohen-Sutherland-1"></p>
 <p>如图，若 $x &lt; x_l$ 则 $D_0 = 1$。若 $x &gt; x_r$ 则 $D_1 = 1$。若 $y &lt; y_b$ 则 $D_2 = 1$。若 $y &gt; y_t$ 则 $D_3 = 1$<br>若两个点 $p_1, p_2$ 的编码 $code_1, code_2$ 满足 $code_1 | code_2 = 0$ 则这条直线就在窗口内，若 $code_1 \&amp; code_2 \neq 0$ 则这条直线可以直接抛弃掉。其他情况只需要求出这条直线和四条边的交点即可<br>所以可以得到如下的流程</p>
 <ol>
 <li>输入点 $p_1, p_2$</li>
@@ -660,10 +675,10 @@ q_4 & = & y_t - y_1
 <li>若从窗口内到窗口内，则输出到达点 $P$</li>
 <li>若从窗口外到窗口外，则不输出</li>
 </ul>
-<p><img src="/image/notebook/Computer-Graphics/Sutherland-Hodgeman-1.png" srcset="/img/loading.gif" alt="Sutherland-Hodgeman-1"></p>
+<p><img src="/image/notebook/Computer-Graphics/Sutherland-Hodgeman-1.png" srcset="/img/loading.gif" lazyload alt="Sutherland-Hodgeman-1"></p>
 <p>将所有输出的点连接，得到新的多边形</p>
 <p>对于窗口的所有边界都进行一次如上的操作，即可得到最终的图像，例如下图，为左边界对此多边形进行裁剪的结果</p>
-<p><img src="/image/notebook/Computer-Graphics/Sutherland-Hodgeman-2.png" srcset="/img/loading.gif" alt="Sutherland-Hodgeman-2"></p>
+<p><img src="/image/notebook/Computer-Graphics/Sutherland-Hodgeman-2.png" srcset="/img/loading.gif" lazyload alt="Sutherland-Hodgeman-2"></p>
 <h4 id="Weiler-Atherton-算法"><a href="#Weiler-Atherton-算法" class="headerlink" title="Weiler-Atherton 算法"></a>Weiler-Atherton 算法</h4><p>从多边形 $P_s$ 的任意一点出发，顺时针遍历所有点</p>
 <ul>
 <li>若出现从窗口外进入窗口内，则输出在窗口内的直线</li>
@@ -870,7 +885,7 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
 <h3 id="凸包性"><a href="#凸包性" class="headerlink" title="凸包性"></a>凸包性</h3><p>略</p>
 <h3 id="几何不变性"><a href="#几何不变性" class="headerlink" title="几何不变性"></a>几何不变性</h3><p>Bézier 曲线与坐标轴无关</p>
 <h3 id="G1-连续"><a href="#G1-连续" class="headerlink" title="G1 连续"></a>G1 连续</h3><p>由于一阶导数可知，若需要满足 G1 连续，则必须要满足第一条曲线的最后两个控制点和第二条曲线的开始两个控制点在同一条直线上，且保证不在同一侧，即</p>
-<p><img src="/image/notebook/Computer-Graphics/Bezier-G1.png" srcset="/img/loading.gif" alt="Bezier-G1"></p>
+<p><img src="/image/notebook/Computer-Graphics/Bezier-G1.png" srcset="/img/loading.gif" lazyload alt="Bezier-G1"></p>
 <script type="math/tex; mode=display">(P_n - P_{n - 1}) = \alpha (Q_1 - Q_0')</script><h3 id="G2-连续"><a href="#G2-连续" class="headerlink" title="G2 连续"></a>G2 连续</h3><script type="math/tex; mode=display">((P_{n - 2} - P_{n - 1}) - (P_{n - 1} - P_n)) = \beta ((Q_2 - Q_1) - (Q_1 - Q_0))</script><h1 id="消隐"><a href="#消隐" class="headerlink" title="消隐"></a>消隐</h1><h2 id="z-buffer"><a href="#z-buffer" class="headerlink" title="z-buffer"></a>z-buffer</h2><p>向 z 轴的负方向作为观察方向，以其 z 轴的大小作为深度值，保存每一个像素的颜色值和深度值，当此像素被再次覆盖时，若新的深度比之前保存的大，则用新的深度和颜色覆盖之前的值，否则不更换</p>
 <h2 id="画家算法"><a href="#画家算法" class="headerlink" title="画家算法"></a>画家算法</h2><p>将物品从远到近排列，先绘制远处的图形，再由近处的图形进行覆盖</p>
 <h2 id="光线投射算法"><a href="#光线投射算法" class="headerlink" title="光线投射算法"></a>光线投射算法</h2><p>对于屏幕上的每一个像素点，构造一条模拟视线的射线，由射线的交点来确定深度最大的点</p>
@@ -902,7 +917,11 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
                 <div class="post-prevnext">
@@ -932,11 +951,13 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('comments', function() {
+    Fluid.utils.loadComments('#comments', function() {
       var light = 'github-light';
       var dark = 'github-dark';
       var schema = document.documentElement.getAttribute('data-user-color-scheme');
@@ -986,7 +1007,7 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -1053,8 +1074,9 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -1069,36 +1091,38 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  
-    <script  src="/js/lazyload.js" ></script>
-  
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  
 
 
 
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+  
 
 
 
@@ -1113,23 +1137,9 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
   </script>
 
 
@@ -1144,6 +1154,9 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
       MathJax = {
         tex: {
           inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        loader: {
+          
         },
         options: {
           renderActions: {
@@ -1194,7 +1207,6 @@ f_n''(x_n) & = & f_{n - 1}''(x_n) \\
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

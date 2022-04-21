@@ -1,22 +1,30 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
-  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/image/default/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Shiroha白羽的博客">
+<meta property="og:url" content="http://example.com/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Shiroha">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -39,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +60,9 @@
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Mauve</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +136,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -183,17 +193,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/24/develop-note/gitbook-install-error/">Gitbook 安装出错</a>
+        <a href="/2022/03/24/develop-note/gitbook-install-error/" target="_self">
+          Gitbook 安装出错
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/03/24/develop-note/gitbook-install-error/">
+        <a href="/2022/03/24/develop-note/gitbook-install-error/" target="_self">
           
-          
-            
-          
-          执行 npm i gitbook-cli -g 时出现
-12345    if (cb) cb.apply(this, arguments)           ^TypeError: cb.apply is not a function    at /home/travis/.nvm/versions/node/v12.18.3/lib/node_modules/gitbook-cli/node
+          执行 npm i gitbook-cli -g 时出现 12345    if (cb) cb.apply(this, arguments)           ^TypeError: cb.apply is not a function    at &#x2F;home&#x2F;travis&#x2F;.nvm&#x2F;versions&#x2F;node&#x2F;v12.18.3&#x2F;lib&#x2F;node_modules&#x2F;gitbook-cli&#x2F;node
         </a>
       </p>
 
@@ -227,17 +235,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/">macOS 更新后导致 sdk 丢失问题</a>
+        <a href="/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/" target="_self">
+          macOS 更新后导致 sdk 丢失问题
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/">
+        <a href="/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/" target="_self">
           
-          
-            
-          
-          在 macOS 更新后，CLion 可能会出现如下错误
-123456CMake Warning at /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Platform/Darwin-Initialize.cmake:131 (message):  Ignoring CMAKE_OSX_SYSROOT v
+          在 macOS 更新后，CLion 可能会出现如下错误 123456CMake Warning at &#x2F;Applications&#x2F;CLion.app&#x2F;Contents&#x2F;bin&#x2F;cmake&#x2F;mac&#x2F;share&#x2F;cmake-3.15&#x2F;Modules&#x2F;Platform&#x2F;Darwin-Initialize.cmake:131 (message):  Ignoring CMAKE_OSX_SYSROOT v
         </a>
       </p>
 
@@ -271,17 +277,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/03/19/develop-note/java-create-captcha/">Java 生成验证码 Captcha</a>
+        <a href="/2022/03/19/develop-note/java-create-captcha/" target="_self">
+          Java 生成验证码 Captcha
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/03/19/develop-note/java-create-captcha/">
+        <a href="/2022/03/19/develop-note/java-create-captcha/" target="_self">
           
-          
-            
-          
-          方法效率较低，推荐使用缓存，重复使用验证码
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283// 验证码宽度private stati
+          方法效率较低，推荐使用缓存，重复使用验证码 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283&#x2F;&#x2F; 验证码宽度private stati
         </a>
       </p>
 
@@ -315,19 +319,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/">C++ 模版可变参数列表传递给 C 的 va_list 可变参数列表</a>
+        <a href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/" target="_self">
+          C++ 模版可变参数列表传递给 C 的 va_list 可变参数列表
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/">
+        <a href="/2022/01/12/develop-note/cpp-template-variable-parameter-to-c/" target="_self">
           
-          
-            
-          
-          C 可变参数以 printf 为例，常见如下1int printf(const char* format, ...);
-CPP 可变参数常见如下
-12template&lt;class... Args&gt;int printf(const string &amp;format, const Args &amp;... args);
-若此时需要为 C 的 printf 进行包装，使其可以接受 st
+          C 可变参数以 printf 为例，常见如下1int printf(const char* format, ...); CPP 可变参数常见如下 12template&lt;class... Args&gt;int printf(const string &amp;format, const Args &amp;... args); 若此时需要为 C 的 printf 进行包装，使其可以接受 st
         </a>
       </p>
 
@@ -363,17 +363,15 @@ CPP 可变参数常见如下
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/25/develop-note/git-remote-reconnect/">GitHub 下载的 zip 代码如何与原仓库再次建立连接</a>
+        <a href="/2021/11/25/develop-note/git-remote-reconnect/" target="_self">
+          GitHub 下载的 zip 代码如何与原仓库再次建立连接
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/25/develop-note/git-remote-reconnect/">
+        <a href="/2021/11/25/develop-note/git-remote-reconnect/" target="_self">
           
-          
-            
-          
-          执行如下命令即可（注意替换关键词）
-1234567unzip &lt;repo&gt;.zipcd &lt;repo&gt;git initgit add .git remote add origin https://github.com/&lt;user&gt;/&lt;repo&gt;.gitgit remote updategit checkout master
+          执行如下命令即可（注意替换关键词） 1234567unzip &lt;repo&gt;.zipcd &lt;repo&gt;git initgit add .git remote add origin https:&#x2F;&#x2F;github.com&#x2F;&lt;user&gt;&#x2F;&lt;repo&gt;.gitgit remote updategit checkout master
         </a>
       </p>
 
@@ -407,41 +405,15 @@ CPP 可变参数常见如下
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/21/acm/2021-ZJGSU-ACM-freshman-competition/">2021年浙江工商大学新生赛题解</a>
+        <a href="/2021/11/21/acm/2021-ZJGSU-ACM-freshman-competition/" target="_self">
+          2021年浙江工商大学新生赛题解
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/21/acm/2021-ZJGSU-ACM-freshman-competition/">
+        <a href="/2021/11/21/acm/2021-ZJGSU-ACM-freshman-competition/" target="_self">
           
-          
-            
-          
-          
-  
-    
-        本篇中的题目顺序为预期难度顺序，并非比赛题目顺序
-    
-    
-        本篇中所有的“更好的优化”均为标准答案之外的思考，不使用此内容也可以通过题目
-    
-  
-
-
-比赛预期情况总共比赛人数：175 (至少通过一道题的人数，没有通过题的不计入总人数)
-
-
-
-
-题目名
-实际通过次数
-实际通过比例
-预期通过比例
-
-
-
-
-chiking 的偶像
-172
+          本篇中的题目顺序为预期难度顺序，并非比赛题目顺序                   本篇中所有的“更好的优化”均为标准答案之外的思考，不使用此内容也可以通过题目           比赛预期情况总共比赛人数：175 (至少通过一道题的人数，没有通过题的不计入总人数)     题目名 实际通过次数 实际通过比例 预期通过比例     chiking 的偶像 172
         </a>
       </p>
 
@@ -473,18 +445,15 @@ chiking 的偶像
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/">Dockerfile 中下载 JDK8</a>
+        <a href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/" target="_self">
+          Dockerfile 中下载 JDK8
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/">
+        <a href="/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/" target="_self">
           
-          
-            
-          
-          openjdk-8-jdk-headless在 Linux 中常用 apt install openjdk-8-headless 来安装 JDK，但是 dockerfile 中无法正常安装
-adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代替 openjdk
-123RUN [&quot;/bin/bash&quot;, &q
+          openjdk-8-jdk-headless在 Linux 中常用 apt install openjdk-8-headless 来安装 JDK，但是 dockerfile 中无法正常安装 adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代替 openjdk 123RUN [&quot;&#x2F;bin&#x2F;bash&quot;, &amp;q
         </a>
       </p>
 
@@ -520,18 +489,15 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/11/15/mac/macvim/">Mac 使用带 python 的 vim</a>
+        <a href="/2021/11/15/mac/macvim/" target="_self">
+          Mac 使用带 python 的 vim
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/11/15/mac/macvim/">
+        <a href="/2021/11/15/mac/macvim/" target="_self">
           
-          
-            
-          
-          mac 自带的 vim 并不支持 python采用 brew 的 macvim 代替即可
-1brew install macvim
-
+          mac 自带的 vim 并不支持 python采用 brew 的 macvim 代替即可 1brew install macvim
         </a>
       </p>
 
@@ -565,22 +531,15 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/10/24/mac/screen-cut/">Mac 截图唤起速度慢</a>
+        <a href="/2021/10/24/mac/screen-cut/" target="_self">
+          Mac 截图唤起速度慢
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/10/24/mac/screen-cut/">
+        <a href="/2021/10/24/mac/screen-cut/" target="_self">
           
-          
-            
-          
-          
-打开截屏软件
-选中任意一个录制的按钮
-点击选项
-取消 mac 麦克风按钮
-
-
+          打开截屏软件 选中任意一个录制的按钮 点击选项 取消 mac 麦克风按钮
         </a>
       </p>
 
@@ -614,18 +573,15 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/10/13/cpp/thread-pool/">C++ 语言实现动态变化的线程池</a>
+        <a href="/2021/10/13/cpp/thread-pool/" target="_self">
+          C++ 语言实现动态变化的线程池
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/10/13/cpp/thread-pool/">
+        <a href="/2021/10/13/cpp/thread-pool/" target="_self">
           
-          
-            
-          
-          线程池JobJob 作为任务的类型
-12345678class Job &#123;    void *data;    function&lt;void(void *data)&gt; func;public:    Job(void *data, function&lt;void(void *data)&gt; func);    void exec();&#125;;
-其中定义两个变量，da
+          线程池JobJob 作为任务的类型 12345678class Job &amp;#123;    void *data;    function&lt;void(void *data)&gt; func;public:    Job(void *data, function&lt;void(void *data)&gt; func);    void exec();&amp;#125;; 其中定义两个变量，da
         </a>
       </p>
 
@@ -657,15 +613,9 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -677,7 +627,7 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -744,8 +694,9 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -760,30 +711,25 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  
-    <script  src="/js/lazyload.js" ></script>
-  
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
+  
 
 
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
@@ -798,23 +744,9 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
   </script>
 
 
@@ -833,7 +765,6 @@ adoptopenjdk-8-hotspot通常在 docker 中使用 adoptopenjdk-8-hotspot 来代�
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

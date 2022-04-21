@@ -1,22 +1,30 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
-  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/image/default/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Shiroha白羽的博客">
+<meta property="og:url" content="http://example.com/page/3/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Shiroha">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -39,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +60,9 @@
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Mauve</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +136,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -183,31 +193,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/23/interview/database/">面试复习（数据库）</a>
+        <a href="/2021/02/23/interview/database/" target="_self">
+          面试复习（数据库）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/23/interview/database/">
+        <a href="/2021/02/23/interview/database/" target="_self">
           
-          
-            
-          
-          B 树和 B+ 树
-B 树的特点
-一个节点上包含至多 $m - 1$ 个值
-根节点至少有两个孩子
-非叶子节点如果包含了 $k$ 个值，则其包含了 $k + 1$ 个孩子节点
-所有叶子节点都位于同一层
-
-
-B+ 树的特点
-所有的非叶子节点不再保存值，而是只保存了中间值
-所有值保存在叶子节点上
-所有的叶子节点通过链表按照顺序进行连接
-
-
-为什么数据库会采用 B+ 树而不是 B 树或者 AVL 树
-AV
+          B 树和 B+ 树 B 树的特点 一个节点上包含至多 $m - 1$ 个值 根节点至少有两个孩子 非叶子节点如果包含了 $k$ 个值，则其包含了 $k + 1$ 个孩子节点 所有叶子节点都位于同一层   B+ 树的特点 所有的非叶子节点不再保存值，而是只保存了中间值 所有值保存在叶子节点上 所有的叶子节点通过链表按照顺序进行连接   为什么数据库会采用 B+ 树而不是 B 树或者 AVL 树 AV
         </a>
       </p>
 
@@ -239,56 +233,15 @@ AV
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/23/interview/computer-network/">面试复习（计算机网络）</a>
+        <a href="/2021/02/23/interview/computer-network/" target="_self">
+          面试复习（计算机网络）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/23/interview/computer-network/">
+        <a href="/2021/02/23/interview/computer-network/" target="_self">
           
-          
-            
-          
-          OSI 模型
-哪七层
-应用层：协议与端口
-表示层
-会话层
-传输层：TCP、UDP
-网络层：IP、ARP
-数据链路层：mac地址
-物理层：物理字节流传输
-
-
-
-ARP 协议
-ARP 协议的作用
-将 IP 地址转为下一跳的 mac 地址
-
-
-
-TCP 三次握手
-
-
-
-序号
-数据发送内容
-发送方向
-客户端状态
-服务器状态
-
-
-
-
-0
-
-
-CLOSED
-LISTEN
-
-
-1
-SYN=1 seq=x
-客户端
+          OSI 模型 哪七层 应用层：协议与端口 表示层 会话层 传输层：TCP、UDP 网络层：IP、ARP 数据链路层：mac地址 物理层：物理字节流传输    ARP 协议 ARP 协议的作用 将 IP 地址转为下一跳的 mac 地址    TCP 三次握手    序号 数据发送内容 发送方向 客户端状态 服务器状态     0   CLOSED LISTEN   1 SYN&#x3D;1 seq&#x3D;x 客户端
         </a>
       </p>
 
@@ -320,26 +273,15 @@ SYN=1 seq=x
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/23/interview/operating-system/">面试复习（操作系统）</a>
+        <a href="/2021/02/23/interview/operating-system/" target="_self">
+          面试复习（操作系统）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/23/interview/operating-system/">
+        <a href="/2021/02/23/interview/operating-system/" target="_self">
           
-          
-            
-          
-          用户态和内核态
-什么时候从用户态转为内核态
-程序在用户态执行时，当需要进行系统调用的时候，或者遇到异常，或者外围设备引发的中断，如文件读取与写入，程序报错，键盘输入，网络操作等行为时，程序会从用户态转为内核态，直到执行此行为结束时，再返回用户态
-
-
-为什么要转至内核态
-通过限制用户态的权利，使得有限的系统资源能够受到系统的控制与管理，由系统进行资源的分配
-
-
-用户态和内核态的切换原理
-实质上就是中
+          用户态和内核态 什么时候从用户态转为内核态 程序在用户态执行时，当需要进行系统调用的时候，或者遇到异常，或者外围设备引发的中断，如文件读取与写入，程序报错，键盘输入，网络操作等行为时，程序会从用户态转为内核态，直到执行此行为结束时，再返回用户态   为什么要转至内核态 通过限制用户态的权利，使得有限的系统资源能够受到系统的控制与管理，由系统进行资源的分配   用户态和内核态的切换原理 实质上就是中
         </a>
       </p>
 
@@ -373,28 +315,15 @@ SYN=1 seq=x
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/22/interview/cpp/">面试复习（C++）</a>
+        <a href="/2021/02/22/interview/cpp/" target="_self">
+          面试复习（C++）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/22/interview/cpp/">
+        <a href="/2021/02/22/interview/cpp/" target="_self">
           
-          
-            
-          
-          C++的特性与轨迹
-C++ 的特性（C++11及以上）
-需要在不同的平台上进行编译
-编译后的程序可以在操作系统上直接运行
-可以面对过程和面对对象两种设计方式
-可以直接操作本地的系统库
-可以直接使用操作系统提供的接口
-编译后仅对变量的类型进行了存储，不可以进行类似反射的操作
-支持无符号整型
-变量类型的字节长度受操作系统影响
-支持指针、引用、值传递
-没有默认提供的 GC 系统
-由程序员负责管理变量所储
+          C++的特性与轨迹 C++ 的特性（C++11及以上） 需要在不同的平台上进行编译 编译后的程序可以在操作系统上直接运行 可以面对过程和面对对象两种设计方式 可以直接操作本地的系统库 可以直接使用操作系统提供的接口 编译后仅对变量的类型进行了存储，不可以进行类似反射的操作 支持无符号整型 变量类型的字节长度受操作系统影响 支持指针、引用、值传递 没有默认提供的 GC 系统 由程序员负责管理变量所储
         </a>
       </p>
 
@@ -426,19 +355,15 @@ C++ 的特性（C++11及以上）
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">Codeforces Round#699 (Div. 2)</a>
+        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/" target="_self">
+          Codeforces Round#699 (Div. 2)
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/">
+        <a href="/2021/02/06/acm/CodeforcesRound699(Div.%202)/" target="_self">
           
-          
-            
-          
-          暂时还没有 AK，留坑
-A. Space Navigation大致题意给你一段在棋盘上的移动指令，问能否通过在不改变原指令顺序，仅删除部分或者全部或者不删除的情况下，到达某个指定地点
-分析可以通过指令直接得出可以到达的范围，比如删除所有的“向左”指令后，能够到达的最右，同理可以得到四个方向的极值，最后判断目标地点是否在极值范围内即可
-AC code1234567891011121314151617
+          暂时还没有 AK，留坑 A. Space Navigation大致题意给你一段在棋盘上的移动指令，问能否通过在不改变原指令顺序，仅删除部分或者全部或者不删除的情况下，到达某个指定地点 分析可以通过指令直接得出可以到达的范围，比如删除所有的“向左”指令后，能够到达的最右，同理可以得到四个方向的极值，最后判断目标地点是否在极值范围内即可 AC code1234567891011121314151617
         </a>
       </p>
 
@@ -472,18 +397,15 @@ AC code1234567891011121314151617
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/27/develop-note/wsl-clean/">清理 WSL2 的磁盘占用</a>
+        <a href="/2021/01/27/develop-note/wsl-clean/" target="_self">
+          清理 WSL2 的磁盘占用
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/27/develop-note/wsl-clean/">
+        <a href="/2021/01/27/develop-note/wsl-clean/" target="_self">
           
-          
-            
-          
-          方法来源：https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168
-由于 vhdx 格式的磁盘镜像文件只支持自动扩容但不支持自动缩容，所以需要手动来实现缩容，即利用 Windows 自带的 diskpart 来实现
-
+          方法来源：https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;WSL&#x2F;issues&#x2F;4699#issuecomment-627133168 由于 vhdx 格式的磁盘镜像文件只支持自动扩容但不支持自动缩容，所以需要手动来实现缩容，即利用 Windows 自带的 diskpart 来实现
         </a>
       </p>
 
@@ -517,18 +439,15 @@ AC code1234567891011121314151617
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/26/acm/CodeforcesRound697(Div.%203)/">Codeforces Round#697 (Div. 3)</a>
+        <a href="/2021/01/26/acm/CodeforcesRound697(Div.%203)/" target="_self">
+          Codeforces Round#697 (Div. 3)
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/26/acm/CodeforcesRound697(Div.%203)/">
+        <a href="/2021/01/26/acm/CodeforcesRound697(Div.%203)/" target="_self">
           
-          
-            
-          
-          自南京区域赛结束之后就一直在准备期末考试，直到最近结束考试之后开始了复建的生活，这场 Div3 除了 D 题因为爆了 int 然后卡了，G题真的没在比赛期间想出来，其他题目都是非常顺利的解决掉了，且只用了一个小时
-A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为 1 的奇因子
-题解因为除 1 以外的所有奇因子都可以分解出至少一个奇质因子，那么只需要找到那些不包含奇质因子的数
+          自南京区域赛结束之后就一直在准备期末考试，直到最近结束考试之后开始了复建的生活，这场 Div3 除了 D 题因为爆了 int 然后卡了，G题真的没在比赛期间想出来，其他题目都是非常顺利的解决掉了，且只用了一个小时 A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为 1 的奇因子 题解因为除 1 以外的所有奇因子都可以分解出至少一个奇质因子，那么只需要找到那些不包含奇质因子的数
         </a>
       </p>
 
@@ -562,23 +481,15 @@ A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/18/develop-note/windows-ntfs/">Windows 下的 NTFS 驱动器索引 BUG</a>
+        <a href="/2021/01/18/develop-note/windows-ntfs/" target="_self">
+          Windows 下的 NTFS 驱动器索引 BUG
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/18/develop-note/windows-ntfs/">
+        <a href="/2021/01/18/develop-note/windows-ntfs/" target="_self">
           
-          
-            
-          
-          NTFS BUG
-            警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问
-          
-1cd c:\:$i30:$bitmap
-
-            警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问
-          
-当你试图进入、访问此目录时，就有机会导致 NTFS 驱动器索引损坏，此问题
+          NTFS BUG             警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问            1cd c:\:$i30:$bitmap              警告，请千万不要在 Windows 下的命令行中运行此命令，或者以其他等价的方式访问            当你试图进入、访问此目录时，就有机会导致 NTFS 驱动器索引损坏，此问题
         </a>
       </p>
 
@@ -615,44 +526,22 @@ A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/01/07/notebook/Compilation-principle/" target="_self">
-          <img src="/image/notebook/Compilation-principle/rightmost-derivation.png" srcset="/img/loading.gif" alt="编译原理">
+          <img src="/image/notebook/Compilation-principle/rightmost-derivation.png" srcset="/img/loading.gif" lazyload alt="编译原理">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/07/notebook/Compilation-principle/">编译原理</a>
+        <a href="/2021/01/07/notebook/Compilation-principle/" target="_self">
+          编译原理
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/07/notebook/Compilation-principle/">
+        <a href="/2021/01/07/notebook/Compilation-principle/" target="_self">
           
-          
-            
-          
-          引言
-编译：将高级语言翻译成汇编语言或机器语言的过程
-
-编译过程的五个阶段
-词法分析
-语法分析
-词义分析与中间代码生成
-优化
-目标代码生成
-
-编译过程的八个部分
-词法分析程序
-语法分析程序
-语义分析程序
-中间代码生成
-代码优化程序
-目标代码生成程序
-错误检查和处理程序
-信息表管理程序
-
-文法和语言基本概念字母表字母表 $\sum$ 是一个有穷的符号集合，符号包括了字母、数字、标点符号……
-字母表上
+          引言 编译：将高级语言翻译成汇编语言或机器语言的过程  编译过程的五个阶段 词法分析 语法分析 词义分析与中间代码生成 优化 目标代码生成  编译过程的八个部分 词法分析程序 语法分析程序 语义分析程序 中间代码生成 代码优化程序 目标代码生成程序 错误检查和处理程序 信息表管理程序  文法和语言基本概念字母表字母表 $\sum$ 是一个有穷的符号集合，符号包括了字母、数字、标点符号…… 字母表上
         </a>
       </p>
 
@@ -687,34 +576,22 @@ A. Odd Divisor题目大意给你一个整数，请问它是否存在一个不为
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/01/07/notebook/Computer-network/" target="_self">
-          <img src="/image/notebook/Computer-network/13.png" srcset="/img/loading.gif" alt="计算机网络复习">
+          <img src="/image/notebook/Computer-network/13.png" srcset="/img/loading.gif" lazyload alt="计算机网络复习">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/01/07/notebook/Computer-network/">计算机网络复习</a>
+        <a href="/2021/01/07/notebook/Computer-network/" target="_self">
+          计算机网络复习
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/01/07/notebook/Computer-network/">
+        <a href="/2021/01/07/notebook/Computer-network/" target="_self">
           
-          
-            
-          
-          概述计算机网络
-21世纪的重要特征是：数字化、网络化、信息化，以网络为核心的信息时代
-三类网络：电信网络、有线电视网络、计算机网络
-互联网的特点：连通性和共享
-连通性：互联网使得上网用户之间，不管相距多远，都可以非常便捷、非常经济地交换信息
-共享：信息共享、软件共享、硬件共享
-
-
-
-互联网
-计算机网络由若干结点(node)和连接这些结点的链路(link)组成
-internet 是一个通用名词，它泛
+          概述计算机网络 21世纪的重要特征是：数字化、网络化、信息化，以网络为核心的信息时代 三类网络：电信网络、有线电视网络、计算机网络 互联网的特点：连通性和共享 连通性：互联网使得上网用户之间，不管相距多远，都可以非常便捷、非常经济地交换信息 共享：信息共享、软件共享、硬件共享    互联网 计算机网络由若干结点(node)和连接这些结点的链路(link)组成 internet 是一个通用名词，它泛
         </a>
       </p>
 
@@ -748,15 +625,9 @@ internet 是一个通用名词，它泛
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/4/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -768,7 +639,7 @@ internet 是一个通用名词，它泛
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -835,8 +706,9 @@ internet 是一个通用名词，它泛
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -851,30 +723,25 @@ internet 是一个通用名词，它泛
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  
-    <script  src="/js/lazyload.js" ></script>
-  
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
+  
 
 
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
@@ -889,23 +756,9 @@ internet 是一个通用名词，它泛
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
   </script>
 
 
@@ -924,7 +777,6 @@ internet 是一个通用名词，它泛
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

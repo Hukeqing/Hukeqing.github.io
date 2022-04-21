@@ -1,22 +1,30 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
-  <link rel="icon" type="image/png" href="/image/default/favicon.ico">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <link rel="icon" href="/image/default/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
+  
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Shiroha白羽的博客">
+<meta property="og:url" content="http://example.com/page/2/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Shiroha">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
   <title>Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
@@ -39,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -52,8 +60,9 @@
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Mauve</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -127,13 +136,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -183,17 +193,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/09/29/acm/CodeforcesRound744(Div.3)/">Codeforces Round#744 (Div. 3)</a>
+        <a href="/2021/09/29/acm/CodeforcesRound744(Div.3)/" target="_self">
+          Codeforces Round#744 (Div. 3)
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/09/29/acm/CodeforcesRound744(Div.3)/">
+        <a href="/2021/09/29/acm/CodeforcesRound744(Div.3)/" target="_self">
           
-          
-            
-          
-          自从退役之后，打了三个月的工，然后再来打这一场 Div3，庆幸自己还能打打，在最后还剩 4 分钟的时候 A 掉了 G 题，终于在比赛期间 AK
-A. Casimir’s String Solitaire大致题意给你一个字符串，仅还有 &#39;A&#39;, &#39;B&#39;, &#39;C&#39; 三个字符，每次可以同时删除任意两个 &#39;A&#39;, &#39;B&#39;，也可
+          自从退役之后，打了三个月的工，然后再来打这一场 Div3，庆幸自己还能打打，在最后还剩 4 分钟的时候 A 掉了 G 题，终于在比赛期间 AK A. Casimir’s String Solitaire大致题意给你一个字符串，仅还有 &#39;A&#39;, &#39;B&#39;, &#39;C&#39; 三个字符，每次可以同时删除任意两个 &#39;A&#39;, &#39;B&#39;，也可
         </a>
       </p>
 
@@ -226,30 +234,22 @@ A. Casimir’s String Solitaire大致题意给你一个字符串，仅还有 &#3
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/06/10/notebook/Computer-Graphics/" target="_self">
-          <img src="/image/notebook/Computer-Graphics/Bezier-G1.png" srcset="/img/loading.gif" alt="计算机图形学">
+          <img src="/image/notebook/Computer-Graphics/Bezier-G1.png" srcset="/img/loading.gif" lazyload alt="计算机图形学">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/10/notebook/Computer-Graphics/">计算机图形学</a>
+        <a href="/2021/06/10/notebook/Computer-Graphics/" target="_self">
+          计算机图形学
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/06/10/notebook/Computer-Graphics/">
+        <a href="/2021/06/10/notebook/Computer-Graphics/" target="_self">
           
-          
-            
-          
-          相关概念分辨率
-屏幕分辨率：用水平和垂直方向所能显示光点数总和的乘积表示
-显示分辨率：用水平和垂直方向所能显示像素点总和的乘积表示
-存储分辨率：指帧缓存区域的大小
-
-帧缓存计算水平分辨率 * 垂直分辨率 * 每个像素所占用的字节图的表示和数据结构
-复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等
-图元通常是指不可再分的独立的图形实体。
+          相关概念分辨率 屏幕分辨率：用水平和垂直方向所能显示光点数总和的乘积表示 显示分辨率：用水平和垂直方向所能显示像素点总和的乘积表示 存储分辨率：指帧缓存区域的大小  帧缓存计算水平分辨率 * 垂直分辨率 * 每个像素所占用的字节图的表示和数据结构 复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等 图元通常是指不可再分的独立的图形实体。
         </a>
       </p>
 
@@ -284,25 +284,22 @@ A. Casimir’s String Solitaire大致题意给你一个字符串，仅还有 &#3
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/06/07/develop-note/wsl-localhost/" target="_self">
-          <img src="/image/develop-note/wsl-localhost/WSL-ifconfig.jpg" srcset="/img/loading.gif" alt="Windows 通过网络访问 WSL2">
+          <img src="/image/develop-note/wsl-localhost/WSL-ifconfig.jpg" srcset="/img/loading.gif" lazyload alt="Windows 通过网络访问 WSL2">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/06/07/develop-note/wsl-localhost/">Windows 通过网络访问 WSL2</a>
+        <a href="/2021/06/07/develop-note/wsl-localhost/" target="_self">
+          Windows 通过网络访问 WSL2
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/06/07/develop-note/wsl-localhost/">
+        <a href="/2021/06/07/develop-note/wsl-localhost/" target="_self">
           
-          
-            
-          
-          localhost当使用 localhost 时，Windows 直接访问到 WSL 内的进程，即看起来似乎是一台电脑，
-127.0.0.1当使用本地 IP 时，即使用 127.0.0.1 时，Windows 将会无法访问到 WSL，Windows 认为这是强调它自己。
-JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并不确定是不是 JVM 的问题还是 Spr
+          localhost当使用 localhost 时，Windows 直接访问到 WSL 内的进程，即看起来似乎是一台电脑， 127.0.0.1当使用本地 IP 时，即使用 127.0.0.1 时，Windows 将会无法访问到 WSL，Windows 认为这是强调它自己。 JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并不确定是不是 JVM 的问题还是 Spr
         </a>
       </p>
 
@@ -335,31 +332,22 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/05/17/front-end/Front-end-image-cropping-effect/" target="_self">
-          <img src="/image/front-end/Front-end-image-cropping-effect/myAvatarUpload.png" srcset="/img/loading.gif" alt="原生 JavaScript 实现图片裁剪">
+          <img src="/image/front-end/Front-end-image-cropping-effect/myAvatarUpload.png" srcset="/img/loading.gif" lazyload alt="原生 JavaScript 实现图片裁剪">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/05/17/front-end/Front-end-image-cropping-effect/">原生 JavaScript 实现图片裁剪</a>
+        <a href="/2021/05/17/front-end/Front-end-image-cropping-effect/" target="_self">
+          原生 JavaScript 实现图片裁剪
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/05/17/front-end/Front-end-image-cropping-effect/">
+        <a href="/2021/05/17/front-end/Front-end-image-cropping-effect/" target="_self">
           
-          
-            
-          
-          原生 JavaScript 实现图片裁剪由于最近做的一个项目里，需要把用户头像上传。但是要求用户头像必须是正方形，所以需要将矩形图片裁剪为正方形
-在花了接近 5 个小时之后，总算是将功能上线了，在此记录下整个思路经过
-前提首先，单纯靠前端，是不可能实现将图片截取其中的部分，然后将部分上传到后端。所以，需要靠伪装裁剪效果的方式来实现裁剪
-思路首先把裁剪图片的页面进行分层
-思路1——clip
-
-
-
-层
+          原生 JavaScript 实现图片裁剪由于最近做的一个项目里，需要把用户头像上传。但是要求用户头像必须是正方形，所以需要将矩形图片裁剪为正方形 在花了接近 5 个小时之后，总算是将功能上线了，在此记录下整个思路经过 前提首先，单纯靠前端，是不可能实现将图片截取其中的部分，然后将部分上传到后端。所以，需要靠伪装裁剪效果的方式来实现裁剪 思路首先把裁剪图片的页面进行分层 思路1——clip    层
         </a>
       </p>
 
@@ -395,36 +383,15 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/27/interview/computer-graphics/">面试复习（计算机图形学）</a>
+        <a href="/2021/03/27/interview/computer-graphics/" target="_self">
+          面试复习（计算机图形学）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/27/interview/computer-graphics/">
+        <a href="/2021/03/27/interview/computer-graphics/" target="_self">
           
-          
-            
-          
-          渲染管线
-渲染流程
-应用程序阶段
-加载数据到显存
-设置渲染模式
-调用 DrawCall
-
-
-几何阶段
-顶点着色器：将三维的顶点坐标信息映射到 $[-1, 1]$ 的平面上
-裁剪：裁剪出摄像机视野内的顶点
-屏幕映射：将 $[-1, 1]$ 内的图片映射到屏幕上
-
-
-光栅化阶段
-三角形设置与三角形遍历：找出片元
-片元着色器：对每一个片元进行着色，计算其颜色值
-逐片元操作：模板测试，深度测试，混合
-
-
-
+          渲染管线 渲染流程 应用程序阶段 加载数据到显存 设置渲染模式 调用 DrawCall   几何阶段 顶点着色器：将三维的顶点坐标信息映射到 $[-1, 1]$ 的平面上 裁剪：裁剪出摄像机视野内的顶点 屏幕映射：将 $[-1, 1]$ 内的图片映射到屏幕上   光栅化阶段 三角形设置与三角形遍历：找出片元 片元着色器：对每一个片元进行着色，计算其颜色值 逐片元操作：模板测试，深度测试，混合
         </a>
       </p>
 
@@ -458,23 +425,15 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/27/interview/algorithm/">面试复习（算法）</a>
+        <a href="/2021/03/27/interview/algorithm/" target="_self">
+          面试复习（算法）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/27/interview/algorithm/">
+        <a href="/2021/03/27/interview/algorithm/" target="_self">
           
-          
-            
-          
-          链表有环问题
-判断单向链表是否有环
-定义两个指针，从链表的开始，同时沿着链表指针移动，速度分别为一个单位和两个单位。当某个时刻，两个指针指向同一个节点的时候则此链表有环
-理论上，速度可以是任意的两个不同的值，因为只要速度差和环的长度有最小公倍数，则必定存在相交的时间点
-
-
-找出链表的环的交点位置
-通过上述步骤（速度取一步两步），当两个指针第一次相遇的时候，将速度为二步的指针移动至开头，并将速度调整
+          链表有环问题 判断单向链表是否有环 定义两个指针，从链表的开始，同时沿着链表指针移动，速度分别为一个单位和两个单位。当某个时刻，两个指针指向同一个节点的时候则此链表有环 理论上，速度可以是任意的两个不同的值，因为只要速度差和环的长度有最小公倍数，则必定存在相交的时间点   找出链表的环的交点位置 通过上述步骤（速度取一步两步），当两个指针第一次相遇的时候，将速度为二步的指针移动至开头，并将速度调整
         </a>
       </p>
 
@@ -506,14 +465,13 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/03/11/acm/CodeforcesRound706(Div.%202)-D%20Let's%20Go%20Hiking/">Codeforces Round#706(Div. 2)-Let&#39;s Go Hiking</a>
+        <a href="/2021/03/11/acm/CodeforcesRound706(Div.%202)-D%20Let&#39;s%20Go%20Hiking/" target="_self">
+          Codeforces Round#706(Div. 2)-Let&#39;s Go Hiking
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/03/11/acm/CodeforcesRound706(Div.%202)-D%20Let's%20Go%20Hiking/">
-          
-          
-            
+        <a href="/2021/03/11/acm/CodeforcesRound706(Div.%202)-D%20Let&#39;s%20Go%20Hiking/" target="_self">
           
           Let’s Go Hiking大致题意有一个数组，两个人，第一步，两个人先后选择数组中的两个下标，要求两个人选择的下标不可以相同。随后按照选择顺序以此进行选择，要求选择一个新的下标，使得新的下标是原来下标的左边或者右边，且不超出数组边界，其中第一个选择的人需要保证新的下标对应的值严格小于原来的下标对应的值，而第二个选择的人则相反，需要选择严格大于的，且保证两人在任意时刻选择的下标不相同，第一个不能
         </a>
@@ -549,27 +507,15 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/25/interview/java/">面试复习（Java）</a>
+        <a href="/2021/02/25/interview/java/" target="_self">
+          面试复习（Java）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/25/interview/java/">
+        <a href="/2021/02/25/interview/java/" target="_self">
           
-          
-            
-          
-          线程池
-线程池的原因
-不断的创建和删除线程，会带来较大的系统资源负载
-线程缺乏统一的管理，可能会出现无限制的创建线程
-线程之间抢占资源
-
-
-线程池的属性
-核心线程数：保持存在的线程数量，这些线程会一直存在，不会被删除
-任务缓冲队列：当所有的核心线程都在运行时，新的任务会被加入到缓冲队列中
-非核心线程数：当任务缓冲队列满后，将会创建新的线程来执行队列中的任务，且额外创建的线程数不会超过非核心线程数
-
+          线程池 线程池的原因 不断的创建和删除线程，会带来较大的系统资源负载 线程缺乏统一的管理，可能会出现无限制的创建线程 线程之间抢占资源   线程池的属性 核心线程数：保持存在的线程数量，这些线程会一直存在，不会被删除 任务缓冲队列：当所有的核心线程都在运行时，新的任务会被加入到缓冲队列中 非核心线程数：当任务缓冲队列满后，将会创建新的线程来执行队列中的任务，且额外创建的线程数不会超过非核心线程数
         </a>
       </p>
 
@@ -601,26 +547,15 @@ JVM(SpringBoot)由于此问题是在使用 SpringBoot 时遇到的问题，并�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/24/interview/git/">面试复习（Git）</a>
+        <a href="/2021/02/24/interview/git/" target="_self">
+          面试复习（Git）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/24/interview/git/">
+        <a href="/2021/02/24/interview/git/" target="_self">
           
-          
-            
-          
-          版本回退
-revert
-重做某个版本，在当前版本后，重新将某个版本的操作重做一次，得到一个新的版本，将会保留所有其他版本的操作
-
-
-reset
-返回到某个版本，所有在这个版本之后的版本都会被撤销
-
-
-
-
+          版本回退 revert 重做某个版本，在当前版本后，重新将某个版本的操作重做一次，得到一个新的版本，将会保留所有其他版本的操作   reset 返回到某个版本，所有在这个版本之后的版本都会被撤销
         </a>
       </p>
 
@@ -652,35 +587,15 @@ reset
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2021/02/23/interview/linux/">面试复习（Linux）</a>
+        <a href="/2021/02/23/interview/linux/" target="_self">
+          面试复习（Linux）
+        </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2021/02/23/interview/linux/">
+        <a href="/2021/02/23/interview/linux/" target="_self">
           
-          
-            
-          
-          查看进程占用系统资源情况
-top
-ps
-
-终端
-session
-一个终端窗口对应一个会话(session)
-一个会话包含多个进程组
-一个会话只有一个前台进程组，可以有多个后台进程组
-所有在终端内的输入都会发送给前台进程组
-当会话关闭时，所有会话内的进程将会被终止
-
-
-
-fork
-进程的 fork 过程
-给新进程分配一个标识符
-在内核中分配一个PCB
-复制它的父进程的环境（PCB中大部分的内容）
-为
+          查看进程占用系统资源情况 top ps  终端 session 一个终端窗口对应一个会话(session) 一个会话包含多个进程组 一个会话只有一个前台进程组，可以有多个后台进程组 所有在终端内的输入都会发送给前台进程组 当会话关闭时，所有会话内的进程将会被终止    fork 进程的 fork 过程 给新进程分配一个标识符 在内核中分配一个PCB 复制它的父进程的环境（PCB中大部分的内容） 为
         </a>
       </p>
 
@@ -710,15 +625,9 @@ fork
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
-  
-  <script>
-    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
-      ele.href += '#board';
-    }
-  </script>
 
 
 
@@ -730,7 +639,7 @@ fork
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -797,8 +706,9 @@ fork
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -813,30 +723,25 @@ fork
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  
-    <script  src="/js/lazyload.js" ></script>
-  
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
+  
 
 
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
 
 
 
@@ -851,23 +756,9 @@ fork
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
-  </script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
-    })()
   </script>
 
 
@@ -886,7 +777,6 @@ fork
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
