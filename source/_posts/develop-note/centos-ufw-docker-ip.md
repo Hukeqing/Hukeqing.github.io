@@ -1,5 +1,5 @@
 ---
-title: develop-note/centos-ufw-docker-ip.md
+title: centOS 防火墙 docker-compse 的问题
 date: 2022-04-21 20:15:20
 updated: 2022-04-21 20:15:20
 tags:
