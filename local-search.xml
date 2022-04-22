@@ -27,7 +27,7 @@
   
   
   <entry>
-    <title>develop-note/centos-ufw-docker-ip.md</title>
+    <title>centOS 防火墙 docker-compse 的问题</title>
     <link href="/2022/04/21/develop-note/centos-ufw-docker-ip/"/>
     <url>/2022/04/21/develop-note/centos-ufw-docker-ip/</url>
     
@@ -291,11 +291,11 @@
     
     <tags>
       
-      <tag>计算机图形学</tag>
-      
       <tag>学习</tag>
       
       <tag>课程</tag>
+      
+      <tag>计算机图形学</tag>
       
     </tags>
     
@@ -358,9 +358,9 @@
     
     <tags>
       
-      <tag>面试准备</tag>
-      
       <tag>计算机图形学</tag>
+      
+      <tag>面试准备</tag>
       
     </tags>
     
@@ -734,9 +734,9 @@
       
       <tag>短笔记</tag>
       
-      <tag>WSL</tag>
-      
       <tag>Dokcer</tag>
+      
+      <tag>WSL</tag>
       
     </tags>
     
