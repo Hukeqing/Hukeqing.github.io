@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>使用 Junit5 和 Mockito 实现 SpringBoot 的优美的单元测试</title>
+    <link href="/2022/04/22/java/junit5-mockito/"/>
+    <url>/2022/04/22/java/junit5-mockito/</url>
+    
+    <content type="html"><![CDATA[<h1 id="什么是单元测试"><a href="#什么是单元测试" class="headerlink" title="什么是单元测试"></a>什么是单元测试</h1><p>// TODO… 先把坑放这儿了</p><h1 id="单元测试的标准"><a href="#单元测试的标准" class="headerlink" title="单元测试的标准"></a>单元测试的标准</h1><h1 id="你需要会哪些代码知识"><a href="#你需要会哪些代码知识" class="headerlink" title="你需要会哪些代码知识"></a>你需要会哪些代码知识</h1><h1 id="开始写单元测试"><a href="#开始写单元测试" class="headerlink" title="开始写单元测试"></a>开始写单元测试</h1><h1 id="应对各种情况"><a href="#应对各种情况" class="headerlink" title="应对各种情况"></a>应对各种情况</h1><h2 id="指定调用的目标函数的返回值"><a href="#指定调用的目标函数的返回值" class="headerlink" title="指定调用的目标函数的返回值"></a>指定调用的目标函数的返回值</h2><h2 id="让调用的目标函数抛出错误"><a href="#让调用的目标函数抛出错误" class="headerlink" title="让调用的目标函数抛出错误"></a>让调用的目标函数抛出错误</h2><h2 id="让调用的目标函数做一些指定的事情"><a href="#让调用的目标函数做一些指定的事情" class="headerlink" title="让调用的目标函数做一些指定的事情"></a>让调用的目标函数做一些指定的事情</h2><h2 id="如何应对没有返回值的函数"><a href="#如何应对没有返回值的函数" class="headerlink" title="如何应对没有返回值的函数"></a>如何应对没有返回值的函数</h2><h2 id="如何控制那些静态的函数"><a href="#如何控制那些静态的函数" class="headerlink" title="如何控制那些静态的函数"></a>如何控制那些静态的函数</h2><h2 id="如何测试-private-的方法"><a href="#如何测试-private-的方法" class="headerlink" title="如何测试 private 的方法"></a>如何测试 private 的方法</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>SpringBoot</tag>
+      
+      <tag>单元测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>develop-note/centos-ufw-docker-ip.md</title>
     <link href="/2022/04/21/develop-note/centos-ufw-docker-ip/"/>
     <url>/2022/04/21/develop-note/centos-ufw-docker-ip/</url>
@@ -56,9 +79,9 @@
     
     <tags>
       
-      <tag>macOS</tag>
-      
       <tag>CLion</tag>
+      
+      <tag>macOS</tag>
       
     </tags>
     
