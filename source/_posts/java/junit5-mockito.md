@@ -80,7 +80,7 @@ tags:
 
 ## 导入 maven 依赖
 
-我们需要了解下面几个重要的依赖，但是并非
+我们需要了解下面几个重要的依赖，但是并非都是需要添加的，请继续阅读
 
 ```xml
 <!-- Junit 5 -->
@@ -105,7 +105,7 @@ tags:
 </dependency>
 ```
 
-以上这些依赖的相互依赖关系
+以上这些依赖的相互依赖关系如下
 
 ```mermaid
 graph LR
@@ -121,17 +121,181 @@ d([spring-boot-starter-test]) ----> a([junit-jupiter])
  - mockito-inline：非必须组件，提供了对静态方法的 Mock 能力，如果不需要对静态方法进行 Mock 则可以不需要
  - spring-boot-starter-test：非必须组件，提供了对类的 private 变量的赋值能力，实际上反射也可以做到，但是通常为了方便期间，可以直接使用已经有的轮子
 
+当你确定好需要的依赖之后，将其最新版本添加到你的 maven 里吧
+
+## 创建测试类
+
+首先，需要进行逻辑测试的永远是某个实现类，而不是接口，因为接口并不是需要测试的，我们需要测试的是实现的过程是否有问题
+
+创建类用来编写你的单元测试。通常我们会根据需要测试的类进行单独建测试类，即每一个类对应一个测试类，每一个测试类，仅测试对应类的方法。例如，我们有 `src/main/java/com/example/service/impl/UserServiceImpl.java` 类，那么我们创建 `src/test/java/com/example/service/impl/UserServiceImplTest.java` 用于测试 `UserServiceImpl` 类。
+
+例如，我们创建了 `src/test/java/com/example/service/impl/UserServiceImplTest.java` 类用于测试对应的类。接下来我们需要介绍一些注解和类。
+
+```java
+@ExtendWith() // 来自 junit 5 的注解，用于测试类上，表示此测试需要额外使用什么扩展工具
+MockitoExtension // 来自 Mockito-core 的类，是 Mockito 的扩展工具，用于 junit 5 使用，junit 4 并不是这个
+@BeforeAll // 来自 junit5 的注解，用于 static 方法上，表示在进行此类的所有测试方法前，执行一次此函数，仅一次
+@AfterAll // 来自 junit 5 的注解，与 @BeforeAll 类似，但是表示所有测试方法结束后执行一次，仅一次
+@BeforeEach // 来自 junit 5 的注解，用于非 static 方法上，表示在此类的所有测试方法将被执行前，每个都执行一次
+@AfterEach // 来自 junit 5 的注解，与 @BeforeEach 类似，但是是在每个测试方法结束后，都执行一次
+@Test // 来自 junit 5 的注解，用于非 static 方法上，表示此方法是一个测试
+```
+
+## 添加注解
+
+接下来，按照上面的描述，为你的每个测试类都添加这些需要的注解，我们可以得到类似下面的代码
+
+```java
+@ExtendWith(MockitoExtension.class)
+class UserServiceImplTest {
+
+    @BeforeEach
+    void setUp() {
+        // 这里的代码将会在每个测试前运行
+    }
+
+    @AfterEach
+    void tearDown() {
+        // 这里的代码将会在每个测试结束后运行
+    }
+
+    /**
+     * 测试登录，用户不存在的情况
+     */
+    @Test
+    void testLoginWithNoSuchUser() {
+        // 这里编写你的测试代码
+    }
+}
+```
+
+我们已经完成了最基本的类的创建，虽然我们还没有开始调用登录的函数，但是我们已经完成类绝大部分的任务。
+
+## 注入类
+
+接下来，让我们将需要测试的类注入进来
+
+在类中最开头添加类似下面的代码
+
+```java
+
+    @InjectMocks
+    private UserServiceImpl userService; // 需要测试的类，需要用 @InjectMocks 注解
+
+    @Mock
+    private UserDaoImpl userDao; // 需要 mock 的类，需要用 @Mock 注解
+
+```
+
+然后，开始测试
+
+```java
+
+    @Test
+    void testLoginWithNoSuchUser() {
+        Boolean isSuccess = userService.login("handle", "password");
+        Assertions.assertFalse(isSuccess); // 校验返回值是否正确
+    }
+
+```
+
+但是这样肯定是不行的，因为你会发现，这样运行的结果会使得 `isSuccess` 为 `null`，而不是我们期望的结果。当然，我们也还没有配置 mock 的内容。
+
+## mock it！
+
+接下来让我们开始 mock 吧，尝试类似下面的代码
+
+```java
+
+    @Test
+    void testLoginWithNoSuchUser() {
+        // 表示「当调用 userDao#selectUserByHandle 且参数为 "handle" 时，则返回 null」
+        Mockito.when(userDao.selectUserByHandle("handle")).thenReturn(null);
+        Boolean isSuccess = userService.login("handle", "password");
+        Assertions.assertFalse(isSuccess); // 校验返回值是否正确
+    }
+
+```
+
+再运行一次看看？是不是完美了？
+
+回头看看我们做的过程，是否让单元测试变得更加简单了，编写单元测试仅需要三步
+
+ - 编写 Mockito 内容
+ - 调用函数
+ - 校验返回值或者参数
+
+下面将会介绍几种常见的情况
+
 # 应对各种情况
+
+## 通用匹配类型
+
+有时候我们并不喜欢指明参数必须要是什么，例如无论什么调用时，都返回 `null`，此时，参数可以使用 `Mockito.any()` 来表示任意参数，例如：
+
+```java
+Mockito.when(userDao.selectUserByHandle(Mockito.any())).thenReturn(null);
+```
 
 ## 指定调用的目标函数的返回值
 
+这已经在上面提及到了，也就是最常见的问题
+
 ## 让调用的目标函数抛出错误
+
+将 `thenReturn` 改为 `thenThrow` 即可
 
 ## 让调用的目标函数做一些指定的事情
 
+如果希望更加自定义函数的内容，譬如做点什么，则可以使用 `thenAnswer` 来解决
+
+```java
+Mockito.when(userDao.selectUserByHandle(Mockito.any())).thenAnswer(invocationOnMock -> {
+    String handle = invocationOnMock.getArgument(0); // 获取第 0 个参数
+    if (handle == "handle") {
+        return null;
+    }
+    return 1;
+})
+```
+
 ## 如何应对没有返回值的函数
+
+把 then 的部分向前提就行，并改为 do 系列
+
+```java
+Mockito.doAnswer(invocationOnMock -> {
+    User argument = invocationOnMock.getArgument(0);
+    argument.setId(1);
+    return null; // 必须要返回些什么
+}).when(userDao).insertAccount(Mockito.any());
+```
 
 ## 如何控制那些静态的函数
 
+假如我们有一个校验密码的静态方法 `BCryptEncoder#encode`，那么下面就是一个很好的例子
+
+```java
+MockedStatic<BCryptEncoder> bCryptEncoderMockedStatic;
+bCryptEncoderMockedStatic = Mockito.mockStatic(BCryptEncoder.class);
+bCryptEncoderMockedStatic.when(() -> BCryptEncoder.encoder("abc")).thenReturn("123");
+
+// do something
+
+bCryptEncoderMockedStatic.close();
+```
+
 ## 如何测试 private 的方法
+
+private 方法不应该被测试，因为其他类不会调用这方法。应该通过 public 间接测试 private 方法
+
+## 如何校验函数的参数
+
+我们以注册用户的时候使用的插入用户至数据库为例
+
+```java
+ArgumentCaptor<User> userArgumentCaptor = ArgumentCaptor.forClass(User.class); // 创建一个捕获类
+Mockito.verify(userManager, Mockito.times(1)).insertAccount(userArgumentCaptor.capture()); // 第一次插入的时候，捕获参数
+User userCP = userArgumentCaptor.getValue(); 获取被捕获的参数的值，后面就可以直接校验 userCP 了
+```
 
