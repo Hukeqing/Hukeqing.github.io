@@ -127,7 +127,7 @@ date: 2020-12-24 14:56:00
       Twitter
     </div>
     <div onclick="openUrl('https://t.me/ShiroNaruse')">
-      <img class="link-avatar" src="https://cdn5.telegram-cdn.org/file/cVVEcIVEDDOn8f2lzkaCMvfNrAoLUbrt3hmdZMYdAw90jTwd8XmGZqHKncTXXTOp4cY4feqStsZ5ifiOlnZmj09OCMG4aUBh8eImAOEFWkNa2h80bIhlnk36wuM4ZzcpT31DUEOhNoqtz1hrunKlYV8e8WLRcHvJvpqHF8BBZcpd8EWFBnwmpFDzXhk6-YT3qIu4C-UxzAkfdspSxPdNTrKWnnbpoBwM2NC_qVuXFzSgs4OE5poDECtbNmy0RH26tHd9ni7TNTTq2P8QRqTdK9pp8jXvNBEBOAjOA3jQjfbuQKsubPZWnVCgcmTLWIST4g79gGm0F_hKlfUtP5tyag.jpg" alt="TelegramAvatar">
+      <img class="link-avatar" src="/image/about/telegram.jpg" alt="TelegramAvatar">
       <i class="iconfont icon-telegram-fill"></i>
       Telegram
     </div>
