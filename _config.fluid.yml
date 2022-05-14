@@ -934,3 +934,5 @@ static_prefix:
   twikoo: https://cdn.jsdelivr.net/npm/twikoo@0.1.15/dist/
 
   hint: /lib/hint/
+
+rss: /rss.xml

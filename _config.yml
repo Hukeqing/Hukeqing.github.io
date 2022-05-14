@@ -117,3 +117,9 @@ math:
 
 plugins:
 - hexo-math
+
+# 订阅 RSS
+feed:
+    type: atom
+    path: rss.xml
+    limit: false
