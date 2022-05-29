@@ -16,22 +16,21 @@
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在 macOS 更新后，CLion 可能会出现如下错误 123456CMake Warning at &#x2F;Applications&#x2F;CLion.app&#x2F;Contents&#x2F;bin&#x2F;cmake&#x2F;mac&#x2F;share&#x2F;cmake-3.15&#x2F;Modules&#x2F;Platform&#x2F;Darwin-Initialize.cmake:131 (message):  Ignoring CMAKE_OSX_SYSROOT v">
+    <meta name="description" content="最近在业务中做数据开发的时候，写了一个 SQL 但是没有得到预期的结果，大致如下 12345678910表 a+----+------+-----+| id | name | tid |+----+------+-----+|  1 |  aaa | 101 |+----+------+-----+|  2 |  bbb | 102 |+----+------+-----+|  3 |  ccc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="macOS 更新后导致 sdk 丢失问题">
-<meta property="og:url" content="http://example.com/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/">
+<meta property="og:title" content="记一次 SQL LEFT JOIN 没有得到预期结果的错误">
+<meta property="og:url" content="http://example.com/2022/05/29/develop-note/sql-left-join-fail/">
 <meta property="og:site_name" content="Shiroha白羽的博客">
-<meta property="og:description" content="在 macOS 更新后，CLion 可能会出现如下错误 123456CMake Warning at &#x2F;Applications&#x2F;CLion.app&#x2F;Contents&#x2F;bin&#x2F;cmake&#x2F;mac&#x2F;share&#x2F;cmake-3.15&#x2F;Modules&#x2F;Platform&#x2F;Darwin-Initialize.cmake:131 (message):  Ignoring CMAKE_OSX_SYSROOT v">
+<meta property="og:description" content="最近在业务中做数据开发的时候，写了一个 SQL 但是没有得到预期的结果，大致如下 12345678910表 a+----+------+-----+| id | name | tid |+----+------+-----+|  1 |  aaa | 101 |+----+------+-----+|  2 |  bbb | 102 |+----+------+-----+|  3 |  ccc">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-22T09:30:15.000Z">
-<meta property="article:modified_time" content="2022-03-23T05:59:38.459Z">
+<meta property="article:published_time" content="2022-05-29T13:26:47.000Z">
+<meta property="article:modified_time" content="2022-05-29T13:47:43.198Z">
 <meta property="article:author" content="Shiroha">
-<meta property="article:tag" content="CLion">
-<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>macOS 更新后导致 sdk 丢失问题 - Shiroha白羽的博客</title>
+  <title>记一次 SQL LEFT JOIN 没有得到预期结果的错误 - Shiroha白羽的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -180,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="macOS 更新后导致 sdk 丢失问题">
+            <span class="h2" id="subtitle" title="记一次 SQL LEFT JOIN 没有得到预期结果的错误">
               
             </span>
 
@@ -195,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-22 17:30" pubdate>
-        2022年3月22日 下午
+      <time datetime="2022-05-29 21:26" pubdate>
+        2022年5月29日 晚上
       </time>
     </span>
   
@@ -206,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      373 字
+      591 字
     </span>
   
 
@@ -215,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      5 分钟
     </span>
   
 
@@ -256,18 +255,22 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">macOS 更新后导致 sdk 丢失问题</h1>
+            <h1 style="display: none">记一次 SQL LEFT JOIN 没有得到预期结果的错误</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 个月前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <p>在 macOS 更新后，CLion 可能会出现如下错误</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs awk">CMake Warning at <span class="hljs-regexp">/Applications/</span>CLion.app<span class="hljs-regexp">/Contents/</span>bin<span class="hljs-regexp">/cmake/m</span>ac<span class="hljs-regexp">/share/</span>cmake-<span class="hljs-number">3.15</span><span class="hljs-regexp">/Modules/</span>Platform/Darwin-Initialize.cmake:<span class="hljs-number">131</span> (message):<br>  Ignoring CMAKE_OSX_SYSROOT value:<br><br>   <span class="hljs-regexp">/Applications/</span>Xcode.app<span class="hljs-regexp">/Contents/</span>Developer<span class="hljs-regexp">/Platforms/</span>MacOSX.platform<span class="hljs-regexp">/Developer/</span>SDKs/MacOSX12.<span class="hljs-number">1</span>.sdk<br><br>  because the directory does not exist.<br></code></pre></td></tr></table></figure>
-<p>这时候，只需要删除 <code>cmake-build-debug</code> 或者对应的目录，然后 reload cmake 就行了</p>
+              <p>最近在业务中做数据开发的时候，写了一个 SQL 但是没有得到预期的结果，大致如下</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs asciidoc">表 a<br><span class="hljs-code">+----+</span>------<span class="hljs-code">+-----+</span><br>| id | name | tid |<br><span class="hljs-code">+----+</span>------<span class="hljs-code">+-----+</span><br>|  1 |  aaa | 101 |<br><span class="hljs-code">+----+</span>------<span class="hljs-code">+-----+</span><br>|  2 |  bbb | 102 |<br><span class="hljs-code">+----+</span>------<span class="hljs-code">+-----+</span><br>|  3 |  ccc | 103 |<br><span class="hljs-code">+----+</span>------<span class="hljs-code">+-----+</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">表 b<br><span class="hljs-code">+------+</span>------<span class="hljs-code">+-------+</span><br>|   id | nick |  type |<br><span class="hljs-code">+------+</span>------<span class="hljs-code">+-------+</span><br>| 1001 |  abc | false |<br><span class="hljs-code">+------+</span>------<span class="hljs-code">+-------+</span><br>| 1002 |  edf |  true |<br><span class="hljs-code">+------+</span>------<span class="hljs-code">+-------+</span><br>| 1003 |  xyz |  true |<br><span class="hljs-code">+------+</span>------<span class="hljs-code">+-------+</span><br></code></pre></td></tr></table></figure>
+<p>然后圈选的 SQL 的为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span><br>    a.name<br>    b.nick<br><span class="hljs-keyword">FROM</span><br>    a<br><span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span><br>    b<br><span class="hljs-keyword">ON</span><br>    a.tid = b.id<br><span class="hljs-keyword">WHERE</span><br>    b.type = <span class="hljs-string">&quot;true&quot;</span><br></code></pre></td></tr></table></figure>
+<p>本意上，通过 <code>LEFT JOIN</code> ，即使没有找到，也应该正常返回数据，但是实际上没有返回任何数据</p>
+<p>因为 WHERE 条件是在 <code>JOIN</code> 之后发生的，所以实际上，因为 <code>LEFT JOIN</code> 拿不到数据，所以所有列的 <code>b.type</code> 都是 <code>NULL</code>，当然就不是 <code>true</code></p>
 
             </div>
             <hr>
@@ -278,9 +281,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/CLion/">CLion</a>
-                    
-                      <a class="hover-with-bg" href="/tags/macOS/">macOS</a>
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
                     
                   </div>
                 
@@ -297,18 +298,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/24/develop-note/gitbook-install-error/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Gitbook 安装出错</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/19/develop-note/java-create-captcha/">
-                        <span class="hidden-mobile">Java 生成验证码 Captcha</span>
+                      <a href="/2022/05/28/acm/CodeforcesRound789(Div.%202)-B2.%20Tokitsukaze%20and%20Good%2001-String%20(hard%20version)/">
+                        <span class="hidden-mobile">Codeforces Round#706(Div. 2)-Let's Go Hiking</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
