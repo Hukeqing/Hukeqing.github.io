@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Java Script 的 null 和 undefined 随想</title>
+    <link href="/2022/08/30/thoughts/java-script-null-undefine/"/>
+    <url>/2022/08/30/thoughts/java-script-null-undefine/</url>
+    
+    <content type="html"><![CDATA[<p>有些时候感觉一些语言里看起来很蠢的设计，实际上却能解决一些很有意思的场景。比如 JavaScript 的 null 和 undefined，虽然看起来都是表示空的意思，但是实际上却解决了“没有这个值”，“这个值为空”这样两种语义。在缓存穿透的问题上，如果 redis、memcached 等数据库也有这样一层设计等话，是不是就能解决 null 穿透问题了呢</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>随想</tag>
+      
+      <tag>缓存</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记一次 SQL LEFT JOIN 没有得到预期结果的错误</title>
     <link href="/2022/05/29/develop-note/sql-left-join-fail/"/>
     <url>/2022/05/29/develop-note/sql-left-join-fail/</url>
@@ -140,9 +161,9 @@
     
     <tags>
       
-      <tag>CLion</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>CLion</tag>
       
     </tags>
     
@@ -795,9 +816,9 @@
       
       <tag>短笔记</tag>
       
-      <tag>WSL</tag>
-      
       <tag>Dokcer</tag>
+      
+      <tag>WSL</tag>
       
     </tags>
     

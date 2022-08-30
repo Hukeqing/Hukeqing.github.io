@@ -6,7 +6,7 @@
   <link href="http://example.com/rss.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-29T13:59:11.106Z</updated>
+  <updated>2022-08-29T16:14:49.479Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java Script 的 null 和 undefined 随想</title>
+    <link href="http://example.com/2022/08/30/thoughts/java-script-null-undefine/"/>
+    <id>http://example.com/2022/08/30/thoughts/java-script-null-undefine/</id>
+    <published>2022-08-29T16:10:06.000Z</published>
+    <updated>2022-08-29T16:14:49.479Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些时候感觉一些语言里看起来很蠢的设计，实际上却能解决一些很有意思的场景。比如 JavaScript 的 null 和 undefined，虽然看起来都是表示空的意思，但是实际上却解决了“没有这个值”，“这个值为空”这样两种语义。在缓存穿透的问题上，如果 redis、memcached 等数据库也有这样一层设计等话，是不是就能解决 null 穿透问题了呢</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;有些时候感觉一些语言里看起来很蠢的设计，实际上却能解决一些很有意思的场景。比如 JavaScript 的 null 和 undefined，虽然看起来都是表示空的意思，但是实际上却解决了“没有这个值”，“这个值为空”这样两种语义。在缓存穿透的问题上，如果 redis、mem</summary>
+      
+    
+    
+    
+    
+    <category term="随想" scheme="http://example.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+    <category term="缓存" scheme="http://example.com/tags/%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次 SQL LEFT JOIN 没有得到预期结果的错误</title>
@@ -187,9 +211,9 @@
     
     
     
-    <category term="CLion" scheme="http://example.com/tags/CLion/"/>
-    
     <category term="macOS" scheme="http://example.com/tags/macOS/"/>
+    
+    <category term="CLion" scheme="http://example.com/tags/CLion/"/>
     
   </entry>
   
@@ -982,9 +1006,9 @@
     
     <category term="短笔记" scheme="http://example.com/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="WSL" scheme="http://example.com/tags/WSL/"/>
-    
     <category term="Dokcer" scheme="http://example.com/tags/Dokcer/"/>
+    
+    <category term="WSL" scheme="http://example.com/tags/WSL/"/>
     
   </entry>
   
