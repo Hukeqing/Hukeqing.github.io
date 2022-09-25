@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://avatars.cloudflare.steamstatic.com/bf589a8c1c3592a4dceee6e42bbc631211219a00_full.jpg">
 <meta property="og:image" content="http://example.com/image/about/avatar.png">
 <meta property="article:published_time" content="2020-12-24T06:56:00.000Z">
-<meta property="article:modified_time" content="2022-04-26T05:03:26.261Z">
+<meta property="article:modified_time" content="2022-09-25T03:30:22.668Z">
 <meta property="article:author" content="Shiroha">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/image/about/avatar.png">
@@ -261,7 +261,7 @@
     <div>岛学家</div>
     <div>罚学家</div>
     <div>星际争霸II 菜鸡玩家</div>
-    <div>也不是不可以女装</div>
+    <div>不可以女装</div>
   </div>
 </div>
 
@@ -556,13 +556,13 @@
   }
 
   function lazyload() {
-    let cardList = document.getElementsByClassName('lazy')
+    let cardList = document.getElementsByClassName('lazy');
     let n = 0;
     return function() {
       for (var i = n; i < cardList.length; i++) {
         if (cardList[i].getBoundingClientRect().top + 100 < document.documentElement.clientHeight) {
-          cardList[i].className = cardList[i].className.replace('lazy-hide', 'lazy-show')
-          n = n + 1
+          cardList[i].className = cardList[i].className.replace('lazy-hide', 'lazy-show');
+          n = n + 1;
           return
         }
       }
@@ -571,6 +571,16 @@
   var loadImages = lazyload();
   loadImages(); //初始化首页的页面图片
   window.addEventListener('scroll', throttle(loadImages, 50, 50), false);
+</script>
+
+<!-- sakana! -->
+<p><div style="position: fixed; bottom: -24px; right: 50px;" id="sakana-widget"></div></p>
+<script>
+    function initSakanaWidget() {
+        new SakanaWidget({ character: 'takina' }).mount('#sakana-widget');
+    }
+</script>
+<script async onload="initSakanaWidget()" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.2/lib/sakana.min.js">
 </script>
 
 
@@ -619,7 +629,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-     <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>GitHub@Mauve</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>Copyright @ Mauve</span></a>
   </div>
   
   <div class="statistics">
