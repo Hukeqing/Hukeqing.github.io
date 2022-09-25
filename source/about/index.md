@@ -44,7 +44,7 @@ date: 2020-12-24 14:56:00
     <div>岛学家</div>
     <div>罚学家</div>
     <div>星际争霸II 菜鸡玩家</div>
-    <div>也不是不可以女装</div>
+    <div>不可以女装</div>
   </div>
 </div>
 
@@ -339,13 +339,13 @@ date: 2020-12-24 14:56:00
   }
 
   function lazyload() {
-    let cardList = document.getElementsByClassName('lazy')
+    let cardList = document.getElementsByClassName('lazy');
     let n = 0;
     return function() {
       for (var i = n; i < cardList.length; i++) {
         if (cardList[i].getBoundingClientRect().top + 100 < document.documentElement.clientHeight) {
-          cardList[i].className = cardList[i].className.replace('lazy-hide', 'lazy-show')
-          n = n + 1
+          cardList[i].className = cardList[i].className.replace('lazy-hide', 'lazy-show');
+          n = n + 1;
           return
         }
       }
@@ -354,4 +354,14 @@ date: 2020-12-24 14:56:00
   var loadImages = lazyload();
   loadImages(); //初始化首页的页面图片
   window.addEventListener('scroll', throttle(loadImages, 50, 50), false);
+</script>
+
+<!-- sakana! -->
+<div style="position: fixed; bottom: -24px; right: 50px;" id="sakana-widget"></div>
+<script>
+    function initSakanaWidget() {
+        new SakanaWidget({ character: 'takina' }).mount('#sakana-widget');
+    }
+</script>
+<script async onload="initSakanaWidget()" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.2/lib/sakana.min.js">
 </script>
