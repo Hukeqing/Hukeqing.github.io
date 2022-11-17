@@ -863,6 +863,18 @@ links:
       link: "https://rei.ac",
       image: "https://cdn.jsdelivr.net/gh/ACRei/picBed/noeru_compressd.png"
     }
+    - {
+      title: "tyin",
+      intro: "Desired to leave something behind.",
+      link: "http://lxtyin.ac.cn",
+      image: "http://lxtyin.ac.cn/img/favicon.png"
+    }
+    - {
+      title: "panggeQAQ",
+      intro: "胖哥学C语言和算法",
+      link: "https://blog.csdn.net/panggeqaq?type=blog",
+      image: "https://profile.csdnimg.cn/9/C/5/1_panggeqaq"
+    }
 
 
 #---------------------------

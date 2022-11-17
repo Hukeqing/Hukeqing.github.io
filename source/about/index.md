@@ -146,10 +146,10 @@ date: 2020-12-24 14:56:00
       <i class="iconfont icon-steam"></i>
       Steam
     </div>
-    <div onclick="openUrl('mailto:keqing.hu@icloud.com')">
+    <div onclick="openUrl('mailto:prefect_thumb_0b@icloud.com')">
       <img class="link-avatar" src="/image/about/avatar.png" alt="avatar">
       <i class="iconfont icon-mail"></i>
-      keqing.hu@icloud.com
+      prefect_thumb_0b@icloud.com
     </div>
   </div>
 </div>
