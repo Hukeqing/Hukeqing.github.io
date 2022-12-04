@@ -211,9 +211,9 @@
     
     
     
-    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
-    
     <category term="CLion" scheme="http://example.com/tags/CLion/"/>
+    
+    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
     
   </entry>
   
