@@ -16,7 +16,7 @@ date: 2020-12-24 14:56:00
 </div>
 
 <div id="hello" class="lazy lazy-hide" style="text-align: center; font-size: 30px; font-weight: 900;">
-  欢迎光临，荣幸之至
+  Ciallo～(∠・ω＜)⌒☆，欢迎光临，荣幸之至
 </div>
 
 <div id="tag" class="card lazy lazy-hide">
