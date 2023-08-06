@@ -16,13 +16,15 @@
   <meta name="author" content="Shiroha">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="A. Morning Sandwich大致题意有 $a$ 个面包片，$b$ 个奶酪片，$c$ 个火腿片，要保证奶酪片和火腿片必须被两块面包片直接夹，问最多可以造多大的汉堡 思路很简单，就不讲了 AC code12345678910void solve() &amp;#123;    int _;    cin &gt;&gt; _;    for (int tss &#x3D; 0; tss &lt; _; ++t">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Educational Codeforces Round#152 (Div. 2)">
 <meta property="og:url" content="http://example.com/2023/08/06/acm/EducationalCodeforcesRound152/">
 <meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="A. Morning Sandwich大致题意有 $a$ 个面包片，$b$ 个奶酪片，$c$ 个火腿片，要保证奶酪片和火腿片必须被两块面包片直接夹，问最多可以造多大的汉堡 思路很简单，就不讲了 AC code12345678910void solve() &amp;#123;    int _;    cin &gt;&gt; _;    for (int tss &#x3D; 0; tss &lt; _; ++t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-06T05:02:41.000Z">
-<meta property="article:modified_time" content="2023-08-06T05:36:39.480Z">
+<meta property="article:modified_time" content="2023-08-06T07:28:43.757Z">
 <meta property="article:author" content="Shiroha">
 <meta property="article:tag" content="ACM">
 <meta property="article:tag" content="Codeforces">
@@ -101,7 +103,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                Home
               </a>
             </li>
           
@@ -114,6 +116,18 @@
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
               </a>
             </li>
           
@@ -137,7 +151,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
-                友链
+                好友
               </a>
             </li>
           
@@ -204,7 +218,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      3.5k 字
     </span>
   
 
@@ -213,7 +227,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      30 分钟
     </span>
   
 
@@ -258,16 +272,68 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 分钟前
+                  本文最后更新于：25 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              
+              <h1 id="A-Morning-Sandwich"><a href="#A-Morning-Sandwich" class="headerlink" title="A. Morning Sandwich"></a>A. Morning Sandwich</h1><h2 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h2><p>有 $a$ 个面包片，$b$ 个奶酪片，$c$ 个火腿片，要保证奶酪片和火腿片必须被两块面包片直接夹，问最多可以造多大的汉堡</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>很简单，就不讲了</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> _;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> tss = <span class="hljs-number">0</span>; tss &lt; _; ++tss) &#123;<br>        <span class="hljs-keyword">int</span> a, b, c;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; c;<br>        <span class="hljs-keyword">int</span> m = min(a - <span class="hljs-number">1</span>, b + c);<br>        <span class="hljs-built_in">cout</span> &lt;&lt; m * <span class="hljs-number">2</span> + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="B-Monsters"><a href="#B-Monsters" class="headerlink" title="B. Monsters"></a>B. Monsters</h1><h2 id="大致题意-1"><a href="#大致题意-1" class="headerlink" title="大致题意"></a>大致题意</h2><p>有 $n$ 个怪物，每个怪物有一定生命值 $a[i]$，每次攻击一定是对着生命值最高的怪物，并减少其生命值 $k$，若有多个则选择最左边的，问怪物的死亡顺序</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>当有任何怪物的生命值大于 $k$ 的时候，那就意味着不会有怪物死亡，所以可以先对所有怪物进行 <code>mod k</code> 操作</p>
+<p>此时，就会有怪物出现死亡，因为会恰好降低到 $0$，需要先输出为 $0$ 的怪物，从左往右输出即可</p>
+<p>后面，再根据剩余生命值从大到小，从左往右输出即可</p>
+<h2 id="AC-code-1"><a href="#AC-code-1" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> _;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> tss = <span class="hljs-number">0</span>; tss &lt; _; ++tss) &#123;<br>        <span class="hljs-keyword">int</span> n, k;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; k;<br>        <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">int</span> tmp;<br>            <span class="hljs-built_in">cin</span> &gt;&gt; tmp;<br>            tmp %= k;<br>            res[tmp].push_back(i);<br>        &#125;<br>        <span class="hljs-keyword">auto</span> zero = res[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : zero) <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> iter = res.rbegin(); iter != res.rend(); ++iter) &#123;<br>            <span class="hljs-keyword">if</span> (iter-&gt;first == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : iter-&gt;second) <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        &#125;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="C-Binary-String-Copying"><a href="#C-Binary-String-Copying" class="headerlink" title="C. Binary String Copying"></a>C. Binary String Copying</h1><p><strong>这题老坑人了QAQ</strong></p>
+<h2 id="大致题意-2"><a href="#大致题意-2" class="headerlink" title="大致题意"></a>大致题意</h2><p>有一个初始字符串 $s$，仅有 <code>0</code> 和 <code>1</code> 组成。</p>
+<p>有 $k$ 次操作，每次操作都是在这个初始字符串上进行的。每次操作选择一个区间 $[l, r]$，并使得这个区间内的值进行排序，即 $0101010 \rightarrow 0000111$</p>
+<p>问，得到的这 $k$ 个字符串，有多少种不同的</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>有点蒙，但还是得找找思路</p>
+<p>考虑到字符串种类，第一反应是做字符串 hash，这非常简单，因为字符串仅有 <code>0</code> 和 <code>1</code>，为了方便，如果当前位为 <code>1</code> 则取这一位的权制，否则不取，这样就有点类似 $mod$ 进制数了</p>
+<p>接下来是如何计算 $k$ 个字符串的 hash 值，根据题目给出的数据量，看起来必须在 O(sqrt(n)) 时间之内完成。我们可以发现，每次操作后实际上有三个区间</p>
+<ul>
+<li>$[1, l)$ 和原来的 hash 值相同</li>
+<li>$[l, r]$ 不知道！</li>
+<li>$(r, n]$ 和原来的 hash 值相同</li>
+</ul>
+<p>即然某段区间存在和之前 hash 值相同的情况，那么可以通过对 hash 值前缀和的方式，使得能够快速求出任意区间的 hash 值，那么就只剩下中间的区间了</p>
+<p>有意思的是，排序后的值恰好是一个前面为 <code>0</code> 后面为 <code>1</code> 的字符串，所以计算单独计算这段区间内的 hash 结果非常简单，只需要有一个每一位的 hash 值的前缀和，并且知道 <code>1</code> 从哪一位开始即可，因为最后一个一定也是 <code>1</code>（当然需要排除一下压根没有 1 的情况）</p>
+<p>而需要计算某个区间内的 <code>1</code> 的数量，好像又可以做一次前缀和</p>
+<p>最终，只需要三个前缀和就可以简单解决问题了</p>
+<p>但是试了两个 hash 值都不通过，一气之下直接同时计算两个 hash 值，然后就过了</p>
+<h2 id="AC-code-2"><a href="#AC-code-2" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> _;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> tss = <span class="hljs-number">0</span>; tss &lt; _; ++tss) &#123;<br>        <span class="hljs-keyword">int</span> n, k;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; k;<br>        <span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; res;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">int</span> tmp;<br>            <span class="hljs-built_in">cin</span> &gt;&gt; tmp;<br>            tmp %= k;<br>            res[tmp].push_back(i);<br>        &#125;<br>        <span class="hljs-keyword">auto</span> zero = res[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : zero) <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> iter = res.rbegin(); iter != res.rend(); ++iter) &#123;<br>            <span class="hljs-keyword">if</span> (iter-&gt;first == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i : iter-&gt;second) <span class="hljs-built_in">cout</span> &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        &#125;<br>        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="D-Array-Painting"><a href="#D-Array-Painting" class="headerlink" title="D. Array Painting"></a>D. Array Painting</h1><h2 id="大致题意-3"><a href="#大致题意-3" class="headerlink" title="大致题意"></a>大致题意</h2><p>有一段数组 $a$，每个值必定是 $0, 1, 2$ 其中一个，开始的时候所有值都是蓝色的，你可以进行如下操作</p>
+<ul>
+<li>选择一个蓝色的值，把它变成红色，同时支付一块钱</li>
+<li>选择一个红色的值，若其大于 $0$，则将其减少 $1$，并将一个相邻它的值改为红色</li>
+</ul>
+<p>问，你最少需要支付多少钱才能把所有值变成红色</p>
+<h2 id="大致思路"><a href="#大致思路" class="headerlink" title="大致思路"></a>大致思路</h2><p>容易明白的是，无论如何先随便找个 $2$ 染色的一定不亏，然后这个 $2$ 就会向两侧染色，直到遇到 $0$。那么这样处理完成后，再找下一个没有被染色的 $2$，直到 $2$ 被全部耗尽</p>
+<p>然后是 $0, 1$ 的问题了，很明显的是，在一段连续没有被染色的区间下，可以分类讨论</p>
+<ul>
+<li>如果只有 $1$，那么恭喜，染色一个端点，就可以染色全部</li>
+<li>如果只有 $0$，那么就得一个个染色</li>
+<li>如果同时有 $1$ 和 $0$<ul>
+<li>因为每一段连续的 $1$ 可以附带染色一个相邻的 $0$，实际上操作几个 $1$ 等于也染色了几个 $0$，所以最终结果一般还是得跟 $0$ 数量相同</li>
+<li>但是从第一条种可以得到，因为一段 $1$ 就得花费一次染色，不能只看 $0$ 的数量，例如 $101$ 这种情况下，虽然只有一个 $0$，但是 $1$ 有两端，则至少需要染色 $2$ 次（实际上就是因为第二段 $1$ 不会染色任何其他 $0$）</li>
+</ul>
+</li>
+</ul>
+<p>所以结论为，每一段没有染色的区间，需要 $max(cnt_0, cnt_part1)$ 的花费</p>
+<h2 id="AC-code-3"><a href="#AC-code-3" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; n;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">data</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">bool</span>&gt; <span class="hljs-title">vis</span><span class="hljs-params">(n, <span class="hljs-literal">false</span>)</span></span>;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) <span class="hljs-built_in">cin</span> &gt;&gt; data[i];<br><br>    <span class="hljs-comment">// 先处理 2 的情况</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (vis[i] || data[i] != <span class="hljs-number">2</span>) <span class="hljs-keyword">continue</span>;<br>        res++;<br>        vis[i] = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; --j) &#123;<br>            <span class="hljs-keyword">if</span> (!vis[j]) &#123;<br>                vis[j] = <span class="hljs-literal">true</span>;<br>                <span class="hljs-keyword">if</span> (data[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (; i &lt; n; ++i) &#123;<br>            vis[i] = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">if</span> (data[i] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 再处理 1 的情况</span><br>    <span class="hljs-keyword">int</span> last = <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">int</span> zero = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> oneP = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (vis[i]) &#123;<br>            res += max(oneP, zero);<br>            zero = <span class="hljs-number">0</span>;<br>            oneP = <span class="hljs-number">0</span>;<br>            last = <span class="hljs-number">-1</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (data[i] == <span class="hljs-number">0</span>) &#123;<br>            zero++;<br>            last = <span class="hljs-number">0</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (last != <span class="hljs-number">1</span>) &#123;<br>            last = <span class="hljs-number">1</span>;<br>            oneP++;<br>        &#125;<br>    &#125;<br>    res += max(oneP, zero);<br><br>    <span class="hljs-built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="hljs-built_in">endl</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/ACM/">ACM</a>
+                    
+                  </div>
                 
                 
                   <div class="post-meta">
