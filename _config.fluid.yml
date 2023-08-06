@@ -215,7 +215,7 @@ web_analytics:  # 网页访问统计
   # Google 统计的 Tracking ID
   # Google analytics, set Tracking ID
   # See: https://developers.google.com/analytics/devguides/collection/analyticsjs
-  google: G-N2HYL7N8TD
+  google: "G-N2HYL7N8TD"
 
   # Google gtag.js 的媒体资源 ID
   # Google gtag.js GA_MEASUREMENT_ID
@@ -279,7 +279,7 @@ navbar:
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
   ground_glass:
-    enable: false
+    enable: true
 
     # 模糊像素，只能为数字，数字越大模糊度越高
     # Number of blurred pixel. the larger the number, the higher the blur
@@ -293,12 +293,12 @@ navbar:
   # 导航栏菜单，可自行增减，key 用来关联 languages/*.yml，如不存在关联则显示 key 本身的值；icon 是 css class，可以省略；增加 name 可以强制显示指定名称
   # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
   menu:
-    - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
-    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
-    - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    # - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "Home", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "归档", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "好友", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -796,15 +796,15 @@ about:
   banner_mask_alpha: 0.3
   subtitle:  # 打字机内容
   # avatar: /img/avatar.png
-  avatar: /image/about/avatar.png
-  name: "Fluid"
-  introduce: "An elegant theme for Hexo"
+  # avatar: /image/about/avatar.png
+  # name: "Fluid"
+  # introduce: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
-  icons:
-    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+  # icons:
+  #   - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
+  #   - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
+  #   - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
 
 
 #---------------------------
@@ -849,7 +849,7 @@ links:
       title: "linbinwu",
       intro: "peaceful life is enough",
       link: "https://blog.csdn.net/weixin_44282912?type=blog",
-      image: "https://simgbb.com/avatar/qMtf7L0rHqYJ.jpg"
+      image: "https://profile-avatar.csdnimg.cn/f1b6dd321b0440b992bb0e58ae3fe2a8_weixin_44282912.jpg!1"
     }
     - {
       title: "狙击美佐",
@@ -861,7 +861,7 @@ links:
       title: "Rei",
       intro: "卖个萌，摸摸头",
       link: "https://rei.ac",
-      image: "https://cdn.jsdelivr.net/gh/ACRei/picBed/noeru_compressd.png"
+      image: "https://rei.ac/img/avatar_hu3414f2bace98b97ab29eff6e141c4f8f_13204_300x0_resize_q75_box.jpg"
     }
     - {
       title: "tyin",
@@ -873,7 +873,13 @@ links:
       title: "panggeQAQ",
       intro: "胖哥学C语言和算法",
       link: "https://blog.csdn.net/panggeqaq?type=blog",
-      image: "https://profile.csdnimg.cn/9/C/5/1_panggeqaq"
+      image: "https://profile-avatar.csdnimg.cn/f77e0effd4224e509150934e169fc92f_panggeqaq.jpg!1"
+    }
+    - {
+      title: "kernel.bin",
+      intro: "干啥啥不行，睡觉第一名",
+      link: "https://kernelbin.cn",
+      image: "https://kernelbin.cn/img/avatar.png"
     }
 
 
