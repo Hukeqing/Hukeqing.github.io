@@ -6,7 +6,7 @@
   <link href="http://example.com/rss.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-08-05T07:23:46.131Z</updated>
+  <updated>2023-08-06T05:36:39.480Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Educational Codeforces Round#152 (Div. 2)</title>
+    <link href="http://example.com/2023/08/06/acm/EducationalCodeforcesRound152/"/>
+    <id>http://example.com/2023/08/06/acm/EducationalCodeforcesRound152/</id>
+    <published>2023-08-06T05:02:41.000Z</published>
+    <updated>2023-08-06T05:36:39.480Z</updated>
+    
+    
+    
+    
+    
+    <category term="ACM" scheme="http://example.com/tags/ACM/"/>
+    
+    <category term="Codeforces" scheme="http://example.com/tags/Codeforces/"/>
+    
+  </entry>
   
   <entry>
     <title>Codeforces Round#889 (Div. 2)</title>
@@ -236,9 +253,9 @@
     
     
     
-    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
-    
     <category term="CLion" scheme="http://example.com/tags/CLion/"/>
+    
+    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
     
   </entry>
   
@@ -494,11 +511,11 @@
     
     
     
-    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
     <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="课程" scheme="http://example.com/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
   </entry>
   
@@ -574,9 +591,9 @@
     
     
     
-    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
-    
     <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
     
   </entry>
   
