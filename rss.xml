@@ -520,11 +520,11 @@
     
     
     
-    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
     <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="课程" scheme="http://example.com/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
   </entry>
   
@@ -600,9 +600,9 @@
     
     
     
-    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
-    
     <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
     
   </entry>
   

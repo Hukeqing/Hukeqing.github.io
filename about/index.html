@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://avatars.cloudflare.steamstatic.com/bf589a8c1c3592a4dceee6e42bbc631211219a00_full.jpg">
 <meta property="og:image" content="http://example.com/image/about/avatar.png">
 <meta property="article:published_time" content="2020-12-24T06:56:00.000Z">
-<meta property="article:modified_time" content="2023-08-06T07:52:45.498Z">
+<meta property="article:modified_time" content="2023-08-07T14:43:18.645Z">
 <meta property="article:author" content="Shiroha">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/image/about/avatar.png">
@@ -385,7 +385,7 @@
 
 <style>
   .head {
-    top: -150px;
+    top: -50px;
     position: relative;
     width: 100%;
     height: 250px;
@@ -430,6 +430,7 @@
 
   .lazy-show {
     opacity: 1;
+    transform: translate(0px, -100px);
   }
 
   .title {
@@ -586,7 +587,7 @@
 </script>
 
 <!-- sakana! -->
-<p><div style="position: fixed; bottom: -24px; right: 50px;" id="sakana-widget"></div></p>
+<div style="position: fixed; bottom: -24px; right: 50px;" id="sakana-widget"></div>
 <script>
     function initSakanaWidget() {
         new SakanaWidget({ character: 'takina' }).mount('#sakana-widget');
@@ -594,6 +595,11 @@
 </script>
 <script async onload="initSakanaWidget()" src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.2/lib/sakana.min.js">
 </script>
+
+<!-- music.163 -->
+<div style="position: fixed; bottom: 20px; left: 0px">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=28445798&auto=1&height=66"></iframe>
+</div>
 
 
   
