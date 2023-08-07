@@ -114,23 +114,69 @@ void solve() {
 void solve() {
     int _;
     cin >> _;
-    for (int tss = 0; tss < _; ++tss) {
+    vector<int> pw1(2e5 + 10);
+    vector<int> pw2(2e5 + 10);
+    int tmp1 = 1;
+    int tmp2 = 1;
+    int mod = 998244353;
+    for (int i = 1; i < pw1.size(); ++i) {
+        pw1[i] = (pw1[i - 1] + tmp1) % mod;
+        tmp1 *= 131;
+        tmp1 %= mod;
+
+        pw2[i] = (pw2[i - 1] + tmp2) % mod;
+        tmp2 *= 1331;
+        tmp2 %= mod;
+    }
+    for (int ts = 0; ts < _; ++ts) {
         int n, k;
         cin >> n >> k;
-        map<int, vector<int>> res;
+        vector<int> a(n + 1), b1(n + 1), b2(n + 1);
+        string str(n, '0');
+        cin >> str;
+
+        tmp1 = 1;
+        tmp2 = 1;
         for (int i = 0; i < n; ++i) {
-            int tmp;
-            cin >> tmp;
-            tmp %= k;
-            res[tmp].push_back(i);
+            a[i + 1] = a[i] + str[i] - '0';
+            b1[i + 1] = (b1[i] + (str[i] == '1' ? tmp1 : 0)) % mod;
+            tmp1 *= 131;
+            tmp1 %= mod;
+
+            a[i + 1] = a[i] + str[i] - '0';
+            b2[i + 1] = (b2[i] + (str[i] == '1' ? tmp2 : 0)) % mod;
+            tmp2 *= 1331;
+            tmp2 %= mod;
         }
-        auto zero = res[0];
-        for (auto i : zero) cout << i + 1 << ' ';
-        for (auto iter = res.rbegin(); iter != res.rend(); ++iter) {
-            if (iter->first == 0) continue;
-            for (auto i : iter->second) cout << i + 1 << ' ';
+
+        set<pair<int, int>> res;
+        for (int i = 0; i < k; ++i) {
+            int l, r;
+            cin >> l >> r;
+
+            int ls, rs;
+            {
+                int left = b1[l - 1] % mod;
+                int right = (b1[n] - b1[r] + mod) % mod;
+                int one = a[r] - a[l - 1];
+                int zero = r - l + 1 - one;
+                int from = l + zero, to = r;
+                int mid = (pw1[to] - pw1[from - 1] + mod) % mod;
+                ls = (left + right + mid) % mod;
+            }
+            {
+                int left = b2[l - 1] % mod;
+                int right = (b2[n] - b2[r] + mod) % mod;
+                int one = a[r] - a[l - 1];
+                int zero = r - l + 1 - one;
+                int from = l + zero, to = r;
+                int mid = (pw2[to] - pw2[from - 1] + mod) % mod;
+                rs = (left + right + mid) % mod;
+            }
+            res.insert({ls, rs});
         }
-        cout << endl;
+
+        cout << res.size() << endl;
     }
 }
 ```
