@@ -25,6 +25,7 @@ date: 2020-12-24 14:56:00
   </div>
   <div class="answer-box">
     <div><i class="iconfont icon-code"></i>程序猿</div>
+    <div>老二次元</div>
     <div>后端工程师</div>
     <div>会一点前端</div>
     <div>unity 退役工程师</div>
@@ -32,7 +33,7 @@ date: 2020-12-24 14:56:00
     <div>Geek</div>
     <div>熟练使用 C++</div>
     <div>Java 工程师</div>
-    <div>学生</div>
+    <div>回不去的学生</div>
     <div>上班ing</div>
     <div>Alibaba</div>
     <div><i class="iconfont icon-taobao-fill"></i>大淘宝技术部</div>
@@ -100,7 +101,7 @@ date: 2020-12-24 14:56:00
         Portable Online Judge
       </div>
       <div class="answer-detail-bottom">
-        一个高性能、分布式、易部署的开源 Online Judge 系统，正在努力迭代中
+        一个高性能、分布式、易部署的开源 Online Judge 系统
         <div class="icon-box">
           <i class="iconfont icon-copyright"></i>
           <span>GPLv3</span>

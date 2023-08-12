@@ -1,6 +1,6 @@
 ---
 title: Codeforces Round#889 (Div. 2)
-date: 2023-8-5 10:37:43
+date: 2023-08-05 10:37:43
 tag:
  - ACM
  - Codeforces
