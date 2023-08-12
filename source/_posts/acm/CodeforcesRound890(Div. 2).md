@@ -42,7 +42,7 @@ void solve() {
 
 ## 大致题意
 
-题目给出一个数组 $a$，要你判定是否存在另外一个数组 $b$，满足 $ \sum_{i=1}^n a\_i = \sum_{i=1}^n b\_i, \forall i \in [1, n], a\_i \nq b\_i, a\_i > 0, b\_i > 0$
+题目给出一个数组 $a$，要你判定是否存在另外一个数组 $b$，满足 $\sum_{i=1}^n a\_i = \sum_{i=1}^n b\_i, \forall i \in [1, n], a\_i \nq b\_i, a\_i > 0, b\_i > 0$
 
 ## 思路
 
