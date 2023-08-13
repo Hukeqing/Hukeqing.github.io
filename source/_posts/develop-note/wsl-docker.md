@@ -1,6 +1,7 @@
 ---
 title: WSL1 使用 Docker 一直无法启动
 date: 2020-12-24 15:55:31
+categories: 杂项
 tag:
  - Dokcer
  - 短笔记

@@ -1,6 +1,7 @@
 ---
 title: 清理 WSL2 的磁盘占用
 date: 2021-01-27 14:58:23
+categories: 杂项
 tag:
  - WSL
  - 短笔记

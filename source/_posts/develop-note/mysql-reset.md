@@ -1,6 +1,7 @@
 ---
 title: 记一次 Navicat 连接 MySQL 一直报认证错误(Access denied)
 date: 2021-01-02 00:38:39
+categories: 杂项
 tag:
  - MySQL
  - 短笔记

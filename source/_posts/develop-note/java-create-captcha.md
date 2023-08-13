@@ -1,6 +1,7 @@
 ---
 title: Java 生成验证码 Captcha
-date: 2022-3-19 10:27:25
+date: 2022-03-19 10:27:25
+categories: 学习&开发&实现
 tag:
  - Java
  - 验证码

@@ -1,6 +1,7 @@
 ---
 title: Windows 下的 NTFS 驱动器索引 BUG
 date: 2021-01-18 12:25:36
+categories: 杂项
 tag:
  - Windows
  - NTFS

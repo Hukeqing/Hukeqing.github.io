@@ -1,6 +1,7 @@
 ---
 title: Windows 通过网络访问 WSL2
 date: 2021-06-07 22:39:21
+categories: 杂项
 tag:
  - WSL
  - 短笔记

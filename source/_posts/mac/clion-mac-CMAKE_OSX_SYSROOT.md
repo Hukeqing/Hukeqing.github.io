@@ -1,6 +1,7 @@
 ---
 title: macOS 更新后导致 sdk 丢失问题
 date: 2022-3-22 17:30:15
+categories: 杂项
 tag:
  - CLion
  - macOS

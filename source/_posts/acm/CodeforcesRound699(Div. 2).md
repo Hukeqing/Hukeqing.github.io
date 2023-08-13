@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round#699 (Div. 2)
 date: 2021-02-06 14:52:56
+categories: ACM&算法
 tag:
  - ACM
  - Codeforces

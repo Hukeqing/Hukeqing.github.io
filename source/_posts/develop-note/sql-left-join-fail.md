@@ -1,6 +1,7 @@
 ---
 title: 记一次 SQL LEFT JOIN 没有得到预期结果的错误
 date: 2022-05-29 21:26:47
+categories: 杂项
 tag:
  - SQL
 ---

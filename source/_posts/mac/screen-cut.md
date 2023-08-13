@@ -1,6 +1,7 @@
 ---
 title: Mac 截图唤起速度慢
 date: 2021-10-24 12:21:12
+categories: 杂项
 tag:
  - macOS
  - 截图

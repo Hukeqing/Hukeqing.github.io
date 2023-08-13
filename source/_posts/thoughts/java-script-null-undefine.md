@@ -1,6 +1,7 @@
 ---
 title: Java Script 的 null 和 undefined 随想
 date: 2022-08-30 00:10:06
+categories: 杂项
 tag:
  - 随想
  - 缓存

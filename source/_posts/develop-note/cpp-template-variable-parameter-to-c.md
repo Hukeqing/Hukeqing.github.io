@@ -1,6 +1,7 @@
 ---
 title: C++ 模版可变参数列表传递给 C 的 va_list 可变参数列表
 date: 2022-01-12 23:26:29
+categories: 杂项
 tag:
  - C
  - C++

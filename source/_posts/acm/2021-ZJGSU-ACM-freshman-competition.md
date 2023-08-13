@@ -1,6 +1,7 @@
 ---
 title: 2021年浙江工商大学新生赛题解
 date: 2021-11-21 14:15:20
+categories: ACM&算法
 tag:
  - ACM
 math: true

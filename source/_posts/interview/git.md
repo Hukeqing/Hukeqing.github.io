@@ -1,6 +1,7 @@
 ---
 title: 面试复习（Git）
 date: 2021-02-24 14:24:14
+categories: 学习笔记
 tag:
  - 面试准备
 ---

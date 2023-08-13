@@ -3,6 +3,7 @@ title: 使用 Junit5 和 Mockito 实现 SpringBoot 的单元测试最优美的�
 date: 2022-04-22 17:17:27
 updated: 2022-04-22 17:17:27
 mermaid: true
+categories: 杂项
 tags:
  - Java
  - SpringBoot

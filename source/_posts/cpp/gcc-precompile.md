@@ -2,6 +2,7 @@
 title: GCC/G++ 预编译头性能优化
 date: 2022-04-30 23:33:29
 updated: 2022-04-30 23:33:29
+categories: 杂项
 tags:
  - GCC/G++
  - 性能优化

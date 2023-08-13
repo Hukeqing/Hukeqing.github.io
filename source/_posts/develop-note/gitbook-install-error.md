@@ -1,6 +1,7 @@
 ---
 title: Gitbook 安装出错
-date: 2022-3-24 23:54:01
+date: 2022-03-24 23:54:01
+categories: 杂项
 tag:
  - Gitbook
  - nodejs

@@ -1,6 +1,7 @@
 ---
 title: 面试复习（Linux）
 date: 2021-02-23 23:37:06
+categories: 学习笔记
 tag:
  - 面试准备
 ---

@@ -1,6 +1,7 @@
 ---
 title: 原生 JavaScript 实现图片裁剪
 date: 2021-05-17 17:07:46
+categories: 学习&开发&实现
 tag:
  - 前端
  - HTML

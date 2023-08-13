@@ -1,6 +1,7 @@
 ---
 title: Dockerfile 中下载 JDK8
 date: 2021-11-18 13:48:29
+categories: 杂项
 tag:
  - Docker
  - 短笔记

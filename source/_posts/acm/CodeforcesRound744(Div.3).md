@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round#744 (Div. 3)
 date: 2021-09-29 12:40:22
+categories: ACM&算法
 tag:
  - ACM
  - Codeforces
