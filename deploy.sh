@@ -1,4 +1,4 @@
 npx hexo clean
-hexo g
+npx hexo g
 cp source/google*.html public/
 npx hexo d
