@@ -332,9 +332,9 @@
     <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
-    
     <category term="CLion" scheme="http://example.com/tags/CLion/"/>
+    
+    <category term="macOS" scheme="http://example.com/tags/macOS/"/>
     
   </entry>
   
@@ -610,11 +610,11 @@
     <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
-    
     <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="课程" scheme="http://example.com/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
     
   </entry>
   
@@ -696,9 +696,9 @@
     <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
-    
     <category term="计算机图形学" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="面试准备" scheme="http://example.com/tags/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
     
   </entry>
   
@@ -1189,9 +1189,9 @@
     
     <category term="短笔记" scheme="http://example.com/tags/%E7%9F%AD%E7%AC%94%E8%AE%B0/"/>
     
-    <category term="Dokcer" scheme="http://example.com/tags/Dokcer/"/>
-    
     <category term="WSL" scheme="http://example.com/tags/WSL/"/>
+    
+    <category term="Dokcer" scheme="http://example.com/tags/Dokcer/"/>
     
   </entry>
   
