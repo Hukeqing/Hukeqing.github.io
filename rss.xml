@@ -358,9 +358,9 @@
     <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
-    <category term="CLion" scheme="http://example.com/tags/CLion/"/>
-    
     <category term="macOS" scheme="http://example.com/tags/macOS/"/>
+    
+    <category term="CLion" scheme="http://example.com/tags/CLion/"/>
     
   </entry>
   
