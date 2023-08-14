@@ -829,7 +829,7 @@ page404:
   banner_img: /image/default/main_bg.webp
   banner_img_height: 100
   banner_mask_alpha: 0.3
-  subtitle: "啊呀，东西找不到了"
+  subtitle: "Oops!东西找不到了"
 
 
 #---------------------------
