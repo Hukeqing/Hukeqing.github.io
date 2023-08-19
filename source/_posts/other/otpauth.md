@@ -13,7 +13,7 @@ mermaid: true
 
 昨天突然 GitHub 给我发了一封邮件，要求我必须添加 2FA 的验证
 
-![GitHub-email](/image/other/otpauth/github-email.png)
+![GitHub-email](/image/other/otpauth/github-email.webp)
 
 好吧好吧，那就创建吧。但是在创建的过程中，GitHub 问我是否有使用 1Password 之类的软件，如果有的话，可以扫码添加 2FA
 
@@ -21,13 +21,13 @@ mermaid: true
 
 结果扫码之后果真添加了 2FA 的能力
 
-![password](/image/other/otpauth/password.png)
+![password](/image/other/otpauth/password.webp)
 
 这个验证码很像 steam 使用的那种自生成的两步验证码，这让我觉得似乎有一种通用协议，来实现这样一套东西。立马开整
 
 第一步，再搞到一份这样的二维码。我翻阅了 GitHub 的文档，最终找到了一份 GitHub 提供的示例二维码
 
-![qr-code](/image/other/otpauth/qr-code.png)
+![qr-code](/image/other/otpauth/qr-code.webp)
 
 接着直接读取二维码内的信息得到了这样一个地址: `otpauth://totp/GitHub:octocat-testing?secret=F76W4SX573PDRIDA&issuer=GitHub`
 
