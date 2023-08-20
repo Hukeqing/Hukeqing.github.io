@@ -6,7 +6,7 @@
 title: Shiroha白羽的博客
 subtitle: ''
 description: ''
-keywords:
+keywords: ACM,算法,计算机,程序
 author: Shiroha
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -120,6 +120,9 @@ plugins:
 
 # 订阅 RSS
 feed:
-    type: atom
-    path: rss.xml
-    limit: false
+  type: atom
+  path: rss.xml
+  limit: false
+
+sitemap:
+  path: sitemap.xml
