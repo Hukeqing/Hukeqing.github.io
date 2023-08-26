@@ -27,7 +27,7 @@ jobs:
         node-version: 16.x
         cache: 'npm'
     - run: npm ci
-    - run: npx hexo clean && npx hexo g
+    - run: npx hexo clean && npx hexo g --config _config-deploy.yml
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:

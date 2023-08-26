@@ -129,4 +129,4 @@ feed:
 sitemap:
   path: sitemap.xml
 
-all_minifier: true
+all_minifier: false
