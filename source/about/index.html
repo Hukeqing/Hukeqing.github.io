@@ -35,7 +35,7 @@
     <div class="bg-image">
     </div>
     <div class="main-container" dir="ltr">
-        <div class="div-container">
+        <div class="div-container" id="div-1">
             <div class="div-title">关于我</div>
             <img id="avatar" src="/image/about/avatar.png" alt="avatar"
                 style="position: relative; width: 200px; height: 200px; border-radius: 100px;">
@@ -44,9 +44,12 @@
                 <a onclick="openUrl('https://github.com/Hukeqing')"><i class="iconfont icon-github"></i></a>
                 <a onclick="openUrl('https://twitter.com/tm_lavender')"><i class="iconfont icon-tuite"></i></a>
                 <a onclick="openUrl('https://t.me/ShiroNaruse')"><i class="iconfont icon-telegram"></i></a>
-                <a onclick="openUrl('https://codeforces.com/profile/KamiyamaShiki')"><i class="iconfont icon-codeforces"></i></a>
-                <a onclick="openUrl('https://codeforces.com/profile/ShirohaIsMyWife')"><i class="iconfont icon-codeforces"></i></a>
-                <a onclick="openUrl('https://steamcommunity.com/profiles/76561198428368750/')"><i class="iconfont icon-steam"></i></a>
+                <a onclick="openUrl('https://codeforces.com/profile/KamiyamaShiki')"><i
+                        class="iconfont icon-codeforces"></i></a>
+                <a onclick="openUrl('https://codeforces.com/profile/ShirohaIsMyWife')"><i
+                        class="iconfont icon-codeforces"></i></a>
+                <a onclick="openUrl('https://steamcommunity.com/profiles/76561198428368750/')"><i
+                        class="iconfont icon-steam"></i></a>
                 <a onclick="openUrl('mailto:prefect_thumb_0b@icloud.com')"><i class="iconfont icon-email"></i></a>
             </div>
             <div style="text-align: center; font-size: 30px; font-weight: 900; margin-top: 30px;">
@@ -59,75 +62,23 @@
                 <div onclick="window.location.href='/tags'"><i class="iconfont icon-tags-fill"></i>标签</div>
                 <div onclick="window.location.href='/links'"><i class="iconfont icon-link-fill"></i>好友</div>
             </div>
-        </div>
-        <div class="div-container">
-            <div class="div-title">我所拥有的</div>
-            <div style="display: grid; place-items: center;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 2px;">
-                    <div class="sub-title">Dev ops</div>
-                    <div class="sub-title">Coding With</div>
-                    <div class="sub-title">Tags</div>
-                    <div style="display: grid; place-items: center;">
-                        <div class="tag-box">
-                            <div>Java(Expert)</div>
-                            <div>Git(Expert)</div>
-                            <div>C/C++(Proficient)</div>
-                            <div>SQL(Proficient)</div>
-                            <div>Redis(Proficient)</div>
-                            <div>Leveldb(Proficient)</div>
-                            <div>Vue(Competent)</div>
-                            <div>nodeJS(Competent)</div>
-                            <div>Docker(Competent)</div>
-                            <div>Hive(Competent)</div>
-                            <div>Flink(Competent)</div>
-                            <div>GUN/Linux(Competent)</div>
-                            <div>Swift(Advanced beginner)</div>
-                            <div>React(Advanced beginner)</div>
-                            <div>Hbase(Advanced beginner)</div>
-                            <div>Rust(Novice)</div>
-                            <div>Golang(Novice)</div>
-                        </div>
-                    </div>
-                    <div style="display: grid; place-items: center;">
-                        <div class="tag-box">
-                            <div>Xcode for swift</div>
-                            <div>IDEA for Java</div>
-                            <div>Clion for C++/Rust</div>
-                            <div>macOS Sonoma</div>
-                        </div>
-                    </div>
-                    <div style="display: grid; place-items: center;">
-                        <div class="tag-box">
-                            <div><i class="iconfont icon-code"></i>程序猿</div>
-                            <div>老二次元</div>
-                            <div>后端工程师</div>
-                            <div>会一点前端</div>
-                            <div>unity 退役工程师</div>
-                            <div>ACM 退役选手</div>
-                            <div>Geek</div>
-                            <div>熟练使用 C++</div>
-                            <div>Java 工程师</div>
-                            <div>回不去的学生</div>
-                            <div>上班ing</div>
-                            <div>Alibaba</div>
-                            <div><i class="iconfont icon-taobao-fill"></i>大淘宝技术部</div>
-                            <div>六级没过</div>
-                            <div>kEy厨</div>
-                            <div>Galgame 玩家</div>
-                            <div>兜厨</div>
-                            <div>珂学家</div>
-                            <div>岛学家</div>
-                            <div>罚学家</div>
-                            <div>星际争霸II 菜鸡玩家</div>
-                            <div>不可以女装</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="scroll-tip">
+                <i class="iconfont icon-arrowdown"></i>
             </div>
         </div>
-        <div class="div-container">
-            <div class="div-title">我的项目</div>
-            <div style="display: grid; place-items: center;">
+        <div class="div-container" id="div-2">
+            <div class="div-title">icon 云</div>
+            <div class="center" style="height: 60%; margin-bottom: 100px;">
+                <div class="skill-box" id="skill-box">
+                </div>
+            </div>
+            <div class="scroll-tip">
+                <i class="iconfont icon-arrowdown"></i>
+            </div>
+        </div>
+        <div class="div-container" id="div-3">
+            <div class="div-title">🚧施工中🚧</div>
+            <!-- <div style="display: grid; place-items: center;">
                 <div
                     style="display: grid; grid-template-columns: auto 200px auto auto 200px auto; column-gap: 30px; place-items: center; row-gap: 30px;">
                     <div><img src="https://github.com/Hukeqing/lightless/blob/master/Assets/Sprites/logo.jpg?raw=true"
@@ -163,7 +114,7 @@
                             onclick="openUrl('https://github.com/PortableOJ/portable-server')"></i>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
@@ -203,6 +154,8 @@
         scroll-snap-align: center;
         width: 100%;
         height: 100%;
+        position: relative;
+        overflow: hidden;
     }
 
     .div-title {
@@ -211,7 +164,7 @@
         padding-top: 60px;
     }
 
-    .links > a > i {
+    .links>a>i {
         cursor: pointer;
         font-size: 30px;
         margin: 10px 5px;
@@ -242,10 +195,33 @@
         background-color: rgba(255, 255, 255, 0.3);
     }
 
-    .sub-title {
-        font-size: 32px;
+    .scroll-tip {
+        position: absolute;
+        bottom: 0px;
+        height: 100px;
+        width: 100%;
+    }
+
+    .scroll-tip>i {
+        font-size: 30px;
+        animation: scroll-down 1.5s infinite;
+        position: absolute;
+    }
+
+    .center {
+        display: grid;
+        place-items: center;
+    }
+
+    .skill-box {
+        width: 80%;
+    }
+
+    .skill-box>div {
+        position: relative;
+        display: inline-block;
         margin: 15px 15px;
-        padding-top: 30px;
+        word-wrap: anywhere;
     }
 
     .project-logo {
@@ -253,12 +229,72 @@
         height: 150px;
     }
 
-    .link-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 100px;
+    @keyframes scroll-down {
+        0% {
+            opacity: 0.1;
+            top: 30px;
+        }
+
+        50% {
+            opacity: 1;
+            top: 60px;
+        }
+
+        100% {
+            opacity: 0.1;
+            top: 30px;
+        }
     }
 </style>
+
+<script>
+    let baseSkillSize = 12
+    let skillList = [
+        { icon: "icon-java", size: 8 },
+        { icon: "icon-git", size: 8 },
+        { icon: "icon-mysql", size: 8 },
+        { icon: "icon-alibaba", size: 8 },
+        { icon: "icon-taobao", size: 8 },
+        { icon: "icon-language-cpp", size: 6 },
+        { icon: "icon-hadoop29", size: 6 },
+        { icon: "icon-linux", size: 6 },
+        { icon: "icon-icons-c-sharp-logo-", size: 6 },
+        { icon: "icon-redis", size: 6 },
+        { icon: "icon-macOS", size: 6 },
+        { icon: "icon-huancunMemcached", size: 6 },
+        { icon: "icon-docker", size: 6 },
+        { icon: "icon-python", size: 6 },
+        { icon: "icon-jetbrains", size: 6 },
+        { icon: "icon-flink", size: 6 },
+        { icon: "icon-LBfuwushili", size: 6 },
+        { icon: "icon-unity", size: 6 },
+        { icon: "icon-vuejs", size: 6 },
+        { icon: "icon-HBASE", size: 6 },
+        { icon: "icon-vim", size: 4 },
+        { icon: "icon-react", size: 4 },
+        { icon: "icon-npm", size: 4 },
+        { icon: "icon-nodejs", size: 4 },
+        { icon: "icon-javascript", size: 4 },
+        { icon: "icon-swift", size: 4 },
+        { icon: "icon-xcode", size: 4 },
+        { icon: "icon-yarn", size: 4 },
+        { icon: "icon-MongoDB", size: 4 },
+        { icon: "icon-rust", size: 2 },
+        { icon: "icon-golang", size: 2 },
+        { icon: "icon-typescript", size: 2 },
+    ]
+    for (let i = 1; i < skillList.length; ++i) {
+        const random = Math.floor(Math.random() * (i + 1));
+        [skillList[i], skillList[random]] = [skillList[random], skillList[i]];
+    }
+    let skillDom = []
+    for (let i = 0; i < skillList.length; ++i) {
+        skillDom.push(`<div><i class="iconfont ${skillList[i].icon}" style="font-size: ${skillList[i].size * baseSkillSize}px;"></i></div>`)
+    }
+    console.log(skillDom)
+    let skillBox = document.getElementById('skill-box')
+    skillBox.insertAdjacentHTML('beforeend', skillDom.join(''))
+</script>
 
 <!-- sakana! -->
 <!-- <div style="position: fixed; bottom: -24px; right: 50px;" id="sakana-widget"></div>
