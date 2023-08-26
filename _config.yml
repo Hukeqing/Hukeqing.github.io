@@ -128,3 +128,5 @@ feed:
 
 sitemap:
   path: sitemap.xml
+
+all_minifier: true
