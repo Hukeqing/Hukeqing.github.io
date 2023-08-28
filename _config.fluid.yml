@@ -852,8 +852,14 @@ links:
       image: "https://profile-avatar.csdnimg.cn/f1b6dd321b0440b992bb0e58ae3fe2a8_weixin_44282912.jpg!1"
     }
     - {
+      title: "panggeQAQ",
+      intro: "胖哥学C语言和算法",
+      link: "https://blog.csdn.net/panggeqaq?type=blog",
+      image: "https://profile-avatar.csdnimg.cn/f77e0effd4224e509150934e169fc92f_panggeqaq.jpg!1"
+    }
+    - {
       title: "狙击美佐",
-      intro: "",
+      intro: "寒蝉黎明之时,便是重生之日",
       link: "http://www.jujimeizuo.cn",
       image: "http://www.jujimeizuo.cn/img/head.png"
     }
@@ -868,12 +874,6 @@ links:
       intro: "Desired to leave something behind.",
       link: "http://lxtyin.ac.cn",
       image: "http://lxtyin.ac.cn/img/favicon.png"
-    }
-    - {
-      title: "panggeQAQ",
-      intro: "胖哥学C语言和算法",
-      link: "https://blog.csdn.net/panggeqaq?type=blog",
-      image: "https://profile-avatar.csdnimg.cn/f77e0effd4224e509150934e169fc92f_panggeqaq.jpg!1"
     }
     - {
       title: "kernel.bin",
