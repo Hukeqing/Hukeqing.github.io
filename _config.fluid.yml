@@ -30,7 +30,7 @@ title_join_string: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
-force_https: false
+force_https: true
 
 # 代码块的增强配置
 # Enhancements to code blocks
@@ -61,7 +61,7 @@ code:
 
       # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
       # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
-      bg_color: false
+      bg_color: true
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -87,7 +87,7 @@ fun_features:
 
     # 游标字符
     # Cursor character
-    cursorChar: "_"
+    cursorChar: "|"
 
     # 是否循环播放效果
     # If true, loop animation
@@ -252,6 +252,7 @@ web_analytics:  # 网页访问统计
 # Lazy loading of images on the page
 lazyload:
   enable: true
+  loading_img: /image/default/mona-loading-dark.gif
   # 懒加载仅对文章页生效，开启后如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
   # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
   onlypost: false
