@@ -224,6 +224,40 @@
         word-wrap: anywhere;
     }
 
+    .skill-box>div>i {
+        position: relative;
+        top: 0px;
+        transition: 0.5s ease all;
+    }
+
+    .skill-box>div>div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.7);
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        white-space: nowrap;
+        border-radius: 20px;
+        margin: 0px;
+        z-index: 1;
+        max-height: 20px;
+        display: grid;
+        place-items: center;
+        border: 3px white solid;
+        opacity: 0;
+        transition: 0.5s ease all;
+    }
+
+    .skill-box>div:hover>i {
+        z-index: 2;
+        top: -80px;
+    }
+
+    .skill-box>div:hover>div {
+        opacity: 1;
+    }
+
     .project-logo {
         width: 150px;
         height: 150px;
@@ -250,38 +284,38 @@
 <script>
     let baseSkillSize = 12
     let skillList = [
-        { icon: "icon-java", size: 8 },
-        { icon: "icon-git", size: 8 },
-        { icon: "icon-mysql", size: 8 },
-        { icon: "icon-alibaba", size: 8 },
-        { icon: "icon-taobao", size: 8 },
-        { icon: "icon-language-cpp", size: 6 },
-        { icon: "icon-hadoop29", size: 6 },
-        { icon: "icon-linux", size: 6 },
-        { icon: "icon-icons-c-sharp-logo-", size: 6 },
-        { icon: "icon-redis", size: 6 },
-        { icon: "icon-macOS", size: 6 },
-        { icon: "icon-huancunMemcached", size: 6 },
-        { icon: "icon-docker", size: 6 },
-        { icon: "icon-python", size: 6 },
-        { icon: "icon-jetbrains", size: 6 },
-        { icon: "icon-flink", size: 6 },
-        { icon: "icon-LBfuwushili", size: 6 },
-        { icon: "icon-unity", size: 6 },
-        { icon: "icon-vuejs", size: 6 },
-        { icon: "icon-HBASE", size: 6 },
-        { icon: "icon-vim", size: 4 },
-        { icon: "icon-react", size: 4 },
-        { icon: "icon-npm", size: 4 },
-        { icon: "icon-nodejs", size: 4 },
-        { icon: "icon-javascript", size: 4 },
-        { icon: "icon-swift", size: 4 },
-        { icon: "icon-xcode", size: 4 },
-        { icon: "icon-yarn", size: 4 },
-        { icon: "icon-MongoDB", size: 4 },
-        { icon: "icon-rust", size: 2 },
-        { icon: "icon-golang", size: 2 },
-        { icon: "icon-typescript", size: 2 },
+        { icon: "icon-java", size: 8, desc: "非常熟悉 Java 语言" },
+        { icon: "icon-git", size: 8, desc: "非常熟悉 Git 版本管理" },
+        { icon: "icon-mysql", size: 8, desc: "熟练使用包括 MySQL 在内的 SQL 引擎" },
+        { icon: "icon-alibaba", size: 8, desc: "目前正在 Alibaba 就职" },
+        { icon: "icon-taobao", size: 8, desc: "目前正在大淘宝技术就职" },
+        { icon: "icon-language-cpp", size: 6, desc: "熟练使用 C++ 语言" },
+        { icon: "icon-hadoop29", size: 6, desc: "熟悉类 Hadoop 的大数据引擎" },
+        { icon: "icon-linux", size: 6, desc: "熟悉 GNU/Linux 以及部分发行版" },
+        { icon: "icon-icons-c-sharp-logo-", size: 6, desc: "熟悉 C# 语言" },
+        { icon: "icon-redis", size: 6, desc: "熟悉 redis 数据库" },
+        { icon: "icon-macOS", size: 6, desc: "主要使用 macOS 进行开发" },
+        { icon: "icon-huancunMemcached", size: 6, desc: "熟悉 memcached 数据库" },
+        { icon: "icon-docker", size: 6, desc: "熟悉 docker 容器技术" },
+        { icon: "icon-python", size: 6, desc: "熟悉 python 语言" },
+        { icon: "icon-jetbrains", size: 6, desc: "主要使用 JetBrains 相关产品进行编程" },
+        { icon: "icon-flink", size: 6, desc: "熟悉 flink 等实时任务相关开发调优" },
+        { icon: "icon-LBfuwushili", size: 6, desc: "熟悉 LevelDB 等相关技术" },
+        { icon: "icon-unity", size: 6, desc: "熟悉 unity 游戏引擎开发" },
+        { icon: "icon-vuejs", size: 6, desc: "熟悉 vuejs 开发框架" },
+        { icon: "icon-HBASE", size: 6, desc: "熟悉 Hbase 等列存数据库" },
+        { icon: "icon-vim", size: 4, desc: "了解 vim 相关功能并进行简单使用" },
+        { icon: "icon-react", size: 4, desc: "了解 reactjs 并能够简单开发" },
+        { icon: "icon-npm", size: 4, desc: "了解 npm 并开发过相关项目" },
+        { icon: "icon-nodejs", size: 4, desc: "了解 nodejs 并能够简单开发" },
+        { icon: "icon-javascript", size: 4, desc: "了解 javascript 并能够简单开发" },
+        { icon: "icon-swift", size: 4, desc: "了解 swift 语言并且能够基于 SwiftUI 开发相关应用" },
+        { icon: "icon-xcode", size: 4, desc: "使用 xcode 作为 swift 开发软件" },
+        { icon: "icon-yarn", size: 4, desc: "了解 yarn 的能力并进行使用" },
+        { icon: "icon-MongoDB", size: 4, desc: "了解 mongoDB 并能够运用开发" },
+        { icon: "icon-rust", size: 2, desc: "正在学习 rust" },
+        { icon: "icon-golang", size: 2, desc: "正在学习 golang" },
+        { icon: "icon-typescript", size: 2, desc: "正在学习 typescript" },
     ]
     for (let i = 1; i < skillList.length; ++i) {
         const random = Math.floor(Math.random() * (i + 1));
@@ -289,7 +323,8 @@
     }
     let skillDom = []
     for (let i = 0; i < skillList.length; ++i) {
-        skillDom.push(`<div><i class="iconfont ${skillList[i].icon}" style="font-size: ${skillList[i].size * baseSkillSize}px;"></i></div>`)
+        skillDom.push(`<div><i class="iconfont ${skillList[i].icon}" style="font-size: ${skillList[i].size * baseSkillSize}px;"></i>
+            <div>${skillList[i].desc}</div></div>`)
     }
     console.log(skillDom)
     let skillBox = document.getElementById('skill-box')
