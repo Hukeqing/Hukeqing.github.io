@@ -20,7 +20,7 @@
     <title>关于我 - Shiroha白羽的博客</title>
     <link rel="alternate" href="/rss.xml" title="Shiroha白羽的博客" type="application/atom+xml">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_8rvm0xuo1yg.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_nk3a5ro3l18.css">
     <script>
         function openUrl(url) {
             // console.log(url)
@@ -50,6 +50,7 @@
                         class="iconfont icon-codeforces"></i></a>
                 <a onclick="openUrl('https://steamcommunity.com/profiles/76561198428368750/')"><i
                         class="iconfont icon-steam"></i></a>
+                <a onclick="window.location.href='/rss.xml'"><i class="iconfont icon-rss"></i></a>
                 <a onclick="openUrl('mailto:prefect_thumb_0b@icloud.com')"><i class="iconfont icon-email"></i></a>
             </div>
             <div style="text-align: center; font-size: 30px; font-weight: 900; margin-top: 30px;">
@@ -69,7 +70,7 @@
         <div class="div-container" id="div-2">
             <div class="div-title">icon 云</div>
             <div class="center" style="height: 60%; margin-bottom: 100px;">
-                <div class="skill-box" id="skill-box">
+                <div class="answer-box" id="skill-box">
                 </div>
             </div>
             <div class="scroll-tip">
@@ -77,44 +78,18 @@
             </div>
         </div>
         <div class="div-container" id="div-3">
-            <div class="div-title">🚧施工中🚧</div>
-            <!-- <div style="display: grid; place-items: center;">
-                <div
-                    style="display: grid; grid-template-columns: auto 200px auto auto 200px auto; column-gap: 30px; place-items: center; row-gap: 30px;">
-                    <div><img src="https://github.com/Hukeqing/lightless/blob/master/Assets/Sprites/logo.jpg?raw=true"
-                            alt="lightless" class="project-logo"></div>
-                    <div>一个使用 Unity 开发的游戏，使用了一些非常好看的 shader</div>
-                    <div class="icon-box"><i class="iconfont icon-code"
-                            onclick="openUrl('https://github.com/Hukeqing/lightless')"></i></div>
-                    <img src="https://raw.githubusercontent.com/Hukeqing/codeforces-client/master/public/favicon.ico"
-                        alt="cc-logo" class="project-logo">
-                    <div>一个基于 nodejs 和 electron 实现的 Codeforces 客户端，能够提升访问 Codeforces 的速度并且提供一定的额外服务支持</div>
-                    <div>
-                        <i class="iconfont icon-copyright"></i>
-                        <span>GPLv3</span>
-                        <i class="iconfont icon-code"
-                            onclick="openUrl('https://github.com/Hukeqing/codeforces-client')"></i>
+            <div class="div-title">FAQ</div>
+            <div class="center" style="height: 70vh;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; width: 80%; height: 70vh;">
+                    <div class="answer-box" id="faq-box" style="overflow: visible;">
                     </div>
-                    <div><img src="https://github.com/ZJGSU-TTCM/mevcl/raw/master/public/favicon.png?raw=true"
-                            alt="mevcl-logo" class="project-logo"></div>
-                    <div>一个高效的，极简主义的 UI 框架，适合用于 Vue(2.0)</div>
-                    <div>
-                        <i class="iconfont icon-copyright"></i>
-                        <span>MIT</span>
-                        <i class="iconfont icon-code" onclick="openUrl('https://github.com/PortableOJ/mevcl')"></i>
-                        <i class="iconfont icon-link-fill" onclick="openUrl('https://www.npmjs.com/package/mevcl')"></i>
-                    </div>
-                    <div><img src="https://github.com/PortableOJ/portable-docs/raw/master/img/favicon.png?raw=true"
-                            alt="portable-logo" class="project-logo"></div>
-                    <div>一个高性能、分布式、易部署的开源 Online Judge 系统</div>
-                    <div>
-                        <i class="iconfont icon-copyright"></i>
-                        <span>GPLv3</span>
-                        <i class="iconfont icon-code"
-                            onclick="openUrl('https://github.com/PortableOJ/portable-server')"></i>
+                    <div style="overflow: auto;">
+                        <script src="https://utteranc.es/client.js" repo="Hukeqing/Hukeqing.github.io"
+                            issue-term="pathname" label="💬" theme="github-light" crossorigin="anonymous"
+                            async></script>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 </body>
@@ -213,49 +188,57 @@
         place-items: center;
     }
 
-    .skill-box {
+    .answer-box {
         width: 80%;
     }
 
-    .skill-box>div {
+    .answer-box>div {
         position: relative;
         display: inline-block;
         margin: 15px 15px;
         word-wrap: anywhere;
     }
 
-    .skill-box>div>i {
-        position: relative;
-        top: 0px;
-        transition: 0.5s ease all;
-    }
-
-    .skill-box>div>div {
+    .answer {
         position: absolute;
         top: 50%;
         left: 50%;
         background-color: rgba(0, 0, 0, 0.7);
         transform: translate(-50%, -50%);
-        padding: 10px;
+        padding: 0px;
         white-space: nowrap;
         border-radius: 20px;
-        margin: 0px;
-        z-index: 1;
-        max-height: 20px;
         display: grid;
         place-items: center;
-        border: 3px white solid;
+        margin: 0px;
+        z-index: 1;
+        max-height: 0px;
+        border: 0px;
         opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
         transition: 0.5s ease all;
     }
 
-    .skill-box>div:hover>i {
-        z-index: 2;
-        top: -80px;
+    .hotzone {
+        display: grid;
+        place-items: center;
     }
 
-    .skill-box>div:hover>div {
+    .hotzone:hover+.answer {
         opacity: 1;
+        max-height: 100%;
+        padding: 10px;
+        border: 3px white solid;
+    }
+
+    .text-query {
+        position: relative;
+        font-size: 20px;
+        padding: 10px;
+        border: 3px white solid;
+        border-radius: 20px;
+        transition: 0.5s ease all;
     }
 
     .project-logo {
@@ -282,6 +265,7 @@
 </style>
 
 <script>
+    // skill
     let baseSkillSize = 12
     let skillList = [
         { icon: "icon-java", size: 8, desc: "非常熟悉 Java 语言" },
@@ -323,12 +307,28 @@
     }
     let skillDom = []
     for (let i = 0; i < skillList.length; ++i) {
-        skillDom.push(`<div><i class="iconfont ${skillList[i].icon}" style="font-size: ${skillList[i].size * baseSkillSize}px;"></i>
-            <div>${skillList[i].desc}</div></div>`)
+        skillDom.push(`<div><i class="iconfont ${skillList[i].icon} hotzone" style="font-size: ${skillList[i].size * baseSkillSize}px;"></i>
+            <div class="answer">${skillList[i].desc}</div></div>`)
     }
     console.log(skillDom)
     let skillBox = document.getElementById('skill-box')
     skillBox.insertAdjacentHTML('beforeend', skillDom.join(''))
+
+    // faq
+    let faqList = [
+        { query: "可以交换友链嘛", answer: "非常欢迎！但是贵站不可以是商业化网站，亦或是植有影响观看体验广告的网站<br>在申请友链之前请先将本站加入贵站的友链中，然后向我发送邮件<br>失联 or 长期不更新站点将会定期移除 QwQ", height: 60 },
+    ]
+    for (let i = 1; i < faqList.length; ++i) {
+        const random = Math.floor(Math.random() * (i + 1));
+        [faqList[i], faqList[random]] = [faqList[random], faqList[i]];
+    }
+    let faqDom = []
+    for (let i = 0; i < Math.min(3, faqList.length); ++i) {
+        faqDom.push(`<div class="center"><div class="hotzone text-query" style="height: ${faqList[i].height}px">Q: ${faqList[i].query}</div><div class="answer">A: ${faqList[i].answer}</div></div>`)
+    }
+    console.log(faqDom)
+    let faqBox = document.getElementById('faq-box')
+    faqBox.insertAdjacentHTML('beforeend', faqDom.join(''))
 </script>
 
 <!-- sakana! -->
