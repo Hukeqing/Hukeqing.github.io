@@ -5,6 +5,7 @@ categories: ACM&算法
 tag:
  - ACM
 math: true
+index_img: /image/acm/2021-ZJGSU-ACM-freshman-competition/2*4.png
 ---
 
 <div style="color: red;">

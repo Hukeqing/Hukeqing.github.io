@@ -6,6 +6,7 @@ tag:
  - otpauth
  - 2FA
 math: true
+index_img: /image/other/otpauth/qr-code.webp
 mermaid: true
 ---
 
