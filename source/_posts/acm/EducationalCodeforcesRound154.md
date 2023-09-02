@@ -202,18 +202,18 @@ void solve() {
 
 $$
 \left\{\begin{matrix}
- dp\_{i,0} = & 
+ dp_{i,0} = & 
 \left\{\begin{matrix}
-a\_{i-1} < a\_i & min(dp\_{i-1, 0}, dp\_{i-1, 1}) \\
-a\_{i-1} = a\_i & min(dp\_{i-1, 0} + 1, dp\_{i-1, 1}) \\
-a\_{i-1} > a\_i & min(dp\_{i-1, 0} + 1, dp\_{i-1, 1})
+min(dp_{i-1,0}, dp_{i-1,1}), & a_{i-1} < a_i \\
+min(dp_{i-1,0} + 1, dp_{i-1,1}), & a_{i-1} = a_i \\
+min(dp_{i-1,0} + 1, dp_{i-1,1}), & a_{i-1} > a_i
 \end{matrix}\right.
 \\
-dp\_{i,1} = &
+dp_{i,1} = &
 \left\{\begin{matrix}
-a\_{i-1} < a\_i & dp\_{i-1, 1} + 1 \\
-a\_{i-1} = a\_i & dp\_{i-1, 1} + 1 \\
-a\_{i-1} > a\_i & dp\_{i-1, 1}
+dp_{i-1, 1} + 1, & a_{i-1} < a_i
+dp_{i-1, 1} + 1, & a_{i-1} = a_i
+dp_{i-1, 1}, & a_{i-1} > a_i
 \end{matrix}\right.
 \end{matrix}\right.
 $$
