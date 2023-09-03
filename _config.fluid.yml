@@ -296,7 +296,16 @@ navbar:
   menu:
     - { key: "Home", link: "/", icon: "iconfont icon-home-fill" }
     - { key: "归档", link: "/archives/", icon: "iconfont icon-archive-fill" }
-    - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { 
+      key: "分类",
+      icon: "iconfont icon-category-fill",
+      submenu: [
+        { key: 'ACM-算法', link: '/categories/ACM-算法/', name: 'ACM-算法' },
+        { key: '学习-开发-实现', link: '/categories/学习-开发-实现', name: '学习-开发-实现' },
+        { key: '学习笔记', link: '/categories/学习笔记', name: '学习笔记' },
+        { key: '杂项', link: '/categories/杂项', name: '杂项' },
+      ]
+    }
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "好友", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "RSS", link: "/rss.xml", icon: "iconfont icon-rss" }
