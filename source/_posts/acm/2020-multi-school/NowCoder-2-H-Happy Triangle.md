@@ -1,5 +1,5 @@
 ---
-title: 2020牛客暑期多校训练营（第一场）H-Minimum-cost Flow——网络流
+title: 2020牛客暑期多校训练营（第二场）H-Happy Triangle——动态开点线段树+STL+区间化点
 date: 2020-07-15 19:34:31
 categories: ACM&算法
 tag:
