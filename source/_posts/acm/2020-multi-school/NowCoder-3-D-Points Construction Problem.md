@@ -6,7 +6,7 @@ tag:
  - ACM
  - NowCoder
 math: true
-index_img: /image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/5.png
+index_img: /image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/5.png
 ---
 
 # D-Points Construction Problem
@@ -25,24 +25,24 @@ index_img: /image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem
 **这里我们仅考虑非单链的结构，即可以出现矩阵的结构，即 $缺失边数 \geq 4$的情况**
 
 我们首先给出一个矩阵的核心部分，暂时称其为“核”
-![核](/image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/1.png)
+![核](/image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/1.png)
 这个核有一个特性：4个点能够增加4条边，记作： $4 \rightarrow 4$
 
 这是一个矩阵的基础，而且一个矩阵仅需要一个核。
 
 接下来最贪心的方法就是放下这样两个蓝色的点
-![23](/image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/2.png)
+![23](/image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/2.png)
 这个结构能够实现用2个点增加3条边，记作： $2 \rightarrow 3$
 
 同样，我们也可以在上面放下这样的结构
 
-![23](/image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/3.png)
+![23](/image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/3.png)
 同样被记作： $2 \rightarrow 3$
 
 **值得注意的是：核结构 $4 \rightarrow 4$ 是所有类矩阵结构的前提，但是由于其产生的连边数量非常少，所以尽可能的减少其使用，即整个图结构仅使用一次 $4 \rightarrow 4$。而 $2 \rightarrow 3$ 则没有次数限制，可以向上也可以向右**
 
 在上图的基础上，我们还可以提出一个结构：
-![12](/image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/4.png)
+![12](/image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/4.png)
 这个橙色的点非常的巧妙，其实现了一个点新增了两条边，记作 $1 \rightarrow 2$
 
 很明显，$1 \rightarrow 2$ 结构是最优的，结构越多则越能用较少的点来实现缺失的边的需求。所以我们需要尽可能的增加 $1 \rightarrow 2$ 的结构
@@ -62,7 +62,7 @@ index_img: /image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem
 ## 剩余不满足结构
 由于上述策略可能会出现遗留下 $1至2$ 条缺失边，则我们可以把点放在矩阵的左下角，即图中的×
 
-![x](/image/2020-multi-school/acm/NowCoder-3-D-Points Construction Problem/5.png)
+![x](/image/acm/2020-multi-school/NowCoder-3-D-Points Construction Problem/5.png)
 
 则可以满足一条缺失边或者两条缺失边的要求
 
