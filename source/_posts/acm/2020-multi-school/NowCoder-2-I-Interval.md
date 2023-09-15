@@ -6,7 +6,7 @@ tag:
  - ACM
  - NowCoder
 math: true
-index_img: /image/acm/NowCoder-2-I-Interval/2.png
+index_img: /image/acm/2020-multi-school/NowCoder-2-I-Interval/2.png
 ---
 
 [题目链接](https://ac.nowcoder.com/acm/contest/5667/I)
