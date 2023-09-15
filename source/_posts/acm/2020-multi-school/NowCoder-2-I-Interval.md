@@ -42,7 +42,7 @@ index_img: /image/acm/2020-multi-school/NowCoder-2-I-Interval/2.png
 > 1 2 R 1
 
 
-![图1](/image/acm/NowCoder-2-I-Interval/1.png)
+![图1](/image/acm/2020-multi-school/NowCoder-2-I-Interval/1.png)
 
 **补充，图片漏画了$[2, 3] \rightarrow [2, 2]$的连线，其流量为 $INF$**
 
@@ -60,11 +60,11 @@ index_img: /image/acm/2020-multi-school/NowCoder-2-I-Interval/2.png
 
 在原图上绘制对偶图得到
 
-![对偶图](/image/acm/NowCoder-2-I-Interval/2.png)
+![对偶图](/image/acm/2020-multi-school/NowCoder-2-I-Interval/2.png)
 
 将对偶图中有用的元素将其分离出来得到
 
-![对偶图](/image/acm/NowCoder-2-I-Interval/3.png)
+![对偶图](/image/acm/2020-multi-school/NowCoder-2-I-Interval/3.png)
 
 （图中未注明边权的边均为 $0$）
 
