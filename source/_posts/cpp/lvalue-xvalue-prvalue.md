@@ -5,6 +5,7 @@ categories: 杂项
 tags:
  - C++
  - 右值引用
+index_img: /image/cpp/lvalue-xvalue-prvalue/value-type.webp
 ---
 
 # 最初概念
