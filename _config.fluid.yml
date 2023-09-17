@@ -30,7 +30,7 @@ title_join_string: " - "
 
 # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
 # Force all links to be HTTPS (applicable to HTTP mixed error)
-force_https: true
+force_https: false
 
 # 代码块的增强配置
 # Enhancements to code blocks
