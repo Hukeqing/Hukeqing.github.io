@@ -178,7 +178,7 @@ void solve() {
 
 ## 大致题意
 
-给出一个数组，其每个值都有两个属性：$a, h$，需要找到一个连续的子数组，使得这个连续的子数组 $[l, r]$的 $h$ 值满足 $\forall i \in [l, r], h\_{i-1} \space mod \space h\_i = 0$，同时 $\Sum_{i=l}^{r} a\_i \leq x$
+给出一个数组，其每个值都有两个属性：$a, h$，需要找到一个连续的子数组，使得这个连续的子数组 $[l, r]$的 $h$ 值满足 $\forall i \in [l, r], h\_{i-1} \space mod \space h\_i = 0$，同时 $\sum_{i=l}^{r} a\_i \leq x$
 
 问最长的子数组的长度
 
