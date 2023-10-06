@@ -370,6 +370,7 @@ navbar:
     - { key: "RSS", link: "/rss.xml", icon: "iconfont icon-rss" }
     - { key: "开往", link: "https://www.travellings.cn/go.html", icon: "iconfont icon-train" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "终页", link: "/last/page" }
 
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
