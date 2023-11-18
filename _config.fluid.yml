@@ -99,7 +99,7 @@ fun_features:
 
     # 是否循环播放效果
     # If true, loop animation
-    loop: true
+    loop: false
 
     # 在指定页面开启，不填则在所有页面开启
     # Enable in specified page, all pages by default
@@ -362,6 +362,7 @@ navbar:
         { key: 'ACM-算法', link: '/categories/ACM-算法/', name: 'ACM-算法' },
         { key: '学习-开发-实现', link: '/categories/学习-开发-实现', name: '学习-开发-实现' },
         { key: '学习笔记', link: '/categories/学习笔记', name: '学习笔记' },
+        { key: '折腾日记', link: '/categories/折腾日记', name: '折腾日记' },
         { key: '杂项', link: '/categories/杂项', name: '杂项' },
       ]
     }
@@ -636,7 +637,7 @@ post:
   # 侧边栏展示当前分类下的文章
   # Sidebar of category
   category_bar:
-    enable: true
+    enable: false
 
     # 开启后，只有在文章 Front-matter 里指定 `category_bar: true` 才会展示分类，也可以通过 `category_bar: ["分类A"]` 来指定分类
     # If true, only set `category_bar: true` in Front-matter will enable sidebar of category, also set `category_bar: ["CategoryA"]` to specify categories
