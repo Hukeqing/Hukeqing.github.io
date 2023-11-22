@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round#706(Div. 2)-Let's Go Hiking
 date: 2021-03-11 15:57:53
+updated: 2021-03-11 15:57:53
 categories: ACM&算法
 tag:
  - ACM

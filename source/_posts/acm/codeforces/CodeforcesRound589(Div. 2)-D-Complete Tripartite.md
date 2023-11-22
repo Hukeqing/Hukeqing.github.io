@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round#589 (Div. 2) D、Complete Tripartite
 date: 2019-09-30 19:17:23
+updated: 2019-09-30 19:17:23
 categories: ACM&算法
 tag:
  - ACM

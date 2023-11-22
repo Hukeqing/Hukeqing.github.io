@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round 612 (Div. 2) C. Garland——DP
 date: 2020-01-06 14:01:40
+updated: 2020-01-06 14:01:40
 categories: ACM&算法
 tag:
  - ACM

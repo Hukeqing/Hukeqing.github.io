@@ -1,6 +1,7 @@
 ---
 title: Codeforces Round 606 E. Two Fairs——图论
 date: 2020-01-08 19:15:24
+updated: 2020-01-08 19:15:24
 categories: ACM&算法
 tag:
  - ACM

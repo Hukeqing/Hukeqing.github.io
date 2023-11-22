@@ -1,6 +1,7 @@
 ---
 title: Educational Codeforces Round 80 D. Minimax Problem——二分+二进制处理
 date: 2020-02-04 00:21:10
+updated: 2020-02-04 00:21:10
 categories: ACM&算法
 tag:
  - ACM

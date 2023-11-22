@@ -1,6 +1,7 @@
 ---
 title: Educational Codeforces Round#152 (Div. 2)
 date: 2023-08-06 13:02:41
+updated: 2023-08-06 13:02:41
 categories: ACM&算法
 tag:
  - ACM
