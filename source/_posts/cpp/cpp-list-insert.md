@@ -54,9 +54,9 @@ for (int&v: l) cout << v << ' ';
 list<int> l;
 for (int i = 0; i < 10; ++i) l.push_back(i);
 auto iter = l.begin();
+++iter;
 for (int i = -1; i >= -10; --i) {
-    l.insert(iter, i);
-    --iter;
+    l.insert(--iter, i);
 }
 for (int&v: l) cout << v << ' ';
 ```
