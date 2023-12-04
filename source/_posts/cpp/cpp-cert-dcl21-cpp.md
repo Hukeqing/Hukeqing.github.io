@@ -21,7 +21,7 @@ struct A {
 
 但是这段代码，Clang-Tidy 却给我报了 Warning: `Clang-Tidy: Overloaded 'operator++' returns a non-constant object instead of a constant object type`
 
-大致意思是说，`operator++` 方法返回了一个非 `const` 的变量。看了下事例，大概意思是说，因为返回值是一个"临时"的类型（毕竟是一个右值，用完应该就要丢掉的）故需要 `const` 一下，避免会出现 `(i++)++;` 这种离谱的代码（后者的 `++` 是作用在返回的右值上的，实际上不会对原来的值生效）
+大致意思是说，`operator++` 方法返回了一个非 `const` 的变量。看了下样例，大概意思是说，因为返回值是一个"临时"的类型（毕竟是一个右值，用完应该就要丢掉的）故需要 `const` 一下，避免会出现 `(i++)++;` 这种离谱的代码（后者的 `++` 是作用在返回的右值上的，实际上不会对原来的值生效）
 
 一听，好像有点道理，自动修复一下
 
