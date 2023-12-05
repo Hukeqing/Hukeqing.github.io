@@ -7,6 +7,7 @@ tag:
 - ACM
 - Codeforces
 math: true
+intro: Codeforces Round 905 (Div. 3) 个人写题记录
 ---
 
 # A. Morning
