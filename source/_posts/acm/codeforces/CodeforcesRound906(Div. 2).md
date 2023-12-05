@@ -1,5 +1,5 @@
 ---
-title: Codeforces Round 905 (Div. 3)
+title: Codeforces Round 906 (Div. 2)
 date: 2023-12-03 15:50:28
 updated: 2023-12-03 15:50:28
 categories: ACM&算法
