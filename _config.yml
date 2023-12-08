@@ -31,7 +31,8 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - google*.html
-  - about/index.html
+  - about/*
+  - test/*
   - last/page/index.html
 
 # Writing

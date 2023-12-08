@@ -1077,6 +1077,12 @@ links:
       link: "https://kernelbin.cn",
       image: "https://kernelbin.cn/img/favicon.png"
     }
+    - {
+      title: "Happier233",
+      intro: "开心树上开心果，开心树下你和我",
+      link: "https://happier233.github.io",
+      image: "https://happier233.github.io/images/avatar.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
