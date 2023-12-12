@@ -3,6 +3,7 @@ title: 一段奇怪的 CPP 代码
 date: 2023-12-03 13:56:55
 updated: 2023-12-03 13:56:55
 categories: 杂项
+index_img: /image/cpp/cpp-list-insert/docs.png
 tag:
  - C++
 description: 踩了一个 list 的一个坑，当然是我自己笨蛋了
