@@ -7,7 +7,7 @@ tag:
 - ACM
 - Codeforces
 math: true
-intro: Educational Codeforces Round 156 (Rated for Div. 2) 个人写题记录
+description: Educational Codeforces Round 156 (Rated for Div. 2) 个人写题记录
 ---
 
 # A. Sum of Three

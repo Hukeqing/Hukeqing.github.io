@@ -5,7 +5,7 @@ updated: 2023-12-04 21:18:30
 categories: 杂项
 tag:
  - C++
-intro: Clang-Tidy 在 operator++(int) 方法的返回值是否要加 const 这件事反复横跳
+description: Clang-Tidy 在 operator++(int) 方法的返回值是否要加 const 这件事反复横跳
 ---
 
 今天早上有些发烧，就没去上班，下午稍微好点了之后就爬起来折腾会代码，写着写着就发现了一个奇怪的东西。把代码抽出核心部分类似如下的代码

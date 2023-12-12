@@ -7,7 +7,7 @@ tag:
 - ACM
 - Codeforces
 math: true
-intro: Codeforces Round 906 (Div. 2) 个人写题记录
+description: Codeforces Round 906 (Div. 2) 个人写题记录
 ---
 
 # A. Doremy's Paint 3
