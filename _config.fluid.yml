@@ -1068,8 +1068,8 @@ links:
     - {
       title: "tyin",
       intro: "Desired to leave something behind.",
-      link: "http://lxtyin.ac.cn",
-      image: "http://lxtyin.ac.cn/img/favicon.png"
+      link: "https://lxtyin.ac.cn",
+      image: "https://lxtyin.ac.cn/img/favicon.png"
     }
     - {
       title: "kernel.bin",
