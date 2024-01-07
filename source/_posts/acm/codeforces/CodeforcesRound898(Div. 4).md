@@ -2,7 +2,8 @@
 title: Codeforces Round 898 (Div. 4)
 date: 2023-09-24 01:33:45
 updated: 2023-09-24 01:33:45
-categories: ACM&算法
+categories: 
+ - ACM&算法
 tag:
  - ACM
  - Codeforces

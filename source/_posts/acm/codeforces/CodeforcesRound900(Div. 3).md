@@ -2,10 +2,11 @@
 title: Codeforces Round 900 (Div. 3)
 date: 2023-10-05 16:24:34
 updated: 2023-10-05 16:24:34
-categories: ACM&算法
+categories:
+  - ACM&算法
 tag:
- - ACM
- - Codeforces
+  - ACM
+  - Codeforces
 math: true
 ---
 

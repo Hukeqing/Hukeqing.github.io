@@ -2,10 +2,11 @@
 title: Codeforces Round 902 (Div. 2, based on COMPFEST 15 - Final Round)
 date: 2023-10-29 22:01:49
 updated: 2023-10-29 22:01:49
-categories: ACM&算法
+categories:
+  - ACM&算法
 tag:
- - ACM
- - Codeforces
+  - ACM
+  - Codeforces
 math: true
 ---
 

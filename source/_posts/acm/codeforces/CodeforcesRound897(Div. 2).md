@@ -2,7 +2,8 @@
 title: Codeforces Round 897 (Div. 2)
 date: 2023-09-16 23:48:01
 updated: 2023-09-16 23:48:01
-categories: ACM&算法
+categories:
+ - ACM&算法
 tag:
  - ACM
  - Codeforces

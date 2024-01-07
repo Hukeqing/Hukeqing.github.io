@@ -2,10 +2,11 @@
 title: Codeforces Round 899 (Div. 2)
 date: 2023-10-04 12:34:09
 updated: 2023-10-04 12:34:09
-categories: ACM&算法
+categories:
+  - ACM&算法
 tag:
- - ACM
- - Codeforces
+  - ACM
+  - Codeforces
 math: true
 ---
 
