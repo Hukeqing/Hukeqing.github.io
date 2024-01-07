@@ -114,13 +114,6 @@ deploy:
 
 math:
   engine: 'mathjax' # or 'katex'
-  mathjax:
-    # src: custom_mathjax_source
-    config:
-      # MathJax config
-
-plugins:
-- hexo-math
 
 # 订阅 RSS
 feed:

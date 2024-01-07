@@ -132,24 +132,28 @@ void solve() {
 
 ## 思路
 
+{% raw %}
 $$\begin{cases}
-& (2^{b\_i})^{2^{b\_j}} & = & (2^{b\_j})^{2^{b\_i}} \\\\
-\Rightarrow & 2^{b\_i \times 2^{b\_j}} & = & 2^{b\_j \times 2^{b\_i}} \\\\
-\Rightarrow & b\_i \times 2^{b\_j} & = & b\_j \times 2^{b\_i} \\\\
-\Rightarrow & \frac{b\_i}{b\_j} & = & \frac{2^{b\_i}}{2^{b\_j}} \\\\
-\Rightarrow & \frac{b\_i}{b\_j} & = & 2^{b\_i - b\_j}
+& (2^{b_i})^{2^{b_j}} & = & (2^{b_j})^{2^{b_i}} \\
+\Rightarrow & 2^{b_i \times 2^{b_j}} & = & 2^{b_j \times 2^{b_i}} \\
+\Rightarrow & b_i \times 2^{b_j} & = & b_j \times 2^{b_i} \\
+\Rightarrow & \frac{b_i}{b_j} & = & \frac{2^{b_i}}{2^{b_j}} \\
+\Rightarrow & \frac{b_i}{b_j} & = & 2^{b_i - b_j}
 \end{cases}$$
+{% endraw %}
 
-设 $x = b\_i - b\_j$，得 $b\_i = x + b\_j$
+设 $x = b_i - b_j$，得 $b_i = x + b_j$
 
 得到
 
+{% raw %}
 $$\begin{cases}
-& \frac{b\_j + x}{b\_j} & = & 2^x \\\\
-\Rightarrow & b\_j + x & = & b\_j \times 2^x \\\\
-\Rightarrow & x & = & b\_j \times (2^x - 1) \\\\
-\Rightarrow & b\_j & = & \frac{x}{2^x - 1} \\\\
+& \frac{b_j + x}{b_j} & = & 2^x \\
+\Rightarrow & b_j + x & = & b_j \times 2^x \\
+\Rightarrow & x & = & b_j \times (2^x - 1) \\
+\Rightarrow & b_j & = & \frac{x}{2^x - 1} \\
 \end{cases}$$
+{% endraw %}
 
 绘图可以得到
 

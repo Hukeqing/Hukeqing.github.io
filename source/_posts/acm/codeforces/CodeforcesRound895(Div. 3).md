@@ -120,7 +120,9 @@ void solve() {
 
 给定 $n, x, y$，你需要找到一个 $n$ 的排列，满足
 
+{% raw %}
 $$((p_{1x}+p_{2x}+p_{3x}+ \dots + p_{\left \lfloor \frac{n}{x} \right \rfloor x}) - (p_{1y}+p_{2y}+p_{3y}+ \dots + p_{\left \lfloor \frac{n}{y} \right \rfloor y})$$
+{% endraw %}
 
 尽可能大，问最终结果是
 
@@ -349,6 +351,7 @@ void solve() {
 
 假定数组中只有两个值是 $> 1$ 的，为 $x, y$，那么可以得到
 
+{% raw %}
 $$
 \begin{align*}
 xy       & \geq n+x+y-2 \\
@@ -363,6 +366,7 @@ xy       & \geq n-1+2\sqrt{n-1}+1 \\
          & \geq 2n
 \end{align*}
 $$
+{% endraw %}
 
 所以只要对于 $xy > 2n$ 的情况，则可以无脑选尽可能全部的即可，因为相加一定不如相乘，当然，是尽可能，不是一定全部
 

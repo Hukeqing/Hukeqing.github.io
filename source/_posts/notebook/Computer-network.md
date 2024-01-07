@@ -101,8 +101,13 @@ index_img: /image/notebook/Computer-network/13.png
 ### 速率
 速率的单位为 `bit/s`，有时写作`bps`，含义为：<font color=red>每秒传输的比特位个数</font>。**注意，这与通常提及的网速单位不同，通常网速的单位为 B/s 而不是 b/s**
 
+{% raw %}
 $$1Gbps = 1000Mbps = 10^6 Kbps = 10^9 bps$$
+{% endraw %}
+
+{% raw %}
 $$1 B/s = 8 bps$$
+{% endraw %}
 
 ### 带宽
 通常带宽指代某个**信号具有的频带宽度**，单位为`Hz`

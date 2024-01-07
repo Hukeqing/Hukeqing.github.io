@@ -18,7 +18,7 @@ index_img: /image/notebook/Computer-Graphics/Bezier-G1.png
 
 ### 帧缓存计算
 
-$$水平分辨率 * 垂直分辨率 * 每个像素所占用的字节$$
+$水平分辨率 * 垂直分辨率 * 每个像素所占用的字节$
 
 # 图的表示和数据结构
  - 复杂的图形通常被看作是由一些基本图形元素（图元）构成的。基本二维图元包括点、直线、圆弧、多边形、字体符号和位图等
@@ -30,10 +30,13 @@ $$水平分辨率 * 垂直分辨率 * 每个像素所占用的字节$$
 ### 数值微分法
 定义
 
+{% raw %}
 $$\epsilon = \frac{1}{max(|\Delta x|, |\Delta y|)}$$
+{% endraw %}
 
 则递推公式为
 
+{% raw %}
 $$
 \left\{
 \begin{aligned}
@@ -42,6 +45,7 @@ y' = Math.round(y + \epsilon \cdot \Delta y)
 \end{aligned}
 \right.
 $$
+{% endraw %}
 
 ### 逐点比较法
 略
@@ -122,6 +126,7 @@ $$
 # 二维观察
 使用齐次坐标表示一个点的坐标
 
+{% raw %}
 $$
 \left(
 \begin{matrix}
@@ -135,12 +140,14 @@ x & y & 1
 \end{matrix}
 \right)
 $$
+{% endraw %}
 
 为什么使用齐次坐标系：使图形变换转化为表示图形的点集矩阵与某一变换矩阵相乘，可以借助计算机的高速运算
 
 ## 几何变换
 ### 平移
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -167,9 +174,11 @@ x + T_x & y + T_y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 ### 比例缩放
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -196,9 +205,11 @@ xS_x & yS_y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 或
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -225,10 +236,12 @@ x & y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 ### 旋转
 关于原点进行<font color=red>逆</font>时针旋转
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -255,9 +268,11 @@ xcos(\theta) - ysin(\theta) & xsin(\theta) + ycos(\theta) & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 关于原点进行<font color=red>顺</font>时针旋转
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -284,11 +299,13 @@ xcos(\theta) + ysin(\theta) & -xsin(\theta) + ycos(\theta) & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 ### 对称变换
 
 关于<font color=red> x </font>轴对称
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -315,9 +332,11 @@ x & -y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 关于<font color=red> y </font>轴对称
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -344,9 +363,11 @@ x & y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 关于<font color=red> 原点 </font>轴对称
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -373,9 +394,11 @@ x & y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 关于<font color=red> $y = x$ </font>轴对称
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -402,9 +425,11 @@ y & x & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 关于<font color=red> $y = -x$ </font>轴对称
 
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -431,6 +456,7 @@ x & y & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 ### 错切变换
 略
@@ -438,6 +464,7 @@ $$
 ### 二维图形几何变换
 定义
 
+{% raw %}
 $$\mathbf P  = 
 \left[
 \begin{matrix}
@@ -449,6 +476,7 @@ x_n & y_n & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 为这个二维多边形的所有顶点的坐标矩阵，此时再乘上变换矩阵，得到最终结果
 
@@ -488,6 +516,7 @@ $$
 
 计算交点时，可以借用比例的方式计算，例如计算与 $x = x_l$ 的交点时，可以得到
 
+{% raw %}
 $$
 \left\{
 \begin{aligned}
@@ -496,6 +525,7 @@ y' & = & y_1 + (y_2 - y_1) \times (x_l - x_1) / (x_2 - x_1)
 \end{aligned}
 \right.
 $$
+{% endraw %}
 
 #### 中点分割算法
 使用了和 [Cohen-Sutherland](#Cohen-Sutherland-算法) 完全相同的编码方式，但在求解交点时略有不同。此方法包含一个“求出距离一个点最远的，且在窗口内的点”。所以分别对 $p_1, p_2$ 进行一次求解，并代替掉对方（即对于 $p_1$ 求解的答案，代替掉 $p_2$）即可，以下方法的是对 $p_1$ 进行求解的操作，对 $p_2$ 求解时，交换两个值即可
@@ -508,6 +538,7 @@ $$
 #### Liang-Barsky 算法
 
 1. 计算
+{% raw %}
 $$
 \left\{
 \begin{aligned}
@@ -522,6 +553,7 @@ q_4 & = & y_t - y_1
 \end{aligned}
 \right.
 $$
+{% endraw %}
 2. 若满足 $p1 = 0 \ AND \  (q1 < 0 \ OR \ q2 < 0)$ 则直线不在窗口内
 3. 若满足 $p3 = 0 \ AND \  (q3 < 0 \ OR \ q4 < 0)$ 则直线不在窗口内
 4. 准备两个数组 $pos, neg$，将 $1$ 加入到数组 $pos$ 中，将 $0$ 加入到数组 $neg$ 中
@@ -565,6 +597,8 @@ $$
 
 ## 三维变换
 ### 平移
+
+{% raw %}
 $$
 \left[
 \begin{matrix}
@@ -592,6 +626,7 @@ x + T_x & y + T_y & z + T_z & 1
 \end{matrix}
 \right]
 $$
+{% endraw %}
 
 ### 缩放
 

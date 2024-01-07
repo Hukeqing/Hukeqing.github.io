@@ -45,7 +45,7 @@ void solve() {
 
 ## 题面概要
 
-一个大的整数 $n$，找到一个区间 $[l, r]$，满足 $\forall x \in [l, r], n mod x = 0$，求出最大的 $r - l + 1$
+一个大的整数 $n$，找到一个区间 $[l, r]$，满足 $\forall x \in [l, r], n \space mod \space x = 0$，求出最大的 $r - l + 1$
 
 ## 思考
 
@@ -115,13 +115,15 @@ void solve() {
 
 如果需要将所有值变成非负数，前提是必须要有一个正数（不考虑都是 0 的情况，可以特判解决），需要在这个前提下考虑才有意义
 
-那么最简单的方式就是将最大的正数通过累加的方式实现幂次放大，直到和最小值相加也能满足大于等于 $0$ 即可。此时可以得到最终需要的操作数：$n - 1 + \left \lceil log_2 \frac{abs(maxValue)}{abs(minValue)} \right \rceil + cnt_-$（其中的 $cnt_-$ 表示负数个数）
+那么最简单的方式就是将最大的正数通过累加的方式实现幂次放大，直到和最小值相加也能满足大于等于 $0$ 即可。此时可以得到最终需要的操作数：$n - 1 + \left \lceil log\_2 \frac{abs(maxValue)}{abs(minValue)} \right \rceil + cnt\_-$（其中的 $cnt\_-$ 表示负数个数）
 
 
-同样，可以得到非正数需要的操作数 $n - 1 + \left \lceil log_2 \frac{abs(minValue)}{abs(maxValue)} \right \rceil + cnt_+$（其中的 $cnt_+$ 表示负数个数）
+同样，可以得到非正数需要的操作数 $n-1+\left \lceil log\_2 \frac{abs(minValue)}{abs(maxValue)} \right \rceil + cnt\_+$（其中的 $cnt\_+$ 表示负数个数）
 
 最终，我们可以取其中的较小值，得到公式
 
+
+{% raw %}
 $$
 \begin{align}
 = & min(n - 1 + \left \lceil log_2 \frac{abs(maxValue)}{abs(minValue)} \right \rceil + cnt_-, n - 1 + \left \lceil log_2 \frac{abs(minValue)}{abs(maxValue)} \right \rceil + cnt_+) \\
@@ -150,6 +152,7 @@ n - 1 + min(0 + cnt_-, 5 + n - cnt_-)
 = & 31
 \end{align}
 $$
+{% endraw %}
 
 求的上述方法最大操作次数一定满足要求
 

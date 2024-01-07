@@ -133,7 +133,7 @@ main () {
 
 # 平面几何问题
  - 判断一个点是否在一个三角形内
-     * 定义三角形为 $ \vartriangle ABC$，点为 $P$，计算 $$ S_{\vartriangle ABC} = S_{\vartriangle ABP} + S_{\vartriangle ACP} + S_{\vartriangle BCP}$$ 是否成立。而三角形面积可以通过割补法或者叉积求
+     * 定义三角形为 $ \vartriangle ABC$，点为 $P$，计算 $ S_{\vartriangle ABC} = S_{\vartriangle ABP} + S_{\vartriangle ACP} + S_{\vartriangle BCP}$ 是否成立。而三角形面积可以通过割补法或者叉积求
 
 # c++智能指针
  - `auto_ptr`（已弃用）

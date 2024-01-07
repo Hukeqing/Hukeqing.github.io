@@ -37,7 +37,7 @@ index_img: /image/notebook/Compilation-principle/rightmost-derivation.png
 字母表 $\sum$ 是一个<font color=red>有穷的符号集合</font>，符号包括了字母、数字、标点符号……
 
 ### 字母表上的运算
- - 乘积：$$\sum_1 \sum_2 = \{ab | a \in \sum_1 , b \in \sum_2 \}$$。即从 $\sum_1$ 中选择一个字符串，和 $\sum_2$ 中的一个字符串连接
+ - 乘积：$\sum_1 \sum_2 = \{ab | a \in \sum_1 , b \in \sum_2 \}$。即从 $\sum_1$ 中选择一个字符串，和 $\sum_2$ 中的一个字符串连接
  - 幂：即多次进行自我乘积的过程。字母表的 $n$ 次幂指长度为 $n$ 的符号串构成的集合
  - 正闭包：长度正数的符号串构成的集合（任意一个合理的符号串均属于字母表的正闭包）记作：$\sum^+$
  - 克林闭包：允许长度为 $0$ 的正闭包，记作：$\sum^*$

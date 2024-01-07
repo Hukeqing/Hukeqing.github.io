@@ -201,6 +201,7 @@ void solve() {
 
 根据上述三条，可以得到状态转移方程
 
+{% raw %}
 $$
 \left\{\begin{matrix}
  dp_{i,0} = & 
@@ -218,6 +219,7 @@ dp_{i-1, 1}, & a_{i-1} > a_i
 \end{matrix}\right.
 \end{matrix}\right.
 $$
+{% endraw %}
 
 ## AC code
 

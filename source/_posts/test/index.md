@@ -11,6 +11,7 @@ Simple inline $ x \geq y $
 
 Multi inline
 
+{% raw %}
 $$\begin{cases}
     A&XXX\\
     B&XXX\\
@@ -21,6 +22,7 @@ $$\begin{cases}
     \end{cases}\\
     F&XXX
 \end{cases}$$
+{% endraw %}
 
 ```cpp
 #include <bits/stdc++.h>

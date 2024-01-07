@@ -113,14 +113,7 @@ deploy:
   branch: gh-pages
 
 math:
-  engine: 'mathjax' # or 'katex'
-  mathjax:
-    # src: custom_mathjax_source
-    config:
-      # MathJax config
-
-plugins:
-- hexo-math
+  engine: 'mathjax'
 
 # 订阅 RSS
 feed:
