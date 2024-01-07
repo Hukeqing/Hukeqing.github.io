@@ -16,7 +16,7 @@ index_img: /image/acm/codeforces/CodeforcesRound909(Div. 3)/D1.png
 
 ## 大致题意
 
-有两个人 A/B 博弈，每次操作可以使一个值 +1/-1
+有两个人 A/B 博弈，每次操作可以使一个值 $+1/-1$
 
 问在 A 先操作的情况下，A 操作后恰好值可以被 3 整除，则 A 获胜，给出初始值，问 A 是否可能获胜
 
@@ -132,24 +132,24 @@ void solve() {
 
 ## 思路
 
-$$
-(2^{b\_i})^{2^{b\_j}} = (2^{b\_j})^{2^{b\_i}}
-\Rightarrow 2^{b\_i \times 2^{b\_j}} = 2^{b\_j \times 2^{b\_i}}
-\Rightarrow b\_i \times 2^{b\_j} = b\_j \times 2^{b\_i}
-\Rightarrow \frac{b\_i}{b\_j} = \frac{2^{b\_i}}{2^{b\_j}}
-\Rightarrow \frac{b\_i}{b\_j} = 2^{b\_i - b\_j}
-$$
+$$\begin{cases}
+& (2^{b\_i})^{2^{b\_j}} & = & (2^{b\_j})^{2^{b\_i}} \\\\
+\Rightarrow & 2^{b\_i \times 2^{b\_j}} & = & 2^{b\_j \times 2^{b\_i}} \\\\
+\Rightarrow & b\_i \times 2^{b\_j} & = & b\_j \times 2^{b\_i} \\\\
+\Rightarrow & \frac{b\_i}{b\_j} & = & \frac{2^{b\_i}}{2^{b\_j}} \\\\
+\Rightarrow & \frac{b\_i}{b\_j} & = & 2^{b\_i - b\_j}
+\end{cases}$$
 
 设 $x = b\_i - b\_j$，得 $b\_i = x + b\_j$
 
 得到
 
-$$
-\frac{b\_j + x}{b\_j} = 2^x
-\Rightarrow b\_j + x = b\_j \times 2^x
-\Rightarrow x = b\_j \times (2^x - 1)
-\Rightarrow b\_j = \frac{x}{2^x - 1}
-$$
+$$\begin{cases}
+& \frac{b\_j + x}{b\_j} & = & 2^x \\\\
+\Rightarrow & b\_j + x & = & b\_j \times 2^x \\\\
+\Rightarrow & x & = & b\_j \times (2^x - 1) \\\\
+\Rightarrow & b\_j & = & \frac{x}{2^x - 1} \\\\
+\end{cases}$$
 
 绘图可以得到
 

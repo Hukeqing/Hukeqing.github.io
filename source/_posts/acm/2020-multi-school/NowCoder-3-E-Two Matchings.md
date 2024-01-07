@@ -1,10 +1,11 @@
 ---
 title: 2020牛客暑期多校训练营（第三场）E-Two Matchings——复杂思维与简单dp
 date: 2020-07-18 17:01:23
-categories: ACM&算法
+categories:
+  - ACM&算法
 tag:
- - ACM
- - NowCoder
+  - ACM
+  - NowCoder
 math: true
 ---
 
@@ -25,9 +26,9 @@ math: true
  - $a_{a_i} = i$
  - $a_i \neq i$
 
-定义一个字符串的费用为$\sum_{i=1}^{n}w_i - w_{a_i} / 2$ ， $w$ 为给出的权值数组
+定义一个字符串的费用为$\sum\_{i=1}^{n}w\_i - w\_{a\_i}/2$ ， $w$ 为给出的权值数组
 
-求两个满足上述对序列 $a$ 的描述的序列 $p, q$，同时还要满足 $p_i \neq q_i$ 对于每一个 $i$ 都成立
+求两个满足上述对序列 $a$ 的描述的序列 $p, q$，同时还要满足 $p\_i \neq q\_i$ 对于每一个 $i$ 都成立
 
 则这两个序列的费用和的最小值是多少
 
