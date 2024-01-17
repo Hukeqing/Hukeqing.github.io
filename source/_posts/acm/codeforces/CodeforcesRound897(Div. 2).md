@@ -8,7 +8,7 @@ tag:
  - ACM
  - Codeforces
 math: true
-index_img: /image/acm/codeforces/CodeforcesRound897(Div. 2)/E2.jpeg
+index_img: /image/acm/codeforces/CodeforcesRound897/E2.jpeg
 ---
 
 # A. green_gold_dog, array and permutation
@@ -215,7 +215,7 @@ easy version 要求更低，所以直接做 hard
 
 如果不满足的情况，就需要考虑一种方案了，这里给出我的一个方案，接下来会参考下面的图进行讲解，图中，$a, b$ 两段之和（蓝色部分）是不满足完美分配后，余下的部分，其他的黑色部分则是可以完美分配的部分，其中 $len(a) = len(b) = len(d) = len(e)$（注意题目中描述了 $n, k$ 必定都是偶数，所以肯定可以这样分配），同时 $len(a) + len(b) + len(c) + len(d) = k$，且 同时 $len(b) + len(c) + len(d) + len(e) = k$
 
-![E2](/image/acm/codeforces/CodeforcesRound897%28Div.%202%29/E2.jpeg)
+![E2](/image/acm/codeforces/CodeforcesRound897/E2.jpeg)
 
 先要求算出 $a,b,c,d$ 这个区间的异或和，假设记为 $x$，如此操作后，必定迎来翻转操作，即区间变成 $d, (c+b), a, e$ 的顺序，其中因为 $c$ 区间长度不确定，故和 $b$ 放在一块，不做区分。
 

@@ -9,7 +9,7 @@ tag:
   - Codeforces
 math: true
 description: Codeforces Round 909 (Div. 3) 个人写题记录
-index_img: /image/acm/codeforces/CodeforcesRound909(Div. 3)/D1.png
+index_img: /image/acm/codeforces/CodeforcesRound909/D1.png
 ---
 
 # A. Game with Integers
@@ -157,7 +157,7 @@ $$\begin{cases}
 
 绘图可以得到
 
-![D1](/image/acm/codeforces/CodeforcesRound909%28Div.%203%29/D1.png)
+![D1](/image/acm/codeforces/CodeforcesRound909/D1.png)
 
 仅有 $x=0,x=1$ 有正整数解，所以显然，只能恰好相同或者恰好为 $1, 2$ 可以成对
 
