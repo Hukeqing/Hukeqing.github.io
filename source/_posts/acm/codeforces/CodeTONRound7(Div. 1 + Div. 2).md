@@ -183,7 +183,7 @@ void solve() {
 有一个 $n$ 的排列的数组，每次按照如下操作进行
 
 - 选出其中 $a\_i \neq i$ 的 $i$，得到一个由 $i$ 组成的数组 $s$
-- $a\_{s\_{i%k+1}} \leftarrow a\_{s\_i}$
+- $a\_{s\_{i \space mod \space k+1}} \leftarrow a\_{s\_i}$
 
 重复进行后，直到整个数组排序完成，问每一个下标完成排序需要操作几次
 
