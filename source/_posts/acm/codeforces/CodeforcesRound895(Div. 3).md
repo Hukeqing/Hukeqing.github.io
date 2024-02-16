@@ -134,7 +134,7 @@ $$((p_{1x}+p_{2x}+p_{3x}+ \dots + p_{\left \lfloor \frac{n}{x} \right \rfloor x}
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -163,22 +163,22 @@ void solve() {
 
 ```cpp
 const int N = 1e5 + 10;
- 
+
 struct SegTree {
- 
+
     int cnt[2][N << 1];
     bool lazy[N << 1];
- 
+
     inline int static get(int l, int r) {
         return (l + r) | (l != r);
     }
- 
+
     inline void up(int l, int r) {
         int mid = (l + r) >> 1;
         cnt[0][get(l, r)] = cnt[0][get(l, mid)] ^ cnt[0][get(mid + 1, r)];
         cnt[1][get(l, r)] = cnt[1][get(l, mid)] ^ cnt[1][get(mid + 1, r)];
     }
- 
+
     void build(int l, int r) { // NOLINT(*-no-recursion)
         lazy[get(l, r)] = false;
         if (l == r) {
@@ -189,7 +189,7 @@ struct SegTree {
         build(mid + 1, r);
         up(l, r);
     }
- 
+
     inline void push(int l, int r) {
         int k = get(l, r);
         if (lazy[k]) {
@@ -202,7 +202,7 @@ struct SegTree {
             lazy[k] = false;
         }
     }
- 
+
     void update(int l, int r, int x, int y) { // NOLINT(*-no-recursion)
         if (l == x && y == r) {
             swap(cnt[0][get(l, r)], cnt[1][get(l, r)]);
@@ -221,7 +221,7 @@ struct SegTree {
         }
         up(l, r);
     }
- 
+
     int query(int l, int r, int x, int y, int p) { // NOLINT(*-no-recursion)
         if (l == x && y == r) {
             return cnt[p][get(l, r)];
@@ -237,7 +237,7 @@ struct SegTree {
         }
     }
 } seg;
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -255,7 +255,7 @@ void solve() {
             if (str[i] == '1')
                 swap(seg.cnt[0][SegTree::get(i + 1, i + 1)], seg.cnt[1][SegTree::get(i + 1, i + 1)]);
         seg.build(1, n);
- 
+
         int q;
         cin >> q;
         for (int i = 0; i < q; ++i) {
@@ -298,7 +298,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -306,7 +306,7 @@ void solve() {
         struct node {
             int v, n;
         };
- 
+
         int n;
         cin >> n;
         vector<int> cost(n);
@@ -319,7 +319,7 @@ void solve() {
         }
         for (auto &item: cost) cin >> item;
         for (int i = 0; i < n; ++i) deg[link[i]] += cost[i];
- 
+
         vector<bool> visit(n, false);
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> prq;
         for (int i = 0; i < n; ++i) prq.emplace(deg[i], i);
@@ -376,7 +376,7 @@ $$
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -390,7 +390,7 @@ void solve() {
             tot *= item;
             if (tot > 2 * n) break;
         }
- 
+
         if (tot > 2 * n) {
             // make 1 less
             int l = 0, r = n - 1;
@@ -399,15 +399,15 @@ void solve() {
             cout << l + 1 << ' ' << r + 1 << endl;
             continue;
         }
- 
+
         vector<int> not1;
         for (int i = 0; i < n; ++i) if (data[i] != 1) not1.push_back(i);
- 
+
         if (not1.empty()) {
             cout << 1 << ' ' << 1 << endl;
             continue;
         }
- 
+
         int mx = 0, l = 0, r = 0;
         for (int i = 0; i < not1.size() - 1; ++i) {
             int curP = data[not1[i]], curS = data[not1[i]] - 1;

@@ -32,7 +32,7 @@ void solve() {
         cin >> str;
         for (int i = 0; i < 8; ++i) {
             if (str[0] != 'a' + i) cout << static_cast<char>('a' + i) << str[1] << endl;
- 
+
             if (str[1] != '1' + i) cout << str[0] << i + 1 << endl;
         }
     }
@@ -138,7 +138,7 @@ void solve() {
             cout << 0 << endl;
             continue;
         }
- 
+
         int l = 0, r = 1e9 + 10;
         auto check = [&](const int x) {
             int bl = 0, br = 0;
@@ -189,7 +189,7 @@ void solve() {
     for (int a = 0; a < 10; ++a)
         for (int b = 0; b < 10; ++b)
             for (int c = 0; c < 10; ++c) ++base[a + b + c];
- 
+
     for (int tc = 0; tc < _; ++tc) {
         int n, tot = 0;
         cin >> n;
@@ -199,7 +199,7 @@ void solve() {
             tot += tmp % 10;
             tmp /= 10;
         }
- 
+
         long long ans = 0, cur = 1;
         function<void(int)> dfs = [&](const int i) {
             if (arr[i] > 27) return;
@@ -213,18 +213,18 @@ void solve() {
                     arr[i] -= d;
                     arr[i + 1] += d * 10;
                     cur *= base[arr[i]];
- 
+
                     dfs(i + 1);
- 
+
                     cur /= base[arr[i]];
                     arr[i] += d;
                     arr[i + 1] -= d * 10;
                 }
             }
         };
- 
+
         dfs(0);
- 
+
         cout << ans << endl;
     }
 }
@@ -264,7 +264,7 @@ void solve() {
             cout << -1 << endl;
             continue;
         }
- 
+
         if (cnt[0] == 0) {
             cout << 0 << endl;
             continue;
@@ -273,7 +273,7 @@ void solve() {
             cout << 1 << endl;
             continue;
         }
- 
+
         int ans = INT_MAX;
         if (cnt[0] == 1) {
             if (data.back() <= data.front()) {
@@ -323,7 +323,7 @@ void solve() {
         cin >> str;
         for (auto& i: nxt) cin >> i;
         for (auto& i: nxt) ++deg[--i];
- 
+
         queue<int> q;
         for (int i = 0; i < n; ++i) if (!deg[i]) q.push(i);
         while (!q.empty()) {
@@ -337,7 +337,7 @@ void solve() {
             --deg[nxt[cur]];
             if (!deg[nxt[cur]]) q.push(nxt[cur]);
         }
- 
+
         bool ret = true;
         for (int i = 0; i < n; ++i) {
             if (!deg[i] || str[i] == '0') continue;

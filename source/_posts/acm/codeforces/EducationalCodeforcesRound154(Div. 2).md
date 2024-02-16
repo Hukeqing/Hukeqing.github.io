@@ -36,7 +36,7 @@ void solve() {
             if (str[i] == '1') pos1 = i;
             if (str[i] == '3') pos3 = i;
         }
- 
+
         if (pos1 < pos3) cout << "13" << endl;
         else cout << "31" << endl;
     }
@@ -84,12 +84,12 @@ void solve() {
             cout << "NO" << endl;
             continue;
         }
- 
+
         if (a.front() == a.back()) {
             cout << "YES" << endl;
             continue;
         }
- 
+
         bool flag = false;
         for (int i = 0; i < a.size() - 1; ++i) {
             if (a[i] == a.front() && a[i + 1] == a.back() && b[i] == b.front() && b[i + 1] == b.back()) {
@@ -97,7 +97,7 @@ void solve() {
                 break;
             }
         }
- 
+
         cout << (flag ? "YES" : "NO") << endl;
     }
 }
@@ -171,7 +171,7 @@ void solve() {
                     break;
             }
         }
- 
+
         cout << (res ? "YES" : "NO") << endl;
     }
 }
@@ -204,7 +204,7 @@ void solve() {
 {% raw %}
 $$
 \left\{\begin{matrix}
- dp_{i,0} = & 
+ dp_{i,0} = &
 \left\{\begin{matrix}
 min(dp_{i-1,0}, dp_{i-1,1}), & a_{i-1} < a_i \\
 min(dp_{i-1,0} + 1, dp_{i-1,1}), & a_{i-1} = a_i \\
@@ -234,7 +234,7 @@ void solve() {
         for (auto &item: data) cin >> item;
         vector<int> dp[2];
         for (auto &row: dp) row.resize(n);
- 
+
         dp[0][0] = 0;
         dp[1][0] = 1;
         for (int i = 1; i < n; ++i) {

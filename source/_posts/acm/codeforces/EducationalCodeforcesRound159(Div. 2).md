@@ -64,7 +64,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -100,12 +100,12 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 int gcd(int a, int b) {
     if (b == 0) return a;
     return gcd(b, a % b);
 }
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -159,7 +159,7 @@ a + b, & others
 $$
 {% endraw %}
 
-问 
+问
 
 {% raw %}
 $$\sum_{i=1}^{n} \sum_{j=1}^{n} \left | C(s_i, s_j) \right |$$
@@ -181,17 +181,17 @@ void solve() {
     cin >> n;
     string str;
     str.resize(1e6 + 10, -1);
- 
+
     struct node {
         int arr[26]{};
         int len = 0, cnt = 0, end = 0;
- 
+
         node() { memset(arr, -1, sizeof arr); }
     };
     vector<node> tree(1e6 + 10);
     constexpr int root = 0;
     int nxt = 1;
- 
+
     vector<string> data;
     for (int i = 0; i < n; ++i) {
         cin >> str;
@@ -207,7 +207,7 @@ void solve() {
         ++tree[cur].end;
         data.push_back(str);
     }
- 
+
     long long ans = 0;
     for (int i = 0; i < n; ++i) {
         string &s = data[i];

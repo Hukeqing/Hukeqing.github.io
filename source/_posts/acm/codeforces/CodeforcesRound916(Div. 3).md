@@ -242,24 +242,24 @@ void solve() {
             cin >> tmp;
             tree[tmp - 1].push_back(i);
         }
- 
+
         function<int(int)> deep = [&](const int v) {
             d[v] = 1;
             for (auto& i: tree[v]) d[v] += deep(i);
             return d[v];
         };
- 
+
         int ans = 0;
         function<void(int, int)> dfs = [&](const int v, int cnt) {
             ans += cnt > 0;
             if (cnt > 0) --cnt;
- 
+
             int sum = 0;
             for (auto &i: tree[v]) sum += d[i];
- 
+
             for (auto &i: tree[v]) dfs(i, sum - d[i] + cnt);
         };
- 
+
         // ReSharper disable once CppExpressionWithoutSideEffects
         deep(0);
         dfs(0, 0);
@@ -307,7 +307,7 @@ void solve() {
     for (int ts = 0; ts < _; ++ts) {
         int n;
         cin >> n;
- 
+
         struct node {
             int v, n;
         };
@@ -323,7 +323,7 @@ void solve() {
             if (rx == ry) return;
             fa[rx] = ry;
         };
- 
+
         for (int i = 0; i < n * 2; ++i) {
             int tmp;
             cin >> tmp;
@@ -333,25 +333,25 @@ void solve() {
                 edge.push_back({tmp, head[st.top()]});
                 head[st.top()] = static_cast<int>(edge.size()) - 1;
                 deg[tmp]++;
- 
+
                 redge.push_back({st.top(), rhead[tmp]});
                 rhead[tmp] = static_cast<int>(redge.size()) - 1;
             }
             st.push(tmp);
             ++vis[tmp];
         }
- 
+
         queue<int> q;
         for (int i = 1; i <= n; ++i) if (deg[i] == 0) q.push(i);
         constexpr long long mod = 998244353;
         const int res = static_cast<int>(q.size());
- 
+
         long long ans = 1;
         for (int i = 0; i < q.size(); ++i) {
             ans <<= 1;
             ans %= mod;
         }
- 
+
         while (!q.empty()) {
             const int cur = q.front();
             q.pop();
@@ -359,10 +359,10 @@ void solve() {
             ++vis[cur];
             for (int i = head[cur]; ~i; i = edge[i].n) q.push(edge[i].v);
         }
- 
+
         map<int, int> superCnt;
         for (int i = 1; i <= n; ++i) if (vis[i] != 3 && finds(i) == i) q.push(i);
- 
+
         while (!q.empty()) {
             const int cur = q.front();
             q.pop();
@@ -372,9 +372,9 @@ void solve() {
             for (int i = rhead[cur]; ~i; i = redge[i].n)
                 q.push(redge[i].v);
         }
- 
+
         for (auto [k, v]: superCnt) ans = ans * 2 * v % mod;
- 
+
         cout << (res + superCnt.size()) << ' ' << ans << endl;
     }
 }

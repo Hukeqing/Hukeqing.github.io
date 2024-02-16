@@ -36,7 +36,7 @@ void solve() {
             s.insert({xk + a * ar[0], yk + b * ar[1]});
             s.insert({xk + b * ar[0], yk + a * ar[1]});
         }
- 
+
         int ans = 0;
         for (const auto ar: arr) {
             if (s.count({xq + a * ar[0], yq + b * ar[1]})) {
@@ -48,7 +48,7 @@ void solve() {
                 ++ans;
             }
         }
- 
+
         cout << ans << endl;
     }
 }
@@ -77,7 +77,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -98,7 +98,7 @@ void solve() {
                 ++r;
             }
             for (int i = l; i < r; ++i) ans[data[i].second] = r - 1;
- 
+
             l = r;
         }
         for (int i = 0; i < n; ++i) cout << ans[i] << " \n"[i == n - 1];
@@ -126,7 +126,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -203,7 +203,7 @@ void solve() {
             st.push(i);
         }
         while (!st.empty()) st.pop();
- 
+
         for (int i = n - 1; i >= 0; --i) {
             while (!st.empty() && a[st.top()] < a[i]) {
                 la[st.top()] = i + 1;
@@ -212,7 +212,7 @@ void solve() {
             st.push(i);
         }
         while (!st.empty()) st.pop();
- 
+
         bool flag = true;
         for (int i = n - 1; i >= 0; --i) {
             while (r >= 0 && (a[r] != b[i] || la[r] > i || ra[r] <= i)) --r;
@@ -221,7 +221,7 @@ void solve() {
                 break;
             }
         }
- 
+
         cout << (flag ? "YES" : "NO") << endl;
     }
 }

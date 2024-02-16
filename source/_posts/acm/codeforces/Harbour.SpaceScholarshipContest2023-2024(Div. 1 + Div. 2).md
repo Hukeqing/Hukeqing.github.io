@@ -41,7 +41,7 @@ void solve() {
             cout << -1 << endl;
             continue;
         }
- 
+
         for (int i = 0; i < n; ++i) cout << data[i] << " \n"[i == n - 1];
     }
 }
@@ -122,7 +122,7 @@ void solve() {
 ```cpp
 void solve() {
     auto lb = [&](int x) { return x & -x; };
- 
+
     int _;
     cin >> _;
     for (int ts = 0; ts < _; ++ts) {
@@ -130,7 +130,7 @@ void solve() {
         cin >> n;
         vector<int> ans;
         ans.reserve(1000);
- 
+
         ans.push_back(n);
         while (n != 1) {
             int tmp = lb(n);
@@ -138,7 +138,7 @@ void solve() {
             else n -= tmp >> 1;
             ans.push_back(n);
         }
- 
+
         cout << ans.size() << endl;
         for (int i = 0; i < ans.size(); ++i) cout << ans[i] << " \n"[i == ans.size() - 1];
     }
@@ -187,7 +187,7 @@ void solve() {
             for (int j = n - 1; j > 0; --j) r[j] = r[j - 1];
             r[0] = 0;
         }
- 
+
         cout << ans << endl;
     }
 }
@@ -235,11 +235,11 @@ Carol 将这两个值进行 OR 计算，计算后得到 $z$，然后将 $x, z$ �
 
 ```cpp
 #define int long long
- 
+
 struct node {
     int cnt, zero, one;
 };
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -254,7 +254,7 @@ void solve() {
             tree[mx].one = -1;
             return mx++;
         };
- 
+
         int root = newNode();
         auto add = [&](int x) {
             int cur = root;
@@ -264,13 +264,13 @@ void solve() {
                 tree[cur].cnt++;
             }
         };
- 
+
         for (int i = 0; i < n; ++i) {
             int tmp;
             cin >> tmp;
             add(tmp);
         }
- 
+
         int ans = 0, total = n * n;
         function<void(int, int)> dfs = [&](int cur, int deep) {
             if (tree[cur].zero == -1 && tree[cur].one == -1) {
@@ -287,7 +287,7 @@ void solve() {
                 dfs(tree[cur].zero, deep);
             }
         };
- 
+
         auto qp = [&](int a, int b) {
             if (b < 0) return 0LL;
             int ret = 1;
@@ -300,7 +300,7 @@ void solve() {
             return ret;
         };
         auto inv = [&](int a) { return qp(a, mod - 2); };
- 
+
         dfs(0, 1);
         cout << (ans * inv(total) % mod) << endl;
     }

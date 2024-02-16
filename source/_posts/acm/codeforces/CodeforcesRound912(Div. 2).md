@@ -103,7 +103,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -151,7 +151,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int n, q;
     cin >> n >> q;
@@ -173,7 +173,7 @@ void solve() {
                     cost += p - data[j] % p;
                     tmp[j] = true;
                 }
- 
+
                 if (cost < 0) {
                     cost = k + 1;
                     break;
@@ -224,7 +224,7 @@ void solve() {
             const int cost = abs(u - sx) + abs(v - sy);
             data[cost % 2].insert(i + 1);
         }
- 
+
         if (data[0].size() >= data[1].size()) {
             // chose first
             cout << "First" << endl;
@@ -238,7 +238,7 @@ void solve() {
                     cout << *iter << endl;
                     data[1].erase(iter);
                 }
- 
+
                 ++i;
                 if (i < n) {
                     // read
@@ -257,7 +257,7 @@ void solve() {
                 data[0].erase(tmp);
                 data[1].erase(tmp);
                 ++i;
- 
+
                 if (i < n) {
                     if (data[0].empty()) {
                         auto iter = data[1].begin();

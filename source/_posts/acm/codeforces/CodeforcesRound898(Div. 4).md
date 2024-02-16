@@ -2,7 +2,7 @@
 title: Codeforces Round 898 (Div. 4)
 date: 2023-09-24 01:33:45
 updated: 2023-09-24 01:33:45
-categories: 
+categories:
  - ACM&算法
 tag:
  - ACM
@@ -153,7 +153,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;

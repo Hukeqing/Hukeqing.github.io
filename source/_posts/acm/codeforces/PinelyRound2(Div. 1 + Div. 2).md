@@ -147,7 +147,7 @@ void solve() {
             row.reserve(m);
             cin >> row;
         }
- 
+
         bool flag = true;
         for (int i = 0; i < n; ++i) {
             int last = -1;
@@ -168,7 +168,7 @@ void solve() {
                 break;
             }
         }
- 
+
         for (int j = 0; j < m; ++j) {
             int last = -1;
             for (int i = 0; i < n; ++i) {
@@ -180,7 +180,7 @@ void solve() {
                     ans[i][j + 1] = 'B';
                     ans[last][j] = 'B';
                     ans[last][j + 1] = 'W';
- 
+
                     last = -1;
                 }
             }
@@ -189,7 +189,7 @@ void solve() {
                 break;
             }
         }
- 
+
         if (!flag) {
             cout << -1 << endl;
             continue;
@@ -223,22 +223,22 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
     for (int ts = 0; ts < _; ++ts) {
         int n, m, k;
         cin >> n >> m >> k;
- 
+
         struct node {
             int v, n;
- 
+
             bool operator<(const node &rhs) const {
                 return rhs.v < v;
             }
         };
- 
+
         vector<int> cost(n);
         vector<int> head(n, -1);
         vector<node> edge(m);
@@ -251,7 +251,7 @@ void solve() {
             head[u - 1] = i;
             deg[v - 1]++;
         }
- 
+
         queue<int> q;
         vector<int> begin;
         for (int i = 0; i < n; ++i)
@@ -259,12 +259,12 @@ void solve() {
                 q.push(i);
                 begin.push_back(i);
             }
- 
+
         int mx = 0, ans = LONG_LONG_MAX;
         while (!q.empty()) {
             int cur = q.front();
             q.pop();
- 
+
             mx = max(mx, cost[cur]);
             for (int i = head[cur]; i != -1; i = edge[i].n) {
                 --deg[edge[i].v];
@@ -275,9 +275,9 @@ void solve() {
         sort(begin.begin(), begin.end(), [&](const int &lhs, const int &rhs) {
             return cost[lhs] < cost[rhs];
         });
- 
+
         ans = min(ans, mx - cost[begin.front()]);
- 
+
         function<void(int)> add = [&](int x) {
             mx = max(mx, cost[x]);
             for (int i = head[x]; i != -1; i = edge[i].n) {
@@ -286,15 +286,15 @@ void solve() {
                 add(edge[i].v);
             }
         };
- 
+
         for (auto &item : begin) {
             ans = min(ans, mx - cost[item]);
             cost[item] += k;
             add(item);
         }
- 
+
         ans = min(ans, mx - cost[begin.front()]);
- 
+
         cout << ans << endl;
     }
 }

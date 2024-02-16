@@ -115,7 +115,7 @@ void solve() {
             --fst;
             --snd;
         }
- 
+
         function<int(int)> dfs = [&](const int x) {
             if (node[x].first == -1 && node[x].second == -1) return 0;
             if (node[x].first == -1) {
@@ -127,7 +127,7 @@ void solve() {
             const int l = dfs(node[x].first) + (str[x] != 'L'), r = dfs(node[x].second) + (str[x] != 'R');
             return min(l, r);
         };
- 
+
         cout << dfs(0) << endl;
     }
 }

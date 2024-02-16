@@ -68,7 +68,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -153,7 +153,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     vector<int> mi(40);
     for (int i = 0; i < 40; ++i) mi[i] = 1LL << i;
@@ -171,7 +171,7 @@ void solve() {
             continue;
         }
         sum /= n;
- 
+
         auto lowBit = [](int x) { return x & -x; };
         vector<int> p[2];
         p[0].reserve(n);
@@ -224,7 +224,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     vector<int> mi(40);
     for (int i = 0; i < 40; ++i) mi[i] = 1LL << i;
@@ -242,13 +242,13 @@ void solve() {
             continue;
         }
         sum /= n;
- 
+
         struct cmp {
             bool operator()(const int &lhs, const int &rhs) const {
                 return abs(lhs) < abs(rhs);
             }
         };
- 
+
         priority_queue<int, vector<int>, cmp> depart;
         map<int, int, greater<>> pos, neg;
         bool flag = true;
@@ -271,12 +271,12 @@ void solve() {
                 depart.push(s);
             }
         }
- 
+
         if (!flag) {
             cout << "NO" << endl;
             continue;
         }
- 
+
         while (!depart.empty() || !pos.empty() || !neg.empty()) {
             if (depart.empty()) {
                 auto posIter = pos.begin(), negIter = neg.begin();
@@ -288,7 +288,7 @@ void solve() {
                     if (negIter->second == 0) neg.erase(negIter);
                     continue;
                 }
- 
+
                 auto &iter = posIter->first > negIter->first ? posIter : negIter;
                 auto mx = posIter->first > negIter->first ? 1 : -1;
                 auto &u = posIter->first > negIter->first ? pos : neg;
@@ -305,11 +305,11 @@ void solve() {
                 if (iter->second == 0) u.erase(iter);
                 if (tIter->second == 0) v.erase(tIter);
             }
- 
+
             while (!pos.empty() || !neg.empty()) {
                 auto posIter = pos.begin();
                 auto negIter = neg.begin();
- 
+
                 bool posWin = negIter == neg.end() || (posIter != pos.end() && posIter->first > negIter->first);
                 auto &maxIter = posWin ? posIter : negIter;
                 auto &maxLink = posWin ? pos : neg;
@@ -321,27 +321,27 @@ void solve() {
                     break;
                 }
             }
- 
+
             int cnt[2] = {depart.top() < 0, depart.top() > 0};
             int cur = abs(depart.top());
             depart.pop();
- 
+
             while (!depart.empty() && abs(depart.top()) == cur) {
                 cnt[0] += depart.top() < 0;
                 cnt[1] += depart.top() > 0;
                 depart.pop();
             }
- 
+
             // receives from not good gay
             int tmp = min(cnt[0], cnt[1]);
             cnt[0] -= tmp;
             cnt[1] -= tmp;
             if (cnt[0] == 0 && cnt[1] == 0) continue;
- 
+
             int left = cnt[0] > 0 ? 0 : 1;
             auto &link = cnt[0] > 0 ? pos : neg;
             int mx = cnt[0] > 0 ? -1 : 1;
- 
+
             // find in pos which is equals to this gay
             auto iter = link.find(cur);
             if (iter != link.end()) {
@@ -351,7 +351,7 @@ void solve() {
                 if (iter->second == 0) link.erase(iter);
             }
             if (cnt[left] == 0) continue;
- 
+
             // not enough, find in pos which is half of this gay
             iter = link.find(cur / 2);
             if (iter != link.end()) {
@@ -361,13 +361,13 @@ void solve() {
                 cnt[left] -= tmp;
                 if (iter->second == 0) link.erase(iter);
             }
- 
+
             if (cnt[left] != 0) {
                 flag = false;
                 break;
             }
         }
- 
+
         cout << (flag ? "YES" : "NO") << endl;
     }
 }

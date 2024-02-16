@@ -36,7 +36,7 @@ void solve() {
                 flag = false;
             }
         }
- 
+
         cout << (flag ? s : -1) << endl;
     }
 }
@@ -56,7 +56,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -74,7 +74,7 @@ void solve() {
             mb = min(mb, tmp);
             sb += tmp;
         }
- 
+
         cout << min(sa + n * mb, sb + n * ma) << endl;
     }
 }
@@ -95,11 +95,11 @@ $$
 \begin{pmatrix}
 2 \\ 1
 \end{pmatrix}
- \times 
+ \times
 \begin{pmatrix}
 3 \\ 2
 \end{pmatrix}
- \times 
+ \times
 A^3_3
 $$
 {% endraw %}
@@ -110,13 +110,13 @@ $$
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     const int mod = 998244353;
     vector<int> p(2e5 + 10);
     p[0] = p[1] = 1;
     for (int i = 2; i < p.size(); ++i) p[i] = (i * p[i - 1]) % mod;
- 
+
     int _;
     cin >> _;
     string str;
@@ -133,10 +133,10 @@ void solve() {
                 tot++;
             }
         }
- 
+
         ans = (ans * cnt) % mod;
         ans = (ans * p[tot]) % mod;
- 
+
         cout << tot << ' ' << ans << endl;
     }
 }

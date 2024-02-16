@@ -62,7 +62,7 @@ void solve() {
         cin >> n >> m >> d;
         vector<int> data(m);
         for (int i = 0; i < m; ++i) cin >> data[i];
- 
+
         int tot = 0, ans = 0, cnt = 0;
         int l = 1, r = data[1];
         for (int i = 0; i < m; ++i) {

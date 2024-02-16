@@ -31,7 +31,7 @@ void solve() {
         vector<string> data(n);
         for (auto &item : data) item.reserve(m);
         for (auto &item : data) cin >> item;
- 
+
         string vika = "vika";
         int cur = 0;
         for (int i = 0; i < m && cur < vika.size(); ++i) {
@@ -68,11 +68,11 @@ void solve() {
         cin >> n;
         vector<int> data(n);
         for (int i = 0; i < n; ++i) cin >> data[i];
- 
+
         int add = 0;
         for (int i = 1; i < n; ++i) add += data[i] < data[i - 1];
         cout << n + add << endl;
- 
+
         cout << data[0];
         for (int i = 1; i < n; ++i) {
             if (data[i] < data[i - 1]) cout << ' ' << 1;
@@ -105,7 +105,7 @@ void solve() {
         vector<int> data(n);
         for (int i = 0; i < n; ++i) cin >> data[i];
         bool flag = true;
- 
+
         int ptr = n - 1;
         for (int i = 0; i < n; ++i) {
             while (ptr >= 0 && data[ptr] <= i) ptr--;
@@ -114,7 +114,7 @@ void solve() {
                 break;
             }
         }
- 
+
         cout << (flag ? "YES" : "NO") << endl;
     }
 }
@@ -186,7 +186,7 @@ void solve() {
             int tmp;
             cin >> tmp;
             if (tmp < 0) continue;
- 
+
             if (prq.size() < m) {
                 prq.push(tmp);
                 cur += tmp;
@@ -198,7 +198,7 @@ void solve() {
             }
             ans = max(ans, cur);
         }
- 
+
         cout << ans << endl;
     }
 }
@@ -218,7 +218,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -230,12 +230,12 @@ void solve() {
         vector<int> data(n);
         for (int i = 0; i < n; ++i) cin >> data[i];
         for (int i = 0; i < n; ++i) sum += data[i];
- 
+
         if (f >= sum || w >= sum) {
             cout << 1 << endl;
             continue;
         }
- 
+
         int p = (sum + f + w - 1) / (f + w), ans;
         {
             int target = f * p;
@@ -243,30 +243,30 @@ void solve() {
             for (int i = 0; i < n; ++i)
                 for (int j = target; j >= data[i]; --j)
                     dp[j] = max(dp[j], dp[j - data[i]] + data[i]);
- 
+
             int maxDp = 0;
             for (int i = 0; i <= target; ++i) maxDp = max(maxDp, dp[i]);
             if (sum - maxDp <= p * w) ans = p;
             else ans = (sum - maxDp + w - 1) / w;
             dp.clear();
         }
- 
+
         {
             int target = w * p;
             vector<int> dp(target + 1);
             for (int i = 0; i < n; ++i)
                 for (int j = target; j >= data[i]; --j)
                     dp[j] = max(dp[j], dp[j - data[i]] + data[i]);
- 
+
             int maxDp = 0;
             for (int i = 0; i <= target; ++i) maxDp = max(maxDp, dp[i]);
             if (sum - maxDp <= p * f) ans = min(ans, p);
             else ans = min(ans, (sum - maxDp + f - 1) / f);
             dp.clear();
         }
- 
+
         cout << ans << endl;
- 
+
     }
 }
 ```
@@ -294,17 +294,17 @@ void solve() {
         cin >> n;
         vector<int> data(n);
         for (auto &item : data) cin >> item;
- 
+
         vector<int> copy = data;
         sort(copy.begin(), copy.end());
- 
+
         map<int, int> dif, cnt;
         for (int i = 0; i < n; ++i) cnt[data[i]]++;
         for (int i = 1; i < n; ++i) dif[copy[i] - copy[i - 1]]++;
- 
+
         int total = 0;
         for (int i = 1; i < n; ++i) total += copy[i] - copy[i - 1];
- 
+
         int q;
         cin >> q;
         for (int i = 0; i < q; ++i) {
@@ -316,7 +316,7 @@ void solve() {
                 continue;
             }
             int old = data[index - 1];
- 
+
             const auto oldIter = cnt.find(old);
             int al, ar, am, bl, br, bm;
             if (oldIter->second > 1) {
@@ -340,7 +340,7 @@ void solve() {
                 cnt.erase(oldIter);
             }
             data[index - 1] = x;
- 
+
             const auto newIter = cnt.upper_bound(x);
             if (newIter == cnt.end()) {
                 ar = am = 0;
@@ -360,21 +360,21 @@ void solve() {
                 am = rv - lv;
             }
             cnt[x]++;
- 
+
             auto del = [&](int t) {
                 auto iter = dif.find(t);
                 if (iter == dif.end()) return;
                 if (iter->second == 1) dif.erase(iter);
                 else iter->second--;
             };
- 
+
             dif[al]++;
             dif[ar]++;
             dif[bm]++;
             del(bl);
             del(br);
             del(am);
- 
+
             cout << cnt.rbegin()->first + dif.rbegin()->first << ' ';
         }
         cout << endl;

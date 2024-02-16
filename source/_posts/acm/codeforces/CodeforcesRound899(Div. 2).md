@@ -81,7 +81,7 @@ void solve() {
             }
             ans = max(ans, (int) st.size());
         }
- 
+
         cout << ans << endl;
     }
 }

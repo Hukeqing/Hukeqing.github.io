@@ -72,7 +72,7 @@ void solve() {
             cout << 0 << endl;
             continue;
         }
- 
+
         int ls = (m - a2) / k;
         int ans = ls + (m - a2 - ls * k);
         if (m - (ls + 1) * k >= 0) ans = min(ans, ls + 1);

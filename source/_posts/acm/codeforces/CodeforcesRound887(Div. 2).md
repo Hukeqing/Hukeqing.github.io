@@ -37,7 +37,7 @@ void solve() {
             diff = min(diff, tmp - last);
             last = tmp;
         }
- 
+
         cout << max(0, (diff + 2) / 2) << endl;
     }
 }
@@ -68,18 +68,18 @@ void solve() {
             cout << 0 << endl;
             continue;
         }
- 
+
         int x[3] = {0, 1, 0}, y[3] = {0, 0, 1};
         for (int i = 2; i < k; ++i) {
             x[0] = x[1];
             x[1] = x[2];
             y[0] = y[1];
             y[1] = y[2];
- 
+
             x[2] = x[0] + x[1];
             y[2] = y[0] + y[1];
         }
- 
+
         int tx = x[2], ty = y[2], ans = 0;
         for (int i = 0; i < n; ++i) {
             if (tx * i > n) break;
@@ -112,7 +112,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -121,13 +121,13 @@ void solve() {
         cin >> n >> k;
         vector<int> a(n);
         for (int i = 0; i < n; i++) cin >> a[i];
- 
+
         int j = 0, x = 1;
         while (k--) {
             while (j < n && a[j] <= x + j) j++;
             x += j;
         }
- 
+
         cout << x << endl;
     }
 }
@@ -165,7 +165,7 @@ void solve() {
         vector<int> data(n);
         for (auto &item: data) cin >> item;
         vector<int> ans(n);
- 
+
         vector<int> usePos;
         set<int> notUse;
         for (int i = 1; i <= n; ++i) notUse.insert(i);
@@ -199,7 +199,7 @@ void solve() {
             cout << "NO" << endl;
             continue;
         }
- 
+
         cout << "YES" << endl;
         for (auto &item : ans) cout << item << ' ';
         cout << endl;

@@ -130,23 +130,23 @@ $$
 \leq & n - 1 + min(\left \lceil log_2 \frac{abs(maxValue)}{abs(minValue)} \right \rceil + cnt_-, \left \lceil log_2 \frac{abs(minValue)}{abs(maxValue)} \right \rceil + n - cnt_-) \\
 = & n - 1 + min(\left \lceil log_2 abs(maxValue) - log_2 abs(minValue) \right \rceil + cnt_-, \left \lceil log_2 abs(minValue) - log_2 abs(maxValue) \right \rceil + n - cnt_-) \\
 = & \begin{cases}
-n - 1 + min(\left \lceil log_2 abs(maxValue) - log_2 abs(minValue) \right \rceil + cnt_-, 0 + n - cnt_-), abs(maxValue) >= abs(minValue) \\ 
+n - 1 + min(\left \lceil log_2 abs(maxValue) - log_2 abs(minValue) \right \rceil + cnt_-, 0 + n - cnt_-), abs(maxValue) >= abs(minValue) \\
 n - 1 + min(0 + cnt_-, \left \lceil log_2 abs(minValue) - log_2 abs(maxValue) \right \rceil + n - cnt_-), abs(maxValue) <= abs(minValue)
 \end{cases} \\
 \leq & \begin{cases}
-n - 1 + min(5 + cnt_-, 0 + n - cnt_-)\\ 
+n - 1 + min(5 + cnt_-, 0 + n - cnt_-)\\
 n - 1 + min(0 + cnt_-, 5 + n - cnt_-)
 \end{cases} \because max(log_2 abs(maxValue) - log_2 abs(minValue)) = max(log_2 abs(minValue) - log_2 abs(maxValue)) \leq 5(2^5 = 32 > 20) \\
 \leq & \begin{cases}
-20 - 1 + min(5 + cnt_-, 20 - cnt_-) \\ 
+20 - 1 + min(5 + cnt_-, 20 - cnt_-) \\
 20 - 1 + min(cnt_-, 5 + 20 - cnt_-)
 \end{cases} \\
 = & \begin{cases}
-19 + min(5 + cnt_-, 20 - cnt_-) \\ 
+19 + min(5 + cnt_-, 20 - cnt_-) \\
 19 + min(cnt_-, 25 - cnt_-)
 \end{cases} \\
 \leq & \begin{cases}
-19 + 12 \\ 
+19 + 12 \\
 19 + 12
 \end{cases} \because \left \lceil cnt_- \right \rceil = cnt_- \\
 = & 31

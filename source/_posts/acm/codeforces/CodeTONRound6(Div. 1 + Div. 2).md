@@ -110,7 +110,7 @@ void solve() {
         }
         for (int i = 0; i < k; ++i)
             cout << (!flag[i] ? 0 : (data[i].second - data[i].first + 1) + (data[i].second - data[i].first + 1)) << ' ';
- 
+
         cout << endl;
     }
 }

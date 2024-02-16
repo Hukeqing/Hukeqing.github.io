@@ -15,7 +15,7 @@ description: Codeforces Round 908 (Div. 2) 个人写题记录
 
 ## 大致题意
 
-有 A 和 B 两个人，他们在比赛，每一局比赛中，率先赢得 $n$ 小场的人获胜，最终赢得 $m$ 局的人获胜，给出每一小场的获胜情况，问最终谁获胜了 
+有 A 和 B 两个人，他们在比赛，每一局比赛中，率先赢得 $n$ 小场的人获胜，最终赢得 $m$ 局的人获胜，给出每一小场的获胜情况，问最终谁获胜了
 
 ## 思路
 
@@ -116,13 +116,13 @@ void solve() {
         cin >> n >> k;
         vector<int> data(n);
         for (auto& i: data) cin >> i;
- 
+
         struct node {
             int v, n;
         };
         vector<node> edge(n);
         vector head(n, -1), deg(n, 0);
- 
+
         for (int i = 0; i < n; ++i) {
             if (data[i] > n) continue;
             const int u = (i + 1 - data[i] + n) % n;
@@ -131,7 +131,7 @@ void solve() {
             head[u] = i;
             ++deg[v];
         }
- 
+
         vector<int> vis(n + 1, false);
         bool circle = false;
         int maxLen = -1;
@@ -147,9 +147,9 @@ void solve() {
                 if (!deg[edge[i].v]) q.emplace(edge[i].v, snd + 1);
             }
         }
- 
+
         if (deg[0]) circle = true;
- 
+
         cout << (circle || maxLen >= k ? "YES" : "NO") << endl;
     }
 }

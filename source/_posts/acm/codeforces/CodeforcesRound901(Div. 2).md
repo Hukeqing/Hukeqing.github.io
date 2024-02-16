@@ -2,7 +2,7 @@
 title: Codeforces Round 901 (Div. 2)
 date: 2023-10-29 00:30:02
 updated: 2023-10-29 00:30:02
-categories: 
+categories:
   - ACM&算法
 tag:
   - ACM

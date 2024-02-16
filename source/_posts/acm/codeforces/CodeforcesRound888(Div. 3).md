@@ -128,7 +128,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -137,7 +137,7 @@ void solve() {
         cin >> n;
         set<int> st;
         for (int i = 0; i < n; ++i) st.insert(i + 1);
- 
+
         int last = 0, out = -1;
         for (int i = 0; i < n - 1; ++i) {
             int tmp;
@@ -147,17 +147,17 @@ void solve() {
             else st.erase(iter);
             last = tmp;
         }
- 
+
         if (st.size() == 1 && out == -1) {
             cout << "YES" << endl;
             continue;
         }
- 
+
         if (st.size() != 2) {
             cout << "NO" << endl;
             continue;
         }
- 
+
         int a, b;
         a = *st.begin();
         b = *(++st.begin());
@@ -180,7 +180,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -194,7 +194,7 @@ void solve() {
             cin >> tmp;
             cost[tmp] = 0;
         }
- 
+
         vector<vector<int>> from(n + 1);
         vector<vector<int>> to(n + 1);
         vector<int> in(n + 1, 0);
@@ -211,7 +211,7 @@ void solve() {
                 in[i]++;
             }
         }
- 
+
         while (!q.empty()) {
             auto cur = q.front();
             q.pop();
@@ -223,7 +223,7 @@ void solve() {
             for (auto &item : to[cur])
                 if (--in[item] == 0) q.push(item);
         }
- 
+
         for (int i = 1; i <= n; ++i) cout << cost[i] << " \n"[i == n];
     }
 }
@@ -269,12 +269,12 @@ void solve() {
             int zero = -1, one = -1, cnt = 0;
             vector<int> index;
         };
- 
+
         int n, k;
         cin >> n >> k;
         vector<node> tree(n * 40);
         int rNode = 1, root = 0;
- 
+
         auto newNode = [&]() {
             return rNode++;
         };
@@ -292,7 +292,7 @@ void solve() {
             }
             tree[cur].index.push_back(index);
         };
- 
+
         auto find = [&](int cur, int &x, int deep) {
             while (cur != -1) {
                 if (tree[cur].zero == -1 && tree[cur].one == -1) return tree[cur].index[0];
@@ -302,15 +302,15 @@ void solve() {
                 } else cur = tree[cur].zero;
                 deep--;
             }
- 
+
             return -1;
         };
- 
+
         int res = INT_MIN, resX, l, r;
         function<void(int, int x, int)> dfs = [&](int cur, int x, int deep) {
             if (tree[cur].zero == -1 && tree[cur].one == -1) {
                 assert(tree[cur].cnt >= 2 && tree[cur].index.size() >= 2);
- 
+
                 res = (1 << k) - 1;
                 l = tree[cur].index[0];
                 r = tree[cur].index[1];
@@ -322,7 +322,7 @@ void solve() {
             else {
                 if (tree[tree[cur].zero].cnt >= 2) dfs(tree[cur].zero, x | (1 << deep), deep - 1);
                 if (tree[tree[cur].one].cnt >= 2) dfs(tree[cur].one, x, deep - 1);
- 
+
                 if (tree[tree[cur].zero].cnt == 1 && tree[tree[cur].one].cnt == 1) {
                     int lv = 0, rv = 1 << deep;
                     int li = find(tree[cur].zero, lv, deep - 1);
@@ -342,13 +342,13 @@ void solve() {
                 }
             }
         };
- 
+
         for (int i = 0; i < n; ++i) {
             int tmp;
             cin >> tmp;
             add(tmp, i + 1);
         }
- 
+
         dfs(0, 0, k - 1);
         cout << l << ' ' << r << ' ' << resX << endl;
     }
@@ -382,7 +382,7 @@ void solve() {
     struct node {
         int v, n;
     };
- 
+
     int _;
     cin >> _;
     for (int ts = 0; ts < _; ++ts) {
@@ -414,10 +414,10 @@ void solve() {
         for (int i = 0; i < q; ++i) cin >> ql[i].u >> ql[i].v >> ql[i].e;
         for (int i = 0; i < q; ++i) ql[i].e += h[ql[i].u].first;
         for (int i = 0; i < q; ++i) ql[i].i = i;
- 
+
         sort(h.begin() + 1, h.end());
         sort(ql.begin(), ql.end(), [&](const query &a, const query &b) { return a.e < b.e; });
- 
+
         vector<int> fa(n + 1);
         for (int i = 0; i < fa.size(); ++i) fa[i] = i;
         function<int(int)> find = [&](int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); };
@@ -426,7 +426,7 @@ void solve() {
             if (rx == ry) return;
             fa[rx] = ry;
         };
- 
+
         int last = 0, qPtr = 0;
         for (int i = 1; i <= n; ++i) {
             if (last != h[i].first) {
@@ -440,14 +440,14 @@ void solve() {
             last = h[i].first;
             for (int j = head[h[i].second]; j != -1; j = edge[j].n) join(h[i].second, edge[j].v);
         }
- 
+
         while (qPtr < q) {
             auto &que = ql[qPtr];
             int ru = find(que.u), rv = find(que.v);
             ans[que.i] = ru == rv && ql[qPtr].e >= last;
             qPtr++;
         }
- 
+
         for (auto item: ans) cout << (item ? "YES" : "NO") << endl;
         cout << endl;
     }
