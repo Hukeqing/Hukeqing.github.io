@@ -171,7 +171,7 @@ void solve() {
 
 ## 大致题意
 
-有一个数组，允许每次操作选择一个区间 $[l, r]$，使得 $a\_i \leftarrow max(a\_{l \dots r}), \all i \in [l, r]$
+有一个数组，允许每次操作选择一个区间 $[l, r]$，使得 $a\_i \leftarrow max(a\_{l \dots r}), \forall i \in [l, r]$
 
 问只操作数组 $a$ 的情况下是否有可能做到
 
