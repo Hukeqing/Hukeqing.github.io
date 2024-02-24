@@ -2,7 +2,8 @@
 title: Pinely Round 2 (Div. 1 + Div. 2)
 date: 2023-09-01 22:41:20
 updated: 2023-09-01 22:41:20
-categories: ACM&算法
+categories: 
+ - ACM&算法
 tag:
  - ACM
  - Codeforces
