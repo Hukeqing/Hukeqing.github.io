@@ -58,7 +58,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -99,7 +99,7 @@ $\sum\_{i=1}^n c\_i \times (r\_i - l\_i)$ 最小
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -156,13 +156,13 @@ $a\_i = m \times t\_i - (t\_i - 1) \times k$
 
 ```cpp
 #define int long long
- 
+
 // NOLINTNEXTLINE(*-no-recursion)
 auto gcd(const int a, const int b) -> int {
     if (b == 0) return a;
     return gcd(b, a % b);
 }
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -171,7 +171,7 @@ void solve() {
         cin >> n >> k;
         vector<int> data(n);
         for (auto& i: data) cin >> i;
- 
+
         if (n == 1) {
             cout << 0 << endl;
             continue;
@@ -182,7 +182,7 @@ void solve() {
             cout << 0 << endl;
             continue;
         }
- 
+
         int ans = LONG_LONG_MAX;
         auto check = [&](int m) {
             if (m == k) return false;
@@ -198,7 +198,7 @@ void solve() {
             if (flag) ans = min(ans, tmp);
             return flag;
         };
- 
+
         check(mk + k);
         cout << (ans == LONG_LONG_MAX ? -1 : ans) << endl;
     }
