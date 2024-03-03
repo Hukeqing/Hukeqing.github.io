@@ -78,7 +78,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -147,7 +147,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -184,7 +184,7 @@ void solve() {
 
 ```cpp
 #define ll long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -196,7 +196,7 @@ void solve() {
         for (auto& [fst, snd]: data) cin >> fst >> snd;
         for (int i = 0; i < n; ++i) b[i] = data[i].second;
         sort(data.begin(), data.end());
- 
+
         function<ll(vector<int>&, vector<int>&, int, int)> mergeSort = [&](vector<int>& record, vector<int>& tmp, const int l, const int r) {
             if (l >= r) return 0ll;
             const int mid = (l + r) / 2;
@@ -223,7 +223,7 @@ void solve() {
             copy(tmp.begin() + l, tmp.begin() + r + 1, record.begin() + l);
             return inv_count;
         };
- 
+
         vector<int> record(n), tmp(n);
         for (int i = 0; i < n; ++i) record[i] = data[i].second;
         cout << mergeSort(record, tmp, 0, n - 1) << endl;
@@ -245,7 +245,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -264,7 +264,7 @@ void solve() {
             head[u] = i << 1 | 1;
         }
         for (int i = 1; i <= n; ++i) cin >> s[i];
- 
+
         vector<vector<int>> last(n + 1);
         for (auto &i: last) i.resize(n + 1, LONG_LONG_MAX);
         last[1][1] = 0;

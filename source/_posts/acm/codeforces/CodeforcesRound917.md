@@ -63,7 +63,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -118,7 +118,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -171,7 +171,7 @@ void solve() {
 
 ```cpp
 #define ll long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -179,14 +179,14 @@ void solve() {
     vector<int> end(2e5 * 2);
     for (auto& i: tree) i.resize(20, 0);
     for (auto& i: next) i.resize(2, 0);
- 
+
     for (int tc = 0; tc < _; ++tc) {
         int n, k;
         cin >> n >> k;
         vector<int> p(n), q(k), cache(k);
         for (auto& i: p) cin >> i;
         for (auto& i: q) cin >> i;
- 
+
         int root, tail = 0;
         auto build = [&] {
             for (int i = 0; i < 20; ++i) tree[tail][i] = 0;
@@ -195,9 +195,9 @@ void solve() {
             assert(tail < tree.size());
             return tail++;
         };
- 
+
         root = build();
- 
+
         auto move = [&](const int x, const int v) {
             int i = 20;
             while (i >= 0 && (x & 1 << i) == 0) --i;
@@ -211,9 +211,9 @@ void solve() {
             }
             end[cur] += v;
         };
- 
+
         for (const auto& pi: p) move(pi, 1);
- 
+
         ll ans = 0;
         constexpr ll mod = 998244353;
         auto pos = [&](const int gap, const int cnt) {
@@ -222,7 +222,7 @@ void solve() {
             const ll tmp = ps * cnt % mod;
             ans = (ans + tmp) % mod;
         };
- 
+
         auto neg = [&](int gap, const int cnt) {
             gap += 1;
             if (gap > k) return;
@@ -231,7 +231,7 @@ void solve() {
             const ll tmp = (all - ps - k) * cnt % mod;
             ans = (ans + tmp) % mod;
         };
- 
+
         for (const auto& pi: p) {
             move(pi, -1);
             int i = 20;
@@ -239,7 +239,7 @@ void solve() {
             int cur = root;
             while (i >= 0) {
                 const int flag = pi & 1 << i ? 1 : 0;
- 
+
                 if (const int other = next[cur][flag ^ 1]; other != -1)
                     for (int ind = 0; ind < 20; ++ind)
                         if (tree[other][ind] > 0) {
@@ -247,14 +247,14 @@ void solve() {
                             pos(max(0, gap), tree[other][ind]);
                             if (gap < 0) neg(-gap, tree[other][ind]);
                         }
- 
+
                 cur = next[cur][flag];
                 const int gap = max(-i, -k + 1);
                 pos(max(0, gap), end[cur]);
                 if (gap < 0) neg(-gap, end[cur]);
                 --i;
             }
- 
+
             auto cal = [&](const int node) {
                 if (node == -1) return;
                 for (int ind = 0; ind < 20; ++ind)
@@ -267,7 +267,7 @@ void solve() {
             cal(next[cur][0]);
             cal(next[cur][1]);
         }
- 
+
         function<ll(vector<int>&, vector<int>&, int, int)> mergeSort = [&](vector<int>& record, vector<int>& tmp, const int l, const int r) {
             if (l >= r) return 0ll;
             const int mid = (l + r) / 2;
@@ -294,11 +294,11 @@ void solve() {
             copy(tmp.begin() + l, tmp.begin() + r + 1, record.begin() + l);
             return inv_count;
         };
- 
+
         const ll cnt = mergeSort(q, cache, 0, k - 1);
         const ll tmp = cnt * n % mod;
         ans = (ans + tmp) % mod;
- 
+
         cout << ans << endl;
     }
 }
