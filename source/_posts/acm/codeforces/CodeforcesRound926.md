@@ -9,7 +9,7 @@ tag:
 - Codeforces
 math: true
 description: Codeforces Round 926 (Div. 2) 个人写题记录
-#index_img: /image/acm/codeforces/CodeforcesRound925/G.png
+#index_img:
 ---
 
 # A. Sasha and the Beautiful Array
@@ -79,7 +79,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -117,7 +117,7 @@ void solve() {
 
 ```cpp
 #define int long long
- 
+
 void solve() {
     int _;
     cin >> _;
@@ -135,7 +135,7 @@ void solve() {
             head[u] = i << 1;
             head[v] = i << 1 | 1;
         }
- 
+
         function<pair<int, int>(int, int)> dfs = [&](int u, int p) {
             int a = 1, b = 0;
             for (int e = head[u]; ~e; e = edges[e].second) {
@@ -144,10 +144,10 @@ void solve() {
                 a = (a * (1 + na)) % mod;
                 b = (b + na + nb) % mod;
             }
- 
+
             return make_pair(a, b);
         };
- 
+
         auto [a, b] = dfs(1, 0);
         cout << (a + b + 1) % mod << endl;
     }
