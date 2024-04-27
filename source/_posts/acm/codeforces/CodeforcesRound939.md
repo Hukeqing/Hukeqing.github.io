@@ -155,7 +155,7 @@ void solve() {
     }
     vector<pair<int, int>> ans;
     ans.reserve(2e5);
- 
+
     auto zero = [&](int l, int r) {
         bool flag = true;
         for (int i = l; i <= r; ++i) if (data[i] == 0) flag = false;
@@ -178,7 +178,7 @@ void solve() {
         data[r] = r - l;
         dfs(l, r - 1);
     };
- 
+
     auto f = [&](int l, int r) {
         zero(l, r);
         dfs(l, r);
@@ -190,7 +190,7 @@ void solve() {
         f(dr[i], i);
         i = dr[i];
     }
- 
+
     cout << dp[n - 1] << ' ' << ans.size() << endl;
     for (auto &[a, b]: ans) cout << a + 1 << ' ' << b + 1 << endl;
 }

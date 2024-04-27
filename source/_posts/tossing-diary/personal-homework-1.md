@@ -3,9 +3,9 @@ title: 个人网络 + NAS 折腾日记-1
 date: 2023-11-07 08:27:24
 updated: 2023-11-07 08:27:24
 categories: 
+- 杂项
 tag:
-- ACM
-- 总结
+- NAS
 math: true
 mermaid: true
 hide: true

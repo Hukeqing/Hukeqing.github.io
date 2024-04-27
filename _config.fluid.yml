@@ -362,7 +362,6 @@ navbar:
         { key: 'ACM-算法', link: '/categories/ACM-算法/', name: 'ACM-算法' },
         { key: '学习-开发-实现', link: '/categories/学习-开发-实现', name: '学习-开发-实现' },
         { key: '学习笔记', link: '/categories/学习笔记', name: '学习笔记' },
-        { key: '折腾日记', link: '/categories/折腾日记', name: '折腾日记' },
         { key: '杂项', link: '/categories/杂项', name: '杂项' },
       ]
     }
