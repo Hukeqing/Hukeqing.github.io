@@ -1,7 +1,7 @@
 ---
 title: 日本旅游杂记-东京篇
 date: 2024-04-23 23:56:42
-updated: 2024-04-23 23:56:42
+updated: 2024-04-29 00:58:17
 categories:
   - 杂项
 tag:
@@ -11,7 +11,7 @@ tag:
 math: true
 description: 日本旅游杂记-东京篇
 hide: true
-index_img: /image/tourist/Japan-Tokyo-1/SUICA.png
+index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 ---
 
 # 旅游计划前的闲聊
@@ -115,13 +115,13 @@ index_img: /image/tourist/Japan-Tokyo-1/SUICA.png
 
 这里考虑到达新宿的时间，如果是在上野、浅草、银座之类的地方就下车的话，应该会更快一些
 
-|            |  N'EX   | SKY ACCESS | Skyliner |
-|:----------:|:-------:|:----------:|:--------:|
-| time cost  |  1h27m  |   1h25m    |  1h11m   |
-| money cost | 5000JPY |  2960JPY   | 5580JPY  |
-|  transfer  |   NO    |   1 time   |  1 time  |
-| first time |  07:37  |   05:41    |  06:20   |
-| last time  |  21:44  |   23:08    |  23:00   |
+|            |   N'EX   | SKY ACCESS | Skyliner |
+|:----------:|:--------:|:----------:|:--------:|
+| time cost  |  1h27m   |   1h25m    |  1h11m   |
+| money cost | 5,000JPY |  2,960JPY  | 5,580JPY |
+|  transfer  |    NO    |   1 time   |  1 time  |
+| first time |  07:37   |   05:41    |  06:20   |
+| last time  |  21:44   |   23:08    |  23:00   |
 
 综合上看，还是坐 SKY ACCESS 比较值，时间也比较充裕，除了慢一点需要转车以外，基本就没太大缺点了。
 另外，搭乘「京成 Access 特急」是不需要预约的！只要在抵达成田机场后于现场的自动售票机、售票中心购票，有 IC 票卡的更可以直接哔哔进站！
@@ -131,6 +131,62 @@ index_img: /image/tourist/Japan-Tokyo-1/SUICA.png
 做了一张东京地图，标注了核心的一些旅游景点
 
 ![key-point](/image/tourist/Japan-Tokyo-1/key-point.png)
+
+### 旅游
+
+- 涩谷
+  - 涩谷 SKY [预定地址](https://www.shibuya-scramble-square.com/sky/ticket/)
+    - 可以俯瞰整个东京地区，可以看到富士山、晴空塔、东京塔等景点
+    - 费用 2,200JPY，但是现场直接买票要 2,500JPY
+    - 日落很好看，需要提前很早很早在网上进行订票，不然是订不到日落时分时间进去的，只有下午场。
+    - 虽然并不限制什么时候出来，但是在里面待一个下午等日落还是有点……
+  - 原宿地区
+    - 指原宿车站到表参道站一路的店铺，包括来自竹下通出口的一带，有非常多的小吃和店家
+  - 涩谷十字路口
+    - 全球人流量最大的十字路口
+- 上野
+  - 上野恩赐公园
+    - 樱花季会比较好，非樱花季就比较尴尬了，可以进去逛逛
+  - 晴空塔（东京天空树）[官网](https://www.tokyo-skytree.jp/ticket/individual/)
+    - 要上去的话，价格还是比较贵的，提前至少一天预定费用是 2,700JPY，如果是当天预定的话需要 3,100JPY，成本还是稍微有一些高
+    - 不过有和隔壁的墨田水族馆合并的门票，价格为 4,700 JPY，组合票在这里 [购买](https://link-ticket.tokyo-skytree.jp/activity/zh/TICKETHUB-skytree_aquarium)
+    - 需要注意组合票必须先去天空树，逛完才能进入水族馆
+  - 墨田水族馆 [官网](https://webket.jp/pc/ticket/index?fc=00294&ac=8001)
+    - 墨田地区的水族馆，单人 2,500JPY 价格不算很高，可以接受，而且是莉可莉丝的取景地，还是挺值得一去
+    - ![Sumida Aquarium](/image/tourist/Japan-Tokyo-1/Sumida-Aquarium.jpg)
+  - 浅草寺
+    - 有着悠久历史寺庙，可以去参拜一下
+    - 记得收集一下御朱印
+  - Sumida Park/隅田公园
+    - 沿河的一条，樱花季会比较好看
+    - 可以看到对面的晴空塔，如果不去晴空塔的话，这里观景也不错
+
+### 美食
+
+- 涩谷
+  - 極味屋 澀谷PARCO店
+    - 日本〒150-0042 Tokyo, Shibuya City, Udagawacho, 15−1 渋谷パルコ地下 1階
+    - 美式牛扒屋，有松露炒饭，自助烤肉
+    - 日常营业时间：11:30–23:00，周末营业时间：11:00–22:30
+    - 人群约 2000JPY+
+  - LUKE'S LOBSTER 表參道貓街店
+    - 三明治专卖店
+  - Micasadeco & Cafe Jingumae
+    - 咖啡甜点店，有松饼等
+    - 晚上不营业
+    - [菜单](https://micasadecoandcafe.com/tokyo.html)
+  - ANAKUMA CAFE - Harajuku
+    - 熊熊咖啡厅，很好玩的咖啡店
+    - 单杯价格在 1,500JPY 左右
+    - [菜单](https://anakuma.jp/pages/menu#food)
+- 上野
+  - Numazuko Kaisho
+    - 1,500JPY 自助海鲜
+  - Bou-ya Uenorokuchometen(房家ホルモン館 上野六丁目店)
+    - 烤肉店
+    - 有各种稀有部位的烤牛肉，比如牛肠、牛舌、
+    - 预期两个人的成本是 5,000JPY
+    - 可乐是梅汁口味的
 
 ## 住宿
 
