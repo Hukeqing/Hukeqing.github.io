@@ -209,6 +209,8 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 
 #### 旅游地点
 
+没啥好逛的地方吧
+
 #### 美食
 （驻地不能边走边吃哦）
 
@@ -223,6 +225,41 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
   - 咖啡抹茶店
   - [官网](https://matchastandmaruni.com/zh-tw)
   - 抹茶单杯 650JPY
+- YONEMOTO Coffee Shop Tsukiji New Shop
+  - 很有名的老店，推荐黑糖蜜咖啡
+- Saito Suisan（斉藤水産㈱）
+  - 生吃牡蛎，1400JPY 一个
+- Soratsuki
+  - 甜点店，有奶昔等
+
+### 月岛/佃岛
+
+#### 美食
+
+- KYUEI MELON PAN（月島久栄）
+  - 面包店
+  - 菠萝面包 200JPY
+- Moheji Hanare（月島もんじゃ もへじ はなれ）
+  - 文字烧
+
+### 丰州
+
+#### 美食
+
+下午两点打烊的街区
+
+- 海鮮丼 大江戶 豐洲市場內店
+  - [菜单与营业时间](https://www.tsukiji-ooedo.com)
+  - 人均约 2500JPY
+- 
+
+### 秋叶原
+
+#### 美食
+
+- 肉屋橫丁
+  - 烤肉自助，和牛吃到饱
+  - 一个人 6980JPY
 
 ## 住宿
 
