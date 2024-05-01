@@ -244,6 +244,12 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 
 ### 丰州
 
+#### 旅游地点
+
+- Tokyo Toyosu Manyo club（東京豊洲 万葉倶楽部）
+  - 超级公共浴室，泡澡
+  - 八楼可以免费泡脚，记得自带毛巾
+
 #### 美食
 
 下午两点打烊的街区
@@ -251,7 +257,14 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 - 海鮮丼 大江戶 豐洲市場內店
   - [菜单与营业时间](https://www.tsukiji-ooedo.com)
   - 人均约 2500JPY
-- 
+  - 14:30 打烊
+- 濱風茶房
+  - 抹茶店，有甜点，比如栗子蛋糕（1000JPY）
+  - 18:00 打烊
+- 越後屋 助五郎
+  - 烤鱼串
+  - 19:00 打烊
+  - 稍微有点贵
 
 ### 秋叶原
 
@@ -260,6 +273,22 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 - 肉屋橫丁
   - 烤肉自助，和牛吃到饱
   - 一个人 6980JPY
+
+### 麻布台
+
+#### 旅游地点
+
+- teamLab Borderless: MORI Building DIGITAL ART MUSEUM
+  - [官网](https://www.teamlab.art/jp/e/tokyo/)
+  - 美术馆，整个房间都是屏幕的艺术馆，艺术内容会和你的互动进行变化
+  - 门票很贵，日常一个人 4000JPY，节假日或者临近的日期容易涨到 4400JPY 甚至 4800JPY
+- Hills House 33F
+  - 高空视野，可以近距离看到东京铁塔，还是免费的景点
+
+#### 美食
+
+- Pelican café
+  - 一家卖吐司的店，评分有高有低，排队比较久
 
 ## 住宿
 
