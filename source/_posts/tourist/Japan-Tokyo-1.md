@@ -126,7 +126,7 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 综合上看，还是坐 SKY ACCESS 比较值，时间也比较充裕，除了慢一点需要转车以外，基本就没太大缺点了。
 另外，搭乘「京成 Access 特急」是不需要预约的！只要在抵达成田机场后于现场的自动售票机、售票中心购票，有 IC 票卡的更可以直接哔哔进站！
 
-## 旅游地点计划
+## 旅游地点
 
 做了一张东京地图，标注了核心的一些旅游景点
 
@@ -206,10 +206,6 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
   - 人群价格在 1100JPY 左右，相对廉价
 
 ### 筑地市场
-
-#### 旅游地点
-
-没啥好逛的地方吧
 
 #### 美食
 （驻地不能边走边吃哦）
@@ -292,4 +288,57 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 
 ## 住宿
 
-未完待续ing
+住宿可以考虑根据游玩路线制定，日本的酒店的房间和床都比较小
+
+## 旅行路线推荐
+
+路线考虑是从新宿出发，回到新宿的，所以不一定时候，也可以根据上面的地点自己进行拟定
+
+### 新宿-涩谷-台场-丰州-月岛-筑地市场
+
+![line1](/image/tourist/Japan-Tokyo-1/line1.png)
+
+- 早上从新宿出发
+- 先乘坐 JR 山手线，到达原宿站
+- 从原宿站的竹下口出
+- 沿着出口方向一直向东步行到竹下口红绿灯处，然后再向南走，一路走到新宿站
+  - LUKE'S LOBSTER 表參道貓街店
+  - Micasadeco & Cafe Jingumae
+  - ANAKUMA CAFE - Harajuku
+- 中午到达新宿站
+  - 極味屋 澀谷PARCO店
+  - 涩谷十字路口
+- 乘坐崎京線到达东京电讯
+- 前往台场海滨公园
+  - 台场海滨公园
+- 下午再向北步行至丰州
+  - Tokyo Toyosu Manyo club
+  - 濱風茶房
+  - 越後屋 助五郎
+- 然后再西北方向，经过月岛
+  - Moheji Hanare（月島もんじゃ もへじ はなれ）
+  - KYUEI MELON PAN（月島久栄）
+- 傍晚到达筑地市场
+  - とんぼや Tonboya
+  - Onigiri Marutoyo
+  - Yamachō/Shouro
+  - Matcha Stand Maruni TOKYO TSUKIJI
+  - YONEMOTO Coffee Shop Tsukiji New Shop
+  - Saito Suisan（斉藤水産㈱）
+  - Soratsuki
+- 晚上可以选择在银座附近逛街
+
+### 新宿-上野-押上-麻布台
+
+- 早上从新宿出发
+- 乘坐 JR 山手线，到达上野
+  - 上野恩赐公园
+- 然后乘坐东京地下铁的银座线再前往浅草
+  - 浅草寺
+  - 隅田公园
+- 中午回到上野地区解决午餐
+  - Bou-ya Uenorokuchometen(房家ホルモン館 上野六丁目店)
+- 乘坐地下铁银座线转都营浅草线前往押上
+  - 墨田水族馆
+- 傍晚前往麻布台，并解决晚饭
+  - Hills House 33F
