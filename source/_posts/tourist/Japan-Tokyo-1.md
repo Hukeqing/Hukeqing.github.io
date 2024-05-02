@@ -285,6 +285,9 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 
 - Pelican café
   - 一家卖吐司的店，评分有高有低，排队比较久
+- 椀もなか 花一会
+  - 18:00 关门
+  - 各种冲泡的调料，适合买回去当礼物
 
 ## 住宿
 
@@ -342,3 +345,4 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
   - 墨田水族馆
 - 傍晚前往麻布台，并解决晚饭
   - Hills House 33F
+  - 椀もなか 花一会
