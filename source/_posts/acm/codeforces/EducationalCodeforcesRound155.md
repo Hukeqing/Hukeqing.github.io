@@ -1,5 +1,5 @@
 ---
-title: Educational Codeforces Round#152 (Div. 2)
+title: Educational Codeforces Round#155 (Div. 2)
 date: 2023-10-02 23:25:36
 updated: 2023-10-02 23:25:36
 categories: ACM&算法

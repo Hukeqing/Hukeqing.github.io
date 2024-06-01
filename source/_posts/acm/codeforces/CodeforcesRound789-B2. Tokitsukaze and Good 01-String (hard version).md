@@ -1,5 +1,5 @@
 ---
-title: Codeforces Round#706(Div. 2)-Let's Go Hiking
+title: Codeforces Round#789(Div. 2)
 date: 2022-05-28 07:20:53
 updated: 2022-05-28 07:20:53
 categories: ACM&算法
