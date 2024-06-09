@@ -11,6 +11,7 @@ tag:
 math: true
 description: 日本旅游杂记-东京篇
 hide: false
+sticky: true
 index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 ---
 
