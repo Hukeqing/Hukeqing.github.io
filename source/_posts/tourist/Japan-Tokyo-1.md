@@ -1,7 +1,7 @@
 ---
 title: 日本旅游杂记-东京篇
 date: 2024-04-23 23:56:42
-updated: 2024-06-09 00:02:39
+updated: 2024-07-10 09:06:09
 categories:
   - 杂项
 tag:
@@ -447,3 +447,5 @@ index_img: /image/tourist/Japan-Tokyo-1/key-point.png
 比如总共 6 个光电，亮了 2 个，意味着当前颜色的灯还有 1/3 的时间，完全没有精确的时间，只有大概的比例
 
 ![TrafficLights](/image/tourist/Japan-Tokyo-1/TrafficLights.JPEG)
+
+另外就是日本对智能马桶的执着有点过分，你甚至可以在地铁站的公共厕所内发现智能马桶……
