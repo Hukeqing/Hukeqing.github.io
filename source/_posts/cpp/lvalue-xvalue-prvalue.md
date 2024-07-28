@@ -1,7 +1,8 @@
 ---
 title: 左值-右值-将亡值
 date: 2023-09-03 21:49:07
-categories: 杂项
+categories:
+ - 杂项
 tags:
  - C++
  - 右值引用
