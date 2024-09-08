@@ -10,7 +10,7 @@ tag:
 math: true
 description: 黑神话悟空个人评测
 hide: false
-index_img: /image/game/Black-Myth-Wukong/steam.png
+index_img: /image/game/Black-Myth-Wukong/rock.jpeg
 ---
 
 # 开篇
