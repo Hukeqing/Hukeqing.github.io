@@ -1,7 +1,7 @@
 ---
 title: Codeforces Round 972 (Div. 2)
-date: 2024-05-05 00:39:10
-updated: 2024-05-05 00:39:10
+date: 2024-09-16 19:14:15
+updated: 2024-09-16 19:14:15
 categories:
 - ACM&算法
 tag:
