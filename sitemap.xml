@@ -11,6 +11,159 @@
   </url>
   
   <url>
+    <loc>https://blog.mauve.icu/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/11/15/mac/macvim/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/10/24/mac/screen-cut/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/01/07/notebook/Compilation-principle/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/06/10/notebook/Computer-Graphics/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2020/12/26/notebook/Computer-network-experiment/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/01/07/notebook/Computer-network/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2022/08/29/thoughts/java-script-null-undefine/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2020/12/20/acm/myACM/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/10/13/cpp/Strassen/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2019/07/22/cpp/cpp-negative-array/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2022/01/12/cpp/cpp-template-variable-parameter-to-c/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2023/09/03/cpp/lvalue-xvalue-prvalue/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/10/13/cpp/thread-pool/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2021/11/25/develop-note/git-remote-reconnect/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/2022/03/24/develop-note/gitbook-install-error/</loc>
+    
+    <lastmod>2024-09-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.mauve.icu/2022/03/19/develop-note/java-create-captcha/</loc>
     
     <lastmod>2024-09-16</lastmod>
@@ -173,159 +326,6 @@
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/2022/03/22/mac/clion-mac-CMAKE_OSX_SYSROOT/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/10/24/mac/screen-cut/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/11/15/mac/macvim/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/01/07/notebook/Compilation-principle/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/06/10/notebook/Computer-Graphics/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2020/12/26/notebook/Computer-network-experiment/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/01/07/notebook/Computer-network/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2022/08/29/thoughts/java-script-null-undefine/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2020/12/20/acm/myACM/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/10/13/cpp/Strassen/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2019/07/22/cpp/cpp-negative-array/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2022/01/12/cpp/cpp-template-variable-parameter-to-c/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2023/09/03/cpp/lvalue-xvalue-prvalue/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/10/13/cpp/thread-pool/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/11/18/develop-note/dockerfile-run-apt-install-jdk-8/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2022/03/24/develop-note/gitbook-install-error/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/2021/11/25/develop-note/git-remote-reconnect/</loc>
-    
-    <lastmod>2024-09-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.mauve.icu/2020/01/05/acm/luogu/P2444/</loc>
     
     <lastmod>2024-09-16</lastmod>
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/2019/09/09/acm/2019-XCPC-online/Online-Nanchang-B-Fire-Fighting-Hero/</loc>
+    <loc>https://blog.mauve.icu/2019/09/14/acm/2019-XCPC-online/Online-Shenyang-G-Special-necklace/</loc>
     
     <lastmod>2024-09-16</lastmod>
     
@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/2019/09/14/acm/2019-XCPC-online/Online-Shenyang-G-Special-necklace/</loc>
+    <loc>https://blog.mauve.icu/2019/09/09/acm/2019-XCPC-online/Online-Nanchang-B-Fire-Fighting-Hero/</loc>
     
     <lastmod>2024-09-16</lastmod>
     
@@ -1387,20 +1387,6 @@
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/tags/Gitbook/</loc>
-    <lastmod>2024-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/tags/nodejs/</loc>
-    <lastmod>2024-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.mauve.icu/tags/git/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -1409,6 +1395,20 @@
   
   <url>
     <loc>https://blog.mauve.icu/tags/GitHub/</loc>
+    <lastmod>2024-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/tags/Gitbook/</loc>
+    <lastmod>2024-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.mauve.icu/tags/nodejs/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1506,6 +1506,13 @@
   </url>
   
   <url>
+    <loc>https://blog.mauve.icu/tags/Golang/</loc>
+    <lastmod>2024-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.mauve.icu/tags/%E6%B8%B8%E6%88%8F%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -1514,13 +1521,6 @@
   
   <url>
     <loc>https://blog.mauve.icu/tags/%E9%BB%91%E7%A5%9E%E8%AF%9D%E6%82%9F%E7%A9%BA/</loc>
-    <lastmod>2024-09-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.mauve.icu/tags/Golang/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1576,14 +1576,14 @@
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/tags/%E6%88%AA%E5%9B%BE/</loc>
+    <loc>https://blog.mauve.icu/tags/vim/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.mauve.icu/tags/vim/</loc>
+    <loc>https://blog.mauve.icu/tags/%E6%88%AA%E5%9B%BE/</loc>
     <lastmod>2024-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
