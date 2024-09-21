@@ -5,6 +5,7 @@ body {
     height: 100%;
     font-family: Blueaka, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: white;
+    scrollbar-width: none; /* Firefox */
 }
 
 .bg-image {
@@ -17,29 +18,6 @@ body {
     filter: brightness(70%);
     -webkit-filter: brightness(70%);
     background: url("/image/default/bg/main_bg.webp") center center / cover no-repeat;
-}
-
-.main-scroll-align-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    width: 100%;
-    scroll-snap-type: y mandatory;
-}
-
-.main-scroll-align-container > .main-scroll-align {
-    scroll-snap-align: center;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    overflow: hidden;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    pointer-events: none;
 }
 
 .scroll-tip {
@@ -93,4 +71,8 @@ body {
     cursor: pointer;
     font-size: 30px;
     margin: 10px 5px;
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
 }
