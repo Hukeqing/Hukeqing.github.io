@@ -8,7 +8,6 @@ tags:
   - Rust
 math: true
 description: Rust 中常见的有关生命周期的误解
-hide: true
 ---
 
 # 1. 介绍
