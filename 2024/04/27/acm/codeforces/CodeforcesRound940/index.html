@@ -1,0 +1,1026 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" href="/image/default/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiroha">
+  <meta name="keywords" content="ACM,算法,计算机,程序">
+  
+    <meta name="description" content="Codeforces Round 940 (Div. 2) and CodeCraft-23 个人写题记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 940 (Div. 2) and CodeCraft-23">
+<meta property="og:url" content="https://blog.mauve.icu/2024/04/27/acm/codeforces/CodeforcesRound940/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="Codeforces Round 940 (Div. 2) and CodeCraft-23 个人写题记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-27T13:39:12.000Z">
+<meta property="article:modified_time" content="2024-04-27T13:39:12.000Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="Codeforces">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Codeforces Round 940 (Div. 2) and CodeCraft-23 - Shiroha白羽的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_qrl3b9uej4.css">
+<link rel="stylesheet" href="/font/Blueaka/Blueaka.css">
+<link rel="stylesheet" href="/font/Blueaka_Bold/Blueaka_Bold.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.mauve.icu","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/image/default/mona-loading-dark.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"G-N2HYL7N8TD","tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":"G-N2HYL7N8TD","woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Shiroha白羽的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/ACM-%E7%AE%97%E6%B3%95/" target="_self">
+                    
+                    <span>ACM-算法</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0-%E5%BC%80%E5%8F%91-%E5%AE%9E%E7%8E%B0" target="_self">
+                    
+                    <span>学习-开发-实现</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" target="_self">
+                    
+                    <span>学习笔记</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E6%9D%82%E9%A1%B9" target="_self">
+                    
+                    <span>杂项</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>好友</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/rss.xml" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go.html" target="_self">
+                <i class="iconfont icon-train"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/last/page" target="_self">
+                <i class="iconfont icon-jieshu"></i>
+                <span>终页</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/default/bg/BA_CG_View_Kivotos2.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Codeforces Round 940 (Div. 2) and CodeCraft-23"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Shiroha
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-27 21:39" pubdate>
+          2024年4月27日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          浏览 <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Codeforces Round 940 (Div. 2) and CodeCraft-23</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="A-Stickogon"><a href="#A-Stickogon" class="headerlink" title="A. Stickogon"></a>A. Stickogon</h1><h2 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h2><p>有 $n$ 根木棍，问最多可以构成多少个等边的多边形，要求每一条边只能用一根木棍</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>构建成三角形就行，统计一下，每种边的数量整除 $3$ 即可</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; mp;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> tmp;<br>            cin &gt;&gt; tmp;<br>            ++mp[tmp];<br>        &#125;<br><br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;[a, b]: mp) ans += b / <span class="hljs-number">3</span>;<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="B-A-BIT-of-a-Construction"><a href="#B-A-BIT-of-a-Construction" class="headerlink" title="B. A BIT of a Construction"></a>B. A BIT of a Construction</h1><h2 id="大致题意-1"><a href="#大致题意-1" class="headerlink" title="大致题意"></a>大致题意</h2><p>给出一个整数 $k$，要求构造一个数组，其长度为给出的 $n$，每一项都不是负数，且满足 $\sum^n_{i=1} a_i = k$</p>
+<p>问如何使得整个数组的 $a_1 | a_2 | \dots | a_n$ 的数中，比特位为 $1$ 数量最多</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>由于求和为 $k$，且每一项都不是负数，那么必然可以得到所有值都比 $k$ 小，最大起码也是等于</p>
+<p>而题目要求比特位为 $1$ 尽可能多，而尽可能多的值必然是 $2^x - 1$，所以找最大的 $x$ 使得 $2^x \leq k$，然后剩下的数值不重要了，补充满 $k$ 即可</p>
+<h2 id="AC-code-1"><a href="#AC-code-1" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n, k;<br>        cin &gt;&gt; n &gt;&gt; k;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) &#123;<br>            cout &lt;&lt; k &lt;&lt; endl;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> a = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">31</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">if</span> (k &gt;= (<span class="hljs-number">1</span> &lt;&lt; i) - <span class="hljs-number">1</span>) &#123;<br>                a = (<span class="hljs-number">1</span> &lt;&lt; i) - <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; a &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; k - a;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; n; ++i) cout &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; <span class="hljs-number">0</span>;<br>        cout &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="C-How-Does-the-Rook-Move"><a href="#C-How-Does-the-Rook-Move" class="headerlink" title="C. How Does the Rook Move?"></a>C. How Does the Rook Move?</h1><h2 id="大致题意-2"><a href="#大致题意-2" class="headerlink" title="大致题意"></a>大致题意</h2><p>有一个棋盘，现在黑白两方轮着下，其中玩家使用白棋，电脑使用黑棋</p>
+<p>电脑下棋的位置固定是根据用户下的位置的相反位置，例如玩家这一步下了 $(i, j)$，那么电脑则会下 $(j, i)$。<br>如果 $i = j$，那么就跳过电脑的回合</p>
+<p>现在下的每一个棋都是城堡（类似中国象棋中的车），需要保证任何一步下的位置都必定不会被出现相互吃的情况，且目前已经有几个位置已经下好了，问剩下的还有几种可能下法</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>容易猜出这是一个递推的题，类似斐波那契数列。当然可以仔细来看</p>
+<p>首先，已经下了几步这件事是无意义的，因为去掉已经下的那些行/列，就会回到一个普通的没有下的棋盘，<br>说白了就是个干扰项，只需要把给出的棋盘大小减去已经下过的位置的行数，就可以得到新的棋盘行数</p>
+<p>同样的，不仅是已经下的位置，你现在下的位置也是如此，一旦下好了+电脑下好，再把下好的那几行/列删掉，就是一个新的空棋盘，所以这是一个递推</p>
+<p>接下来是如何得到递推公式了，因为下哪一行都一样，删掉之后就是空白的，且根据要求，每一行必定有一个城堡，且求算的总数并不关系下的顺序，只看最后的样子，<br>那么我们可以只考虑第一行（因为第一行必定有一个城堡，可能是白的也可能是黑的）</p>
+<p>如果第一行，我下了最左上角的位置，那么就会得到一个 $n - 1$ 的棋盘（$i = j$，机器人没有地方下）</p>
+<p>如果第一行，我下了不是第一个位置，那么机器人必定会下对角线位置，即得到一个 $n - 2$ 的棋盘。因为这样的位置有 $n - 1$ 个，<br>且第一行可能是黑的也可能是白的，所以递推公式就是</p>
+<p>$a_n = a_{n-1} + 2 \times (n - 1) \times a_{n - 2}$</p>
+<h2 id="AC-code-2"><a href="#AC-code-2" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(<span class="hljs-number">3e5</span> + <span class="hljs-number">10</span>)</span></span>;<br>    ans[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>    ans[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">constexpr</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt; ans.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>        ans[i] = (ans[i - <span class="hljs-number">1</span>] + (ans[i - <span class="hljs-number">2</span>] * (i - <span class="hljs-number">1</span>) * <span class="hljs-number">2</span>) % mod) % mod;<br>    &#125;<br><br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n, k;<br>        cin &gt;&gt; n &gt;&gt; k;<br>        set&lt;<span class="hljs-type">int</span>&gt; st;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; k; ++i) &#123;<br>            <span class="hljs-type">int</span> u, v;<br>            cin &gt;&gt; u &gt;&gt; v;<br>            st.<span class="hljs-built_in">insert</span>(u);<br>            st.<span class="hljs-built_in">insert</span>(v);<br>        &#125;<br>        cout &lt;&lt; ans[n - st.<span class="hljs-built_in">size</span>()] &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="D-A-BIT-of-an-Inequality"><a href="#D-A-BIT-of-an-Inequality" class="headerlink" title="D. A BIT of an Inequality"></a>D. A BIT of an Inequality</h1><h2 id="大致题意-3"><a href="#大致题意-3" class="headerlink" title="大致题意"></a>大致题意</h2><p>给出一个数组，要求找到一个元祖 $(x, y, z)$，满足 $0 \leq x \leq y \leq z \leq n, f(x, y) \oplus f(y, z) &gt; f(x, z)$</p>
+<p>其中 $f(l, r) = a_l \oplus a_{l+1} \oplus a_{l+2} \oplus \dots \oplus a_{r}$</p>
+<p>问有多少个不同的元组</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><p>很容易得到，$f(x, z) \oplus a_y = f(x, y) \oplus f(y, z)$，就是再异或上一边 $a_y$ 能让值变大</p>
+<p>那么必然，原来 $a_y$ 中，最大的为 $1$ 那个比特位，$f(x, z)$ 为 $0$，毕竟如果是 $1$ 的话，肯定就变小了</p>
+<p>接下来从这个角度分析，由于 $x \leq y \leq z$，所以 $f(x, z)$ 中一定已经异或过一次 $a_y$ 了，<br>而已知一个比特位 $a_y$ 是 $1$ 但是 $f(x, z)$ 是 $0$，那么必然在 $[x, z]$ 中，这个比特位为 $1$ 的，出现了偶数次，且至少 $2$ 次</p>
+<p>所以只需要对于每一个可能的 $y$，找这个 $y$ 最大的为 $1$ 的那个比特位，为 $1$ 的次数恰好为偶数，且包含 $y$ 的区间数量即可。我采用了双向的奇偶标记</p>
+<p>例如第三个例子，可以得到如下的表格</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">index</th>
+<th style="text-align:center">origin</th>
+<th style="text-align:center">2^2</th>
+<th style="text-align:center">forward</th>
+<th style="text-align:center">back</th>
+<th style="text-align:center">2^1</th>
+<th style="text-align:center">forward</th>
+<th style="text-align:center">back</th>
+<th style="text-align:center">2^0</th>
+<th style="text-align:center">forward</th>
+<th style="text-align:center">back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">even</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">odd</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">even</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">odd</td>
+<td style="text-align:center">odd</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">even</td>
+<td style="text-align:center">odd</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>这个表格的制作方式：</p>
+<ul>
+<li>先计算出每个值的每个比特位，放在 $2^x$ 列上</li>
+<li>单独计算每一列 forward，从上往下走，初始值为 even，如果当前的 $2^x$ 是 $1$，则将前一个 forward 翻转后填入，反之则超过来</li>
+<li>然后单独计算每一列 back，从下往上走，初始值为 forward 最后的值，填入逻辑同上</li>
+</ul>
+<p>然后统计某个位置，左边的 back 下不同类型的数量和右边的 forward 不同的类型数量，再做乘法即可</p>
+<h2 id="AC-code-3"><a href="#AC-code-3" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">data</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;i: data) cin &gt;&gt; i;<br>        vector&lt;<span class="hljs-type">bool</span>&gt; flag[<span class="hljs-number">32</span>][<span class="hljs-number">2</span>];<br>        <span class="hljs-type">int</span> cntR[<span class="hljs-number">32</span>][<span class="hljs-number">2</span>] = &#123;&#125;, cntL[<span class="hljs-number">32</span>][<span class="hljs-number">2</span>] = &#123;&#125;, ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">bool</span> cf[<span class="hljs-number">43</span>] = &#123;&#125;;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;i: flag) i[<span class="hljs-number">0</span>].<span class="hljs-built_in">resize</span>(n);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;i: flag) i[<span class="hljs-number">1</span>].<span class="hljs-built_in">resize</span>(n);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v = <span class="hljs-number">0</span>; v &lt; n; ++v) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; ++i) &#123;<br>                <span class="hljs-keyword">if</span> (data[v] &amp; (<span class="hljs-number">1ll</span> &lt;&lt; i)) cf[i] = !cf[i];<br>                flag[i][<span class="hljs-number">0</span>][v] = cf[i];<br>                ++cntR[i][cf[i]];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v = n - <span class="hljs-number">1</span>; v &gt;= <span class="hljs-number">0</span>; --v) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; ++i) &#123;<br>                <span class="hljs-keyword">if</span> (data[v] &amp; (<span class="hljs-number">1ll</span> &lt;&lt; i)) cf[i] = !cf[i];<br>                flag[i][<span class="hljs-number">1</span>][v] = cf[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v = <span class="hljs-number">0</span>; v &lt; n; ++v) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; ++i) ++cntL[i][flag[i][<span class="hljs-number">1</span>][v]];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">31</span>; i &gt;= <span class="hljs-number">0</span>; --i) <span class="hljs-keyword">if</span> (data[v] &amp; (<span class="hljs-number">1ll</span> &lt;&lt; i)) &#123;<br>                ans += cntL[i][<span class="hljs-number">0</span>] * cntR[i][<span class="hljs-number">0</span>] + cntL[i][<span class="hljs-number">1</span>] * cntR[i][<span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; ++i) --cntR[i][flag[i][<span class="hljs-number">0</span>][v]];<br>        &#125;<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ACM-%E7%AE%97%E6%B3%95/" class="category-chain-item">ACM&amp;算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ACM/" class="print-no-link">#ACM</a>
+      
+        <a href="/tags/Codeforces/" class="print-no-link">#Codeforces</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Codeforces Round 940 (Div. 2) and CodeCraft-23</div>
+      <div>https://blog.mauve.icu/2024/04/27/acm/codeforces/CodeforcesRound940/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiroha</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年4月27日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/05/03/acm/codeforces/CodeforcesRound941/" title="Codeforces Round 941 (Div. 2)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Codeforces Round 941 (Div. 2)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/23/tourist/Japan-Tokyo-1/" title="日本旅游杂记-东京篇">
+                        <span class="hidden-mobile">日本旅游杂记-东京篇</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Hukeqing/Hukeqing.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkzMjM2NjU2MzM=","category":"General(讨论贴)","category-id":"DIC_kwDOE0q-4c4CZYMv","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>Copyright ♡ Mauve</span></a> <br><a href="https://icp.gov.moe/?keyword=20240210" target="_blank">萌ICP备20240210号</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

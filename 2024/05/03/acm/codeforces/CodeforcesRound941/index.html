@@ -1,0 +1,940 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" href="/image/default/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiroha">
+  <meta name="keywords" content="ACM,算法,计算机,程序">
+  
+    <meta name="description" content="Codeforces Round 941 (Div. 2) 个人写题记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round 941 (Div. 2)">
+<meta property="og:url" content="https://blog.mauve.icu/2024/05/03/acm/codeforces/CodeforcesRound941/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="Codeforces Round 941 (Div. 2) 个人写题记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-03T15:47:21.000Z">
+<meta property="article:modified_time" content="2024-05-03T15:47:21.000Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="ACM">
+<meta property="article:tag" content="Codeforces">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Codeforces Round 941 (Div. 2) - Shiroha白羽的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_qrl3b9uej4.css">
+<link rel="stylesheet" href="/font/Blueaka/Blueaka.css">
+<link rel="stylesheet" href="/font/Blueaka_Bold/Blueaka_Bold.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.mauve.icu","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/image/default/mona-loading-dark.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"G-N2HYL7N8TD","tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":"G-N2HYL7N8TD","woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Shiroha白羽的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/ACM-%E7%AE%97%E6%B3%95/" target="_self">
+                    
+                    <span>ACM-算法</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0-%E5%BC%80%E5%8F%91-%E5%AE%9E%E7%8E%B0" target="_self">
+                    
+                    <span>学习-开发-实现</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" target="_self">
+                    
+                    <span>学习笔记</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E6%9D%82%E9%A1%B9" target="_self">
+                    
+                    <span>杂项</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>好友</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/rss.xml" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go.html" target="_self">
+                <i class="iconfont icon-train"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/last/page" target="_self">
+                <i class="iconfont icon-jieshu"></i>
+                <span>终页</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/default/bg/BA_CG_View_Kivotos2.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Codeforces Round 941 (Div. 2)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Shiroha
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-05-03 23:47" pubdate>
+          2024年5月3日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          浏览 <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Codeforces Round 941 (Div. 2)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>从本篇开始，代码仅包含核心逻辑部分，多组数据的逻辑也将不再包含</strong></p>
+<h1 id="A-Card-Exchange"><a href="#A-Card-Exchange" class="headerlink" title="A. Card Exchange"></a>A. Card Exchange</h1><h2 id="大致题意"><a href="#大致题意" class="headerlink" title="大致题意"></a>大致题意</h2><p>有开始的 $n$ 张牌，每张牌有点数，可能相同也可能不同</p>
+<p>允许进行如下操作：选择 $k$ 张相同的牌，弃掉，然后再摸进来 $k-1$ 张任意点数的牌</p>
+<p>问最少可以剩下多少张牌</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>每次操作就可以整来 $k - 1$ 张的任意牌，所以只需要将任意牌单独计数，暴力循环找可以进行操作的点数，在包含任意牌的情况下，是否可以进行操作，能操作就操作</p>
+<h2 id="AC-code"><a href="#AC-code" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n, k, cnt[<span class="hljs-number">101</span>] = &#123;&#125;;<br>        cin &gt;&gt; n &gt;&gt; k;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-type">int</span> tmp;<br>            cin &gt;&gt; tmp;<br>            ++cnt[tmp];<br>        &#125;<br><br>        <span class="hljs-type">int</span> tot = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>            <span class="hljs-type">bool</span> flag = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">101</span>; ++i) &#123;<br>                <span class="hljs-keyword">if</span> (cnt[i] + tot &gt;= k) &#123;<br>                    <span class="hljs-keyword">if</span> (k - cnt[i] % k &lt;= tot) &#123;<br>                        tot -= k - cnt[i] % k;<br>                        cnt[i] += k - cnt[i] % k;<br>                    &#125;<br>                    flag = <span class="hljs-literal">false</span>;<br>                    tot += (cnt[i] / k) * (k - <span class="hljs-number">1</span>);<br>                    cnt[i] %= k;<br>                &#125;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (flag) <span class="hljs-keyword">break</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i: cnt) tot += i;<br>        cout &lt;&lt; tot &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="B-Rectangle-Filling"><a href="#B-Rectangle-Filling" class="headerlink" title="B. Rectangle Filling"></a>B. Rectangle Filling</h1><h2 id="大致题意-1"><a href="#大致题意-1" class="headerlink" title="大致题意"></a>大致题意</h2><p>有一个矩阵，每个位置有黑色和白色两种情况，允许进行如下操作</p>
+<p>在矩阵里选择两个相同的颜色的节点，将这两个节点组成的矩阵内的所有颜色变成和这两个节点的颜色相同</p>
+<p>问是否能够通过任意次数的操作，使得整个矩阵变成完全相同的颜色的矩阵</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>容易得出如下结论：</p>
+<ul>
+<li>若一个矩阵的一个对角顶点颜色相同，则必然可以通过一次操作完成</li>
+<li>若一个矩阵的一条边的两端颜色相同，且对边存在一个点的颜色和这两端相同，则可以通过两次操作完成</li>
+</ul>
+<p>其他情况均不可能</p>
+<h2 id="AC-code-1"><a href="#AC-code-1" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> _;<br>    cin &gt;&gt; _;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> tc = <span class="hljs-number">0</span>; tc &lt; _; ++tc) &#123;<br>        <span class="hljs-type">int</span> n, m;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        <span class="hljs-function">vector&lt;string&gt; <span class="hljs-title">mp</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;i: mp) &#123;<br>            i.<span class="hljs-built_in">resize</span>(m);<br>            cin &gt;&gt; i;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] == mp[n - <span class="hljs-number">1</span>][m - <span class="hljs-number">1</span>] || mp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] == mp[<span class="hljs-number">0</span>][m - <span class="hljs-number">1</span>]) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-type">bool</span> flag = <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] == mp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>]) <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] == mp[i][m - <span class="hljs-number">1</span>]) flag = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][m - <span class="hljs-number">1</span>] == mp[n - <span class="hljs-number">1</span>][m - <span class="hljs-number">1</span>]) <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][m - <span class="hljs-number">1</span>] == mp[i][<span class="hljs-number">0</span>]) flag = <span class="hljs-literal">true</span>;<br><br>        <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] == mp[<span class="hljs-number">0</span>][m - <span class="hljs-number">1</span>]) <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; ++i) <span class="hljs-keyword">if</span> (mp[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] == mp[n - <span class="hljs-number">1</span>][i]) flag = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span> (mp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] == mp[n - <span class="hljs-number">1</span>][m - <span class="hljs-number">1</span>]) <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; ++i) <span class="hljs-keyword">if</span> (mp[n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] == mp[<span class="hljs-number">0</span>][i]) flag = <span class="hljs-literal">true</span>;<br><br>        cout &lt;&lt; (flag ? <span class="hljs-string">&quot;YES&quot;</span> : <span class="hljs-string">&quot;NO&quot;</span>) &lt;&lt; endl;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="C-Everything-Nim"><a href="#C-Everything-Nim" class="headerlink" title="C. Everything Nim"></a>C. Everything Nim</h1><h2 id="大致题意-2"><a href="#大致题意-2" class="headerlink" title="大致题意"></a>大致题意</h2><p>有 $n$ 个石头堆，Alice 和 Bob 玩游戏，轮流进行取石子，<br>每次取的时候，必须选择一个 $k$，满足现在有石头的石头堆中，石头数量最少的那个堆也有 $k$ 个石头<br>然后在每一堆里都同时取走 $k$ 个石头</p>
+<p>谁最后没办法取石头，谁就输了，问最后谁赢了</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>首先，每次从所有堆里进行删除，可以等价将所有的石头堆排序后，变成差值堆，且必须从第一个石头堆开始取</p>
+<p>那么问题就变成了：有一组石头堆，必须从第一个石头堆里开始取，每次可以取任意个数，问最后谁会取最后一次</p>
+<p>这就很简单了，因为如果这个石头堆是 $1$ 个，那么大家都没得选，就是交换一下先后手，但是如果不是一个，那么就必然此时操作的人，可以是否要先手还是后手了，<br>因为此时他可以选择取到只剩下一个或者一个都不剩下，就可以实现交换先后手<br>所以核心是谁拿到了第一个先后手交换权，谁就能操纵整个游戏</p>
+<h2 id="AC-code-2"><a href="#AC-code-2" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">data</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;i: data) cin &gt;&gt; i;<br>    <span class="hljs-built_in">sort</span>(data.<span class="hljs-built_in">begin</span>(), data.<span class="hljs-built_in">end</span>());<br>    <span class="hljs-keyword">if</span> (data[<span class="hljs-number">0</span>] != <span class="hljs-number">1</span>) &#123;<br>        cout &lt;&lt; <span class="hljs-string">&quot;Alice&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> cnt = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) <span class="hljs-keyword">if</span> (data[i] - data[i - <span class="hljs-number">1</span>]) &#123;<br>        <span class="hljs-keyword">if</span> (data[i] - data[i - <span class="hljs-number">1</span>] == <span class="hljs-number">1</span>) ++cnt;<br>        <span class="hljs-keyword">else</span> &#123;<br>            ++cnt;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; (cnt % <span class="hljs-number">2</span> ? <span class="hljs-string">&quot;Alice&quot;</span> : <span class="hljs-string">&quot;Bob&quot;</span>) &lt;&lt; endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="D-Missing-Subsequence-Sum"><a href="#D-Missing-Subsequence-Sum" class="headerlink" title="D. Missing Subsequence Sum"></a>D. Missing Subsequence Sum</h1><h2 id="大致题意-3"><a href="#大致题意-3" class="headerlink" title="大致题意"></a>大致题意</h2><p>需要构造一个数列，满足</p>
+<ul>
+<li>对于 $k$，无法从数组中找到任何一个子序列，使得序列之和等于 $k$</li>
+<li>对于 $i \in [1, n] \space and \space i \neq k$，必定从数组中找到任何一个子序列，使得序列之和等于 $k$</li>
+</ul>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><p>如果不考虑不能构造 $k$ 的情况，其实相当简单，即都是 $2^x$ 即可，即二进制上考虑</p>
+<p>接下来是考虑如何构造不出 $k$。首先假定一下 $k &gt; 1$，后面再单独讨论 $1$ 的情况</p>
+<p>那么必然可以分为两个部分 $[1, k - 1]$ 和 $[k + 1, n]$</p>
+<p>我们很容易得到这样一个结论：假如可以组成 $1$ 和 $k - 1$ 的话，如果组合一下必然可以得到 $k$，如果要组合不出来，<br>必定 $k - 1$ 中包含了 $1$ 的必要元素，同理，$k - 2$ 也可以如此推理，这样可以得到非常多的关系链</p>
+<p>但是这些关系链重要吗，并不，因为太多太乱太无意义了，但是反而可以得到这样一个结论：如果所有小于 $k$ 的值之和是超过 $k$ 的，那么很容易能够找到一个组合，可以得到 $k$</p>
+<p>所以只需要背着这条结论走即可，即刚好将比 $k$ 小的所有值加起来都比 $k$ 小即可，这样就可以构造出 $[1, k - 1]$ 的全部值了，<br>然后再加入一个 $k + 1$ 即可完成后面部分</p>
+<p>不过稍微可能需要注意的需要再加入一个值，因为 $k$ 本身被排除在外了，所以这可能会导致原来依赖 $k$ 的值无法组成，<br>例如，如果 $k = 4$，那么 $6$ 就是一个很难组成的值，因为唯一包含第 $3$ 个比特位是 $1$ 的值就被干掉了，所以需要补充一个来避免这个问题</p>
+<h2 id="AC-code-3"><a href="#AC-code-3" class="headerlink" title="AC code"></a>AC code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n, k, tot = <span class="hljs-number">0</span>, nxt = <span class="hljs-number">1</span>;<br>    cin &gt;&gt; n &gt;&gt; k;<br>    vector&lt;<span class="hljs-type">int</span>&gt; ans;<br>    ans.<span class="hljs-built_in">reserve</span>(<span class="hljs-number">25</span>);<br>    <span class="hljs-type">bool</span> flag = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">while</span> (tot &lt; n) &#123;<br>        <span class="hljs-keyword">if</span> (flag &amp;&amp; tot + nxt &gt;= k) &#123;<br>            ans.<span class="hljs-built_in">push_back</span>(k - tot - <span class="hljs-number">1</span>);<br>            ans.<span class="hljs-built_in">push_back</span>(k + <span class="hljs-number">1</span>);<br>            ans.<span class="hljs-built_in">push_back</span>(k + (nxt &lt;&lt; <span class="hljs-number">1</span>));<br>            flag = <span class="hljs-literal">false</span>;<br>        &#125; <span class="hljs-keyword">else</span> ans.<span class="hljs-built_in">push_back</span>(nxt);<br><br>        tot += nxt;<br>        nxt &lt;&lt;= <span class="hljs-number">1</span>;<br>    &#125;<br>    cout &lt;&lt; ans.<span class="hljs-built_in">size</span>() &lt;&lt; endl;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; ans.<span class="hljs-built_in">size</span>(); ++i) cout &lt;&lt; ans[i] &lt;&lt; <span class="hljs-string">&quot; \n&quot;</span>[i == ans.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/ACM-%E7%AE%97%E6%B3%95/" class="category-chain-item">ACM&amp;算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/ACM/" class="print-no-link">#ACM</a>
+      
+        <a href="/tags/Codeforces/" class="print-no-link">#Codeforces</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Codeforces Round 941 (Div. 2)</div>
+      <div>https://blog.mauve.icu/2024/05/03/acm/codeforces/CodeforcesRound941/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiroha</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年5月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/05/05/acm/codeforces/CodeforcesRound942/" title="Codeforces Round 942 (Div. 2)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Codeforces Round 942 (Div. 2)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/27/acm/codeforces/CodeforcesRound940/" title="Codeforces Round 940 (Div. 2) and CodeCraft-23">
+                        <span class="hidden-mobile">Codeforces Round 940 (Div. 2) and CodeCraft-23</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Hukeqing/Hukeqing.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkzMjM2NjU2MzM=","category":"General(讨论贴)","category-id":"DIC_kwDOE0q-4c4CZYMv","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>Copyright ♡ Mauve</span></a> <br><a href="https://icp.gov.moe/?keyword=20240210" target="_blank">萌ICP备20240210号</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" href="/image/default/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiroha">
+  <meta name="keywords" content="ACM,算法,计算机,程序">
+  
+    <meta name="description" content="最初概念 如何确定一个值是左值还是右值？通常有一个比较简单的判断方案：有地址的值被称为左值，没有地址的值称为右值  但是事实好像并非如此，特别是写了一些相关代码的时候，比如下面的这段 123456789101112131415161718int f(int &amp;a) &#123;    return 1;&#125;int f(int &amp;&amp;a) &#123;    retur">
+<meta property="og:type" content="article">
+<meta property="og:title" content="左值-右值-将亡值">
+<meta property="og:url" content="https://blog.mauve.icu/2023/09/03/cpp/lvalue-xvalue-prvalue/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="最初概念 如何确定一个值是左值还是右值？通常有一个比较简单的判断方案：有地址的值被称为左值，没有地址的值称为右值  但是事实好像并非如此，特别是写了一些相关代码的时候，比如下面的这段 123456789101112131415161718int f(int &amp;a) &#123;    return 1;&#125;int f(int &amp;&amp;a) &#123;    retur">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.mauve.icu/image/cpp/lvalue-xvalue-prvalue/value-type.webp">
+<meta property="article:published_time" content="2023-09-03T13:49:07.000Z">
+<meta property="article:modified_time" content="2024-07-28T14:12:43.900Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="右值引用">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.mauve.icu/image/cpp/lvalue-xvalue-prvalue/value-type.webp">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>左值-右值-将亡值 - Shiroha白羽的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_qrl3b9uej4.css">
+<link rel="stylesheet" href="/font/Blueaka/Blueaka.css">
+<link rel="stylesheet" href="/font/Blueaka_Bold/Blueaka_Bold.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.mauve.icu","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/image/default/mona-loading-dark.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"G-N2HYL7N8TD","tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":"G-N2HYL7N8TD","woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Shiroha白羽的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/ACM-%E7%AE%97%E6%B3%95/" target="_self">
+                    
+                    <span>ACM-算法</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0-%E5%BC%80%E5%8F%91-%E5%AE%9E%E7%8E%B0" target="_self">
+                    
+                    <span>学习-开发-实现</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" target="_self">
+                    
+                    <span>学习笔记</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E6%9D%82%E9%A1%B9" target="_self">
+                    
+                    <span>杂项</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>好友</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/rss.xml" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go.html" target="_self">
+                <i class="iconfont icon-train"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/last/page" target="_self">
+                <i class="iconfont icon-jieshu"></i>
+                <span>终页</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/default/bg/BA_CG_View_Kivotos2.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="左值-右值-将亡值"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Shiroha
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-03 21:49" pubdate>
+          2023年9月3日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          浏览 <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">左值-右值-将亡值</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="最初概念"><a href="#最初概念" class="headerlink" title="最初概念"></a>最初概念</h1><blockquote>
+<p>如何确定一个值是左值还是右值？<br>通常有一个比较简单的判断方案：有地址的值被称为左值，没有地址的值称为右值</p>
+</blockquote>
+<p>但是事实好像并非如此，特别是写了一些相关代码的时候，比如下面的这段</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;a)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">f</span><span class="hljs-params">(<span class="hljs-type">int</span> &amp;&amp;a)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> &amp;b = a;<br>    <span class="hljs-type">int</span> &amp;&amp;c = <span class="hljs-number">1</span>;<br><br>    cout &lt;&lt; <span class="hljs-built_in">f</span>(<span class="hljs-number">1</span>) &lt;&lt; endl; <span class="hljs-comment">// 2</span><br>    cout &lt;&lt; <span class="hljs-built_in">f</span>(a) &lt;&lt; endl; <span class="hljs-comment">// 1</span><br>    cout &lt;&lt; <span class="hljs-built_in">f</span>(b) &lt;&lt; endl; <span class="hljs-comment">// 1</span><br>    cout &lt;&lt; <span class="hljs-built_in">f</span>(c) &lt;&lt; endl; <span class="hljs-comment">// 1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>对应的输出结果也写在每一行的后面了，这似乎有一些意料之外的情况</p>
+<ul>
+<li>第一行，一个单独的数字 <code>1</code>，很明显的确实是一个右值，符合预期</li>
+<li>第二行，变量 <code>a</code> 明显也是一个合情合理的左值，那么也是符合预期的</li>
+<li>接下来第三行，变量 <code>b</code> 作为 <code>a</code> 的一个引用，那毫无意义也是一个左值（<code>b</code> 只是引用了 <code>a</code> 的值，实际上仍然是 <code>a</code> 本身），符合预期</li>
+<li>但是第四行，却让人摸不着头脑，明明 <code>c</code> 是一个明确的右值引用，为什么也是一个 <code>1</code></li>
+</ul>
+<p>这似乎表明了，<code>c</code> 是一个合法的左值，而非右值</p>
+<p>尝试做一些看起来非法的操作</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">int</span> &amp;&amp;c = <span class="hljs-number">1</span>;<br>c += <span class="hljs-number">10</span>;<br>cout &lt;&lt; c &lt;&lt; endl; <span class="hljs-comment">// 11</span><br></code></pre></td></tr></table></figure>
+<p>看起来非常的合法合理，就像是一个活灵活现的左值，而并非它类型那样描述的右值。即然是左值，那么必然有地址，输出看看</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp">cout &lt;&lt; &amp;a &lt;&lt; endl; <span class="hljs-comment">// 0x7fff1ba1f724</span><br>cout &lt;&lt; &amp;b &lt;&lt; endl; <span class="hljs-comment">// 0x7fff1ba1f724</span><br>cout &lt;&lt; &amp;c &lt;&lt; endl; <span class="hljs-comment">// 0x7fff1ba1f72c</span><br></code></pre></td></tr></table></figure>
+<p>从上面的数字可以看出来，<code>c</code> 确实是在栈上，即拥有一个合理合法的地址，这是发生了什么？</p>
+<h1 id="调查"><a href="#调查" class="headerlink" title="调查"></a>调查</h1><p>如果把上述的代码改成汇编语言后，再看看结果</p>
+<ul>
+<li>汇编前</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> a = <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> &amp;b = a;<br>    <span class="hljs-type">int</span> &amp;&amp;c = <span class="hljs-number">1</span>;<br>    c += <span class="hljs-number">10</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>汇编结果（仅摘录核心段）</li>
+</ul>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.cfi_startproc</span><br>pushq	%rbp<br><span class="hljs-meta">.cfi_def_cfa_offset</span> <span class="hljs-number">16</span><br><span class="hljs-meta">.cfi_offset</span> <span class="hljs-number">6</span>, -<span class="hljs-number">16</span><br><span class="hljs-keyword">movq</span>	%rsp, %rbp<br><span class="hljs-meta">.cfi_def_cfa_register</span> <span class="hljs-number">6</span><br>subq	<span class="hljs-number">$32</span>, %rsp           <span class="hljs-comment">; 以上均为函数定义需要的一些基本操作，例如记录栈位置等，忽略</span><br><span class="hljs-keyword">movq</span>	%fs:<span class="hljs-number">40</span>, %rax        <span class="hljs-comment">; 设置 canary 值，用于检测 stack overflow 现象</span><br><span class="hljs-keyword">movq</span>	%rax, -<span class="hljs-number">8</span>(%rbp)      <span class="hljs-comment">; 将 canary 值保存到栈的前 8 个字节中</span><br>xorl	%eax, %eax          <span class="hljs-comment">; 任何值 xor 自己必定为 0，此处相当于清理 eax 寄存器</span><br>movl	<span class="hljs-number">$1</span>, -<span class="hljs-number">32</span>(%rbp)       <span class="hljs-comment">; 将 1 存储到 28-32 这几个字节中（int 占用 4 个字节）【变量 a】</span><br>leaq	-<span class="hljs-number">32</span>(%rbp), %rax     <span class="hljs-comment">; 将【a】的地址拷贝到 rax</span><br><span class="hljs-keyword">movq</span>	%rax, -<span class="hljs-number">24</span>(%rbp)     <span class="hljs-comment">; 将【a】的地址保存到 16-24 这几个字节中（64bit 上占用 8 个字节）【变量 b】</span><br>movl	<span class="hljs-number">$1</span>, %eax            <span class="hljs-comment">; 将值 1 写入 eax</span><br>movl	%eax, -<span class="hljs-number">28</span>(%rbp)     <span class="hljs-comment">; 将 eax 的值写入 24-28 这几个字节中【未知变量】</span><br>leaq	-<span class="hljs-number">28</span>(%rbp), %rax     <span class="hljs-comment">; 将【未知变量】的地址拷贝到 rax</span><br><span class="hljs-keyword">movq</span>	%rax, -<span class="hljs-number">16</span>(%rbp)     <span class="hljs-comment">; 将【未知变量】的地址写入到 8-16 这几个字节中【变量 c】</span><br><span class="hljs-keyword">movq</span>	-<span class="hljs-number">16</span>(%rbp), %rax     <span class="hljs-comment">; 再读取【变量 c】的到 rax</span><br>movl	(%rax), %eax        <span class="hljs-comment">; 将【变量 c】认为是一个地址，取出此地址中的值并写入到 eax 中</span><br>leal	<span class="hljs-number">10</span>(%rax), %edx      <span class="hljs-comment">; edx = rax + 10</span><br><span class="hljs-keyword">movq</span>	-<span class="hljs-number">16</span>(%rbp), %rax     <span class="hljs-comment">; 将【变量 c】的值拷贝到 rax 中</span><br>movl	%edx, (%rax)        <span class="hljs-comment">; 将 edx 的结果保存到 rax 对应的值的地址中（即写入【变量 c】作为地址所在的位置）</span><br>movl	<span class="hljs-number">$0</span>, %eax            <span class="hljs-comment">; 清空 eax</span><br><span class="hljs-keyword">movq</span>	-<span class="hljs-number">8</span>(%rbp), %rax      <span class="hljs-comment">; 取出 canary 值</span><br>xorq	%fs:<span class="hljs-number">40</span>, %rax<br><span class="hljs-keyword">je</span>	.L3<br><span class="hljs-keyword">call</span>	__stack_chk_fail@PLT<br></code></pre></td></tr></table></figure>
+<p>可以注意到，对于引用而言，汇编仍然使用的是指针来解决，所以可以看到变量 <code>b</code> 记录下的是 <code>a</code> 的指针，而非真正的给 <code>a</code> 做了一个别名。而 <code>c</code> 也是一个指针，指向了一个未知的变量。这似乎就是我们寻找的答案</p>
+<p>从内存本身而言，任何值都可以认为是左值，因为一个值存在，则必定存在具体的地址，即使它是作为常量的方式写在代码中，那起码它也应该存在于代码段，“存在即有地址”</p>
+<p>但是对于这种在代码段“有地址”的值，又违背了代码段不可修改的原则，而具体操作的时候又未免会使用到这些值，这个时候，编译器会将代码段的这个值拷贝到栈空间，然后将其再赋给具体的对象，这个拷贝过来的值，像是一个右值，同时又具有着左值的特点，更确切的说，它属于“将亡值(xvalue)”。</p>
+<h1 id="将亡值"><a href="#将亡值" class="headerlink" title="将亡值"></a>将亡值</h1><p><img src="/image/cpp/lvalue-xvalue-prvalue/value-type.webp" srcset="/image/default/mona-loading-dark.gif" lazyload alt="value-type"></p>
+<p>其中，lvalue 和 rvalue 就是我们一般认为上的左值和右值，而 glvalue 则是包含了将亡值的泛左值，而 prvalue 则是指那些纯右值，也就是那些在代码段里的值</p>
+<p>将亡值则表示一种中间变量，例如使用了纯右值的时候，或者隐式类型转化，或者函数的返回值，这些都是将亡值充当的角色。实际上他们都有确切的栈上地址。</p>
+<p>但是将亡值本身的含义是一个临时存在的变量，终是不可久留，这也就意味着编译器通常会限制对将亡值进行左值引用的方式。例如</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> &amp;x = (<span class="hljs-type">double</span>)<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<p>此时编译器的报错是：<code>Non-const lvalue reference to type &#39;double&#39; cannot bind to a temporary of type &#39;double&#39;</code>，即无法通过一个非常量的左值引用指向一个将亡值。而当你改成 <code>const double &amp;x = (double)1;</code> 后，程序又可以通过编译了。这也说明了编译器实际上只是在做一些安全性的检查，并没有真正限制修改将亡值，甚至可以将将亡值变成长期存在的栈上的值（例如一开始的程序）</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-chain-item">杂项</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/C/" class="print-no-link">#C++</a>
+      
+        <a href="/tags/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/" class="print-no-link">#右值引用</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>左值-右值-将亡值</div>
+      <div>https://blog.mauve.icu/2023/09/03/cpp/lvalue-xvalue-prvalue/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiroha</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/09/acm/codeforces/CodeforcesRound895/" title="Codeforces Round 895 (Div. 3)">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Codeforces Round 895 (Div. 3)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/02/acm/codeforces/EducationalCodeforcesRound154/" title="Educational Codeforces Round#154 (Div. 2)">
+                        <span class="hidden-mobile">Educational Codeforces Round#154 (Div. 2)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Hukeqing/Hukeqing.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkzMjM2NjU2MzM=","category":"General(讨论贴)","category-id":"DIC_kwDOE0q-4c4CZYMv","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>Copyright ♡ Mauve</span></a> <br><a href="https://icp.gov.moe/?keyword=20240210" target="_blank">萌ICP备20240210号</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

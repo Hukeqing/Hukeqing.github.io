@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: Blueaka, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: white;
+    scrollbar-width: none; /* Firefox */
+}
+
+.bg {
+    z-index: -100;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-image {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+    background: center center / cover no-repeat;
+}
+
+.scroll-tip {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.scroll-tip > i {
+    font-size: 30px;
+    animation: scroll-down 1.5s infinite;
+    position: absolute;
+}
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0.1;
+        top: 30px;
+    }
+
+    50% {
+        opacity: 1;
+        top: 60px;
+    }
+
+    100% {
+        opacity: 0.1;
+        top: 30px;
+    }
+}
+
+.animate-container {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.animate-container > div {
+    position: absolute;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.links > a > i {
+    cursor: pointer;
+    font-size: 30px;
+    margin: 10px 5px;
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}

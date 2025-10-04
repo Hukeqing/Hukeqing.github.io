@@ -1,0 +1,1029 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
+  <link rel="icon" href="/image/default/favicon.ico">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shiroha">
+  <meta name="keywords" content="ACM,算法,计算机,程序">
+  
+    <meta name="description" content="起因最近有人问起我，关于我家里的 NAS 以及家庭网络搭建的情况，正好也闲来无事，打算写写目前的家庭网络部署情况 前置条件首先，谈到家庭网络搭建，那必然需要先简单介绍一下生活基本情况：  我目前主要居住在公司附近的小区，租了一个大房间，房间内仅有一个网孔。房东提供的不可撼动的网络布局很简单：光猫拨号上网，下面接一个路由器。 路由器主要是起到交换机和 AP 的作用，并没有路由的意义，而后从路由器的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人网络 + NAS 折腾日记-1">
+<meta property="og:url" content="https://blog.mauve.icu/2023/11/07/tossing-diary/personal-homework-1/">
+<meta property="og:site_name" content="Shiroha白羽的博客">
+<meta property="og:description" content="起因最近有人问起我，关于我家里的 NAS 以及家庭网络搭建的情况，正好也闲来无事，打算写写目前的家庭网络部署情况 前置条件首先，谈到家庭网络搭建，那必然需要先简单介绍一下生活基本情况：  我目前主要居住在公司附近的小区，租了一个大房间，房间内仅有一个网孔。房东提供的不可撼动的网络布局很简单：光猫拨号上网，下面接一个路由器。 路由器主要是起到交换机和 AP 的作用，并没有路由的意义，而后从路由器的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/DS423+.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/suzume.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/smb-private.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/http-private.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/qc-forward.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/qc-share.png">
+<meta property="og:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/aliyun.png">
+<meta property="article:published_time" content="2023-11-07T00:27:24.000Z">
+<meta property="article:modified_time" content="2023-11-07T00:27:24.000Z">
+<meta property="article:author" content="Shiroha">
+<meta property="article:tag" content="NAS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.mauve.icu/image/tossing-diary/personal-homework-1/DS423+.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>个人网络 + NAS 折腾日记-1 - Shiroha白羽的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4225917_qrl3b9uej4.css">
+<link rel="stylesheet" href="/font/Blueaka/Blueaka.css">
+<link rel="stylesheet" href="/font/Blueaka_Bold/Blueaka_Bold.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.mauve.icu","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":"§"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/image/default/mona-loading-dark.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":"G-N2HYL7N8TD","tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":"G-N2HYL7N8TD","woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/rss.xml" title="Shiroha白羽的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mauve</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/ACM-%E7%AE%97%E6%B3%95/" target="_self">
+                    
+                    <span>ACM-算法</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0-%E5%BC%80%E5%8F%91-%E5%AE%9E%E7%8E%B0" target="_self">
+                    
+                    <span>学习-开发-实现</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0" target="_self">
+                    
+                    <span>学习笔记</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/%E6%9D%82%E9%A1%B9" target="_self">
+                    
+                    <span>杂项</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>好友</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/rss.xml" target="_self">
+                <i class="iconfont icon-rss"></i>
+                <span>RSS</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.travellings.cn/go.html" target="_self">
+                <i class="iconfont icon-train"></i>
+                <span>开往</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/last/page" target="_self">
+                <i class="iconfont icon-jieshu"></i>
+                <span>终页</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/image/default/bg/BA_CG_View_Kivotos2.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="个人网络 + NAS 折腾日记-1"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Shiroha
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-11-07 08:27" pubdate>
+          2023年11月7日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          32 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          浏览 <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">个人网络 + NAS 折腾日记-1</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>最近有人问起我，关于我家里的 NAS 以及家庭网络搭建的情况，正好也闲来无事，打算写写目前的家庭网络部署情况</p>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><p>首先，谈到家庭网络搭建，那必然需要先简单介绍一下生活基本情况：</p>
+<ul>
+<li>我目前主要居住在公司附近的小区，租了一个大房间，房间内仅有一个网孔。房东提供的不可撼动的网络布局很简单：光猫拨号上网，下面接一个路由器。</li>
+<li>路由器主要是起到交换机和 AP 的作用，并没有路由的意义，而后从路由器的 LAN 口出来的网线接入到每个房间的网孔上，恰好一个房间一个，当然，这个路由器也有 AP，所以也能提供 Wi-Fi，而且速度还不错。</li>
+<li>光猫很荣幸能够分配到公网的 IPv6 的一个子网段。</li>
+<li><p>通过盲猜了一波路由器的密码，发现其他合租人的设备是直接使用房东提供的 Wi-Fi，并没有做太多处理</p>
+<p>大概的网络拓扑长这样</p>
+</li>
+</ul>
+<pre><code class=" mermaid">graph BT
+A1[他人设备1] -.Wi-Fi.-&gt; B[路由器]
+A2[他人设备2] -.Wi-Fi.-&gt; B[路由器]
+A3[他人设备3] -.Wi-Fi.-&gt; B[路由器]
+A4[他人设备4] -.Wi-Fi.-&gt; B[路由器]
+B[路由器] --DHCP--&gt; C[光猫]
+C[光猫] --PPOE--&gt; D((公网))
+</code></pre>
+<p>同时，在爸妈家也有一套网络：</p>
+<ul>
+<li>家中则是独立房屋，房间较大，需要多个 AP 才能覆盖全房间</li>
+<li>但是入户光猫比较破烂，需要采购，且运营商能给到的带宽不高（毕竟都是爸妈承担费用，他们的目标就是能用就行）</li>
+<li>距离平时居住的地点路程较远，爸妈也不太懂这种东西，总不能出点事情就坐一路车回去就为了插根网线 or 刷个路由器吧</li>
+</ul>
+<p>因此，主要也是将个人网络部署在租房内</p>
+<p>另外，部署的过程也要符合个人的审美原则：</p>
+<ol>
+<li>必须是体验极佳，要用户无感以及快速入手，能够使用系统自带的应用程序就不用第三方的程序</li>
+<li>能多花一点钱就能减少折腾的，绝对不折腾</li>
+</ol>
+<p>部署的目标也得罗列一下：</p>
+<ul>
+<li>家庭网络保证可用，所有设备都可以通过一个Wi-Fi接入网络<ul>
+<li>比起网络线路的复杂，还是希望家中的网线不要太复杂，一个Wi-Fi，一切安好</li>
+</ul>
+</li>
+<li>家庭局域网对国外IP/域名自动代理，对任何入网设备无感<ul>
+<li>家中有一些设备并不适合下载代理软件，比如 switch，如果不在路由器上下点功夫，肯定没办法拥有很好的体验</li>
+<li>部分开发的时候需要用到设备自身的 VPN，比如连接到公司内网需要占用手机的 VPN，laptop 需要抓包的时候，也需要占用 VPN……为了避免这些行为发生的时候，无法继续享受 Google 作为默认搜索引擎的乐趣</li>
+</ul>
+</li>
+<li>NAS 需要提供任意地区访问的能力，即公网可以访问 NAS<ul>
+<li>要是仅局域网访问，那还不如直接整个 U 盘便宜又简单，而且还</li>
+</ul>
+</li>
+</ul>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><h2 id="家庭网络"><a href="#家庭网络" class="headerlink" title="家庭网络"></a>家庭网络</h2><p>网络方面的架构则比较简单，因为对这块的特殊需求比较少，当然也因为能够改造的方面比较少，所以也就采用简单的方案</p>
+<pre><code class=" mermaid">graph BT
+subgraph 我家
+pad[pad] -.Wi-Fi.-&gt; mi[小米路由器]
+phone[phone] -.Wi-Fi.-&gt; mi[小米路由器]
+pc[laptop] -.Wi-Fi.-&gt; mi[小米路由器]
+nas[NAS] --&gt; mi[小米路由器]
+mi[小米路由器] --AP--&gt; r2s[r2s]
+end
+r2s[r2s] --DHCP--&gt; B[路由器]
+A2[他人设备2] -.Wi-Fi.-&gt; B[路由器]
+A3[他人设备3] -.Wi-Fi.-&gt; B[路由器]
+A4[他人设备4] -.Wi-Fi.-&gt; B[路由器]
+B[路由器] --DHCP--&gt; C[光猫]
+C[光猫] --PPOE--&gt; D((公网))
+</code></pre>
+<ul>
+<li>由于房东包的网络带宽并不高，故直接买了一个 r2s，安装了 openwrt，同时在里面通过插件功能，实现全屋代理</li>
+<li>然后买了一个小米路由器，开启 AP 模式，并直连到 r2s 上。不直接买普通的 AP 的目的，主要还是希望它还能发挥交换机的能力</li>
+<li>NAS 则通过网线直接和小米路由器连接，然后其他的设备也是通过 Wi-Fi 的方式连接到小米路由器上，使得家庭内网内的数据传输，仅需要通过小米路由器完成，虽然 r2s 的带宽并不高，但内网交换数据并不需要到 r2s 这一层</li>
+</ul>
+<h2 id="NAS-搭建"><a href="#NAS-搭建" class="headerlink" title="NAS 搭建"></a>NAS 搭建</h2><p>接下来是 NAS 的部分</p>
+<p>考虑到避免折腾以及后续真香的成本，我决定直接入手白群晖。选择的是四盘位的 DS423+ 这款。主要考虑到的也是使用的目的。</p>
+<p><img src="/image/tossing-diary/personal-homework-1/DS423+.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="DS423+"></p>
+<h3 id="存储设置端"><a href="#存储设置端" class="headerlink" title="存储设置端"></a>存储设置端</h3><ul>
+<li>由于群晖会将第一个磁盘作为主系统盘，主要提供读取，故采用 SSD 放在第一个盘位能够非常有效的解决噪音问题<ul>
+<li>恰好自己之前从坏掉的笔记本上拆下来了 SATA 接口的 2.5 寸 SSD 硬盘。这个硬盘单独创建一个 Basic 阵列，此盘不做任何容灾备份，主要就用来当缓存用</li>
+<li>但需要注意的是，群晖其实是在所有硬盘上创建了一个 RAID 1 的</li>
+</ul>
+</li>
+<li>剩下的三个盘作为主要存储，也是使用机械硬盘为主，并组建了 SHR 的磁盘整列</li>
+</ul>
+<p>硬盘安装可以参考群晖给出的<a target="_blank" rel="noopener" href="https://global.download.synology.com/download/Document/Hardware/HIG/DiskStation/20-year/DS920+/chs/Syno_HIG_DS920_Plus_chs.pdf">文档</a></p>
+<p>SHR 比之余 RAID5 的好处，主要还是在于扩容的时候，只需要购买两张更大的硬盘就可以实现扩容，无需把所有硬盘都替换掉。至于性能和寿命？作为一个偏轻度的 NAS 使用者而言，似乎是一个无关痛痒的东西</p>
+<p>将套件中心的存储空间和 Download Station 的缓存空间都设置到 SSD 盘，这样可以减少很多机械硬盘本身带来的噪音</p>
+<h3 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h3><p>网络配置才是比较麻烦的操作</p>
+<p>内网访问不必多说，主要是通过 HTTP 协议来管理，由于群晖提供的套件比较丰富，实际上你可以仅使用 HTTP 来管理文件、系统，当然，考虑到舒适的使用，还是需要用上 SMB 服务</p>
+<p>测试了一下，房东的光猫的防火墙禁止了入网流量，导致无法直接在外网通过 IPv6 来访问到自己的 NAS。既然在没有考虑到要换新的房子的前提下，那就只能委曲求全，通过一些其他方案来访问内网</p>
+<h4 id="方案一：QuickConnect"><a href="#方案一：QuickConnect" class="headerlink" title="方案一：QuickConnect"></a>方案一：QuickConnect</h4><p>quick connect 可以说是非常完美的解决方案，它考虑内网直连、公网 IP 直连、UPNP 连接、打洞、转发等方案，一个地址走天下的方案，能够在任何场景下得到最好的访问途径，可以说 QuickConnect 是体验最好的方案……吗？来看看速度对比</p>
+<p>为了对比速度，我测试了一个大文件在多种场景下的速度情况，测试文件是《铃芽之旅》2K 的 mkv 打包的视频，大小为 10.64GB（9.91GiB）足够传输个几秒钟了</p>
+<p><img src="/image/tossing-diary/personal-homework-1/suzume.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="suzume"></p>
+<p>测试环境，只用一根网线让 NAS 和路由器直连，然后由我的 laptop 通过 Wi-Fi 接入路由器，路由器本身开启 AP 模式。如果传输方式本身能够提供速度监控的话，那就按照监控本身为准，否则直接将 laptop 的整体网络下载速度为准</p>
+<p>首先采用理论上 TCP 下最快的方案：在 NAS 上开启 tcp 监听，同时将输入流设置为视频文件，而后在本机上通过 tcp 直接连接到 NAS 的端口，并将结果写入到本地文件</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-comment"># nas 上</span><br><span class="hljs-attribute">nc</span> -l <span class="hljs-number">9090</span> &lt; <span class="hljs-string">&quot;~/Videos/Movies/Suzume/Suzume.2022.2160p.WEB-DL.H265.DDP5.1.2Audio-DreamHD.mkv&quot;</span><br><span class="hljs-comment"># 本地机器</span><br><span class="hljs-attribute">nc</span> nas.com <span class="hljs-number">9090</span> &gt; <span class="hljs-string">&quot;~/Download/Suzume.2022.2160p.WEB-DL.H265.DDP5.1.2Audio-DreamHD.mkv&quot;</span><br></code></pre></td></tr></table></figure>
+<p>可惜的是群晖系统没有默认携带 netcat，再去下一个的意义不大，毕竟说白了也没人这么用 NAS 的，谁下载个东西都用 netcat 啊（虽然好像我经常这样给服务器传输文件）<br>当然也可以退而求其次，选择使用 SCP 的方式来拷贝文件，但也和上述问题一样：没有人平时会这样用 NAS，也就不再过多测试了</p>
+<p>那就直接上 SMB 的下载吧</p>
+<p><img src="/image/tossing-diary/personal-homework-1/smb-private.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="smb-private"></p>
+<p>速度基本上可以稳点在 100MB/s+</p>
+<p>然后是内网通过 HTTP 协议下载的速度</p>
+<p><img src="/image/tossing-diary/personal-homework-1/http-private.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="http-private"></p>
+<p>也差不多，这两者的误差几乎可以忽略</p>
+<p>然后是 QuickConnect 的在最坏的情况下（采用转发的方案）外网访问速度，我才用了 5G 热点的方式接入，也是在外网最常见的访问场景</p>
+<p><img src="/image/tossing-diary/personal-homework-1/qc-forward.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="qc-forward"></p>
+<p>这就有点丢脸了，也是这个方案下最让人难以接受的原因</p>
+<p>当然还有一个令人难以接受的就是，他强制会将你的文件分享地址改成 gofile.me 这个域名，看起来就让人不太舒服</p>
+<p><img src="/image/tossing-diary/personal-homework-1/qc-share.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="qc-share"></p>
+<h4 id="DDNS-和-IPv6"><a href="#DDNS-和-IPv6" class="headerlink" title="DDNS 和 IPv6"></a>DDNS 和 IPv6</h4><p>这两个方案本是个人最喜欢的方案，没有什么比直接连接更加干净利索的了，但……目前的居住环境既拿不到公网的 IPv4 地址，又被光猫的防火墙拦截了 IPv6 的数据，这确实让人没办法接受</p>
+<h4 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h4><p>最终，只能选择内网穿透方案。考虑采用 frp 作为内网穿透的方案</p>
+<h5 id="外网访问配置"><a href="#外网访问配置" class="headerlink" title="外网访问配置"></a>外网访问配置</h5><p>租一台阿里云的 ECS，在按量计费的阿里云 ECS 的成本确实很低，百兆带宽，也只要 1k 就能用 5 年，虽然流量挺贵，1GiB 需要 ¥0.8<br>但通常也不太会在外面直接看视频，毕竟要么还需要消耗手机的移动网络，要么是有预期要出远门，通常更多会提前下载在本地，比如坐飞机的时候。另外，一部电影 20G 的话，也花不了几块钱才是</p>
+<p><img src="/image/tossing-diary/personal-homework-1/aliyun.png" srcset="/image/default/mona-loading-dark.gif" lazyload alt="aliyun"></p>
+<p>然后通过 frp 的方式进行数据传输，简单起一个 docker 镜像。</p>
+<p><code>docker-compose.yml</code> 的大概信息</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">version</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;3.3&#x27;</span><br><span class="hljs-attribute">services</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">frps</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">network_mode</span><span class="hljs-punctuation">:</span> <span class="hljs-string">host</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&#x27;./frps.ini:/frp/frps.ini&#x27;</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">frps</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">stilleshan/frps</span><br></code></pre></td></tr></table></figure>
+<p>之所以选择 <code>network_mode</code> 为 <code>host</code> 的目的也是懒了，毕竟但凡来一个端口需要转发的，就又要再配置一下 docker 镜像的端口映射，确实有些麻烦了</p>
+<p><code>frps.ini</code> 配置信息</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[common]</span><br><span class="hljs-attr">bind_port</span> = <span class="hljs-number">7000</span><br><span class="hljs-attr">token</span> = XXXXX<br></code></pre></td></tr></table></figure>
+<p><code>frpc.ini</code> 的配置参考信息</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[common]</span><br><span class="hljs-attr">server_addr</span> = nas.com  <span class="hljs-comment"># 阿里云服务器的 IP/域名</span><br><span class="hljs-attr">server_port</span> = <span class="hljs-number">7000</span><br><span class="hljs-attr">token</span> = XXXXX          <span class="hljs-comment"># frp 的 token，和服务端配置一致即可</span><br><br><span class="hljs-section">[nas_dsm_http]</span><br><span class="hljs-attr">type</span> = tcp<br><span class="hljs-attr">local_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">local_port</span> = <span class="hljs-number">5000</span>      <span class="hljs-comment"># DSM 配置端口，因为一般不允许修改为 80</span><br><span class="hljs-attr">remote_port</span> = <span class="hljs-number">80</span>       <span class="hljs-comment"># 阿里云服务器上暴露的端口，后续访问直接使用此端口即可</span><br><br><span class="hljs-section">[nas_dsm]</span><br><span class="hljs-attr">type</span> = tcp<br><span class="hljs-attr">local_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">local_port</span> = <span class="hljs-number">5001</span>      <span class="hljs-comment"># DSM 配置端口，因为一般不允许修改为 443</span><br><span class="hljs-attr">remote_port</span> = <span class="hljs-number">443</span>      <span class="hljs-comment"># 阿里云服务器上暴露的端口，后续访问直接使用此端口即可</span><br><br><span class="hljs-section">[nas_smb]</span><br><span class="hljs-attr">type</span> = tcp<br><span class="hljs-attr">local_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">local_port</span> = <span class="hljs-number">445</span>       <span class="hljs-comment"># NAS 的 SMB 端口，默认是 445</span><br><span class="hljs-attr">remote_port</span> = <span class="hljs-number">12345</span>    <span class="hljs-comment"># 阿里云服务器上暴露的 SMB 端口，因为国内防止蠕虫病毒，默认都是禁用了 445，至少我连不上我自己阿里云服务器的 445 端口，故只好换一个端口用</span><br></code></pre></td></tr></table></figure>
+<p>然后再配置一下域名和证书。去阿里云购买一个域名，比如 <code>nas.com</code>，然后将其 A 记录指向购买的阿里云服务器的外网地址。然后再申请一张免费的证书，上传到 NAS 的证书上。</p>
+<p>然后再将阿里云的服务器的防火墙开放 80、443 和 12345 的连接，这样就可以直接通过域名访问到 NAS</p>
+<h5 id="内网优化"><a href="#内网优化" class="headerlink" title="内网优化"></a>内网优化</h5><p>目前这样做的坏处是：内网使用的是 <code>192.168.xxx.xxx</code> 地址访问，而外网则是用 <code>nas.com</code> 进行访问，有一种奇怪的割裂感，于是打算继续优化一下</p>
+<p>路由器上，为 NAS 的 mac 地址绑定固定的 IP，避免 DHCP 每次得到的地址不同。比如绑定到 <code>192.168.1.100</code>，然后再进行 DNS 挟持，将 <code>nas.com</code> 挟持到 <code>192.168.1.100</code>。这样内外网访问的域名就相同了</p>
+<p>但稍微有些不适的问题，内网下，访问地址为 <code>nas.com:5001</code> 而外网则为正常的 <code>nas.com</code>。当然你也可以把 frp 的 <code>[nas_dsm]</code> 下的 <code>remote_port = 443</code> 改成 <code>remote_port = 5001</code> 来强行相同。但仍然让人有点膈应</p>
+<p>那就继续优化内网的访问，通过 ssh 进入群晖的后台，通过<a target="_blank" rel="noopener" href="https://tonylawrence.com/posts/unix/synology/freeing-port-80/">这个方案</a>解除对 <code>80/443</code> 端口的占用，然后修改 <code>/usr/syno/etc/www/DSM.json</code> 文件，将控制台的端口强制改为 <code>80/443</code>。注意要同时修改 <code>frpc.ini</code> 文件</p>
+<h5 id="个人想法"><a href="#个人想法" class="headerlink" title="个人想法"></a>个人想法</h5><p>由于阿里云的服务器通常还有很多用处，NAS 只是其中之一，所以还需要再做一层调整，为其再套一层 nginx 服务。首先修改一下 <code>frpc.ini</code> 配置，将 <code>80/443</code> 端口释放出来。因为大部分其他服务通常都需要使用这两个端口，不如统一架设一层 nginx 来实现代理访问</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[common]</span><br><span class="hljs-attr">server_addr</span> = nas.com  <span class="hljs-comment"># 阿里云服务器的 IP/域名</span><br><span class="hljs-attr">server_port</span> = <span class="hljs-number">7000</span><br><span class="hljs-attr">token</span> = XXXXX          <span class="hljs-comment"># frp 的 token，和服务端配置一致即可</span><br><br><span class="hljs-section">[nas_dsm]</span><br><span class="hljs-attr">type</span> = tcp<br><span class="hljs-attr">local_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">local_port</span> = <span class="hljs-number">443</span>      <span class="hljs-comment"># DSM 配置端口，因为一般不允许修改为 443</span><br><span class="hljs-attr">remote_port</span> = <span class="hljs-number">5001</span>    <span class="hljs-comment"># 阿里云服务器上暴露的端口，后续访问直接使用此端口即可</span><br><br><span class="hljs-section">[nas_smb]</span><br><span class="hljs-attr">type</span> = tcp<br><span class="hljs-attr">local_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span><br><span class="hljs-attr">local_port</span> = <span class="hljs-number">445</span>       <span class="hljs-comment"># NAS 的 SMB 端口，默认是 445</span><br><span class="hljs-attr">remote_port</span> = <span class="hljs-number">12345</span>    <span class="hljs-comment"># 阿里云服务器上暴露的 SMB 端口，因为国内防止蠕虫病毒，默认都是禁用了 445，至少我连不上我自己阿里云服务器的 445 端口，故只好换一个端口用</span><br></code></pre></td></tr></table></figure>
+<p>而后在阿里云服务器上，再起一个 docker 容器，作为服务器的主 nginx 配置</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">version</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&#x27;3.1&#x27;</span><br><br><span class="hljs-attribute">services</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-attribute">http</span><span class="hljs-punctuation">:</span><br>    <span class="hljs-attribute">container_name</span><span class="hljs-punctuation">:</span> <span class="hljs-string">http</span><br>    <span class="hljs-attribute">image</span><span class="hljs-punctuation">:</span> <span class="hljs-string">nginx</span><br>    <span class="hljs-attribute">extra_hosts</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;host.docker.internal:host-gateway&quot;</span><br>    <span class="hljs-attribute">restart</span><span class="hljs-punctuation">:</span> <span class="hljs-string">always</span><br>    <span class="hljs-attribute">volumes</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./cert:/etc/nginx/cert</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./templates:/etc/nginx/templates</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./html:/usr/share/nginx/html</span><br>    <span class="hljs-attribute">ports</span><span class="hljs-punctuation">:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">80:80</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">443:443</span><br></code></pre></td></tr></table></figure>
+<p>而后将证书也上传到阿里云的服务器，并配置 nginx 的配置文件</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> &#123;<br>  <span class="hljs-attribute">listen</span>       <span class="hljs-number">443</span> ssl;<br>  <span class="hljs-attribute">listen</span>  [::]:<span class="hljs-number">443</span> ssl;<br>  <span class="hljs-attribute">server_name</span>  nas.com;<br><br>  <span class="hljs-attribute">ssl_certificate</span> cert/nas.com.pem;<br>  <span class="hljs-attribute">ssl_certificate_key</span> cert/nas.com.key;<br><br>  <span class="hljs-attribute">ssl_session_cache</span> shared:SSL:<span class="hljs-number">1m</span>;<br>  <span class="hljs-attribute">ssl_session_timeout</span> <span class="hljs-number">5m</span>;<br><br>  <span class="hljs-attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;<br>  <span class="hljs-attribute">ssl_protocols</span> TLSv1.<span class="hljs-number">1</span> TLSv1.<span class="hljs-number">2</span> TLSv1.<span class="hljs-number">3</span>;<br>  <span class="hljs-attribute">ssl_prefer_server_ciphers</span> <span class="hljs-literal">on</span>;<br><br>  <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;<br><br>  <span class="hljs-attribute">client_max_body_size</span> <span class="hljs-number">20m</span>; <span class="hljs-comment"># 务必设置客户端最大上传文件大小，否则部分文件上传将会失败</span><br><br>  <span class="hljs-section">location</span> / &#123;<br>    <span class="hljs-attribute">proxy_pass</span>              https://host.docker.internal:5001;<br>  &#125;<br>&#125;<br><br><span class="hljs-section">server</span> &#123;<br>  <span class="hljs-attribute">listen</span>       <span class="hljs-number">80</span> default_server;<br>  <span class="hljs-attribute">server_name</span> _;<br><br>  <span class="hljs-comment"># 将所有 HTTP 请求通过 rewrite 指令重定向到 HTTPS。</span><br>  <span class="hljs-attribute">return</span> <span class="hljs-number">301</span> https://<span class="hljs-variable">$host</span><span class="hljs-variable">$uri</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样，如果后续还要新增服务，只需要通过在这个主的 nginx 内配置相关的路由和转发即可，由主路由实现代理访问和证书管理</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-chain-item">杂项</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/NAS/" class="print-no-link">#NAS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>个人网络 + NAS 折腾日记-1</div>
+      <div>https://blog.mauve.icu/2023/11/07/tossing-diary/personal-homework-1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shiroha</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年11月7日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-cc-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+    <div id="giscus" class="giscus"></div>
+    <script type="text/javascript">
+      Fluid.utils.loadComments('#giscus', function() {
+        var options = {"repo":"Hukeqing/Hukeqing.github.io","repo-id":"MDEwOlJlcG9zaXRvcnkzMjM2NjU2MzM=","category":"General(讨论贴)","category-id":"DIC_kwDOE0q-4c4CZYMv","theme-light":"light","theme-dark":"dark","mapping":"pathname","reactions-enabled":1,"emit-metadata":0,"input-position":"top","lang":"zh-CN"};
+        var attributes = {};
+        for (let option in options) {
+          if (!option.startsWith('theme-')) {
+            var key = option.startsWith('data-') ? option : 'data-' + option;
+            attributes[key] = options[option];
+          }
+        }
+        var light = 'light';
+        var dark = 'dark';
+        window.GiscusThemeLight = light;
+        window.GiscusThemeDark = dark;
+        attributes['data-theme'] = document.documentElement.getAttribute('data-user-color-scheme') === 'dark' ? dark : light;
+        for (let attribute in attributes) {
+          var value = attributes[attribute];
+          if (value === undefined || value === null || value === '') {
+            delete attributes[attribute];
+          }
+        }
+        var s = document.createElement('script');
+        s.setAttribute('src', 'https://giscus.app/client.js');
+        s.setAttribute('crossorigin', 'anonymous');
+        for (let attribute in attributes) {
+          s.setAttribute(attribute, attributes[attribute]);
+        }
+        var ss = document.getElementsByTagName('script');
+        var e = ss.length > 0 ? ss[ss.length - 1] : document.head || document.documentElement;
+        e.parentNode.insertBefore(s, e.nextSibling);
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      <a href="https://github.com/Hukeqing/" target="_blank" rel="nofollow noopener"><span>Copyright ♡ Mauve</span></a> <br><a href="https://icp.gov.moe/?keyword=20240210" target="_blank">萌ICP备20240210号</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+
+  
+
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
