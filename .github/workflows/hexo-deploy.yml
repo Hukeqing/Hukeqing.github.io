@@ -20,15 +20,15 @@ jobs:
     #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 21.x
-      uses: pnpm/action-setup@v4
-      with:
-        version: 10
-    - run: sudo apt-get update && sudo apt-get install -y nasm autoconf automake libtool libpng-dev pkg-config build-essential
-    - run: pnpm i && npx hexo clean && npx hexo g --config _config-deploy.yml
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+      - uses: actions/checkout@v3
+      - name: Use Node.js 21.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21.x
+          cache: 'npm'
+      - run: npm i && npx hexo clean && npx hexo g --config _config-deploy.yml
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
