@@ -25,7 +25,6 @@ jobs:
       uses: pnpm/action-setup@v4
       with:
         version: 10
-        cache: true
     - run: sudo apt-get update && sudo apt-get install -y nasm autoconf automake libtool libpng-dev pkg-config build-essential
     - run: pnpm i && npx hexo clean && npx hexo g --config _config-deploy.yml
     - name: Deploy
