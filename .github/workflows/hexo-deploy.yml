@@ -26,8 +26,8 @@ jobs:
       with:
         version: 10
         cache: true
-    - run: pnpm i
-    - run: npx hexo clean && npx hexo g --config _config-deploy.yml
+    - run: sudo apt-get update && sudo apt-get install -y nasm autoconf automake libtool libpng-dev pkg-config build-essential
+    - run: pnpm i && npx hexo clean && npx hexo g --config _config-deploy.yml
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
