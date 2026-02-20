@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>2025 总结</title>
+    <link href="/2026/02/20/thoughts/end-for-2025/"/>
+    <url>/2026/02/20/thoughts/end-for-2025/</url>
+    
+    <content type="html"><![CDATA[<p>2025年还在写博客的感受，就好像对着虚空呐喊。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>杂项</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>The Burrows-Wheeler Transform 块排序压缩算法</title>
     <link href="/2026/01/01/notebook/Burrows-Wheeler-Transform/"/>
     <url>/2026/01/01/notebook/Burrows-Wheeler-Transform/</url>
@@ -2353,9 +2372,9 @@
     
     <tags>
       
-      <tag>CLion</tag>
-      
       <tag>macOS</tag>
+      
+      <tag>CLion</tag>
       
     </tags>
     
