@@ -3,6 +3,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     font-family: Blueaka, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: white;
     scrollbar-width: none; /* Firefox */
@@ -73,16 +74,77 @@ body {
     position: absolute;
 }
 
+#avatar {
+    transform: translate(-50%, -50%);
+}
+
+#avatar-name {
+    position: absolute;
+}
+
+#intro {
+    left: 40vw;
+    top: 30vh;
+    text-align: left;
+    line-height: 5vh;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2rem;
+    pointer-events: none;
+}
+
+#intro-2 > span:last-child {
+    font-size: 1.6rem;
+}
+
+#intro-3 > span:last-child {
+    font-size: 1.4rem;
+}
+
+#home-title-1,
+#home-title-2,
+#home-title-3 {
+    width: 100%;
+}
+
+#building {
+    width: 100%;
+    top: 40vh;
+    font-size: 2rem;
+}
+
 .avatar {
     width: 100%;
     height: 100%;
     border-radius: 50%;
 }
 
-.links > a > i {
+.links {
+    margin-top: 3vh;
+}
+
+.links > a {
     cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+.links > a > i {
     font-size: 30px;
     margin: 10px 5px;
+}
+
+.links > a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-tip > i {
+        animation: none;
+        opacity: 1;
+        top: 45px;
+    }
 }
 
 ::-webkit-scrollbar {
