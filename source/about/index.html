@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/image/default/favicon.ico">
@@ -10,7 +10,7 @@
   <meta name="keywords" content="ACM,算法,计算机,程序">
   <meta property="og:type" content="website">
   <meta property="og:title" content="关于我">
-  <meta property="og:url" content="https://blog.mauve.icu/links/">
+  <meta property="og:url" content="https://blog.mauve.icu/about/">
   <meta property="og:site_name" content="Shiroha白羽的博客">
   <meta property="og:locale" content="zh_CN">
   <meta property="article:author" content="Shiroha">
@@ -25,72 +25,63 @@
   <link rel="stylesheet" href="../font/Blueaka/Blueaka.css">
   <link rel="stylesheet" href="../font/Blueaka_Bold/Blueaka_Bold.css">
   <link rel="stylesheet" href="./index.css">
-  <script src="./index.js"></script>
+  <script type="module" src="./index.js"></script>
 </head>
 
-<body style="overflow: hidden;">
+<body>
 <div class="bg" id="bg"></div>
-<div>
-  <div id="home">
+<main aria-label="关于我">
+  <section id="home" data-scene="home">
     <div class="animate-container">
       <div class="bg-image" style="background-image: url('/image/default/bg/main_bg.webp')"></div>
 
-      <div id="avatar" style="transform: translate(-50%, -50%)">
-        <img src="/image/about/avatar.png" alt="avatar" class="avatar">
-        <div id="avatar-name" style="position: absolute;">
+      <div id="avatar" data-animate="avatar">
+        <img src="/image/about/avatar.png" alt="Shiroha 的头像" class="avatar">
+        <div id="avatar-name" data-animate="avatar-name">
           <div>Shiroha</div>
-          <div class="links" style="margin-top: 3vh">
-            <a onclick="openUrl('https://github.com/Hukeqing')"><i class="iconfont icon-github"></i></a>
-            <a onclick="openUrl('https://twitter.com/tm_lavender')"><i class="iconfont icon-tuite"></i></a>
-            <a onclick="openUrl('https://t.me/ShiroNaruse')"><i class="iconfont icon-telegram"></i></a>
-            <a onclick="openUrl('https://codeforces.com/profile/KamiyamaShiki')"><i
-                    class="iconfont icon-codeforces"></i></a>
-            <a onclick="openUrl('https://codeforces.com/profile/ShirohaIsMyWife')"><i
-                    class="iconfont icon-codeforces"></i></a>
-            <a onclick="openUrl('https://steamcommunity.com/profiles/76561198428368750/')"><i
-                    class="iconfont icon-steam"></i></a>
-            <a onclick="window.location.href='/rss.xml'"><i class="iconfont icon-rss"></i></a>
-            <a onclick="openUrl('mailto:report.blog@mauve.icu')"><i class="iconfont icon-email"></i></a>
-          </div>
+          <nav class="links" aria-label="社交链接">
+            <a href="https://github.com/Hukeqing" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="iconfont icon-github" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/tm_lavender" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="iconfont icon-tuite" aria-hidden="true"></i></a>
+            <a href="https://t.me/ShiroNaruse" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="iconfont icon-telegram" aria-hidden="true"></i></a>
+            <a href="https://codeforces.com/profile/KamiyamaShiki" target="_blank" rel="noopener noreferrer" aria-label="Codeforces：KamiyamaShiki"><i class="iconfont icon-codeforces" aria-hidden="true"></i></a>
+            <a href="https://codeforces.com/profile/ShirohaIsMyWife" target="_blank" rel="noopener noreferrer" aria-label="Codeforces：ShirohaIsMyWife"><i class="iconfont icon-codeforces" aria-hidden="true"></i></a>
+            <a href="https://steamcommunity.com/profiles/76561198428368750/" target="_blank" rel="noopener noreferrer" aria-label="Steam"><i class="iconfont icon-steam" aria-hidden="true"></i></a>
+            <a href="/rss.xml" aria-label="RSS"><i class="iconfont icon-rss" aria-hidden="true"></i></a>
+            <a href="mailto:report.blog@mauve.icu" target="_blank" rel="noopener noreferrer" aria-label="发送邮件"><i class="iconfont icon-email" aria-hidden="true"></i></a>
+          </nav>
         </div>
       </div>
-      <div id="intro" style="left: 40vw; top: 30vh; text-align: left; line-height: 5vh; white-space: nowrap; overflow: hidden; font-size: 2rem; pointer-events: none">
-        <div id="intro-1"><span>🎈</span>
+      <div id="intro">
+        <div id="intro-1" data-animate="intro-1"><span>🎈</span>
           <span>A retired acmer</span></div>
-        <div id="intro-2"><span>💼</span>
-          <span style="font-size: 1.6rem">A back-end engineer who working for the Alibaba Group now</span>
+        <div id="intro-2" data-animate="intro-2"><span>💼</span>
+          <span>A back-end engineer who working for the Alibaba Group now</span>
         </div>
-        <div id="intro-3"><span>❤️</span>
-          <span style="font-size: 1.4rem">A programmer who loves the free software and the open source community</span>
+        <div id="intro-3" data-animate="intro-3"><span>❤️</span>
+          <span>A programmer who loves the free software and the open source community</span>
         </div>
-        <div id="intro-4"><span>📈</span>
+        <div id="intro-4" data-animate="intro-4"><span>📈</span>
           <span>building some interesting project on GitHub</span></div>
-        <div id="intro-5"><span>💻</span>
+        <div id="intro-5" data-animate="intro-5"><span>💻</span>
           <span>using C/C++ and Java for my daily work</span></div>
       </div>
-      <div id="home-title-1" style="width: 100%">Ciallo～(∠・ω< )⌒★</div>
-      <div id="home-title-2" style="width: 100%">欢迎光临寒舍～いらっしゃいませ～</div>
-      <div id="home-title-3" style="width: 100%">
+      <div id="home-title-1" data-animate="home-title-1">Ciallo～(∠・ω< )⌒★</div>
+      <div id="home-title-2" data-animate="home-title-2">欢迎光临寒舍～いらっしゃいませ～</div>
+      <div id="home-title-3" data-animate="home-title-3">
         <div>稍微来一些音乐<audio controls loop src="https://cdn.mauve.icu/bgm.mp3"></audio></div>
         <div>然后，请继续轻轻得向下滚动屏幕来阅读吧～</div>
       </div>
     </div>
-  </div>
-  <div id="project">
+  </section>
+  <section id="project" data-scene="project">
     <div class="animate-container">
       <div class="bg-image" style="background-image: url('/image/default/bg/BA_CG_View_Kivotos1.jpg')"></div>
-      <div id="building" style="width: 100%; top: 40vh; font-size: 2rem">🚧施工中🚧</div>
+      <div id="building">🚧施工中🚧</div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
 <div class="scroll-tip">
-  <i class="iconfont icon-arrowdown"></i>
+  <i class="iconfont icon-arrowdown" aria-hidden="true"></i>
 </div>
 </body>
-
-<script>
-    start()
-    addEventListener("wheel", scroll)
-    setInterval(clampPlay, 10)
-</script>
 </html>
